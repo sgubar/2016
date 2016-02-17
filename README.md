@@ -1,2 +1,2 @@
 # 2016
-Workspace for students of dk51, dk52
+Workspace for students of 2016 studied year. AiP
