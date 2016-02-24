@@ -2,7 +2,7 @@
  * main.c
  *
  *  Created on: 24.02.2016
- *      Author: crope
+ *      Author: Aleksander Mahnyov
  */
 
 
