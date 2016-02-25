@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1456433864 source:/home/crope/workspace/dk51/AMahnyov/lab1/main.c
+	<stdio.h>
+	<stdlib.h>
+
+1456437074 source:/home/crope/workspace/dk51/AMahnyov/lab1/calculate.c
+	<stdio.h>
+	"calculate.h"
+
+1456435010 /home/crope/workspace/dk51/AMahnyov/lab1/calculate.h
+
