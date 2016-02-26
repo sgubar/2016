@@ -4,7 +4,7 @@
 	<stdlib.h>
 	"calculate.h"
 
-1456515551 source:/home/crope/workspace/dk51/AMahnyov/lab1/calculate.c
+1456516807 source:/home/crope/workspace/dk51/AMahnyov/lab1/calculate.c
 	<stdio.h>
 	"calculate.h"
 	"biclycleMath.h"
@@ -18,7 +18,7 @@
 
 1456493912 /home/crope/workspace/dk51/AMahnyov/lab1/biclycleMath.h
 
-1456515325 source:/home/crope/workspace/dk51/AMahnyov/lab1/getInput.c
+1456516176 source:/home/crope/workspace/dk51/AMahnyov/lab1/getInput.c
 	"getInput.h"
 	<stdio.h>
 
