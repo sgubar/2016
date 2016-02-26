@@ -31,7 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="bicycleMath" />
+		<Unit filename="biclycleMath.h" />
+		<Unit filename="bicycleMath.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="calculate.c">
 			<Option compilerVar="CC" />
 		</Unit>

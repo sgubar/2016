@@ -1,22 +1,23 @@
 #include <stdio.h>
 #include "calculate.h"
 #include "biclycleMath.h"
+#include "getInput.h"
 
-static void checkAndDo(int A, int B, int C);
+static void doFormula(int arguments[2]);
 
 void doCalculation()
 {
-    int paramA, paramB, paramC;
-    printf("Enter the parameters, space separated: ");
-    scanf("%d %d %d", &paramA, &paramB, &paramC); //ask user for parameters
-    checkAndDo(paramA, paramB, paramC);
+    char *answer = "y";
+    while(answer == "y" || answer == "Y"){
+    int *arguments;
+    arguments = getInput(2); //gets input from user, as an array: A-0 B-1 C-2
+    doFormula(arguments);
+    printf("Again? [Y/N]: ");
+    scanf("%с", answer);
+    }
 }
 
-void checkAndDo(int A, int B, int C){
-    if(C == 0){ //to avoid dividing by zero
-        printf("Invalid input!");
-        }else{
-            double finalResult = bicycleModulo(A*C-B) / bicyclePow(C, 3) * bicycleSum(A); //main formula
-            printf("Final result: %f", finalResult);
-        }
+void doFormula(int arguments[2]){ //calculates the result, with bicyleMath formulas
+    double finalResult = bicycleModulo(arguments[0]*arguments[2]-arguments[1]) / bicyclePow(arguments[2], 3) * bicycleSum(arguments[0]); //main formula
+    printf("Final result: %f", finalResult);
 }
