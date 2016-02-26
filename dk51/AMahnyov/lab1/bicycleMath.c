@@ -1,12 +1,12 @@
 #include "biclycleMath.h"
 #include <stdio.h>
 
-int bicycleSum(int iterations);
-int bicycleModulo(int input);
-int bicyclePow(int num, int power);
+double bicycleSum(int iterations);
+double bicycleModulo(int input);
+double bicyclePow(int num, int power);
 
 //untested!
-int bicycleSum(int iterations){ //sum of 2^parameter
+double bicycleSum(int iterations){ //sum of 2^parameter
     int result = 0;
     int i = 0;
     for(i = 0; i < iterations; i++){ //variable cycle
@@ -18,7 +18,7 @@ int bicycleSum(int iterations){ //sum of 2^parameter
 }
 
 //works!
-int bicycleModulo(int input){ //inverts number, if negative
+double bicycleModulo(int input){ //inverts number, if negative
     if(input < 0) input*=(-1);
     //printf(" Modulo worked, result: ");
     //printf("%d", input);
@@ -26,7 +26,7 @@ int bicycleModulo(int input){ //inverts number, if negative
     }
 
 //works!
-int bicyclePow(int num, int power){ //DIY pow, yay!
+double bicyclePow(int num, int power){ //DIY pow, yay!
     int i = 0;
     int result = num - 1;
     for(i = 0; i < power; i++){
