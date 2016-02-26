@@ -3,7 +3,7 @@
 #include "calculate.h"
 
 static void checkAndDo(int A, int B, int C, int D);
-static int bicycleSum(int param, int iterations);
+static int bicycleSum(int iterations);
 static int bicycleModulo(int input);
 static int bicyclePow(int num, int power);
 
@@ -21,12 +21,12 @@ void checkAndDo(int A, int B, int C, int D){
     if(C == 0){ //to avoid dividing by zero
         printf("Invalid input!");
         }else{
-            int finalResult = bicycleModulo(A*C-B) / bicyclePow(C, 3) * bicycleSum(D, A); //main formula
+            int finalResult = bicycleModulo(A*C-B) / bicyclePow(C, 3) * bicycleSum(A); //main formula
             printf("%d", finalResult);
         }
 }
 
-int bicycleSum(int param, int iterations){ //sum of 2^parameter
+int bicycleSum(int iterations){ //sum of 2^parameter
     int result = 0;
     int i = 0;
     for(i = 0; i < iterations; i++){ //variable cycle
@@ -35,17 +35,18 @@ int bicycleSum(int param, int iterations){ //sum of 2^parameter
     return(result);
 }
 
+//works!
 int bicycleModulo(int input){ //inverts number, if negative
     if(input < 0) input*=(-1);
     return(input);
     }
 
+//works!
 int bicyclePow(int num, int power){ //DIY pow, yay!
     int i = 0;
-    int result = 0;
+    int result = num - 1;
     for(i = 0; i < power; i++){
         result*=num;
     }
     return(result);
-    num = 0;
 }
