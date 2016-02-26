@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "calculate.h"
+
 int main()
 {
-    calculate();
+    doCalculation();
     return 0;
 }

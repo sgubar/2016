@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include "calculate.h"
+#include "biclycleMath.h"
 
 static void checkAndDo(int A, int B, int C);
 
-void calculate()
+void doCalculation()
 {
     int paramA, paramB, paramC;
     printf("Enter the parameters, space separated: ");
@@ -16,6 +17,11 @@ void checkAndDo(int A, int B, int C){
         printf("Invalid input!");
         }else{
             int finalResult = bicycleModulo(A*C-B) / bicyclePow(C, 3) * bicycleSum(A); //main formula
-            printf("%d", finalResult);
+
+            printf("%d\n", bicycleModulo(A*C-B));
+            printf("%d\n", bicyclePow(C, 3));
+            printf("%d\n", bicycleSum(A));
+
+            //printf("%d", finalResult);
         }
 }
