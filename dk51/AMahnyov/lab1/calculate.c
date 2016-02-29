@@ -9,7 +9,11 @@ void doCalculation()
 {
     int *arguments; //pointer for an array
     arguments = getInput(2); //gets input from user, as an array: A-0 B-1 C-2
-    doFormula(arguments);
+    if(arguments[2] != 0){
+        doFormula(arguments);
+    }else{
+        printf("Invalid input!");
+    }
 }
 
 void doFormula(int arguments[2]){ //calculates the result, with bicyleMath formulas
