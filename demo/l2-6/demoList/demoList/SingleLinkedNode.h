@@ -23,6 +23,7 @@ struct __IntNode
 
 //Create a new Node with int value
 IntNode *SLCreateNodeWithIntValue(int aValue);
+//Free a created node
 void SLFreeIntNode(IntNode *aNode);
 
 #endif /* SingleLinkedNode_h */
