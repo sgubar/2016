@@ -21,6 +21,7 @@ struct __IntNode
 	IntNode *nextNode;
 };
 
+//Create a new Node with int value
 IntNode *SLCreateNodeWithIntValue(int aValue);
 void SLFreeIntNode(IntNode *aNode);
 
