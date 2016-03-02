@@ -14,13 +14,6 @@
 // Predeclaration
 typedef struct __IntNode IntNode;
 
-// The node declaration
-struct __IntNode
-{
-	int value;
-	IntNode *nextNode;
-};
-
 typedef struct __IntList
 {
 	IntNode *head;
@@ -28,16 +21,20 @@ typedef struct __IntList
 	int count;
 }IntList;
 
-const int kSLListError = -1;
+extern const int kSLListError;
 
 //Interface
 //Create/delete a list
-const IntList *createSLList();
-void freeList(IntList *aList);
+IntList *SLCreateList();
+void SLFreeList(IntList *aList);
 
-const IntNode *addNode(IntList *aList, IntNode *aNewNode);
+IntNode *SLAddNode(IntList *aList, IntNode *aNewNode);
 
-int countList(const IntList *aList);
-const IntNode *nodeAtIndex(const IntList *aList, int aIndex);
+int SLCountList(const IntList *aList);
+IntNode *SLNodeAtIndex(const IntList *aList, int aIndex);
+
+//TODO: house work
+//IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex);
+//IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex);
 
 #endif /* SingleLinkedList_h */

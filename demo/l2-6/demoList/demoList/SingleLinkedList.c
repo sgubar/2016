@@ -7,10 +7,14 @@
 //
 
 #include "SingleLinkedList.h"
+#include "SingleLinkedNode.h"
 #include <stdlib.h>
 
+// Constants
+const int kSLListError = -1;
+
 //Create/delete a list
-const IntList *createSLList()
+IntList *SLCreateList()
 {
 	//Allocate memory for the list structure
 	IntList *theList = (IntList *)malloc(sizeof(IntList));
@@ -26,7 +30,7 @@ const IntList *createSLList()
 	return theList;
 }
 
-void freeList(IntList *aList)
+void SLFreeList(IntList *aList)
 {
 	// Check the input parameter
 	if (NULL == aList)
@@ -49,7 +53,7 @@ void freeList(IntList *aList)
 	free(aList);
 }
 
-const IntNode *addNode(IntList *aList, IntNode *aNewNode)
+IntNode *SLAddNode(IntList *aList, IntNode *aNewNode)
 {
 	// Check the input parameter
 	if (NULL == aList || NULL == aNewNode)
@@ -61,14 +65,28 @@ const IntNode *addNode(IntList *aList, IntNode *aNewNode)
 	
 	// a b c d e + G = a b c d e G
 	
-	IntNode *theTail = aList->tail;
-	aList->tail = aNewNode;
-	theTail->nextNode = aList->tail;
+	if (NULL == aList->head && NULL == aList->tail)
+	{
+		//The list is empty
+		aList->head = aList->tail = aNewNode;
+	}
+	else
+	{
+		IntNode *theTail = aList->tail;
+		aList->tail = aNewNode;
+	
+		if (NULL != theTail)
+		{
+			theTail->nextNode = aList->tail;
+		}
+	}
+
+	aList->count += 1;
 	
 	return aNewNode;
 }
 
-int countList(const IntList *aList)
+int SLCountList(const IntList *aList)
 {
 	int theResult = kSLListError;
 
@@ -80,7 +98,7 @@ int countList(const IntList *aList)
 	return theResult;
 }
 
-const IntNode *nodeAtIndex(const IntList *aList, int anIndex)
+IntNode *SLNodeAtIndex(const IntList *aList, int anIndex)
 {
 	IntNode *theResult = NULL;
 

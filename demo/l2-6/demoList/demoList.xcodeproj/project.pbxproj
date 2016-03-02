@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		736349BF1C863E7600CE89B2 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 736349BE1C863E7600CE89B2 /* main.c */; };
 		736349C71C863EE000CE89B2 /* SingleLinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 736349C51C863EE000CE89B2 /* SingleLinkedList.c */; };
+		736349CA1C877E6C00CE89B2 /* SingleLinkedNode.c in Sources */ = {isa = PBXBuildFile; fileRef = 736349C81C877E6C00CE89B2 /* SingleLinkedNode.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		736349BE1C863E7600CE89B2 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		736349C51C863EE000CE89B2 /* SingleLinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SingleLinkedList.c; sourceTree = "<group>"; };
 		736349C61C863EE000CE89B2 /* SingleLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleLinkedList.h; sourceTree = "<group>"; };
+		736349C81C877E6C00CE89B2 /* SingleLinkedNode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SingleLinkedNode.c; sourceTree = "<group>"; };
+		736349C91C877E6C00CE89B2 /* SingleLinkedNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleLinkedNode.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				736349BE1C863E7600CE89B2 /* main.c */,
 				736349C51C863EE000CE89B2 /* SingleLinkedList.c */,
 				736349C61C863EE000CE89B2 /* SingleLinkedList.h */,
+				736349C81C877E6C00CE89B2 /* SingleLinkedNode.c */,
+				736349C91C877E6C00CE89B2 /* SingleLinkedNode.h */,
 			);
 			path = demoList;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				736349C71C863EE000CE89B2 /* SingleLinkedList.c in Sources */,
+				736349CA1C877E6C00CE89B2 /* SingleLinkedNode.c in Sources */,
 				736349BF1C863E7600CE89B2 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
