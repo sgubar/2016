@@ -9,7 +9,6 @@
 #include <stdio.h>
 
 #include "SumComplexity.h"
-#include "SumComplexity.h"
 #include "MulComplexity.h"
 
 int main(int argc, const char * argv[])
