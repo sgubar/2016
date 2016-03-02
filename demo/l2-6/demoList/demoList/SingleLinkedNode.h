@@ -18,7 +18,7 @@ typedef struct __IntNode IntNode;
 struct __IntNode
 {
 	int value;
-	IntNode *nextNode;
+	IntNode *nextNode;//<! - the reference to next node
 };
 
 //Create a new Node with int value
