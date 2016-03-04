@@ -3,26 +3,23 @@
 
 int main()
 {
-    int iterations;
-
-    scanf("%d", iterations);
-
-    int result = 0;
-    int i = 0;
-
-    for(i = 0; i < iterations; i++){ //variable cycle
+    double result = 0;
+    int i;
+    for(i = 0; i < 4; i++){ //variable cycle
         result += bicyclePow(2, i); //sends it to makeshift pow
+        printf("pow: %d\n", bicyclePow(2, i));
     }
-
-    printf(result);
-
-    return 0;
+    printf("Result: %f\n", result);
+    return(0);
 }
 
 int bicyclePow(int num, int power){ //DIY pow, yay!
-    int i = 0;
-    int result = num - 1;
-    for(i = 0; i < power; i++){
+    if(power == 0){
+        return(1);
+    }
+    int i;
+    int result = num;
+    for(i = 1; i < power; i++){
         result*=num;
     }
     return(result);

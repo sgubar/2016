@@ -1,17 +1,17 @@
 # depslib dependency file v1.0
-1457118193 source:/home/crope/workspace/dk51/AMahnyov/lab1/main.c
+1457118927 source:/home/crope/workspace/dk51/AMahnyov/lab1/main.c
 	<stdio.h>
 	<stdlib.h>
 	"calculate.h"
 
-1457117797 source:/home/crope/workspace/dk51/AMahnyov/lab1/calculate.c
+1457124597 source:/home/crope/workspace/dk51/AMahnyov/lab1/calculate.c
 	<stdio.h>
 	"calculate.h"
 	"biclycleMath.h"
 
 1457118311 /home/crope/workspace/dk51/AMahnyov/lab1/calculate.h
 
-1457116637 source:/home/crope/workspace/dk51/AMahnyov/lab1/bicycleMath.c
+1457125958 source:/home/crope/workspace/dk51/AMahnyov/lab1/bicycleMath.c
 	"biclycleMath.h"
 	<stdio.h>
 
