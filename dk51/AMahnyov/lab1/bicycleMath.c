@@ -16,8 +16,10 @@ double bicycleSum(int iterations){ //sum of 2^parameter
 }
 
 //works!
-double bicycleModulo(int input){ //inverts number, if negative
-    if(input < 0) input*=(-1);
+    double bicycleModulo(int input){//inverts number, if negative
+    if(input < 0){
+        input*=(-1);
+    }
     return(input);
     }
 
