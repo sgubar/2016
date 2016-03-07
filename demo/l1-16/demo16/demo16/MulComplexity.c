@@ -16,10 +16,10 @@ void doMulComplexity()
 {
 	printf ("The complexity of multiplication");
 	
-	doSlowly(10, 10, 10);
+	doSlowly(10, 10, 10); //<! - O(n^3)
 	doFastest(10, 10);
 	
-	printf("O (f(n) * g(n)) = O(n^3) * O(n^2) = O (n^5)\n");
+	printf("O (f(n) * g(n)) = O(n^3) + O(n^3) * O(n^2) = O (n^5)\n");
 	printf("Thanks!\n");
 }
 

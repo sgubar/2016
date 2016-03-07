@@ -1,22 +1,20 @@
+/* Copyright (c) 2016 Aleksander Mahnyov. All rights reserved.*/
+
 #include <stdio.h>
 #include "calculate.h"
 #include "biclycleMath.h"
-#include "getInput.h"
 
-static void doFormula(int arguments[2]);
+void doFormula(int argA, int argB, int argC);
 
-void doCalculation()
-{
-    int *arguments; //pointer for an array
-    arguments = getInput(2); //gets input from user, as an array: A-0 B-1 C-2
-    if(arguments[2] != 0){
-        doFormula(arguments);
-    }else{
-        printf("Invalid input!");
+void doFormula(int argA, int argB, int argC){ //calculates the result, with bicyleMath formulas
+    if(argB != 0){
+        double finalResult = bicycleModulo(argA*argC-argB) * bicycleSum(argA) / bicyclePow(argB, 3); //main formula
+        printf("Final result: %f\n", finalResult);
+// debug lefrowers, let's just leave it here.
+//        printf("Mod: %f\n", bicycleModulo(argA*argC-argB));
+//        printf("Sum: %f\n", bicycleSum(argA));
+//        printf("Pow: %f\n", bicyclePow(argB, 3));
+    } else {
+        printf("Invalid arguments!\n");
     }
-}
-
-void doFormula(int arguments[2]){ //calculates the result, with bicyleMath formulas
-    double finalResult = bicycleModulo(arguments[0]*arguments[2]-arguments[1]) / bicyclePow(arguments[2], 3) * bicycleSum(arguments[0]); //main formula
-    printf("Final result: %f\n", finalResult);
 }
