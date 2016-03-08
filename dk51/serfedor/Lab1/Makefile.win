@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o Lab1.o
-LINKOBJ  = main.o Lab1.o
+OBJ      = main.o octal.o hex.o
+LINKOBJ  = main.o octal.o hex.o
 LIBS     = -L"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
 INCS     = -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
 CXXINCS  = -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
@@ -28,5 +28,8 @@ $(BIN): $(OBJ)
 main.o: main.c
 	$(CC) -c main.c -o main.o $(CFLAGS)
 
-Lab1.o: Lab1.c
-	$(CC) -c Lab1.c -o Lab1.o $(CFLAGS)
+octal.o: octal.c
+	$(CC) -c octal.c -o octal.o $(CFLAGS)
+
+hex.o: hex.c
+	$(CC) -c hex.c -o hex.o $(CFLAGS)

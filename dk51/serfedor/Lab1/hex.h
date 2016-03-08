@@ -1,6 +1,6 @@
 #ifndef hex_h
 #define hex_h
 
-void doHex();
+void doHex(); 
 
 #endif // hex_h
