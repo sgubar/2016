@@ -1,34 +1,28 @@
 #include<stdio.h>
 
 #include"Math.h"
-extern int number, A, C, B, D;
+#include"InputHEX.h"
 
-extern int Sub();
-extern int Mult();
-int Sum();
+int doInputHEX();
+int Sub(int numberB);
+int Sum(int resultSub, int numberD);
 
-int Sub(int Sub) {
-	Sub = number - C;
-	printf("Sub=%d\n", Sub);
-	return(Sub);
+int Sub(int numberB) {
+	int resultSub = doInputHEX() - numberB;
+	printf("Sub=%d\n", resultSub);
+	return(resultSub);
 }
 
-int Mult(int Mult)
-{
-    Mult =(int) Sub*A;
-	printf("Mult=%d\n", Mult);
-	return(Mult);
-}
 
-int Sum()
+
+int Sum(int resultSub, int numberD)
 {
-	int A = 1;
-	int result,i = 0;
-	for (i =A ; i <= D; i++)
+	int resultMult, result = 0;
+	for (int A=1 ; A <= numberD; A++)
 	{
-		result = Mult;
-		result +=(int) Mult;
+		resultMult = resultSub*A;
+		result += resultMult;
 	}
-	printf("Sum=%d\n", result);
+	printf("RESULT=%d\n", result);
 	return(result);
 }

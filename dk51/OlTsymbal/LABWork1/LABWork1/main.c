@@ -5,13 +5,18 @@
 #include"Input.h"
 #include"Math.h"
 
+int doInputHEX();
 
 int main()
 {
-	doInputHEX();
-	doInput();
-	Sub();
-	Mult();
-	Sum();
+	printf("Enter a number B\n");
+	int numberB = doInput();
+	printf("Enter a number D\n");
+	int numberD = doInput();
+	
+	
+	Sub(numberB);
+	Sum(Sub(numberB), numberD);
+	
 	system("pause");
 }

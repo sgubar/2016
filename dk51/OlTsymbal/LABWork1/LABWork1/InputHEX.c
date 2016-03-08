@@ -4,7 +4,7 @@
 #include "InputHEX.h"
 
 
-int doInputHEX(int Number)
+int doInputHEX()
 {
 	int number = 0;
 	char HEXnumber[4];
