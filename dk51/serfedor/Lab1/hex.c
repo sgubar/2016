@@ -7,21 +7,21 @@
 //
 #include<stdio.h>
 #include "hex.h"
-const int C = 20; A=19;//Встановлення кількості комірок для масивів
-void doHex()// розкриття змісту функції
+const int C = 20; A=19;
+void doHex()
 {
-	int Array[C], Num2, k = 0,m;  //ініціалізація цілочисленних масиву та змінних 
-	char Char[A];// ініціалізація символьного масиву 
+	int Array[C], Num2, k = 0,m; 
+	char Char[A];
 	printf("\nInput Num2 to hexadecimal converts (less than 1000): ");
-	scanf("%d", &Num2);// зберігання змінної
-	if(Num2>1000)// умова, якщо введене число більше за 1000
-	printf("Incorrect input");// вивід помилки
-	else //якщо не виконуеться умова
+	scanf("%d", &Num2);
+	if(Num2>1000)
+	printf("Incorrect input");
+	else 
 	{
-	while(Num2>16) //цикл ділення введеного числа на 16, поки останнє число >16
+	while(Num2>16)
 	{
-	Array[k]= Num2%16; //присвоєння масиву остачі від ділення
-	switch(Array[k])// цикл - інструкція, якщо значення остачі від ділення  дорівнює  ...
+	Array[k]= Num2%16;
+	switch(Array[k])
 	{
 		case 10 : Char[k] = 'A'; break;
 		case 11 : Char[k] = 'B'; break;
@@ -30,11 +30,11 @@ void doHex()// розкриття змісту функції
 		case 14 : Char[k] = 'E'; break;
 		case 15 : Char[k] = 'F'; break;
 	}
-	Num2 = Num2 / 16; // ділення числа на 16
-	k = k++; //перехід до наступної комірки масиву
+	Num2 = Num2 / 16; 
+	k = k++;
 	}
-	Array[k] = Num2; // присвоєння останнього числа поділеного на 16 масиву
-	switch(Array [k]) // цикл - інструкція, якщо значення  ділення  дорівнює  ...
+	Array[k] = Num2; 
+	switch(Array [k]) 
 	{
 		case 10 : Char[k] = 'A'; break;
 		case 11 : Char[k] = 'B'; break;
@@ -44,9 +44,9 @@ void doHex()// розкриття змісту функції
 		case 15 : Char[k] = 'F'; break;
 	}
 	printf ("Hexadecimal number is: ");
-	for(m=k;m>-1;m--)//заповнення комірок  задом на перед
+	for(m=k;m>-1;m--)
 	{
-	if (Array[m]>9) // умова якщо значення масиву більше за 9
+	if (Array[m]>9) 
 	printf("%c", Char[m]);
 	else 
 	printf("%d", Array[m])	;
