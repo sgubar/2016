@@ -39,10 +39,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="calculate.h" />
-		<Unit filename="getInput.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="getInput.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

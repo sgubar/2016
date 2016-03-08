@@ -16,8 +16,8 @@ void doSumComplexity()
 {
 	printf ("The complexity of summary");
 	
-	doSlowly(10, 10, 10);
-	doFastest(10, 10);
+	doSlowly(10, 3, 10);//<! n^3
+	doFastest(10, 10); //<! n^2
 	
 	printf("O (max (f(n), g(n)) = O(n^3)\n");
 	printf("Thanks!\n");
