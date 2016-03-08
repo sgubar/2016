@@ -5,7 +5,7 @@
 
 int doInput()
 {
-	int B, C, D;
+	extern int B, C, D;
 	printf("Enter a number B\n");
 	scanf("%d", &B);
 	printf("Enter a number C\n");
@@ -14,6 +14,5 @@ int doInput()
 	scanf("%d", &D);
 	printf("%d %d %d\n", B, C, D);
 	return (B,C,D);
-	system("pause");
 }
 
