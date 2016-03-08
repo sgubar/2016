@@ -10,8 +10,8 @@
 main()
 {
 	printf("Hello, this programm is converts decimal numbers to octal,\nand to hexadecimal numbers");
-	doOctal();//Об'ява функції конвертації у вісімкову систему числень
-	doHex();//Об'ява функції конвертації у шістнадцяткву систему числень
+	doOctal();
+	doHex();
 	printf ("\nThanks");
 	getch();
 }

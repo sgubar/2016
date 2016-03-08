@@ -7,8 +7,8 @@
 //
 #include<stdio.h>
 #include "octal.h"
-const int N = 20;//Rozmir masiva
-void doOctal() //
+const int N = 20;
+void doOctal() 
 {
 	int Array[N], Num1, i = 0,d;
 	printf("\nInput Num1 to octal converts (less than 1000): ");
