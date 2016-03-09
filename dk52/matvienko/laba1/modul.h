@@ -1,0 +1,1 @@
+double modul(double A);
