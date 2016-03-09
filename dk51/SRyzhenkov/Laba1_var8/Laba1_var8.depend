@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1457476275 source:d:\Документы\Учебники\Программирование\С\laba1_var8\doeight.c
+
+1457483813 source:d:\Документы\Учебники\Программирование\С\laba1_var8\dohexadecimal.c
+
+1457482669 source:d:\Документы\Учебники\Программирование\С\laba1_var8\main.c
+	<stdio.h>
+	<stdlib.h>
+	"doEight.h"
+	"doHexadecimal.h"
+
+1457476226 d:\Документы\Учебники\Программирование\С\laba1_var8\doeight.h
+
+1457482669 d:\Документы\Учебники\Программирование\С\laba1_var8\dohexadecimal.h
+

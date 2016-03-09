@@ -39,6 +39,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="doEight.h" />
+		<Unit filename="doHexadecimal.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="doHexadecimal.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

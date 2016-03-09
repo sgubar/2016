@@ -7,9 +7,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "doEight.h"
+#include "doHexadecimal.h"
 
 int main()
 {
-   doEight();
+    doEight();
+    doHexadecimal();
 }
 
