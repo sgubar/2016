@@ -1,1 +1,1 @@
-Calculates Q=∑_(A=1)^D [A×(F_16-C)]
+Lab1 task 6 (see lab1.doc). Post any revievs here.
