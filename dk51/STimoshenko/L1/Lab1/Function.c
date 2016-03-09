@@ -1,15 +1,32 @@
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "Function.h"
-void Arguments(int A, int B, int C);
+
+int FCTRL (int B);
+int PWR (int C);
+
+
+int FCTRL (int B)
 {
-void Arguments(int A, int B, int C)
-    printf("Rozrahoovati znachennya virazoo \n ((A^2 + B^2)/(B + 5^C)) + B!\n");
-    printf("Zadaite A,B,C\n");
-        scanf("%f", &A);
-    printf("A=%f\n",A);
-        scanf("%f", &B);
-    printf("B=%f\n",B);
-        scanf("%f", &C);
-    printf("C=%f\n",C);
+int i;
+int k=1;
+for (i=B; i!=1; i--)
+{
+    k=k*i;
 }
+return (k);
+}
+
+int PWR (int C)
+{
+int j;
+int m=1;
+for (j=0; j!=C; j++)
+{
+ m=m*5;
+}
+return (m);
+}
+

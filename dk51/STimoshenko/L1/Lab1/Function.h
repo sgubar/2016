@@ -1,7 +1,8 @@
 #ifndef FUNCTION_H_INCLUDED
 #define FUNCTION_H_INCLUDED
 
-void Arguments(int (A), int(B), int (C));
 
+int FCTRL (int B);
+int PWR (int C);
 
 #endif // FUNCTION_H_INCLUDED

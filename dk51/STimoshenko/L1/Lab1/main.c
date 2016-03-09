@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Function.h"
+#include "Args.h"
 
-int Arguments(int A,int B,int C);
-
+int main()
+{
+int Arguments(int A, int B, int C);
+}
