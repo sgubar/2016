@@ -1,13 +1,21 @@
-﻿Сборка начата 08.03.2016 18:35:50.
-     1>Проект "C:\Users\User\Documents\Visual Studio 2015\Projects\LABWork1\LABWork1\LABWork1.vcxproj" в узле 2 (целевые объекты Build).
+﻿Сборка начата 09.03.2016 17:47:14.
+     1>Проект "C:\Users\User\documents\visual studio 2015\Projects\LABWork1\LABWork1\LABWork1.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt main.c
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt InputHEX.c Math.c main.c
          main.c
-     1>c:\users\user\documents\visual studio 2015\projects\labwork1\labwork1\main.c(12): warning C4013: doInput: нет определения; предполагается "extern" с возвратом типа "int"
-     1>c:\users\user\documents\visual studio 2015\projects\labwork1\labwork1\main.c(13): error C2198: Sub: слишком мало аргументов для вызова
-     1>c:\users\user\documents\visual studio 2015\projects\labwork1\labwork1\main.c(14): warning C4013: Mult: нет определения; предполагается "extern" с возвратом типа "int"
-     1>Сборка проекта "C:\Users\User\Documents\Visual Studio 2015\Projects\LABWork1\LABWork1\LABWork1.vcxproj" завершена (целевые объекты Build) с ошибкой.
+     1>c:\users\user\documents\visual studio 2015\projects\labwork1\labwork1\main.c(20): warning C4013: doInput: нет определения; предполагается "extern" с возвратом типа "int"
+         Math.c
+         InputHEX.c
+     1>c:\users\user\documents\visual studio 2015\projects\labwork1\labwork1\inputhex.c(29): warning C4013: exit: нет определения; предполагается "extern" с возвратом типа "int"
+         Создание кода...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\User\documents\visual studio 2015\Projects\LABWork1\Debug\LABWork1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\User\documents\visual studio 2015\Projects\LABWork1\Debug\LABWork1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\User\documents\visual studio 2015\Projects\LABWork1\Debug\LABWork1.lib" /MACHINE:X86 Debug\doInput.obj
+         Debug\InputHEX.obj
+         Debug\main.obj
+         Debug\Math.obj
+         LABWork1.vcxproj -> C:\Users\User\documents\visual studio 2015\Projects\LABWork1\Debug\LABWork1.exe
+     1>Сборка проекта "C:\Users\User\documents\visual studio 2015\Projects\LABWork1\LABWork1\LABWork1.vcxproj" завершена (целевые объекты Build).
 
-Ошибка сборки.
+Сборка успешно завершена.
 
-Затраченное время: 00:00:00.27
+Затраченное время: 00:00:01.30

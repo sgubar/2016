@@ -7,12 +7,15 @@
 //
 #include<stdio.h>
 #include "octal.h"
-const int N = 20;//Rozmir masiva
-void doOctal()
+const int N = 20;
+void doOctal() 
 {
 	int Array[N], Num1, i = 0,d;
-	printf("Input Num1: ");
+	printf("\nInput Num1 to octal converts (less than 1000): ");
 	scanf("%d", &Num1);
+	if(Num1>1000)
+	printf("Incorrect input");
+	else{
 	while(Num1>8)
 	{
 	
@@ -21,9 +24,11 @@ void doOctal()
 	i = i++;
 	}
 	Array[i] = Num1;
+	printf ("Octal number is: ");
 	for(d=i;d>-1;d--)
 	{
 	printf ("%d", Array[d]);
+	}
 	}
 	getch();
 }

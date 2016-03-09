@@ -9,8 +9,10 @@
 #include "octal.h"
 main()
 {
+	printf("Hello, this programm is converts decimal numbers to octal,\nand to hexadecimal numbers");
 	doOctal();
 	doHex();
+	printf ("\nThanks");
 	getch();
 }
 
