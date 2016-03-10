@@ -7,33 +7,33 @@
 
 void main() {
 	
-	setlocale(LC_ALL, "RUS"); //включає підтримку кирилиці
+	setlocale(LC_ALL, "RUS"); //localization
 	float B, Q;
 	int A = 0;
 
-	printf("\tЦя програма рахує Q<-(A!)/(A*2+B). \n\n");
-	printf("Введiть цiле число A(бiльше 0): ");
+	printf("\tThis programm calculate Q<-(A!)/(A*2+B). \n\n");
+	printf("Enter the A(greater than 0): ");
 	scanf("%d", &A);
 	
 	if (A <= 0) {
-		printf("\tПомилка. А повинне бути цiлим числом > 0.\n");
+		printf("\tError. Must be integer > 0.\n");
 	}
 	else {
 
-		printf("Введiть число з плаваючою КОМОЮ(,) B: ");
+		printf("Enter a float value (,) B: ");
 		scanf_s("%f", &B);
 		
 		if (B > 0) {
 			if ((A * 2 + B) == 0) {
-				printf("\n\tПомилка. Дiльник = 0\n\n");
+				printf("\n\tError.\n\n");
 			}
 			else {
 				Q = formula(A, B);
-				printf("\n\tРезультат Q = %f\n", Q);
+				printf("\n\tResult Q = %f\n", Q);
 			}
 		}
 		else {
-			printf("\n\tПомилка. B - не число\n");
+			printf("\n\tError. B - not a number\n");
 		}
 	}
 		
