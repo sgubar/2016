@@ -1,3 +1,7 @@
+// main.c
+//
+// Created by Stanislav Bashkirov on 8/03/2016
+// Copyright (C) 2016 Stanislav Bashkirov. All rights reserved.
 #include <stdio.h>
 #include "formula.h"
 
