@@ -1,1 +1,50 @@
-lab1
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+#include<locale.h>
+ 
+int main(void)
+{
+    setlocale(LC_ALL,"Russian");
+ 
+    int q;
+    int a,b,c, w;
+              
+    printf("\t\t\t\t Условия пользования! \n");
+    printf("\n Не вводите буквы! \n");
+    printf("\n Не вводите символы кроме цифр! \n");
+    printf("\n Дроби вводить нельзя! \n");
+    printf("\n Убедительная просьба, выполнять условия пользования \n во избежания некорректной роботы программы. \n\n");
+bool doTask=true;
+while (doTask)
+{
+    printf("\n \n Выражения для вычисления: (a*a + b*b) / (b*b + 5^c) * b! = q \n");
+    printf("\n Введите переменную  a: ");
+    scanf( "%i", &a);
+    printf("\n Введите переменную  b: ");
+    scanf( "%i", &b);
+    printf("\n Введите переменную c: ");
+    scanf( "%i", &c);
+        int bfact=1; 
+for (int i=1; i<=b; i++) bfact*=b; 
+if((b*b)+(pow((double)5,(double)c)) == 0)
+    {
+        printf("\n (b*b)+(pow((double)5,(double)c)) = 0 \n");
+        printf("\n Простите на нуль делить нельзя!");
+        getch();   
+    }
+else
+    {
+    q = (a*a + b*b) / (b*b + pow((double)5,(double)c))*bfact;
+    printf("\n Решение: \n");
+    printf("\n (a*a + b*b)/(b*b +5^c) *b! = %i \n", q);
+    printf("\n Спасибо, что использовали это приложение!\n");
+    getch();
+   }
+doTask!=doTask;
+printf("\n Повторить расчеты (y/n): ");
+scanf( "%c", &w);
+if (w=='y') doTask=true;
+}
+return 0;
+}
