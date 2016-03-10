@@ -1,3 +1,4 @@
+
 #include "Header.h"
 
 int fac(int n) {   //факторіал числа n
