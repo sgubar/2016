@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "Args.h"
 #include "Function.h"
 
-int Arguments(int A,int B,int C);
+int main()
+{
 
+float Args();
+}

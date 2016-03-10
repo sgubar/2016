@@ -1,3 +1,9 @@
+//
+// Laba. 1 var. 8
+//
+//  Created by Ryzhenkov Serhii on 08/03/16.
+//  Copyright © 2016 Ryzhenkov Serhii. All rights reserved.
+
 int doHexadecimal();
 int doHexadecimal()
 {
@@ -8,6 +14,7 @@ int doHexadecimal()
 
     printf("Enter the number: ");
     scanf("%d", &result);
+
     while(result>=16){
         output[iter] = result%16;
         result /= 16;

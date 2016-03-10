@@ -1,1 +1,10 @@
 # depslib dependency file v1.0
+1457551847 source:d:\my\l1\l1\lab1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Args.h"
+
+1457538444 d:\my\l1\l1\lab1\function.h
+
+1457551793 d:\my\l1\l1\lab1\args.h
+

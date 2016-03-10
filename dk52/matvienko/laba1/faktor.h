@@ -1,0 +1,1 @@
+int faktor(int A);

@@ -1,22 +1,24 @@
-
 //  main.c 
 //  laba1
 // 
 //  Created by Bogdan Maximovich on 8/03/16. 
 //  Copyright (C) 2016 Bogdan Maximovich. All rights reserved. 
 
+
 #include "Header.h"
 
-int fac(int n) {   //факторіал числа n
-	int k = 1;  
-	for (int i = 1; i <= n; i++) //поки і буде менше або дорівнювати n винонується умова, і збільшується на 1
-		k *= i; //поки і менше n виконується ця умова
-	return k;
-}
 
-double f(int a, int b, int c) {
-	double q = 0;
-	q += (double)(a*b) / (b + c*c);
-	for (int i = 0; i <= b; i++) q += fac(i); //на кожне повторення циклу до q додається значення яке повертає функція fac
-	return q;
+
+int main(int argc, char *argv[])
+{
+	int a, b, c; //змінним присвоюємо тип данних типу int
+	printf("Enter A\n"); // виводимо повідомлення для вводу А
+	scanf_s("%d", &a); // зчитуємо  введені з клавіатури дані та вказуємо на змінну а. %d - десятична ціла типу int
+	printf("Enter B\n");
+	scanf_s("%d", &b);
+	printf("Enter C\n");
+	scanf_s("%d", &c);
+	double q = f(a, b, c); //тип числа з плаваючою точкою 
+	printf("Result: %f\n", q);
+	system("pause");
 }
