@@ -1,0 +1,49 @@
+     //////////////////////////////////////////////////////////
+    // main.c                                               //
+   // My Progect File_1☻                                   //
+  // Created by Maxim Migush  on 10.03.16                 //
+ // Copyright (C) 2016 Maxim Migush. All rights reserved.//
+//////////////////////////////////////////////////////////
+
+#include <stdio.h>
+#include <stdlib.h>
+
+ int i = 0;
+ int g =0;
+    float a, c, b;
+float x;
+    int fact(int fac_arg)
+{
+    int f_out=1;
+    if (fac_arg == 0)
+        return 1;
+    else
+    for(fac_arg;fac_arg>0;fac_arg--)
+    f_out=f_out*fac_arg;
+    return f_out;
+}
+
+
+int main()
+{
+     printf("Ne vvodite bykvi, simvoli i drobi!!! \n");
+
+
+int fac_arg;
+    printf("Vvedite a: ");
+    scanf("%f", &a);
+    printf("Vvedite b: ");
+     scanf("%f", &b);
+     printf("Vvedite c: ");
+      scanf("%f", &c);
+      fac_arg=b ;
+
+      for(fac_arg;fac_arg>=0 ;fac_arg--)
+      {
+          g = g + fact(fac_arg);
+      }
+       x = ((a * b)/(b + (c*c))) + g;
+    printf("Otvet: %f", x);
+    return 0;
+    system("PAUSE");
+}
