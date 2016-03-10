@@ -1,5 +1,5 @@
-#ifndef BICLYCLEMATH_H_INCLUDED
-#define BICLYCLEMATH_H_INCLUDED
+#ifndef SIMPLEMATH_H_INCLUDED
+#define SIMPLEMATH_H_INCLUDED
 
 double Summ(int iterations);
 double factorial(int iterations);

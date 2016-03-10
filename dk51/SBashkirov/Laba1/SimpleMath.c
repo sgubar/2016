@@ -1,7 +1,7 @@
 #include "SimpleMath.h"
 
-double Summ(int iterations);
-double factorial(int iterations);
+double Summ(int num);
+double factorial(int fact);
 double Pow2(int number, int stepen);
 
 double Summ(int num) {
