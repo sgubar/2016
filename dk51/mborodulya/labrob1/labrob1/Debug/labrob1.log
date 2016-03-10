@@ -1,0 +1,4 @@
+﻿  main.c
+c:\users\natas\documents\visual studio 2015\projects\labrob1\labrob1\formula.h(5): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\natas\documents\visual studio 2015\projects\labrob1\labrob1\main.c(40): warning C4013: 'getch' undefined; assuming extern returning int
+  labrob1.vcxproj -> c:\users\natas\documents\visual studio 2015\Projects\labrob1\Debug\labrob1.exe
