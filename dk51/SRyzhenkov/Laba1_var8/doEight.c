@@ -7,12 +7,12 @@
  int doEight();
  int doEight()
  {
-    int result;
-    int iter = 0;
+    int result, iter = 0;
     int output[100];    //Создали и объявили массив для записи остачи от деления
     int i;
-    printf("Enter the number: "); //запросили данные у пользователя
+    printf("Enter the number: ");
     scanf("%d", &result);
+
     //цикл для выполнения поставленной нам задачи
     while(result>=8){                   //Пока число, которое ввел пользователь, делится на 8, цикл выолняется
         output[iter] = result%8;        //запись остачи от деления в массив
