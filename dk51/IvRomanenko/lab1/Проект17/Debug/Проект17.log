@@ -1,0 +1,20 @@
+﻿Сборка начата 10.03.2016 9:46:40.
+     1>Проект "D:\Program Files (x86)\Microsoft Visual Studio 12.0\Project\Проект17\Проект17\Проект17.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt Main.c
+         Main.c
+     1>d:\program files (x86)\microsoft visual studio 12.0\project\проект17\проект17\main.c(5): warning C4013: Convertion: нет определения; предполагается "extern" с возвратом типа "int"
+     1>d:\program files (x86)\microsoft visual studio 12.0\project\проект17\проект17\main.c(6): warning C4013: Vidnim: нет определения; предполагается "extern" с возвратом типа "int"
+     1>d:\program files (x86)\microsoft visual studio 12.0\project\проект17\проект17\main.c(7): warning C4013: Summa: нет определения; предполагается "extern" с возвратом типа "int"
+     1>d:\program files (x86)\microsoft visual studio 12.0\project\проект17\проект17\main.c(10): warning C4013: system: нет определения; предполагается "extern" с возвратом типа "int"
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Program Files (x86)\Microsoft Visual Studio 12.0\Project\Проект17\Debug\Проект17.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Program Files (x86)\Microsoft Visual Studio 12.0\Project\Проект17\Debug\Проект17.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Program Files (x86)\Microsoft Visual Studio 12.0\Project\Проект17\Debug\Проект17.lib" /MACHINE:X86 Debug\Convertion.obj
+         Debug\Main.obj
+         Debug\Summa.obj
+         Debug\Vidnim.obj
+         Проект17.vcxproj -> D:\Program Files (x86)\Microsoft Visual Studio 12.0\Project\Проект17\Debug\Проект17.exe
+     1>Сборка проекта "D:\Program Files (x86)\Microsoft Visual Studio 12.0\Project\Проект17\Проект17\Проект17.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:00.46

@@ -1,3 +1,10 @@
+//
+//  InputHEX.h
+//  Lab1
+//
+//  Created by Olexander Tsymbal on 02/28/16.
+//  Copyright © 2016 Olexander Tsymbal. All rights reserved.
+//
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
@@ -12,7 +19,17 @@ int doInputHEX()
 	scanf("%s", &HEXnumber);
 	if (HEXnumber[2] != 0)
 	{
+		printf("Your argument is WRONG\n");
 		printf("Please Check your entries\n");
+		printf("Will you continue?(Y-Yes/N-No)\n");
+		char answer;
+		scanf(" %c", &answer); //scan for answer
+		if (answer == 'n' || answer == 'N') //if it is no, exit
+		{
+			exit(0);
+		}
+		else//if it is yes return 0 to number
+			return 0;
 	}
 	else
 	{
@@ -44,7 +61,7 @@ int doInputHEX()
 			}
 		}
 		number = (HEXnumber[0] * 16) + HEXnumber[1];
-		printf("%d\n", number);
+		/*printf("%d\n", number);*/
 	}
 	return(number);
 }

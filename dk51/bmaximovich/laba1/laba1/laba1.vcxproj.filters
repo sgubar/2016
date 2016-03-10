@@ -20,7 +20,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="data.c">
+    <ClCompile Include="formula.c">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
     <ClCompile Include="main.c">
