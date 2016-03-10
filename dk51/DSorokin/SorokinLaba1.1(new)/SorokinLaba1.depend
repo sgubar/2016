@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1457361226 source:d:\dima\documents\programs\codeblock\sorokinlaba1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Untitled1.h"
+
+1456596251 d:\dima\documents\programs\codeblock\sorokinlaba1\untitled1.h
+
+1457360397 source:d:\dima\documents\programs\codeblock\sorokinlaba1\untitled1.c
+	<stdio.h>
+	<stdlib.h>
+	"Untitled1.h"
+
+1457551081 source:d:\docx\documents\github\2016\dk51\dsorokin\sorokinlaba1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Untitled1.h"
+
+1457550616 d:\docx\documents\github\2016\dk51\dsorokin\sorokinlaba1\untitled1.h
+
+1457550616 source:d:\docx\documents\github\2016\dk51\dsorokin\sorokinlaba1\untitled1.c
+	<stdio.h>
+	<stdlib.h>
+	"Untitled1.h"
+
+1457550825 source:d:\docx\documents\github\2016\dk51\dsorokin\sorokinlaba1\untitled2.c
+	<stdio.h>
+	<stdlib.h>
+	"Untitled1.h"
+
+1457550616 source:d:\docx\documents\github\2016\dk51\dsorokin\sorokinlaba1\untitled3.c
+	<stdio.h>
+	<stdlib.h>
+	"Untitled1.h"
+

@@ -10,24 +10,24 @@
 const int N = 20;
 void doOctal() 
 {
-	int Array[N], Num1, i = 0,d;
-	printf("\nInput Num1 to octal converts (less than 1000): ");
-	scanf("%d", &Num1);
-	if(Num1>1000)
+	int Array[N], Num, i = 0,rezult;
+	printf("\nInput Num to octal converts (less than 1000): ");
+	scanf("%d", &Num);
+	if(Num>1000)
 	printf("Incorrect input");
 	else{
-	while(Num1>8)
+	while(Num>8)
 	{
 	
-	Array[i]= Num1%8;
-	Num1 = Num1 / 8;
+	Array[i]= Num%8;
+	Num = Num / 8;
 	i = i++;
 	}
-	Array[i] = Num1;
+	Array[i] = Num;
 	printf ("Octal number is: ");
-	for(d=i;d>-1;d--)
+	for(rezult=i;rezult>-1;rezult--)
 	{
-	printf ("%d", Array[d]);
+	printf ("%d", Array[rezult]);
 	}
 	}
 	getch();
