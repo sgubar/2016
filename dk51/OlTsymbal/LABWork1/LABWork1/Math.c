@@ -9,9 +9,6 @@
 
 #include"Math.h"
 
-int Sub(int numberHEX, int numberB);
-int Sum(int resultSub, int numberD);
-
 int Sub(int numberHEX, int numberB) //it is function of Sublimation (F-B)
 {
 	if (numberHEX != 0)//if numberHEX not equal 0(there is no more two symbols or it is not 0)
