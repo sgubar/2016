@@ -12,6 +12,9 @@
 int main()
 {
     int variation;
+    printf("Добро пожаловать в программу для конвертации чисел.\n"
+           "Вам доступно несколько систем счисления на выбор.\n"
+           "Просьба, для корректных расчетов, не вводить числа с плавающей запятой.\n");
     printf("1 - Converter of the decimal system in octal notation\n");
     printf("2 - Converter of the decimal system in hexadecimal notation\n");
     scanf("%i", &variation);
