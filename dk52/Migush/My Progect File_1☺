@@ -26,6 +26,7 @@ float x;
 
 int main()
 {
+     printf("Reshaemoe uravnenie: 𝑄←𝐴×𝐵𝐵+𝐶2+∑𝐷!𝐵𝐷=0, zadavaemie parametri: a, b, c. \n");
      printf("Ne vvodite bykvi, simvoli i drobi!!! \n");
 
 
