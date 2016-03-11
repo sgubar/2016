@@ -1,8 +1,8 @@
 //
-//  hex_oct.c
+//  oct_hex.c
 //  Lab1
 //
-//  Created by Andrew Toporivskiy on 09/03/16 (DD/MM/YY).
+//  Created by Andrew Toporivskiy on 11/03/16 (DD/MM/YY).
 //  Copyright (C) 2016 Andrew Toporivskiy. All rights reserved.
 //
 
@@ -10,18 +10,18 @@
 #include <stdio.h>
 #include <string.h> 
 
-#include "hex_oct.h"
+#include "oct_hex.h"
 
-void hex_oct()
+void oct_hex()
 {
 	// Initialization
-	int hex_oct_Number;
+	int oct_hex_Number;
 
 	// Translation from hexadecimal to octal and output on the screen
 	printf("Enter hexadecimal number:\n");
-	scanf("%x", &hex_oct_Number);
-	printf("Octal equivalent of number is %o\n", hex_oct_Number);
-	
+	scanf("%o", &oct_hex_Number);
+	printf("Octal equivalent of number is %x\n", oct_hex_Number);
+
 	// Keeping the console open
 	system("pause");
 	printf("\n");
