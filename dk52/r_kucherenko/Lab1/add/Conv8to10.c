@@ -1,3 +1,11 @@
+//
+//  Conv8to10.c
+//  add_to_lab1
+//
+//  Created by Ruslan Kucherenko on 10/03/16.
+//  Copyright (C) 2016 Ruslan Kucherenko. All rights reserved.
+//
+
 #include <stdio.h>
 #include <string.h>
 
