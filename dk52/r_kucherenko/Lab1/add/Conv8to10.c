@@ -3,16 +3,20 @@
 
 int main()
 {
-	int i;
 	int val;
-	int sum = 0;
 	char oct_val[20];
 	printf("Enter the number:\n");
 	gets(oct_val);
-	for(i =0;i<strlen(oct_val);i++)
-	{
-		sum = sum*8+oct_val[i]-'0';
-	}
-	printf("%d\n",sum);
+	val = oct_to_dec(oct_val);
+	printf("%d\n",val);
 	return 0;
+}
+
+int oct_to_dec(char* oct){
+	int sum = 0;
+	int i;
+	for(i =0;i<strlen(oct);i++){
+		sum = sum*8+oct[i]-'0';
+	}
+	return sum;
 }
