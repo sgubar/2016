@@ -26,7 +26,7 @@ float x;
 
 int main()
 {
-     printf("Reshaemoe uravnenie: 𝑄←𝐴×𝐵𝐵+𝐶2+∑𝐷!𝐵𝐷=0, zadavaemie parametri: a, b, c. \n");
+     printf("Reshaemoe uravnenie: x = ((a * b)/(b + (c*c))) + g, gde g eto sum fact;\nZadavaemie parametri: a, b, c. \n");
      printf("Ne vvodite bykvi, simvoli i drobi!!! \n");
 
 
