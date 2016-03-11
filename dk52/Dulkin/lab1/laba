@@ -1,0 +1,26 @@
+#include <iostream> 
+#include <math.h> 
+
+using namespace std; 
+
+float a,b,c,q; 
+int d; 
+int main() 
+{ 
+cout << "Enter A\n"; 
+cin >> a; 
+cout << "Enter B\n";
+cin >> b;
+cout << "Enter C\n"; 
+cin >> c;
+if (b+c == 100){ 
+cout << "Error\n"; 
+} else { 
+q = (a+b+c)/(100-b-c); 
+for (d=0;d<=a;d++){ 
+q = q+pow(2,d+a); 
+} 
+} 
+cout << "Q = " << q << "\n"; 
+system("pause"); 
+} 
