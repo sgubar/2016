@@ -1,3 +1,9 @@
+    //////////////////////////////////////////////////////////
+    // main.c                                              //
+   // My laba                                             //
+  // Created by Dulkin Oleg  on 11.03.16                 //
+ // Copyright (C) 2016 Dulkin Oleg. All rights reserved.//
+//////////////////////////////////////////////////////////
 #include <iostream> 
 #include <math.h> 
 
