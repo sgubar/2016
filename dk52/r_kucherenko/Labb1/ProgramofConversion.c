@@ -5,6 +5,9 @@
 //  Created by Ruslan Kucherenko on 6/03/16.
 //  Copyright (C) 2016 Ruslan Kucherenko. All rights reserved.
 //
+// A8-A10 && A16-A10 work in folder "add"
+
+
 #include <stdio.h>
 #include "ProgramofConversion.h"
 
@@ -20,7 +23,7 @@ void doProgramofConversion()
 		printf("1 - A10-A16\n");
 		printf("2 - A16-A10\n");
 		printf("3 - A10-A8\n");
-		printf("4 - A8-A10\n");
+		printf("4 - A16-A10\n");
 		scanf_s("%i", &act);
 		switch (act)
 		{
