@@ -1,0 +1,55 @@
+     ////////////////////////////////////////////////////////
+    // main.c                                             //
+   // My Progect                                         //
+  // Created by Max Migush  on 08.03.16                 //
+ // Copyright (C) 2016 Max Migush. All rights reserved.//
+////////////////////////////////////////////////////////
+#include <stdio.h>
+#include <stdlib.h>
+
+ int i = 0;
+ int g =0;
+    float a, c, b;
+float x;
+    int fact(int fac_arg)
+{
+    int f_out=1;
+    if (fac_arg == 0)
+        return 1;
+    else
+    for(fac_arg;fac_arg>0;fac_arg--)
+    f_out=f_out*fac_arg;
+    return f_out;
+}
+
+
+int main()
+{
+    printf("Reshaemoe uravnenie: x = ((a * b)/(b + (c*c))) + g, gde g eto sum fact; \nZadavaemie parametri: a, b, c. \n");
+    printf("Ne vvodite bykvi, simvoli i drobi!!! \n");
+
+
+int fac_arg;
+    printf("Vvedite a: ");
+    scanf("%f", &a);
+   // if (a = 0)
+     //   { printf ("Uravnenie = 1\n"); return 0;}
+    printf("Vvedite b: ");
+    scanf("%f", &b);
+     //if (b = 0)
+      //  { printf ("Uravnenie = 1\n"); return 0;}
+     printf("Vvedite c: ");
+      scanf("%f", &c);
+     // if (c = 0)
+      //  { printf ("Uravnenie = 1\n"); return 0;}
+      fac_arg=b ;
+
+      for(fac_arg;fac_arg>=0 ;fac_arg--)
+      {
+          g = g + fact(fac_arg);
+      }
+       x = ((a * b)/(b + (c*c))) + g;
+    printf("Otvet: %f", x);
+    return 0;
+    system("PAUSE");
+}
