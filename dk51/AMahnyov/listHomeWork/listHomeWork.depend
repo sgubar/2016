@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1457994095 source:/home/crope/workspace/dk51/AMahnyov/demoList/main.c
+	<stdio.h>
+	"SingleLinkedNode.h"
+	"SingleLinkedList.h"
+
+1457026401 /home/crope/workspace/dk51/AMahnyov/demoList/SingleLinkedNode.h
+	<stdio.h>
+
+1457993055 /home/crope/workspace/dk51/AMahnyov/demoList/SingleLinkedList.h
+	<stdio.h>
+
+1457026401 source:/home/crope/workspace/dk51/AMahnyov/demoList/SingleLinkedNode.c
+	"SingleLinkedNode.h"
+	<stdlib.h>
+
+1457994027 source:/home/crope/workspace/dk51/AMahnyov/demoList/SingleLinkedList.c
+	"SingleLinkedList.h"
+	"SingleLinkedNode.h"
+	<stdlib.h>
+

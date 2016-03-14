@@ -5,7 +5,8 @@
 int* getInput(int argNum);
 
 int* getInput(int argNum){
-    int answer[argNum];
+    const int anArgNum = argNum;
+    static int answer[anArgNum];
     int i;
     for(i = 0; i < argNum; i++){
         printf("Write an argument [%d]: ", i);

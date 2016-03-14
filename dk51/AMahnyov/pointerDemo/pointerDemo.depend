@@ -11,3 +11,15 @@
 
 1457785283 /home/crope/workspace/dk51/AMahnyov/lab1/pointerDemo/getInput.h
 
+1457799561 source:/home/crope/workspace/dk51/AMahnyov/pointerDemo/main.c
+	<stdio.h>
+	<stdlib.h>
+	"getInput.h"
+
+1457785283 /home/crope/workspace/dk51/AMahnyov/pointerDemo/getInput.h
+
+1457799508 source:/home/crope/workspace/dk51/AMahnyov/pointerDemo/getInput.c
+	<stdio.h>
+	<stdlib.h>
+	"getInput.h"
+
