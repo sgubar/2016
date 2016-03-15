@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-std=c99" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -31,7 +32,15 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="main.c">
+		<Unit filename="../demoList/SingleLinkedList.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../demoList/SingleLinkedList.h" />
+		<Unit filename="../demoList/SingleLinkedNode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../demoList/SingleLinkedNode.h" />
+		<Unit filename="../demoList/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>

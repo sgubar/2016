@@ -126,7 +126,6 @@ IntNode *SLNodeAtIndex(const IntList *aList, int anIndex)
 
 IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex){
     IntNode *result = NULL;
-    IntNode *nodeAfterThat = NULL;
 
     if (NULL == aList || NULL == aNewNode){
 		return NULL;
@@ -141,9 +140,8 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex){
             IntNode *theNode = aList->head;
             do{
 			if (i == anIndex){ //<!- index was found
-                nodeAfterThat = theNode->nextNode;
-                theNode->nextNode = result;
-                result->nextNode = nodeAfterThat;
+                //result->nextNode=theNode->nextNode;
+                //theNode->nextNode=result;
                 break;
 			}
 			i++; // increase index
