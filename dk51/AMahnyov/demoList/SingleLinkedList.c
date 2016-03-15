@@ -140,8 +140,8 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex){
             IntNode *theNode = aList->head;
             do{
 			if (i == anIndex){ //<!- index was found
-                //result->nextNode=theNode->nextNode;
-                //theNode->nextNode=result;
+                result->nextNode=theNode->nextNode;
+                theNode->nextNode=result;
                 break;
 			}
 			i++; // increase index
@@ -151,4 +151,22 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex){
         }
 	}
 	return result;
+}
+
+IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex){
+    if(anIndex < aList->count){
+        int i = 0;
+            IntNode *theNode = aList->head;
+            do{
+			if (i == anIndex){ //<!- index was found
+                IntNode *aNextNode = theNode->nextNode;
+                theNode->nextNode = aNextNode->nextNode;
+                free(aNextNode);
+                break;
+			}
+			i++; // increase index
+			theNode = theNode->nextNode; //<! - go to next node
+
+            }while (NULL != theNode);
+    }
 }
