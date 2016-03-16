@@ -123,7 +123,7 @@ IntNode *SLNodeAtIndex(const IntList *aList, int anIndex)
 	
 	return theResult;
 }
-//  Created by Slava Gubar on 3/16/16.
+//  Created by Bashkirov Stanislav on 3/16/16.
 //  Copyright © 2016 Bashkirov Stanislav. All rights reserved.
 //
 IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
