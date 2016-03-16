@@ -140,6 +140,8 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
 		{
 			IntNode *OnThisIndexNode = SLNodeAtIndex(aList, anIndex);
 			aNewNode->nextNode = OnThisIndexNode;
+			aList->count += 1;
+			return(aNewNode);
 		}
 		else
 		{
