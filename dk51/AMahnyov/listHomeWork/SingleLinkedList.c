@@ -126,48 +126,32 @@ IntNode *SLNodeAtIndex(const IntList *aList, int anIndex)
 
 IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex){
 
-    if (NULL == aList || NULL == aNewNode){
+    if (NULL == aList || NULL == aNewNode){ //"list vaild" check
 		return NULL;
 	}
 
-    if (NULL == aList->head && NULL == aList->tail){
+    if (NULL == aList->head && NULL == aList->tail && anIndex == 0){
 		//The list is empty
 		aList->head = aList->tail = aNewNode;
 	}else{
-        if(anIndex < aList->count){
-            int i = 0;
-            IntNode *theNode = aList->head;
-            do{
-			if (i == anIndex){ //<!- index was found
-                aNewNode->nextNode=theNode->nextNode;
-                theNode->nextNode=aNewNode;
-                aList->count += 1;
-                break;
-			}
-			i++; // increase index
-			theNode = theNode->nextNode; //<! - go to next node
-
-            }while (NULL != theNode);
-        }
-	}
-	return aNewNode;
+        IntNode *theNode = SLNodeAtIndex(aList, anIndex); //find a node with a given index
+        aNewNode->nextNode = theNode->nextNode; //new node should link to the next of found node
+        theNode->nextNode = aNewNode; //found node should link to the new node
+        aList->count++; //so other functions would not freak out
+        return aNewNode;
+    }
 }
 
 IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex){
     if(anIndex < aList->count){
-        int i = 0;
-            IntNode *theNode = aList->head;
-            do{
-			if (i == anIndex){ //<!- index was found
-                IntNode *aNextNode = theNode->nextNode;
-                theNode->nextNode = aNextNode->nextNode;
-                free(aNextNode);
-                aList->count -= 1;
-                break;
-			}
-			i++; // increase index
-			theNode = theNode->nextNode; //<! - go to next node
+        IntNode *theNode = SLNodeAtIndex(aList, anIndex); //find a node with a given index
+        IntNode *aNextNode = theNode->nextNode; //remember the next node
 
-            }while (NULL != theNode);
+        theNode->nextNode = aNextNode->nextNode; //break connection - aNextNode is being skipped
+
+        aList->count -= 1;
+
+        return aNextNode;
     }
 }
+

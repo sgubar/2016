@@ -19,3 +19,23 @@
 	"SingleLinkedNode.h"
 	<stdlib.h>
 
+1458668991 source:/home/crope/workspace/dk51/AMahnyov/listHomeWork/main.c
+	<stdio.h>
+	"SingleLinkedNode.h"
+	"SingleLinkedList.h"
+
+1457026401 /home/crope/workspace/dk51/AMahnyov/listHomeWork/SingleLinkedNode.h
+	<stdio.h>
+
+1458080846 /home/crope/workspace/dk51/AMahnyov/listHomeWork/SingleLinkedList.h
+	<stdio.h>
+
+1458669434 source:/home/crope/workspace/dk51/AMahnyov/listHomeWork/SingleLinkedList.c
+	"SingleLinkedList.h"
+	"SingleLinkedNode.h"
+	<stdlib.h>
+
+1457026401 source:/home/crope/workspace/dk51/AMahnyov/listHomeWork/SingleLinkedNode.c
+	"SingleLinkedNode.h"
+	<stdlib.h>
+
