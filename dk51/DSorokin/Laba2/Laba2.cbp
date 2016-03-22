@@ -35,6 +35,20 @@
 			<Add library="cw32mt.lib" />
 			<Add library="import32.lib" />
 		</Linker>
+		<Unit filename="Function.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="Function.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="FunctionList.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="FunctionList.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
