@@ -1,27 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Function.h"
-IntNode *CreateN(int perevod);
+#include "FunctionList.h"
 
-void main(int argc, const char * argv[])
-{
-    int i;
+int main(int argc, const char * argv[]){
+	IntNode *theNode2 = CreateNodeWithIntValue(2);
+	IntNode *theNode4 = CreateNodeWithIntValue(4);
 
-    if (argc==1)
-        printf ("Netu chisel\n");
+	IntList *theList = CreateList();
+	//printf("number of elements: %d\n", CountList(theList));
 
-    else
-
-        for ( i=1; i<argc; i++)
-            {
-            int perevod;
-            perevod=atoi(argv[i]);
-            CreateN(perevod);
-            }
-
-    printf("%c",*argv[2]);
-
-    //system ("pause");
+    doPrintSLList(theList);
+if(argc!=1){
+//IntNode *Node = CreateN(atoi(argv[1]));
+printf("Node created.\n");
 }
-
+//printf("Node value: %s", Node->value);
+return 0;
+}
 
