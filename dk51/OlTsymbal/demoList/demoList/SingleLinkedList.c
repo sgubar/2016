@@ -126,33 +126,33 @@ IntNode *SLNodeAtIndex(const IntList *aList, int anIndex)
 }
 
 IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex) {
-	if (NULL == aList || NULL == aNewNode) 
+	if (NULL == aList || NULL == aNewNode) // checking does the list and Node is empty?
 	{
 		return NULL;
 	}
-	if (NULL == aList->head && NULL == aList->tail)
+	if (NULL == aList->head && NULL == aList->tail) 
 	{
-		aList->head = aList->tail = aNewNode;
+		aList->head = aList->tail = aNewNode; //if the head and the tail is empty our node will be put on this place
 	}
 	else
 	{
-		if (NULL != aList &&  anIndex <= aList->count)
+		if (NULL != aList &&  anIndex <= aList->count)//cheking does the list is empty and an index 
 		{
 			IntNode *theNode = aList->head;
-			while (theNode != NULL) {
-				if (anIndex == 0)
+			while (theNode != NULL) {// cheking is there the Node?
+				if (anIndex == 0)   // if index=0, we put our node on first plase in List
 				{
-					aNewNode->nextNode = theNode;
-					aList->head = aNewNode;
-					aList->count += 1;
+					aNewNode->nextNode = theNode;//aNewNode link to theNode
+					aList->head = aNewNode;//put aNewNode on a head of aList
+					aList->count += 1;//increase count
 					return (aNewNode);
 				}
 				else
 				{
 					IntNode *PredNode = SLNodeAtIndex(aList, anIndex - 1);
-					aNewNode->nextNode = PredNode->nextNode;
-					PredNode->nextNode = aNewNode;
-					aList->count += 1;
+					aNewNode->nextNode = PredNode->nextNode;//aNewNode shoul link to that which previous node refers
+					PredNode->nextNode = aNewNode;// previous node link to aNewNode
+					aList->count += 1;//increase count 
 					return (aNewNode);
 				}
 			}
@@ -163,25 +163,25 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex) {
 
 IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex) 
 {
-	if (NULL == aList)
+	if (NULL == aList)//checking input parameters
 	{
 		return NULL;
 	}
-	if (NULL != aList &&  anIndex <= aList->count)
+	if (NULL != aList &&  anIndex <= aList->count)//checking input parameters
 	{
-			IntNode *removedNode = SLNodeAtIndex(aList, anIndex);
+			IntNode *removedNode = SLNodeAtIndex(aList, anIndex);//find the node with needed index
 			if (anIndex == 0)
 			{
-				aList->head = removedNode->nextNode;
-				SLFreeIntNode(removedNode);
-				aList->count -= 1;
+				aList->head = removedNode->nextNode;//head of aList have a link to the nextNode
+				SLFreeIntNode(removedNode);// free node
+				aList->count -= 1;//decrease count 
 			}
 			else
 			{
-				IntNode *PredNode = SLNodeAtIndex(aList, anIndex - 1);
-				PredNode->nextNode = removedNode->nextNode;
-				SLFreeIntNode(removedNode);
-				aList->count -= 1;
+				IntNode *PredNode = SLNodeAtIndex(aList, anIndex - 1);//find the previous node
+				PredNode->nextNode = removedNode->nextNode;//previous node has a link to link of removedNode
+				SLFreeIntNode(removedNode);//free node
+				aList->count -= 1;//decrease count
 			}
 	}
 }
