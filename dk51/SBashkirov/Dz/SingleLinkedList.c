@@ -129,7 +129,7 @@ IntNode *SLNodeAtIndex(const IntList *aList, int anIndex)
 IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
 {
 	// Check the input parameter
-	if (NULL == aList || NULL == aNewNode)
+	if (NULL == aList || NULL == aNewNode || anIndex>aList->count+1)
 	{
 		return NULL;
 	}
@@ -140,9 +140,13 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
 		{
 			IntNode *OnThisIndexNode = SLNodeAtIndex(aList, anIndex);
 			aNewNode->nextNode = OnThisIndexNode;
+			aList->head = aNewNode;
+			aList->count += 1;
+			return(aNewNode);
 		}
 		else
 		{
+			if (anIndex == aList->count + 1) aList->tail = aNewNode;
 			IntNode *PrevNode = SLNodeAtIndex(aList, anIndex - 1);
 			aNewNode->nextNode = PrevNode->nextNode;
 			PrevNode->nextNode = aNewNode;
@@ -162,6 +166,7 @@ IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)
 		IntNode *RemovedNode = SLNodeAtIndex(aList, anIndex);
 		if (0 == anIndex)
 		{
+			aList->head = RemovedNode->nextNode;
 			SLFreeIntNode(RemovedNode);
 			aList->count -= 1;
 		}

@@ -1,0 +1,20 @@
+﻿Сборка начата 23.03.2016 16:55:13.
+     1>Проект "D:\VSPROG\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt Function.c FunctionList.c main.c
+         main.c
+     1>d:\vsprog\consoleapplication4\consoleapplication4\main.c(11): warning C4013: doPrintList: нет определения; предполагается "extern" с возвратом типа "int"
+         FunctionList.c
+     1>d:\vsprog\consoleapplication4\consoleapplication4\functionlist.c(12): error C2039: count: не является членом "__IntList"
+         d:\vsprog\consoleapplication4\consoleapplication4\functionlist.h(8): note:  см. объявление "__IntList"
+     1>d:\vsprog\consoleapplication4\consoleapplication4\functionlist.c(55): error C2039: count: не является членом "__IntList"
+         d:\vsprog\consoleapplication4\consoleapplication4\functionlist.h(8): note:  см. объявление "__IntList"
+     1>d:\vsprog\consoleapplication4\consoleapplication4\functionlist.c(63): error C2039: count: не является членом "__IntList"
+         d:\vsprog\consoleapplication4\consoleapplication4\functionlist.h(8): note:  см. объявление "__IntList"
+         Function.c
+         Создание кода...
+     1>Сборка проекта "D:\VSPROG\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.vcxproj" завершена (целевые объекты Build) с ошибкой.
+
+Ошибка сборки.
+
+Затраченное время: 00:00:04.92

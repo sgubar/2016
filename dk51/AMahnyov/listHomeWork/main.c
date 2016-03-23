@@ -1,8 +1,69 @@
-#include <stdio.h>
-#include <stdlib.h>
+//
+//  main.c
+//  demoList
+//
+//  Created by Slava Gubar on 3/1/16.
+//  Copyright © 2016 Slava Gubar. All rights reserved.
+//
 
-int main()
+#include <stdio.h>
+#include "SingleLinkedNode.h"
+#include "SingleLinkedList.h"
+
+void doTestSLList();
+void doPrintSLList(const IntList *aList);
+
+int main(int argc, const char * argv[])
 {
-    printf("Hello world!\n");
-    return 0;
+	doTestSLList();
+
+	return 0;
+}
+
+void doTestSLList()
+{
+	printf("Start to demo a single-linked list ...\n");
+
+	IntNode *theNode2 = SLCreateNodeWithIntValue(2);
+	IntNode *theNode4 = SLCreateNodeWithIntValue(4);
+	IntNode *theNode5 = SLCreateNodeWithIntValue(5);
+
+	IntList *theList = SLCreateList();
+	printf("number of elements: %d\n", SLCountList(theList));
+
+	SLAddNode(theList, theNode2);
+	printf("number of elements: %d\n", SLCountList(theList));
+
+	SLAddNode(theList, theNode4);
+	printf("number of elements: %d\n", SLCountList(theList));
+
+	printf("Current list: \n");
+	doPrintSLList(theList);
+
+	SLInsertNodeAtIndex(theList, theNode5, 0);
+
+    printf("Node at [0] inserted\n");
+	doPrintSLList(theList);
+
+	SLRemovedNodeAtIndex(theList, 1);
+
+	printf("Node at [1] removed\n");
+
+	doPrintSLList(theList);
+
+	SLFreeList(theList);
+
+	printf("Done.\n");
+}
+
+void doPrintSLList(const IntList *aList)
+{
+	for (int i = 0; i < SLCountList(aList); i++)
+	{
+		IntNode *theNode = SLNodeAtIndex(aList, i);
+		if (NULL != theNode)
+		{
+			printf("node[%d].value = %d\n", i, theNode->value);
+		}
+	}
 }
