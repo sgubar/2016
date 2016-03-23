@@ -1,21 +1,21 @@
 //
-//  SingleLinkedNode.c
-//  demoList
+//  SingleNode.c
+//  Lab 2
 //
-//  Created by Slava Gubar on 3/2/16.
-//  Copyright © 2016 Slava Gubar. All rights reserved.
+//  Created by Sergey Fedorenko on 3/21/16.
+//  Copyright © 2016 Sergey Fedorenko. All rights reserved.
 //
 
-#include "SingleLinkedNode.h"
+#include "SingleNode.h"
 #include <stdlib.h>
 
-IntNode *SLCreateNodeWithIntValue(int aValue)
+IntNode *CreateNodeWithIntValue(int aValue)
 {
 	IntNode *theResult = (IntNode *)malloc(sizeof(IntNode));
-	
+
 	theResult->value = aValue;
 	theResult->nextNode = NULL;
-	
+
 	return theResult;
 }
 

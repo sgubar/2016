@@ -3,7 +3,7 @@
 //  demoList
 //
 //  Created by Slava Gubar on 3/1/16.
-//  Copyright Â© 2016 Slava Gubar. All rights reserved.
+//  Copyright © 2016 Slava Gubar. All rights reserved.
 //
 
 #ifndef SingleLinkedList_h

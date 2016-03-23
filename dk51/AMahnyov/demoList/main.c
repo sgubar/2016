@@ -3,7 +3,7 @@
 //  demoList
 //
 //  Created by Slava Gubar on 3/1/16.
-//  Copyright Â© 2016 Slava Gubar. All rights reserved.
+//  Copyright © 2016 Slava Gubar. All rights reserved.
 //
 
 #include <stdio.h>
@@ -37,9 +37,13 @@ void doTestSLList()
 	SLAddNode(theList, theNode4);
 	printf("number of elements: %d\n", SLCountList(theList));
 
-	SLInsertNodeAtIndex(theList, theNode5, 1);
+	SLInsertNodeAtIndex(theList, theNode5, 0);
 
 	printf("number of elements: %d\n", SLCountList(theList));
+
+	doPrintSLList(theList);
+
+	SLRemovedNodeAtIndex(theList, 1);
 
 	doPrintSLList(theList);
 

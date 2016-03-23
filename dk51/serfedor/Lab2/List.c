@@ -1,36 +1,34 @@
 //
-//  SingleLinkedList.c
-//  demoList
+//  List.c
+//  Lab2
 //
-//  Created by Slava Gubar on 3/1/16.
-//  Copyright © 2016 Slava Gubar. All rights reserved.
+//  Created by  on 3/23/16.
+//  Copyright Â© 2016 Sergey fedorenko. All rights reserved.
 //
 
-#include "SingleLinkedList.h"
-#include "SingleLinkedNode.h"
+#include "List.h"
+#include "Node.h"
 #include <stdlib.h>
 
 // Constants
-const int kSLListError = -1;
+const int kListError = -1;
 
 //Create/delete a list
-IntList *SLCreateList()
+IntList *CreateList()
 {
 	//Allocate memory for the list structure
 	IntList *theList = (IntList *)malloc(sizeof(IntList));
 
-	//Clean internal data
-	theList->head = NULL; //<!- not head
-	theList->tail = NULL; //<!- not tail
-	theList->count = 0; //<!- initial value of count is zero - no elements in the list
 
-// or
-//	bzero(theList, sizeof(IntList));
+	theList->head = NULL;
+	theList->tail =theList-> head;
+	theList->count = 0;
+
 
 	return theList;
 }
 
-void SLFreeList(IntList *aList)
+void FreeList(IntList *aList)
 {
 	// Check the input parameter
 	if (NULL == aList)
@@ -53,7 +51,7 @@ void SLFreeList(IntList *aList)
 	free(aList);
 }
 
-IntNode *SLAddNode(IntList *aList, IntNode *aNewNode)
+IntNode *AddNode(IntList *aList, IntNode *aNewNode)
 {
 	// Check the input parameter
 	if (NULL == aList || NULL == aNewNode)
@@ -86,9 +84,9 @@ IntNode *SLAddNode(IntList *aList, IntNode *aNewNode)
 	return aNewNode;
 }
 
-int SLCountList(const IntList *aList)
+int CountList(const IntList *aList)
 {
-	int theResult = kSLListError;
+	int theResult = kListError;
 
 	if (NULL != aList)
 	{
@@ -98,7 +96,7 @@ int SLCountList(const IntList *aList)
 	return theResult;
 }
 
-IntNode *SLNodeAtIndex(const IntList *aList, int anIndex)
+IntNode *NodeAtIndex(const IntList *aList, int anIndex)
 {
 	IntNode *theResult = NULL;
 
@@ -124,7 +122,8 @@ IntNode *SLNodeAtIndex(const IntList *aList, int anIndex)
 	return theResult;
 }
 
-IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex){
+IntNode *InsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex){
+    IntNode *result = NULL;
 
     if (NULL == aList || NULL == aNewNode){
 		return NULL;
@@ -139,9 +138,8 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex){
             IntNode *theNode = aList->head;
             do{
 			if (i == anIndex){ //<!- index was found
-                aNewNode->nextNode=theNode->nextNode;
-                theNode->nextNode=aNewNode;
-                aList->count += 1;
+                result->nextNode=theNode->nextNode;
+                theNode->nextNode=result;
                 break;
 			}
 			i++; // increase index
@@ -150,10 +148,10 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex){
             }while (NULL != theNode);
         }
 	}
-	return aNewNode;
+	return result;
 }
 
-IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex){
+IntNode *RemovedNodeAtIndex(IntList *aList, int anIndex){
     if(anIndex < aList->count){
         int i = 0;
             IntNode *theNode = aList->head;
@@ -162,7 +160,6 @@ IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex){
                 IntNode *aNextNode = theNode->nextNode;
                 theNode->nextNode = aNextNode->nextNode;
                 free(aNextNode);
-                aList->count -= 1;
                 break;
 			}
 			i++; // increase index
