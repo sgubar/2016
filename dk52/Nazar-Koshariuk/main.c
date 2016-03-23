@@ -13,13 +13,14 @@ float Frac, Q;
 int Fakto,ParamA, ParamB, ParamC, ParamD=0;
 int main(int argc, const char * argv[])
 {
-	scanf("%d%d%d", &ParamA, &ParamB, &ParamC);
+	printf("Please enter A, B, C\n");
+	scanf("%d%d%d", &ParamA, &ParamB, &ParamC); //read paramA, ParamB, ParaC;
 	if (ParamB + (ParamC * ParamC ) == 0){
 		printf("The denominator is 0, please try again");
 	 }
 	else{
-		doFakt(ParamB, ParamD);
-		doFraction(ParamA, ParamB, ParamC);
+		doFakt(ParamB, ParamD);//Calculatoin factorial
+		doFraction(ParamA, ParamB, ParamC);// Calculation fractions
 		Q = Frac + Fakto;
 		printf("Result %.3f\n", Q);
 		printf("Thanks!\n");
