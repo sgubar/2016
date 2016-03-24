@@ -7,7 +7,7 @@
 #include "start.h"
 #include "countsigma.h"
 
-void are_u_dumb(int value) {
+void errorer(int value) {
 	switch (value)
 	{
 	case 1:
