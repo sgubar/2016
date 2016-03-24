@@ -27,9 +27,9 @@ void doList()
 	IntNode *theNode0 = CreateNode(0);
 	IntNode *theNode1 = CreateNode(4);
 	IntNode *theNode2 = CreateNode(3);
-	IntNode *theNode3 = CreateNode(5);
-	IntNode *theNode4 = CreateNode(1);
-	IntNode *theNode5 = CreateNode(2);
+	IntNode *theNode4 = CreateNode(5);
+	IntNode *theNode5 = CreateNode(1);
+	IntNode *theNode6 = CreateNode(2);
 
 	IntList *theList = CreateList();
 	printf("number of elements: %d\n", CountList(theList));
@@ -43,16 +43,16 @@ void doList()
 	AddNode(theList, theNode2);
 	printf("number of elements: %d\n", CountList(theList));
 
-    AddNode(theList, theNode3);
+        AddNode(theList, theNode4);
 	printf("number of elements: %d\n", CountList(theList));
 
-    AddNode(theList, theNode4);
+        AddNode(theList, theNode5);
 	printf("number of elements: %d\n", CountList(theList));
 
-	AddNode(theList, theNode5);
+	AddNode(theList, theNode6);
 	printf("number of elements: %d\n", CountList(theList));
 
-	InsertNodeAtIndex(theList, theNode0, 0);
+	InsertNodeAtIndex(theList, theNode3, 7);
 
 	printf("number of elements: %d\n", CountList(theList));
 
