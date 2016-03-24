@@ -9,6 +9,6 @@
 
 void start() {// privetsvie i vvod chisla
 	printf("Введите  десятичные число С: "); scanf_s("%d", &C);
-	printf("Введите  десятичное число D: "); scanf_s("%d", &D); if (D < 1) are_u_dumb(1);
+	printf("Введите  десятичное число D: "); scanf_s("%d", &D); if (D < 1) errorer(1);
 	printf("Введите  шестнадцетеричное число F: (ввод большими буквами)"); readarr(); //vizov funcii chteniya
 };
