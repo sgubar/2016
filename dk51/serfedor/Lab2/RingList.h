@@ -1,14 +1,14 @@
 //
-//  List.h
+//  RingList.h
 //  Lab2
 //
-//  Created by ergey Fedorenko on 3/23/16.
+//  Created by Sergey Fedorenko on 3/23/16.
 //  Copyright © 2016 Sergey Fedorenko. All rights reserved.
 //
 
 
-#ifndef List_h
-#define List_h
+#ifndef RingList_h
+#define RingList_h
 
 #include <stdio.h>
 

@@ -31,14 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="List.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="List.h" />
 		<Unit filename="Node.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Node.h" />
+		<Unit filename="RingList.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="RingList.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

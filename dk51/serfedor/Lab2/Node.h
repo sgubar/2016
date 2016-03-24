@@ -23,8 +23,8 @@ struct __IntNode
 };
 
 //Create a new Node with int value
-IntNode *CreateNodeWithIntValue(int aValue);
+IntNode *CreateNode(int aValue);
 //Free a created node
-void FreeIntNode(IntNode *aNode);
+void FreeNode(IntNode *aNode);
 
 #endif /* Node_h */

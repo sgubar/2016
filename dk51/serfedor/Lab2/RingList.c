@@ -1,12 +1,12 @@
 //
-//  List.c
+//  RingList.c
 //  Lab2
 //
 //  Created by  on 3/23/16.
 //  Copyright © 2016 Sergey fedorenko. All rights reserved.
 //
 //
-#include "List.h"
+#include "RingList.h"
 #include "Node.h"
 #include <stdlib.h>
 

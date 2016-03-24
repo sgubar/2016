@@ -8,9 +8,9 @@
 
 #include <stdio.h>
 #include "Node.h"
-#include "List.h"
+#include "RingList.h"
 
-void doList();
+void doRingList();
 void doPrintList(const IntList *aList);
 
 int main(int argc, const char * argv[])
@@ -22,14 +22,14 @@ int main(int argc, const char * argv[])
 
 void doList()
 {
-	printf("Start to a circular list ...\n");
+	printf("Start to create a circular list ...\n");
 
-	IntNode *theNode0 = CreateNodeWithIntValue(0);
-	IntNode *theNode1 = CreateNodeWithIntValue(4);
-	IntNode *theNode2 = CreateNodeWithIntValue(3);
-	IntNode *theNode3 = CreateNodeWithIntValue(5);
-	IntNode *theNode4 = CreateNodeWithIntValue(1);
-	IntNode *theNode5 = CreateNodeWithIntValue(2);
+	IntNode *theNode0 = CreateNode(0);
+	IntNode *theNode1 = CreateNode(4);
+	IntNode *theNode2 = CreateNode(3);
+	IntNode *theNode3 = CreateNode(5);
+	IntNode *theNode4 = CreateNode(1);
+	IntNode *theNode5 = CreateNode(2);
 
 	IntList *theList = CreateList();
 	printf("number of elements: %d\n", CountList(theList));

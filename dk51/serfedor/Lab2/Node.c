@@ -9,7 +9,7 @@
 #include "Node.h"
 #include <stdlib.h>
 
-IntNode *CreateNodeWithIntValue(int aValue)
+IntNode *CreateNode(int aValue)
 {
 	IntNode *theResult = (IntNode *)malloc(sizeof(IntNode));
 
@@ -19,7 +19,7 @@ IntNode *CreateNodeWithIntValue(int aValue)
 	return theResult;
 }
 
-void FreeIntNode(IntNode *aNode)
+void FreeNode(IntNode *aNode)
 {
 	if (NULL != aNode)
 	{
