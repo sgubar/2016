@@ -92,7 +92,7 @@ void elements() { //prohojdenie chisla(massiva) F
 			funcforF(9, fstepen(i));
 			break;
 		default:
-			are_u_dumb(2);
+			errorer(2);
 			break;
 	};
 };
