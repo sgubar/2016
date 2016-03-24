@@ -15,7 +15,9 @@ void readarr() {//zapolnyaem massiv a
 		};
 		printf("%c", a[i]);
 	};
-
+    if (a[20]!=' '){
+    	length=20;
+    };
 };
 
 void replace() {
