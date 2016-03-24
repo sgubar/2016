@@ -1,44 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #pragma warning(disable : 4996)
-char* getString()
+void right() 
 {
-	FILE *file;
-	bool fileCorrect = false;
-	char string[6];
-
-	while (fileCorrect == false)
+	char answer = 'f';
+	printf("\nCorrect data?(Press y or n)");
+	answer = getchar();
+	if (answer != 'y')
 	{
-		printf("Please input strings with 6 symbols to file 'in.txt' and press ENTER\n");
+		printf("Change your file and restart the program!");
 		getchar();
-		
-		file = fopen("in.txt", "r");
-		if ((file = fopen("in.txt", "r")) == 0) {
-			printf("Error of opening file!");
-		}
-		else
-		{
-
-			
-				fgets(string,6, file);
-				
-			
-			printf("Is this correct?\n%s \n", string);
-			char answer = getchar();
-
-			if (answer == 'y')
-			{
-				
-				fileCorrect = true;
-			}
-			else
-			{
-				printf("Change data file and press ENTER");
-				getchar();
-				getchar();
-			}
-		}
-
+		getchar();
+		exit(0);
 	}
-	return string;
 }

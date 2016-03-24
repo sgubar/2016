@@ -1,1 +1,1 @@
-char* getString();
+void right();
