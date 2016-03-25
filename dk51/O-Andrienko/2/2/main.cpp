@@ -5,46 +5,51 @@
 
 void main()
 {
-	char c[5];
-	char buffer[5];
-	FILE *fptr;
+
+	FILE *in;
+	in = fopen("in.txt", "r");
 	FILE *out;
-	if ((fptr = fopen("in.txt", "r")) == NULL) {
-		printf("Error! opening in file");
-		exit(1);         /* Program exits if file pointer returns NULL. */
-	}
 
-	if ((out = fopen("out.txt", "w")) == NULL) {
-		printf("Error! opening out file");
-		exit(1);         /* Program exits if file pointer returns NULL. */
+	char a[100];
+	char buffer[100];
+	char c;
+	int i = 0;
+	while ((c = getc(in)) != EOF)
+	{
+		a[i] = c;
+		i++;
 	}
+	
+	int length = i;
+	a[length] = '\0';
+	puts(a);
 
-	printf("Your file in.txt\n");
-	fscanf(fptr, "%s", c);
-
-	fscanf(fptr, "$s", c);
-	for (int i = 0; i < 5; i++) {
-		buffer[i] = c[5 - i];
+	int count = 0;
+	char memo = 0;
+	int wordNum = 0;
+	while(count != length)
+	{
+		while ((a[count] != '\n')) count++;
+		for (int index = 0; index < count-memo; index++)
+		{
+			buffer[count - index - 1 ] = a[index+wordNum+memo];
+		}
+		
+		
+		
+		buffer[count] = '\n';
+		memo = count;
+		wordNum = 1;
+		count++;
 	}
-	fputs(buffer, out);
-
-	printf("%s\n", c);
-	fscanf(fptr, "%s", c);
-	for (int i = 0; i < 5; i++) {
-		buffer[i] = c[5 - i];
-	}
-	fputs(buffer, out);
-	printf("%s\n", c);
-	fscanf(fptr, "%s", c);
-	for (int i = 0; i < 5; i++) {
-		buffer[i] = c[5 - i];
-	}
-	fputs(buffer, out);
-	printf("%s", c);
+	buffer[count] = '\0';
+	printf("\n");
+	puts(buffer);
 
 	right();
 
-	getchar();
+	fclose(in);
+
 	getchar();
 	
 }
