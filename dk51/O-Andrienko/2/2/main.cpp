@@ -5,7 +5,12 @@
 
 void main()
 {
-
+	do
+	{
+		printf("\tInput text to 'in.txt' and press Enter. \n\tDon't forget add enter symbol to end of text!");
+		getchar();
+	} while (!rightText());
+	
 	FILE *in;
 	in = fopen("in.txt", "r");
 	FILE *out;
