@@ -27,10 +27,11 @@ bool rightText()
 		a[i] = c;
 		i++;
 	}
-	if (a[i - 1] != '\n')
+	if (a[i - 1] != '\n') //if the prelast symbol is not enter shows error
 	{
+		
+		printf("\n\t*!!You forget to add enter symbol to the end!!*\n\n");
 		return false;
-		printf("\n\t\t**You forget to add enter symbol to the end\n");
 	}
 	else return true;
 	fclose(in);
