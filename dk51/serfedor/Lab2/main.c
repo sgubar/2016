@@ -43,17 +43,13 @@ void doList()
 	AddNode(theList, theNode2);
 	printf("number of elements: %d\n", CountList(theList));
 
-        AddNode(theList, theNode4);
+    AddNode(theList, theNode4);
 	printf("number of elements: %d\n", CountList(theList));
 
-        AddNode(theList, theNode5);
+    AddNode(theList, theNode5);
 	printf("number of elements: %d\n", CountList(theList));
 
 	AddNode(theList, theNode6);
-	printf("number of elements: %d\n", CountList(theList));
-
-	InsertNodeAtIndex(theList, theNode3, 7);
-
 	printf("number of elements: %d\n", CountList(theList));
 
 	doPrintList(theList);
