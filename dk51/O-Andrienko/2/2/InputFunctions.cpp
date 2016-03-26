@@ -14,3 +14,25 @@ void right()
 		exit(0);
 	}
 }
+
+bool rightText()
+{
+	FILE *in;
+	in = fopen("in.txt", "r");
+
+	int i=0; char c;
+	char a[1000];
+	while ((c = getc(in)) != EOF)
+	{
+		a[i] = c;
+		i++;
+	}
+	if (a[i - 1] != '\n') //if the prelast symbol is not enter shows error
+	{
+		
+		printf("\n\t*!!You forget to add enter symbol to the end!!*\n\n");
+		return false;
+	}
+	else return true;
+	fclose(in);
+}

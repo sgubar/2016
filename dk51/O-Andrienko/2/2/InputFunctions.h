@@ -1,1 +1,3 @@
 void right();
+
+bool rightText();

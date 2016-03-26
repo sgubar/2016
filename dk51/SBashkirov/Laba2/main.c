@@ -8,19 +8,19 @@
 
 #include <stdio.h>
 #include "SingleNode.h"
+#include "SingleList.h"
+#include "WorkWithFile.h"
 
-void doProgram();
 
-int main()
+int main(int argc,char *argv[])
 {
-
-	doProgram;
+	if (argc != 5) printf("Error!\n Need syntax: <FileName> <Number> <FirstBorder> <SecondBorder>");
+	else
+	{
+		IntList *theList = ListCreate();
+		ReadTheFile(argv[2],theList);
+		printf("number of elements: %d\n", CountList(theList));
+	}
 	system("pause");
 
-}
-
-void doProgram()
-{
-	IntNode *theNode2 = CreateNodeWithValue(10);
-	
 }

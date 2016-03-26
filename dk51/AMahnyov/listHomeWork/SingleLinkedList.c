@@ -136,6 +136,9 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex){
 	}else{
         IntNode *theNode = SLNodeAtIndex(aList, anIndex); //find a node with a given index
         aNewNode->nextNode = theNode->nextNode; //new node should link to the next of found node
+        if(NULL == theNode->nextNode){ //if we are inserting aNewnode to the end of the list, edit list.tail
+		aList->tail = aNewNode;
+	}
         theNode->nextNode = aNewNode; //found node should link to the new node
         aList->count++; //so other functions would not freak out
         return aNewNode;
