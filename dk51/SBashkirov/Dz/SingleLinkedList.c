@@ -164,6 +164,7 @@ IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)
 	{
 		if (0 == anIndex)
 		{
+			IntNode *RemovedNode = SLNodeAtIndex(aList, anIndex);
 			aList->head = SLNodeAtIndex(aList, anIndex+1);
 			aList->count -= 1;
 			return(RemovedNode);
