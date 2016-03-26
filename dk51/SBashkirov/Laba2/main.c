@@ -7,9 +7,10 @@
 //
 
 #include <stdio.h>
-#include "SingleNode.h"
 #include "SingleList.h"
 #include "WorkWithFile.h"
+#include "Sorting.h"
+
 
 
 int main(int argc,char *argv[])
@@ -18,8 +19,9 @@ int main(int argc,char *argv[])
 	else
 	{
 		IntList *theList = ListCreate();
-		ReadTheFile(argv[2],theList);
+		ReadTheFile(argv[1],theList);
 		printf("number of elements: %d\n", CountList(theList));
+		NodeSorting(theList, argv[2], argv[3], argv[4]);
 	}
 	system("pause");
 

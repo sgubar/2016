@@ -19,7 +19,6 @@ struct __IntNode
 	IntNode *nextNode;
 };
 
-IntNode *CreateNodeWithValue(int aValue);
 void FreeNode(IntNode *aNode);
 
 #endif 

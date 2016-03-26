@@ -9,16 +9,6 @@
 #include "SingleNode.h"
 #include <stdlib.h>
 
-IntNode *CreateNodeWithValue(int aValue)
-{
-	IntNode *theResult = (IntNode *)malloc(sizeof(IntNode));
-
-	theResult->value = aValue;
-	theResult->nextNode = NULL;
-
-	return theResult;
-}
-
 void SLFreeIntNode(IntNode *aNode)
 {
 	if (NULL != aNode)

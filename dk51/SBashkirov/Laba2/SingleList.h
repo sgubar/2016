@@ -26,7 +26,7 @@ extern const int ListError;
 IntList *ListCreate();
 void FreeList(IntList *aList);
 
-IntNode *NodeAdd(IntList *aList, IntNode *aNewNode);
+IntNode *NodeAdd(IntList *aList, int aValue);
 
 int CountList(const IntList *aList);
 IntNode *NodeAtIndex(const IntList *aList, int aIndex);
