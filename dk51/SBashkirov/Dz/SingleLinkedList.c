@@ -166,6 +166,7 @@ IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)
 		{
 			aList->head = SLNodeAtIndex(aList, anIndex+1);
 			aList->count -= 1;
+			return(RemovedNode);
 		}
 		else
 		{
@@ -173,8 +174,8 @@ IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)
 			IntNode *RemovedNode = SLNodeAtIndex(aList, anIndex);
 			if (anIndex == aList->count) aList->tail = PrevNode;
 			PrevNode->nextNode = RemovedNode->nextNode;
-			SLFreeIntNode(RemovedNode);
 			aList->count -= 1;
+			return(RemovedNode);
 		}
 	}
 }
