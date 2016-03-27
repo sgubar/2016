@@ -1,10 +1,10 @@
 #pragma once
 //
 //  SingleLinkedNode.h
-//  demoList
+//  HomeWork
 //
-//  Created by Slava Gubar on 3/2/16.
-//  Copyright © 2016 Slava Gubar. All rights reserved.
+//  Created by Timoshenko Serj on 3/27/16.
+//  Copyright © 2016 Timoshenko Serj . All rights reserved.
 //
 
 #ifndef SingleLinkedNode_h
