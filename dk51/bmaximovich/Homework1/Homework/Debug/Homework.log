@@ -1,0 +1,16 @@
+﻿Сборка начата 25.03.2016 21:57:54.
+     1>Проект "C:\Users\Богдан\Documents\2016\dk51\bmaximovich\Homework1\Homework\Homework.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt SingleLinkedList.c
+         SingleLinkedList.c
+     1>c:\users\богдан\documents\2016\dk51\bmaximovich\homework1\homework\singlelinkedlist.c(130): warning C4716: SLInsertNodeAtIndex: должна возвращать значение
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Богдан\Documents\2016\dk51\bmaximovich\Homework1\Debug\Homework.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Богдан\Documents\2016\dk51\bmaximovich\Homework1\Debug\Homework.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Богдан\Documents\2016\dk51\bmaximovich\Homework1\Debug\Homework.lib" /MACHINE:X86 Debug\main.obj
+         Debug\SingleLinkedList.obj
+         Debug\SingleLinkedNode.obj
+         Homework.vcxproj -> C:\Users\Богдан\Documents\2016\dk51\bmaximovich\Homework1\Debug\Homework.exe
+     1>Сборка проекта "C:\Users\Богдан\Documents\2016\dk51\bmaximovich\Homework1\Homework\Homework.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:00.46
