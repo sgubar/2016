@@ -12,7 +12,7 @@
 
 const int ListError = -1;
 
-IntList *CreateList()
+IntList *ListCreate()
 {
 	IntList *theList = (IntList *)malloc(sizeof(IntList));
 
@@ -43,13 +43,18 @@ void FreeList(IntList *aList)
 	free(aList);
 }
 
-IntNode *NodeAdd(IntList *aList, IntNode *aNewNode)
+IntNode *NodeAdd(IntList *aList, int aValue)
 {
-	if (NULL == aList || NULL == aNewNode)
+	if (NULL == aList)
 	{
 		return NULL;
 	}
 
+	IntNode *aNewNode = (IntNode *)malloc(sizeof(IntNode));
+
+	aNewNode->value = aValue;
+	aNewNode->nextNode = NULL;
+	
 	if (NULL == aList->head && NULL == aList->tail)
 	{
 		aList->head = aList->tail = aNewNode;
@@ -128,9 +133,9 @@ IntNode *InsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
 		else
 		{
 			IntNode *PrevNode = NodeAtIndex(aList, anIndex - 1);
-			PrevNode->nextNode = aNewNode;
 			if (anIndex == aList->count + 1) aList->tail = aNewNode;
 			else aNewNode->nextNode = PrevNode->nextNode;
+			PrevNode->nextNode = aNewNode;
 			aList->count += 1;
 			return(aNewNode);
 		}

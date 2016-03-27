@@ -1,0 +1,18 @@
+﻿Сборка начата 24.03.2016 19:58:36.
+     1>Проект "D:\VS\Новая папка\ConsoleApplication3\ConsoleApplication3\ConsoleApplication3.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt main.c SingleLinkedList.c SingleLinkedNode.c
+         SingleLinkedNode.c
+         SingleLinkedList.c
+         main.c
+         Создание кода...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\VS\Новая папка\ConsoleApplication3\Debug\ConsoleApplication3.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\VS\Новая папка\ConsoleApplication3\Debug\ConsoleApplication3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\VS\Новая папка\ConsoleApplication3\Debug\ConsoleApplication3.lib" /MACHINE:X86 Debug\main.obj
+         Debug\SingleLinkedList.obj
+         Debug\SingleLinkedNode.obj
+         ConsoleApplication3.vcxproj -> D:\VS\Новая папка\ConsoleApplication3\Debug\ConsoleApplication3.exe
+     1>Сборка проекта "D:\VS\Новая папка\ConsoleApplication3\ConsoleApplication3\ConsoleApplication3.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:03.00

@@ -2,23 +2,18 @@
 #include <conio.h>
 #include <stdlib.h> //exit
 #include <locale.h>
-#include "check.h"
-#include "read_and_prepare_hex_to_dec.h"
+#include "hex_converter.h"
 #include "start.h"
+#include "error_log.h"
 #include "countsigma.h"
 
-char a[20]; //maximalniy masiv
-short length = 1;// realniy razmer massiva
-int C, D; //nashi intovie peremennie
-char F; //hex variable
-long F_dec = 0;// peredelannoe chislo
-int sigma = 0;
+void error_log(int);
+char a[20]; //массив "ответственный" за число F				
+int length = 1, F_dec = 0, sigma = 0 , C, D; //Length - длина числа F, F_dec - его десятичное значение, sigma - сумма натуральных чисел от 1 до D, C - десятичная переменная
 
-void main(){
-
-	start();
-	replace();
-	elements();
-	countsigma();
-	printf("\nAnswer : %d\n", (F_dec - C)*sigma);
+void main() {
+	start(); //Ввод данных и проверка чисоа D
+	elements();//Перевод числа F из шестнадцатеричной в десятичную систему + проверка правильности ввода числа F
+	countsigma();// Подсчет суммы натуральных чисел от 1 до D
+	printf("\nAnswer : %d\n", (F_dec - C)*sigma);//Подсчет и вывод окончательного ответа
 };
