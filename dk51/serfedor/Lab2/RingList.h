@@ -15,22 +15,22 @@
 
 typedef struct __IntNode IntNode;
 
-typedef struct __IntList
+typedef struct __RingList
 {
 	IntNode *head;
 	IntNode *tail;
 	int count;
-}IntList;
+}RingList;
 
 extern const int kListError;
 
-IntList *CreateList();
-void FreeList(IntList *aList);
+RingList *CreateList();
+void FreeList(RingList *aList);
 
-IntNode *AddNode(IntList *aList, IntNode *aNewNode);
+IntNode *AddNode(RingList *aList, IntNode *aNewNode);
 
-int SLCountList(const IntList *aList);
-IntNode *NodeAtIndex(const IntList *aList, int aIndex);
+int SLCountList(const RingList *aList);
+IntNode *NodeAtIndex(const RingList *aList, int aIndex);
 
 
-#endif /* List_h */
+#endif /* RingList_h */

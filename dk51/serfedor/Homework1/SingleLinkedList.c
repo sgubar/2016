@@ -137,17 +137,20 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
 	{
 		if (0 == anIndex)
 		{
-			IntNode *OnThisIndexNode = SLNodeAtIndex(aList, anIndex);
-			aNewNode->nextNode = OnThisIndexNode;
+			aNewNode->nextNode = aList->head; //nextNode in head list
+			aList->head = aNewNode; //aNewNode becomes head of list
+			aList->count += 1;
 		}
 		else
 		{
-			IntNode *PrevNode = SLNodeAtIndex(aList, anIndex - 1);
-			aNewNode->nextNode = PrevNode->nextNode;
-			PrevNode->nextNode = aNewNode;
+			IntNode *PrevNode = SLNodeAtIndex(aList, anIndex - 0);
+			if (anIndex == aList->count + 1)
+				aList->tail = aNewNode;
+			else 
+				aNewNode->nextNode = PrevNode->nextNode;
 			aList->count += 1;
-			return(aNewNode);
 		}
+		return(aNewNode);
 	}
 }
 IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)
@@ -158,17 +161,19 @@ IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)
 	}
 	else
 	{
-		IntNode *RemovedNode = SLNodeAtIndex(aList, anIndex);
+		
 		if (0 == anIndex)
 		{
-			SLFreeIntNode(RemovedNode);
+			aList->head = SLNodeAtIndex(aList, anIndex+1);//head of list becomes next Node 
 			aList->count -= 1;
 		}
 		else
 		{
-			IntNode *PrevNode = SLNodeAtIndex(aList, anIndex - 1);
-			PrevNode->nextNode = RemovedNode->nextNode;
-			SLFreeIntNode(RemovedNode);
+			IntNode *PrevNode = SLNodeAtIndex(aList, anIndex - 1);//change PrevNode 
+			IntNode *RemovedNode = SLNodeAtIndex(aList, anIndex); //delete Node
+			if(anIndex == aList->count )// if  this is the end of the list
+			aList-> tail = PrevNode;//assigned PrevNode
+			PrevNode -> NextNode = RemovedNode -> NextNode;
 			aList->count -= 1;
 		}
 	}

@@ -14,21 +14,21 @@
 const int kListError = -1;
 
 //Create/delete a list
-IntList *CreateList()
+RingList *CreateList()
 {
-	//Allocate memory for the list structure
-	IntList *theList = (IntList *)malloc(sizeof(IntList));
+
+	RingList *theList = (RingList *)malloc(sizeof(RingList));
 
 
 	theList->head = NULL;
-	theList->tail =theList-> head;
+	theList->tail = NULL;
 	theList->count = 0;
 
 
 	return theList;
 }
 
-void FreeList(IntList *aList)
+void FreeList(RingList *aList)
 {
 	// Check the input parameter
 	if (NULL == aList)
@@ -41,17 +41,17 @@ void FreeList(IntList *aList)
 
 	while (NULL != theNode)
 	{
-		IntNode *theNodeToBeFree = theNode;
+		IntNode *theNodeFree = theNode;
 		theNode = theNode->nextNode;
 
-		free(theNodeToBeFree);
+		free(theNodeFree);
 	}
 
 	//2. Free memory for the List structure
 	free(aList);
 }
 
-IntNode *AddNode(IntList *aList, IntNode *aNewNode)
+IntNode *AddNode(RingList *aList, IntNode *aNewNode)
 {
 	// Check the input parameter
 	if (NULL == aList || NULL == aNewNode)
@@ -59,13 +59,10 @@ IntNode *AddNode(IntList *aList, IntNode *aNewNode)
 		return NULL;
 	}
 
-	//Add the new node to end of the list
-
-	// a b c d e + G = a b c d e G
 
 	if (NULL == aList->head && NULL == aList->tail)
 	{
-		//The list is empty
+
 		aList->head = aList->tail = aNewNode;
 	}
 	else
@@ -84,7 +81,7 @@ IntNode *AddNode(IntList *aList, IntNode *aNewNode)
 	return aNewNode;
 }
 
-int CountList(const IntList *aList)
+int CountList(const RingList *aList)
 {
 	int theResult = kListError;
 
@@ -96,7 +93,7 @@ int CountList(const IntList *aList)
 	return theResult;
 }
 
-IntNode *NodeAtIndex(const IntList *aList, int anIndex)
+IntNode *NodeAtIndex(const RingList *aList, int anIndex)
 {
 	IntNode *theResult = NULL;
 
@@ -107,14 +104,14 @@ IntNode *NodeAtIndex(const IntList *aList, int anIndex)
 
 		do
 		{
-			if (i == anIndex) //<!- index was found
+			if (i == anIndex)
 			{
-				theResult = theNode; //<! - our node
+				theResult = theNode;
 				break;
 			}
 
-			i++; // increase index
-			theNode = theNode->nextNode; //<! - go to next node
+			i++;
+			theNode = theNode->nextNode;
 
 		} while (NULL != theNode);
 	}
@@ -122,49 +119,56 @@ IntNode *NodeAtIndex(const IntList *aList, int anIndex)
 	return theResult;
 }
 
-IntNode *InsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex){
-    IntNode *result = NULL;
-
-    if (NULL == aList || NULL == aNewNode){
+IntNode *InsertNodeAtIndex(RingList *aList, IntNode *aNewNode, int anIndex){
+    // Check the input parameter
+	if (NULL == aList || NULL == aNewNode || anIndex>aList->count+1)
+	{
 		return NULL;
 	}
 
-    if (NULL == aList->head && NULL == aList->tail){
-		//The list is empty
-		aList->head = aList->tail = aNewNode;
-	}else{
-        if(anIndex < aList->count){
-            int i = 0;
-            IntNode *theNode = aList->head;
-            do{
-			if (i == anIndex){ //<!- index was found
-                result->nextNode=theNode->nextNode;
-                theNode->nextNode=result;
-                break;
-			}
-			i++; // increase index
-			theNode = theNode->nextNode; //<! - go to next node
-
-            }while (NULL != theNode);
-        }
+	else
+	{
+		if (0 == anIndex)
+		{
+			aNewNode->nextNode = aList->head;
+			aList->head = aNewNode;
+			aList->count += 1;
+			return(aNewNode);
+		}
+		else
+		{
+			IntNode *PrevNode = NodeAtIndex(aList, anIndex - 1);
+			PrevNode->nextNode = aNewNode;
+			if (anIndex == aList->count + 1) aList->tail = aNewNode;
+			else aNewNode->nextNode = PrevNode->nextNode;
+			aList->count += 1;
+			return(aNewNode);
+		}
 	}
-	return result;
 }
 
-IntNode *RemovedNodeAtIndex(IntList *aList, int anIndex){
-    if(anIndex < aList->count){
-        int i = 0;
-            IntNode *theNode = aList->head;
-            do{
-			if (i == anIndex){ //<!- index was found
-                IntNode *aNextNode = theNode->nextNode;
-                theNode->nextNode = aNextNode->nextNode;
-                free(aNextNode);
-                break;
-			}
-			i++; // increase index
-			theNode = theNode->nextNode; //<! - go to next node
-
-            }while (NULL != theNode);
-    }
+IntNode *RemovedNodeAtIndex(RingList *aList, int anIndex){
+    if ((NULL == aList) || (anIndex>aList->count))
+	{
+		return NULL;
+	}
+	else
+	{
+		if (0 == anIndex)
+		{
+			IntNode *RemovedNode = aList->head;
+			aList->head = NodeAtIndex(aList, anIndex+1);
+			aList->count -= 1;
+			return(RemovedNode);
+		}
+		else
+		{
+			IntNode *PrevNode = NodeAtIndex(aList, anIndex - 1);
+			IntNode *RemovedNode = NodeAtIndex(aList, anIndex);
+			if (anIndex == aList->count) aList->tail = PrevNode;
+			PrevNode->nextNode = RemovedNode->nextNode;
+			aList->count -= 1;
+			return(RemovedNode);
+		}
+	}
 }

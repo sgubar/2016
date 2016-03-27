@@ -12,14 +12,14 @@
 
 #include <stdio.h>
 
-// Predeclaration
+
 typedef struct __IntNode IntNode;
 
-// The node declaration
+
 struct __IntNode
 {
 	int value;
-	IntNode *nextNode;//<! - the reference to next node
+	IntNode *nextNode;
 };
 
 //Create a new Node with int value

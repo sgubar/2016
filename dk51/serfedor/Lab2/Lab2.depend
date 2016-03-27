@@ -34,18 +34,18 @@
 	"Node.h"
 	<stdlib.h>
 
-1458752197 source:c:\users\home\github\dk51\serfedor\lab2\main.c
+1459095080 source:c:\users\home\github\dk51\serfedor\lab2\main.c
 	<stdio.h>
 	"Node.h"
-	"List.h"
+	"RingList.h"
 
-1458799002 c:\users\home\github\dk51\serfedor\lab2\node.h
+1459093295 c:\users\home\github\dk51\serfedor\lab2\node.h
 	<stdio.h>
 
 1458752058 c:\users\home\github\dk51\serfedor\lab2\list.h
 	<stdio.h>
 
-1458799002 source:c:\users\home\github\dk51\serfedor\lab2\node.c
+1458802602 source:c:\users\home\github\dk51\serfedor\lab2\node.c
 	"Node.h"
 	<stdlib.h>
 
@@ -54,11 +54,11 @@
 	"Node.h"
 	<stdlib.h>
 
-1458799002 source:c:\users\home\github\dk51\serfedor\lab2\ringlist.c
+1459094113 source:c:\users\home\github\dk51\serfedor\lab2\ringlist.c
 	"RingList.h"
 	"Node.h"
 	<stdlib.h>
 
-1458799002 c:\users\home\github\dk51\serfedor\lab2\ringlist.h
+1459093952 c:\users\home\github\dk51\serfedor\lab2\ringlist.h
 	<stdio.h>
 

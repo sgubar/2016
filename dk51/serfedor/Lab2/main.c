@@ -11,7 +11,7 @@
 #include "RingList.h"
 
 void doRingList();
-void doPrintList(const IntList *aList);
+void doPrintList(const RingList *aList);
 
 int main(int argc, const char * argv[])
 {
@@ -22,7 +22,7 @@ int main(int argc, const char * argv[])
 
 void doList()
 {
-	printf("Start to create a circular list ...\n");
+	printf("Start to create a circular list \n");
 
 	IntNode *theNode0 = CreateNode(0);
 	IntNode *theNode1 = CreateNode(4);
@@ -31,37 +31,34 @@ void doList()
 	IntNode *theNode5 = CreateNode(1);
 	IntNode *theNode6 = CreateNode(2);
 
-	IntList *theList = CreateList();
-	printf("number of elements: %d\n", CountList(theList));
+	RingList *theList = CreateList();
+
 
 	AddNode(theList, theNode0);
-	printf("number of elements: %d\n", CountList(theList));
 
 	AddNode(theList, theNode1);
-	printf("number of elements: %d\n", CountList(theList));
 
 	AddNode(theList, theNode2);
-	printf("number of elements: %d\n", CountList(theList));
 
     AddNode(theList, theNode4);
-	printf("number of elements: %d\n", CountList(theList));
 
     AddNode(theList, theNode5);
-	printf("number of elements: %d\n", CountList(theList));
 
 	AddNode(theList, theNode6);
 	printf("number of elements: %d\n", CountList(theList));
+
+	//NodeAtIndex(RingList,aList->count)->nextNode=aList->head;
 
 	doPrintList(theList);
 
 	FreeList(theList);
 
-	printf("Done.\n");
+
 }
 
-void doPrintList(const IntList *aList)
+void doPrintList(const RingList *aList)
 {
-	for (int i = 0; i < CountList(aList); i++)
+	for (int i = 0; i < CountList(aList) +5 ; i++)
 	{
 		IntNode *theNode = NodeAtIndex(aList, i);
 		if (NULL != theNode)

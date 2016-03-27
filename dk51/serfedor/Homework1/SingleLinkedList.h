@@ -34,7 +34,7 @@ int SLCountList(const IntList *aList);
 IntNode *SLNodeAtIndex(const IntList *aList, int aIndex);
 
 //TODO: house work
-//IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex);
-//IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex);
+IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex);
+IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex);
 
 #endif /* SingleLinkedList_h */
