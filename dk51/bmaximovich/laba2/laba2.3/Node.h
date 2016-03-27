@@ -21,7 +21,7 @@ struct IntNode
 
 //New Node with int value
 IntNode *CreateNode(int aValue);
-//Free a created node
+
 void FreeNode(IntNode *aNode);
 
 #endif /* Node */

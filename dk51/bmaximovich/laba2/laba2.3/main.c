@@ -26,19 +26,27 @@ void doTestList()
 	printf("List ...\n");
 
 	IntNode *theNode2 = CreateNode(2);
+	IntNode *theNode3 = CreateNode(3);
 	IntNode *theNode4 = CreateNode(4);
+	IntNode *theNode5 = CreateNode(5);
+	IntNode *theNode6 = CreateNode(6);
 
 	IntList *theList = CreateList();
 	printf("number of elements: %d\n", CountList(theList));
 
 	AddNode(theList, theNode2);
 	printf("number of elements: %d\n", CountList(theList));
-
+	AddNode(theList, theNode3);
+	printf("number of elements: %d\n", CountList(theList));
 	AddNode(theList, theNode4);
+	printf("number of elements: %d\n", CountList(theList));
+	AddNode(theList, theNode5);
+	printf("number of elements: %d\n", CountList(theList));
+	AddNode(theList, theNode6);
 	printf("number of elements: %d\n", CountList(theList));
 
 	IntList *theList1 = ÑreateDoubleList(theList);
-	printf("number of elements: %d\n", CountList(theList1));
+	printf("number of elements at DoubleList: %d\n", CountList(theList1));
 
 	doPrintList(theList1);
 

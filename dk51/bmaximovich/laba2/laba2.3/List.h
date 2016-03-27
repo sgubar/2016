@@ -19,11 +19,11 @@ typedef struct IntList
 	IntNode *head;
 	IntNode *tail;
 	int count;
-}IntList;
+}
+
+IntList;
+
 extern const int ListError;
-
-
-//Create a list
 
 IntList *CreateList();
 

@@ -26,7 +26,6 @@ IntList *CreateList()
 
 void FreeList(IntList *aList)
 {
-	// Check the input parameter
 	if (NULL == aList)
 	{
 		return;
