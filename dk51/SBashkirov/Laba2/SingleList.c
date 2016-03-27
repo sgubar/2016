@@ -133,9 +133,9 @@ IntNode *InsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
 		else
 		{
 			IntNode *PrevNode = NodeAtIndex(aList, anIndex - 1);
-			PrevNode->nextNode = aNewNode;
 			if (anIndex == aList->count + 1) aList->tail = aNewNode;
 			else aNewNode->nextNode = PrevNode->nextNode;
+			PrevNode->nextNode = aNewNode;
 			aList->count += 1;
 			return(aNewNode);
 		}

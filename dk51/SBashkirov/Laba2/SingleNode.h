@@ -19,6 +19,4 @@ struct __IntNode
 	IntNode *nextNode;
 };
 
-void FreeNode(IntNode *aNode);
-
 #endif 

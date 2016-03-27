@@ -7,11 +7,13 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "SingleList.h"
 #include "WorkWithFile.h"
 #include "Sorting.h"
+#include "SingleNode.h"
 
-
+void PrintList(const IntList *aList);
 
 int main(int argc,char *argv[])
 {
@@ -20,9 +22,24 @@ int main(int argc,char *argv[])
 	{
 		IntList *theList = ListCreate();
 		ReadTheFile(argv[1],theList);
-		printf("number of elements: %d\n", CountList(theList));
-		NodeSorting(theList, argv[2], argv[3], argv[4]);
+		printf("No sorting\n");
+		PrintList(theList);
+		printf("After sorting\n");
+		NodeSorting(theList, atof(argv[2]), atof(argv[3]), atof(argv[4]));
+		PrintList(theList);
 	}
 	system("pause");
 
+}
+
+void PrintList(const IntList *aList)
+{
+	for (int i = 0; i < CountList(aList); i++)
+	{
+		IntNode *theNode = NodeAtIndex(aList, i);
+		if (NULL != theNode)
+		{
+			printf("node[%d].value = %d\n", i, theNode->value);
+		}
+	}
 }

@@ -8,6 +8,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "WorkWithFile.h"
 #include "SingleList.h"
@@ -21,7 +22,7 @@ ReadTheFile(char *FileName, IntList *aList)
 	while (NULL != fgets(RString, 200, ReadingFile))
 	{
 		Number = strtok_s(RString, " ", &last);
-		NodeAdd(aList, Number);
+		NodeAdd(aList, atof(Number));
 		while(NULL!=Number)
 		{
 			Number = strtok_s(NULL, " ", &last);
