@@ -1,6 +1,6 @@
-#ifndef check_h
-#define check_h
+#ifndef error_log_h
+#define error_log_h
 
-void are_u_dumb(int);
+error_log();
 
 #endif 
