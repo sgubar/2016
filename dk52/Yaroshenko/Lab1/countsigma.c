@@ -2,9 +2,9 @@
 #include <conio.h>
 #include <stdlib.h> //exit
 #include <locale.h>
-#include "check.h"
-#include "read_and_prepare_hex_to_dec.h"
+#include "hex_converter.h"
 #include "start.h"
+#include "error_log.h"
 #include "countsigma.h"
 
 void countsigma() {
