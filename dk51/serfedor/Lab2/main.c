@@ -47,7 +47,7 @@ void doList()
 	AddNode(theList, theNode6);
 	printf("number of elements: %d\n", CountList(theList));
 
-	//NodeAtIndex(RingList,aList->count)->nextNode=aList->head;
+	NodeAtIndex(aList,aList->count)->nextNode=aList->head;
 
 	doPrintList(theList);
 
