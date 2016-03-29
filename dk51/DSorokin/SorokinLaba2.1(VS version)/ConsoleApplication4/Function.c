@@ -3,8 +3,6 @@
 #include "Function.h"
 #include "FunctionList.h"
 
-IntNode *CreateN(int perevod);
-
 IntNode *CreateN(int perevod) {
 	IntNode *theResult = (IntNode *)malloc(sizeof(IntNode));
 	theResult->value = perevod;
@@ -68,4 +66,72 @@ IntNode *NodeAtIndex(const IntList *aList, int anIndex)
 	}
 
 	return theResult;
+}
+
+void doSorting(IntNode *theList) {
+	int a;
+	int j = 0;
+	int min;
+	int IndexMinimum = 0;
+	int IndexMaximum = 0;
+	int IndexRemoved = 0;
+	a = CountList(theList);
+	for (int j = 0; j < a; j++) {
+
+		IntNode *MinNode = NodeAtIndex(theList, IndexMinimum);
+		min = NodeAtIndex(theList, IndexMinimum)->value;
+
+		for (int k = IndexMinimum; k < a; k++)
+		{
+
+			if (min >= MinNode->value)
+			{
+				min = MinNode->value;
+				IndexRemoved = k;
+			}
+
+			MinNode = MinNode->nextNode;
+
+		}
+
+		InsertNode(theList, RemovedNode(theList, IndexRemoved), IndexMinimum);
+		IndexMinimum++;
+
+	}
+	printf("Sorting List\n");
+	doPrintList(theList);
+}
+
+void doChangeValue(IntNode *theList) {
+	int a;
+	int min;
+	int max;
+	int IndexMinimum = 0;
+	int IndexMaximum = 0;
+	a = CountList(theList);
+	
+	IntNode *MinNode = NodeAtIndex(theList, IndexMinimum);
+	IntNode *MaxNode = NodeAtIndex(theList, IndexMaximum);
+	
+
+	for (int k = IndexMinimum; k < a; k++)
+	{
+
+		if (max <= MaxNode->value)
+		{
+			max = MaxNode->value;
+
+		}
+
+		if (min >= MinNode->value)
+		{
+			min = MinNode->value;
+		}
+
+		MinNode = MinNode->nextNode;
+		printf("Minimum%d\n", min);
+		printf("Maximum%d\n", max);
+
+
+	}
 }
