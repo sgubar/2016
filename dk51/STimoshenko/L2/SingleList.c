@@ -46,14 +46,16 @@ int CountList(const IntList *aList)
 
 void doPrintList(IntList *aList)
 {
+	printf("The list\n");
 	for (int i = 0; i < CountList(aList); i++)
 	{
 		IntNode *theNode = NodeAtIndex(aList, i);
 		if (NULL != theNode)
 		{
-			printf("node[%d].value = %d\n", i, theNode->value);
+			printf("node[%d].Word  = %s\n", i, theNode->CharWord);
 		}
 	}
+	
 }
 
 IntNode *InsertNode(IntList *aList, IntNode *aNewNode, int anIndex) {
@@ -125,3 +127,38 @@ IntList *MinToTheMax(IntList *aList)
 		printf("The min value of this list-%d  ", min->value);
 	
 	}
+
+
+void TheMinAndTheMax(IntNode *theList) {
+	int a;
+	int j = 0;
+	int min;
+	int InMin = 0;
+	int InMax = 0;
+	int RemovedAtIndex = 0;
+	a = CountList(theList);
+	for (int j = 0; j < a; j++) {
+
+		IntNode *TheMinNode = NodeAtIndex(theList, InMin);
+		min = NodeAtIndex(theList, InMin)->value;
+
+		for (int k = InMin; k < a; k++)
+		{
+
+			if (min >= TheMinNode->value)
+			{
+				min = TheMinNode->value;
+				RemovedAtIndex = k;
+			}
+
+			TheMinNode = TheMinNode->nextNode;
+
+		}
+
+		InsertNode(theList, RemovedNode(theList, RemovedAtIndex), InMin);
+		InMin++;
+
+	}
+	printf("Edited list\n");
+	doPrintList(theList);
+}

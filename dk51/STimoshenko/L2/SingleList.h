@@ -24,6 +24,7 @@ IntNode *NodeAtIndex(const IntList *aList, int aIndex);
 IntNode *InsertNode(IntList *aList, IntNode *aNewNode, int anIndex);
 IntNode *RemovedNode(IntList *aList, int anIndex);
 IntList *MinToTheMax(IntList *aList);
+void TheMinAndTheMax(IntNode *theList);
 
-#endif // SingleList_H_INCLUDED
+#endif
 

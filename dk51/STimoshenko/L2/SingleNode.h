@@ -11,11 +11,11 @@ typedef struct __IntNode IntNode;
 struct __IntNode
 {
 	int value;
-	char CharWord;
+	char *CharWord;
 	IntNode *nextNode;
 };
 
-IntNode *CreateNode(int aValue, char CharWord);
+IntNode *CreateNode(int aValue, char *CharWord);
 void FreeIntNode(IntNode *aNode);
 
 #endif

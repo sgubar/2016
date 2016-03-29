@@ -11,10 +11,10 @@ int main(int argc, const char * argv[]) {
 	{
 		IntNode *theNode = CreateNode(strlen(argv[i]), argv[i]);
 		AddNode(theList, theNode);
-		printf("Node value: %d\n", theNode->value);
+		
 	}
-
+	
 	doPrintList(theList);
-	MinToTheMax(theList);
+	TheMinAndTheMax(theList);
 	system("pause");
 }

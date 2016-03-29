@@ -3,12 +3,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-IntNode *CreateNode(int perevod);
 
-IntNode *CreateNode(int perevod, char CharWord)
+IntNode *CreateNode(int theValue, char *CharWord)
 {
 	IntNode *theResult = (IntNode *)malloc(sizeof(IntNode));
-	theResult->value = perevod;
+	theResult->value = theValue;
 	theResult->nextNode = NULL;
 	theResult->CharWord = CharWord;
 	return theResult;
