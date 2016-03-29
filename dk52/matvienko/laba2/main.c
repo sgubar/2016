@@ -17,4 +17,5 @@ int main()
 		scanf("%c", &a);
 		AddList(&head, &tail,a);
 	}
+	return 0;
 }
