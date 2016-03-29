@@ -11,12 +11,12 @@
 
 #include <stdio.h>
 
-typedef struct __IntNode IntNode;
+typedef struct __FloatNode FloatNode;
 
-struct __IntNode
+struct __FloatNode
 {
-	int value;
-	IntNode *nextNode;
+	float value;
+	FloatNode *nextNode;
 };
 
 #endif 

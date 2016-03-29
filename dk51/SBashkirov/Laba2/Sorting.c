@@ -10,7 +10,7 @@
 #include "SingleList.h"
 #include "SingleNode.h"
 
-int NodeSorting(IntList *aList, int Number, int FirstBorder, int SecondBorder)
+int NodeSorting(FloatList *aList, float Number, float FirstBorder, float SecondBorder)
 {
 	int sortingIndex = 0;
 	for (int i=0; i < CountList(aList);i++)
@@ -21,7 +21,7 @@ int NodeSorting(IntList *aList, int Number, int FirstBorder, int SecondBorder)
 			sortingIndex++;
 		}
 	}
-	for (int i=0;i < CountList(aList);i++)
+	for (int i=sortingIndex;i < CountList(aList);i++)
 	{
 		if ((NodeAtIndex(aList, i)->value >= FirstBorder) && (NodeAtIndex(aList,i)->value <= SecondBorder))
 		{

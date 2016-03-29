@@ -12,6 +12,6 @@
 #include <stdio.h>
 #include "SingleList.h"
 
-int NodeSorting(IntList *aList,int Number, int FirstBorder, int SecondBorder);
+int NodeSorting(FloatList *aList,float Number, float FirstBorder, float SecondBorder);
 
 #endif

@@ -11,27 +11,28 @@
 
 #include <stdio.h>
 
-typedef struct __IntNode IntNode;
+typedef struct __FloatNode FloatNode;
 
-typedef struct __IntList
+typedef struct __FloatList
 {
-	IntNode *head;
-	IntNode *tail;
+	FloatNode *head;
+	FloatNode *tail;
 	int count;
-}IntList;
+}FloatList;
 
 extern const int ListError;
 
 
-IntList *ListCreate();
-void FreeList(IntList *aList);
+FloatList *ListCreate();
+void FreeList(FloatList *aList);
 
-IntNode *NodeAdd(IntList *aList, int aValue);
+FloatNode *NodeAdd(FloatList *aList, float aValue);
+FloatList *MinMax(FloatList *aList);
+FloatList *deleteKeys(FloatList *aList, float key1, float key2, float key3);
+int CountList(const FloatList *aList);
+FloatNode *NodeAtIndex(const FloatList *aList, int aIndex);
 
-int CountList(const IntList *aList);
-IntNode *NodeAtIndex(const IntList *aList, int aIndex);
-
-IntNode *InsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex);
-IntNode *RemovedNodeAtIndex(IntList *aList, int anIndex);
+FloatNode *InsertNodeAtIndex(FloatList *aList, FloatNode *aNewNode, int anIndex);
+FloatNode *RemovedNodeAtIndex(FloatList *aList, int anIndex);
 
 #endif /* SingleList_h */
