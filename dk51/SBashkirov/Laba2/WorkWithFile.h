@@ -12,6 +12,6 @@
 #include <stdio.h>
 #include "SingleList.h"
 
-int ReadTheFile(char *FileName, IntList *aList);
+int ReadTheFile(char *FileName, FloatList *aList);
 
 #endif

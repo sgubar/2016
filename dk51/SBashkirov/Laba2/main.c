@@ -13,33 +13,38 @@
 #include "Sorting.h"
 #include "SingleNode.h"
 
-void PrintList(const IntList *aList);
+void PrintList(const FloatList *aList);
 
 int main(int argc,char *argv[])
 {
 	if (argc != 5) printf("Error!\n Need syntax: <FileName> <Number> <FirstBorder> <SecondBorder>");
 	else
 	{
-		IntList *theList = ListCreate();
-		ReadTheFile(argv[1],theList);
-		printf("No sorting\n");
+		FloatList *theList = ListCreate();
+		ReadTheFile(argv[1], theList);
+		printf("The List: \n");
 		PrintList(theList);
-		printf("After sorting\n");
+		MinMax(theList);
+		printf("Your keys: %s %s %s\n", argv[2], argv[3], argv[4]);
+		deleteKeys(theList, atof(argv[2]), atof(argv[3]), atof(argv[4]));
+		printf("No sorting, exchange min max, deleting keys\n");
+		PrintList(theList);
 		NodeSorting(theList, atof(argv[2]), atof(argv[3]), atof(argv[4]));
+		printf("After sorting\n");
 		PrintList(theList);
 	}
 	system("pause");
 
 }
 
-void PrintList(const IntList *aList)
+void PrintList(const FloatList *aList)
 {
 	for (int i = 0; i < CountList(aList); i++)
 	{
-		IntNode *theNode = NodeAtIndex(aList, i);
+		FloatNode *theNode = NodeAtIndex(aList, i);
 		if (NULL != theNode)
 		{
-			printf("node[%d].value = %d\n", i, theNode->value);
+			printf("node[%d].value = %.3f\n", i, theNode->value);
 		}
 	}
 }

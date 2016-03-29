@@ -14,7 +14,7 @@
 #include "SingleList.h"
 
 
-ReadTheFile(char *FileName, IntList *aList)
+ReadTheFile(char *FileName, FloatList *aList)
 {
 	FILE *ReadingFile;
 	ReadingFile = fopen(FileName,"r");
@@ -23,11 +23,14 @@ ReadTheFile(char *FileName, IntList *aList)
 	{
 		Number = strtok_s(RString, " ", &last);
 		NodeAdd(aList, atof(Number));
-		while(NULL!=Number)
+		while (NULL != Number)
 		{
 			Number = strtok_s(NULL, " ", &last);
+
 			if (NULL != Number)
+			{
 				NodeAdd(aList, atof(Number));
+			}
 		}
 	}
 	fclose(ReadingFile);

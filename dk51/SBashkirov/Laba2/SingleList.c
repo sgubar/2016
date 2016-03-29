@@ -12,9 +12,9 @@
 
 const int ListError = -1;
 
-IntList *ListCreate()
+FloatList *ListCreate()
 {
-	IntList *theList = (IntList *)malloc(sizeof(IntList));
+	FloatList *theList = (FloatList *)malloc(sizeof(FloatList));
 
 	theList->head = NULL;
 	theList->tail = NULL; 
@@ -23,18 +23,18 @@ IntList *ListCreate()
 	return theList;
 }
 
-void FreeList(IntList *aList)
+void FreeList(FloatList *aList)
 {
 	if (NULL == aList)
 	{
 		return;
 	}
 
-	IntNode *theNode = aList->head;
+	FloatNode *theNode = aList->head;
 
 	while (NULL != theNode)
 	{
-		IntNode *theNodeToBeFree = theNode;
+		FloatNode *theNodeToBeFree = theNode;
 		theNode = theNode->nextNode;
 
 		free(theNodeToBeFree);
@@ -43,14 +43,14 @@ void FreeList(IntList *aList)
 	free(aList);
 }
 
-IntNode *NodeAdd(IntList *aList, int aValue)
+FloatNode *NodeAdd(FloatList *aList, float aValue)
 {
 	if (NULL == aList)
 	{
 		return NULL;
 	}
 
-	IntNode *aNewNode = (IntNode *)malloc(sizeof(IntNode));
+	FloatNode *aNewNode = (FloatNode *)malloc(sizeof(FloatNode));
 
 	aNewNode->value = aValue;
 	aNewNode->nextNode = NULL;
@@ -61,7 +61,7 @@ IntNode *NodeAdd(IntList *aList, int aValue)
 	}
 	else
 	{
-		IntNode *theTail = aList->tail;
+		FloatNode *theTail = aList->tail;
 		aList->tail = aNewNode;
 
 		if (NULL != theTail)
@@ -75,7 +75,7 @@ IntNode *NodeAdd(IntList *aList, int aValue)
 	return aNewNode;
 }
 
-int CountList(const IntList *aList)
+int CountList(const FloatList *aList)
 {
 	int theResult = ListError;
 
@@ -87,14 +87,14 @@ int CountList(const IntList *aList)
 	return theResult;
 }
 
-IntNode *NodeAtIndex(const IntList *aList, int anIndex)
+FloatNode *NodeAtIndex(const FloatList *aList, int anIndex)
 {
-	IntNode *theResult = NULL;
+	FloatNode *theResult = NULL;
 
 	if (NULL != aList && anIndex < aList->count)
 	{
 		int i = 0;
-		IntNode *theNode = aList->head;
+		FloatNode *theNode = aList->head;
 
 		do
 		{
@@ -113,7 +113,7 @@ IntNode *NodeAtIndex(const IntList *aList, int anIndex)
 	return theResult;
 }
 
-IntNode *InsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
+FloatNode *InsertNodeAtIndex(FloatList *aList, FloatNode *aNewNode, int anIndex)
 {
 	// Check the input parameter
 	if (NULL == aList || NULL == aNewNode || anIndex>aList->count + 1)
@@ -132,7 +132,7 @@ IntNode *InsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
 		}
 		else
 		{
-			IntNode *PrevNode = NodeAtIndex(aList, anIndex - 1);
+			FloatNode *PrevNode = NodeAtIndex(aList, anIndex - 1);
 			if (anIndex == aList->count + 1) aList->tail = aNewNode;
 			else aNewNode->nextNode = PrevNode->nextNode;
 			PrevNode->nextNode = aNewNode;
@@ -141,7 +141,7 @@ IntNode *InsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
 		}
 	}
 }
-IntNode *RemovedNodeAtIndex(IntList *aList, int anIndex)
+FloatNode *RemovedNodeAtIndex(FloatList *aList, int anIndex)
 {
 	if ((NULL == aList) || (anIndex>aList->count))
 	{
@@ -151,19 +151,69 @@ IntNode *RemovedNodeAtIndex(IntList *aList, int anIndex)
 	{
 		if (0 == anIndex)
 		{
-			IntNode *RemovedNode = aList->head;
+			FloatNode *RemovedNode = aList->head;
 			aList->head = NodeAtIndex(aList, anIndex + 1);
 			aList->count -= 1;
 			return(RemovedNode);
 		}
 		else
 		{
-			IntNode *PrevNode = NodeAtIndex(aList, anIndex - 1);
-			IntNode *RemovedNode = NodeAtIndex(aList, anIndex);
+			FloatNode *PrevNode = NodeAtIndex(aList, anIndex - 1);
+			FloatNode *RemovedNode = NodeAtIndex(aList, anIndex);
 			if (anIndex == aList->count) aList->tail = PrevNode;
 			PrevNode->nextNode = RemovedNode->nextNode;
 			aList->count -= 1;
 			return(RemovedNode);
 		}
 	}
+}
+
+FloatList *MinMax(FloatList *aList)
+{
+	FloatNode *min = aList->head, *max = aList->head;
+	int minIndex, maxIndex;
+	for (int i = 1; i < aList->count;i++)
+	{
+		FloatNode *theNode=NodeAtIndex(aList,i);
+		if (min->value > theNode->value)
+		{
+			min = theNode;
+			minIndex = i;
+		}
+		else
+		if (max->value < theNode->value)
+		{
+			max = theNode;
+			maxIndex = i;
+		}
+	}
+	if (minIndex < maxIndex)
+	{
+		RemovedNodeAtIndex(aList, maxIndex);
+		RemovedNodeAtIndex(aList, minIndex);
+		InsertNodeAtIndex(aList, max, minIndex);
+		InsertNodeAtIndex(aList, min, maxIndex);
+	}
+	else
+	{
+		RemovedNodeAtIndex(aList, minIndex);
+		RemovedNodeAtIndex(aList, maxIndex);
+		InsertNodeAtIndex(aList, min, maxIndex);
+		InsertNodeAtIndex(aList, max, minIndex);
+	}
+	return aList;
+}
+
+FloatList *deleteKeys(FloatList *aList, float key1, float key2, float key3)
+{
+	for (int i = 0;i < aList->count;i++)
+	{
+		FloatNode *theNode = NodeAtIndex(aList, i);
+		if ((theNode->value == key1) || (theNode->value == key2) || (theNode->value == key3))
+		{
+			RemovedNodeAtIndex(aList, i);
+			free(theNode);
+		}
+	}
+	return (aList);
 }
