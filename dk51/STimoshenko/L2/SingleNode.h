@@ -1,3 +1,12 @@
+//
+//  SingleNode.h
+//  Lab2
+//
+//  Created by Timoshenko Serj on 3/29/16.
+//  Copyright (C) 2016 Timoshenko Serj. All rights reserved.
+//
+
+
 #pragma once
 #ifndef SingleNode_h
 #define SingleNode_h

@@ -1,3 +1,13 @@
+//
+//  main.c
+//  Lab2
+//
+//  Created by Timoshenko Serj on 3/29/16.
+//  Copyright (C) 2016 Timoshenko Serj. All rights reserved.
+//
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "SingleNode.h"
@@ -13,7 +23,7 @@ int main(int argc, const char * argv[]) {
 		AddNode(theList, theNode);
 		
 	}
-	
+	printf("The list\n");
 	doPrintList(theList);
 	TheMinAndTheMax(theList);
 	system("pause");

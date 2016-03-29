@@ -1,3 +1,14 @@
+//
+//  SingleList.c
+//  Lab2
+//
+//  Created by Timoshenko Serj on 3/29/16.
+//  Copyright (C) 2016 Timoshenko Serj. All rights reserved.
+//
+
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "SingleNode.h"
@@ -46,7 +57,7 @@ int CountList(const IntList *aList)
 
 void doPrintList(IntList *aList)
 {
-	printf("The list\n");
+	
 	for (int i = 0; i < CountList(aList); i++)
 	{
 		IntNode *theNode = NodeAtIndex(aList, i);
