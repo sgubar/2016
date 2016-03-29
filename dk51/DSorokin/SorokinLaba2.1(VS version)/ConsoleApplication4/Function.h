@@ -8,12 +8,9 @@ struct __IntNode
 	IntNode *nextNode;
 };
 
-//typedef struct __IntArray IntArray;
-//typedef struct __IntArray {
-	//int Param;
-//};
-
 IntNode *CreateN(int perevod);
 void FreeIntNode(IntNode *aNode);
+void doSorting(IntNode *theList);
+void doChangeValue(IntNode *theList);
 
 #endif // FUNCTION_H_INCLUDED

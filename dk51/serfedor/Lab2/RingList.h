@@ -31,6 +31,6 @@ IntNode *AddNode(RingList *aList, IntNode *aNewNode);
 
 int SLCountList(const RingList *aList);
 IntNode *NodeAtIndex(const RingList *aList, int aIndex);
-
+RingList *MinMax(RingList *aList);
 
 #endif /* RingList_h */

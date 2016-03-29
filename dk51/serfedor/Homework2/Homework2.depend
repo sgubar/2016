@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1458854046 source:c:\users\home\desktop\homework2\dynarray.c
-
-1458854095 source:c:\users\home\desktop\homework2\main.c
-	<stdio.h>
-	"DynArray.h"
-
-1458854135 c:\users\home\desktop\homework2\dynarray.h
-

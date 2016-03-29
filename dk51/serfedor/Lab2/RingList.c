@@ -172,3 +172,38 @@ IntNode *RemovedNodeAtIndex(RingList *aList, int anIndex){
 		}
 	}
 }
+RingList *MinMax(RingList *aList)
+{
+	IntNode *min = aList->head, *max = aList->head;
+	int minIndex, maxIndex;
+	for (int i = 1; i < aList->count;i++)
+	{
+		IntNode *theNode=NodeAtIndex(aList,i);
+		if (min->value > theNode->value)
+		{
+			min = theNode;
+			minIndex = i;
+		}
+		else
+		if (max->value < theNode->value)
+		{
+			max = theNode;
+			maxIndex = i;
+		}
+	}
+	if (minIndex < maxIndex)
+	{
+		RemovedNodeAtIndex(aList, maxIndex);
+		RemovedNodeAtIndex(aList, minIndex);
+		InsertNodeAtIndex(aList, max, minIndex);
+		InsertNodeAtIndex(aList, min, maxIndex);
+	}
+	else
+	{
+		RemovedNodeAtIndex(aList, minIndex);
+		RemovedNodeAtIndex(aList, maxIndex);
+		InsertNodeAtIndex(aList, min, maxIndex);
+		InsertNodeAtIndex(aList, max, minIndex);
+	}
+	return aList;
+}
