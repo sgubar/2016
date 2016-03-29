@@ -16,12 +16,12 @@ void doPrintList(const RingList *aList);
 int main(int argc, const char * argv[])
 {
 	doList();
-
 	return 0;
 }
 
 void doList()
 {
+
 	printf("Start to create a circular list \n");
 
 	IntNode *theNode0 = CreateNode(0);
@@ -45,17 +45,16 @@ void doList()
     AddNode(theList, theNode5);
 
 	AddNode(theList, theNode6);
-	printf("number of elements: %d\n", CountList(theList));
 
-	NodeAtIndex(aList,aList->count)->nextNode=aList->head;
-
+	//NodeAtIndex(const RingList*aList, int aIndex )->nextNode=aList->head;
+    printf("number of elements: %d\n", CountList(theList));
 	doPrintList(theList);
 
 	FreeList(theList);
 
 
 }
-
+doMinMax(theList);
 void doPrintList(const RingList *aList)
 {
 	for (int i = 0; i < CountList(aList) +5 ; i++)
@@ -64,6 +63,9 @@ void doPrintList(const RingList *aList)
 		if (NULL != theNode)
 		{
 			printf("node[%d].value = %d\n", i, theNode->value);
+
+
 		}
 	}
 }
+

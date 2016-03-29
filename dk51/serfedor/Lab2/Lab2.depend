@@ -1,0 +1,64 @@
+# depslib dependency file v1.0
+1458140731 source:c:\users\home\desktop\lab2\singlelinkedlist.c
+	"SingleLinkedList.h"
+	"SingleLinkedNode.h"
+	<stdlib.h>
+
+1458140731 c:\users\home\desktop\lab2\singlelinkedlist.h
+	<stdio.h>
+
+1458140731 c:\users\home\desktop\lab2\singlelinkednode.h
+	<stdio.h>
+
+1458140731 source:c:\users\home\desktop\lab2\singlelinkednode.c
+	"SingleLinkedNode.h"
+	<stdlib.h>
+
+1458752197 source:c:\users\home\desktop\lab2\main.c
+	<stdio.h>
+	"Node.h"
+	"List.h"
+
+1458752058 c:\users\home\desktop\lab2\node.h
+	<stdio.h>
+
+1458752058 c:\users\home\desktop\lab2\list.h
+	<stdio.h>
+
+1458752130 source:c:\users\home\desktop\lab2\list.c
+	"List.h"
+	"Node.h"
+	<stdlib.h>
+
+1458752058 source:c:\users\home\desktop\lab2\node.c
+	"Node.h"
+	<stdlib.h>
+
+1459270072 source:c:\users\home\github\dk51\serfedor\lab2\main.c
+	<stdio.h>
+	"Node.h"
+	"RingList.h"
+
+1459093295 c:\users\home\github\dk51\serfedor\lab2\node.h
+	<stdio.h>
+
+1458752058 c:\users\home\github\dk51\serfedor\lab2\list.h
+	<stdio.h>
+
+1458802602 source:c:\users\home\github\dk51\serfedor\lab2\node.c
+	"Node.h"
+	<stdlib.h>
+
+1458754771 source:c:\users\home\github\dk51\serfedor\lab2\list.c
+	"List.h"
+	"Node.h"
+	<stdlib.h>
+
+1459264644 source:c:\users\home\github\dk51\serfedor\lab2\ringlist.c
+	"RingList.h"
+	"Node.h"
+	<stdlib.h>
+
+1459264815 c:\users\home\github\dk51\serfedor\lab2\ringlist.h
+	<stdio.h>
+
