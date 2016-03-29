@@ -14,10 +14,18 @@ charList *charListConstructor(); //create/destroy interface
 void charListDestructor(charList *listToBeDeleted);
 
 charNode *addNode(charList *inputList, charNode *newNode);
-//int countCharList(charList *inputList);
 
+charNode *charNodeAtIndex(const charList *aList, int anIndex);
+
+void printCharList(const charList *inputList);
+
+int findMaxNode(const charList *inputList);
+int findMinNode(const charList *inputList);
+
+charNode *removeCharNodeAtIndex(charList *aList, int anIndex);
+charNode *insertCharNodeAtIndex(charList *aList, charNode *aNewNode, int anIndex);
 //charList arrangeCharList(charList *inputList);
 
-//charList swapList(charList *inputList);
+charList *swapList(charList *inputList);
 
 #endif // TWINLINKLIST_H_INCLUDED
