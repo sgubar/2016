@@ -1,3 +1,5 @@
+/*Copyright (c), 2016, Mahnyov Aleksander. All rights reserved*/
+
 #include <stdlib.h>
 #include "twinLinkList.h"
 #include "twinLinkNode.h"

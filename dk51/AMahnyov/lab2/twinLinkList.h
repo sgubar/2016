@@ -1,3 +1,5 @@
+/*Copyright (c), 2016, Mahnyov Aleksander. All rights reserved*/
+
 #ifndef TWINLINKLIST_H_INCLUDED
 #define TWINLINKLIST_H_INCLUDED
 
