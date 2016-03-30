@@ -6,14 +6,10 @@
 //  Copyright (C) 2016 Timoshenko Serj. All rights reserved.
 //
 
-
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "SingleNode.h"
 #include "SingleList.h"
-
 
 const int ListError = -1;
 
@@ -119,31 +115,9 @@ IntNode *RemovedNode(IntList *aList, int anIndex) {
 	}
 }
 
-IntList *MinToTheMax(IntList *aList)
-{
-	IntNode *min = aList->head;
-	int minIndex;
-	for (int i = 1; i < aList->count; i++)
-
-	{
-			IntNode *theNode = NodeAtIndex(aList, i);
-			if (min->value > theNode->value)
-			{
-				min = theNode;
-				minIndex = i;
-
-			}
-
-	}
-		printf("The min value of this list-%d  ", min->value);
-	
-	}
-
-
 void TheMinAndTheMax(IntNode *theList) {
-	int a;
+	int a, min;
 	int j = 0;
-	int min;
 	int InMin = 0;
 	int InMax = 0;
 	int RemovedAtIndex = 0;

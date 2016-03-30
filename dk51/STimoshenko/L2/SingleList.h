@@ -29,12 +29,12 @@ int CountList(const IntList *aList);
 void doPrintList(IntList *aList);
 
 IntNode *AddNode(IntList *aList, IntNode *aNewNode);
-IntNode *NodeAtIndex(const IntList *aList, int aIndex);
+IntNode *NodeAtIndex(const IntList *aList, int anIndex);
 
 IntNode *InsertNode(IntList *aList, IntNode *aNewNode, int anIndex);
 IntNode *RemovedNode(IntList *aList, int anIndex);
-IntList *MinToTheMax(IntList *aList);
 void TheMinAndTheMax(IntNode *theList);
+
 
 #endif
 
