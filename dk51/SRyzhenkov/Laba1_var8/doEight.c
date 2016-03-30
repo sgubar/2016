@@ -4,7 +4,8 @@
 //  Created by Ryzhenkov Serhii on 08/03/16.
 //  Copyright © 2016 Ryzhenkov Serhii. All rights reserved.
 
- int doEight();
+ #include "doEight.h"
+
  int doEight()
  {
     int result, iter = 0;

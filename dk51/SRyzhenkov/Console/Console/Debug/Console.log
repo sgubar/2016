@@ -1,0 +1,10 @@
+﻿  Fun.c
+d:\документы\visual studio 2015\projects\console\console\fun.c(78): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(81): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(82): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(97): warning C4133: 'function': incompatible types - from 'IntNode *' to 'IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(102): warning C4133: 'function': incompatible types - from 'IntNode *' to 'IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(111): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(113): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(114): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+  Console.vcxproj -> d:\документы\visual studio 2015\Projects\Console\Debug\Console.exe
