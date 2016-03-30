@@ -128,7 +128,6 @@ FloatNode *InsertNodeAtIndex(FloatList *aList, FloatNode *aNewNode, int anIndex)
 			aNewNode->nextNode = aList->head;
 			aList->head = aNewNode;
 			aList->count += 1;
-			return(aNewNode);
 		}
 		else
 		{
@@ -137,8 +136,8 @@ FloatNode *InsertNodeAtIndex(FloatList *aList, FloatNode *aNewNode, int anIndex)
 			else aNewNode->nextNode = PrevNode->nextNode;
 			PrevNode->nextNode = aNewNode;
 			aList->count += 1;
-			return(aNewNode);
 		}
+		return(aNewNode);
 	}
 }
 FloatNode *RemovedNodeAtIndex(FloatList *aList, int anIndex)
@@ -149,22 +148,21 @@ FloatNode *RemovedNodeAtIndex(FloatList *aList, int anIndex)
 	}
 	else
 	{
+		FloatNode *RemovedNode = NodeAtIndex(aList, anIndex);
 		if (0 == anIndex)
 		{
-			FloatNode *RemovedNode = aList->head;
 			aList->head = NodeAtIndex(aList, anIndex + 1);
 			aList->count -= 1;
-			return(RemovedNode);
 		}
 		else
 		{
 			FloatNode *PrevNode = NodeAtIndex(aList, anIndex - 1);
-			FloatNode *RemovedNode = NodeAtIndex(aList, anIndex);
 			if (anIndex == aList->count) aList->tail = PrevNode;
 			PrevNode->nextNode = RemovedNode->nextNode;
 			aList->count -= 1;
-			return(RemovedNode);
+			
 		}
+		return(RemovedNode);
 	}
 }
 

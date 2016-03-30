@@ -29,4 +29,5 @@ int NodeSorting(FloatList *aList, float Number, float FirstBorder, float SecondB
 			sortingIndex++;
 		}
 	}
+	return aList;
 }

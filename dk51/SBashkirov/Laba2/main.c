@@ -20,18 +20,22 @@ int main(int argc,char *argv[])
 	if (argc != 5) printf("Error!\n Need syntax: <FileName> <Number> <FirstBorder> <SecondBorder>");
 	else
 	{
-		FloatList *theList = ListCreate();
-		ReadTheFile(argv[1], theList);
-		printf("The List: \n");
-		PrintList(theList);
-		MinMax(theList);
-		printf("Your keys: %s %s %s\n", argv[2], argv[3], argv[4]);
-		deleteKeys(theList, atof(argv[2]), atof(argv[3]), atof(argv[4]));
-		printf("No sorting, exchange min max, deleting keys\n");
-		PrintList(theList);
-		NodeSorting(theList, atof(argv[2]), atof(argv[3]), atof(argv[4]));
-		printf("After sorting\n");
-		PrintList(theList);
+		if (argv[3] > argv[4]) printf("Error!\n FirstBorder > SecondBorder!!!\n Need: FirstBorder < SecondBorder");
+		else
+		{
+			FloatList *theList = ListCreate();
+			ReadTheFile(argv[1], theList);
+			printf("The List: \n");
+			PrintList(theList);
+			MinMax(theList);
+			printf("Your keys: %s %s %s\n", argv[2], argv[3], argv[4]);
+			deleteKeys(theList, atof(argv[2]), atof(argv[3]), atof(argv[4]));
+			printf("No sorting, exchange min max, deleting keys\n");
+			PrintList(theList);
+			NodeSorting(theList, atof(argv[2]), atof(argv[3]), atof(argv[4]));
+			printf("After sorting\n");
+			PrintList(theList);
+		}
 	}
 	system("pause");
 
