@@ -12,6 +12,8 @@ int main(int argc, const char * argv[]) {
 
 	IntList *theList = CreateList();
 	IntList *MinList = CreateList();
+	int IndexMaximum;
+	int IndexMinimum;
 
 	for (int i = 1; i < argc; i++) {
 		IntNode *theNode = CreateN(atoi(argv[i]));
@@ -22,8 +24,11 @@ int main(int argc, const char * argv[]) {
 		printf("Simple List\n");
 		doPrintList(theList);
 	
-		doSorting(theList);
-		doChangeValue(theList);
+		IndexMaximum=doFindIndexMax(theList);
+		IndexMinimum=doFindIndexMin(theList);
+
+		doSorting(theList,IndexMinimum,IndexMaximum);
+
 		
 	system ("pause");
 }

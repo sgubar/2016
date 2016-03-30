@@ -10,7 +10,7 @@ struct __IntNode
 
 IntNode *CreateN(int perevod);
 void FreeIntNode(IntNode *aNode);
-void doSorting(IntNode *theList);
-void doChangeValue(IntNode *theList);
-
+void doSorting(IntNode *theList,int IndexMin,int IndexMax);
+int doFindIndexMax(IntNode *theList);
+int doFindIndexMin(IntNode *theList);
 #endif // FUNCTION_H_INCLUDED

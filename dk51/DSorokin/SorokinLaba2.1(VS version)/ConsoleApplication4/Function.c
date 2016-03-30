@@ -68,20 +68,83 @@ IntNode *NodeAtIndex(const IntList *aList, int anIndex)
 	return theResult;
 }
 
-void doSorting(IntNode *theList) {
+int doFindIndexMin(IntNode *theList) {
+	int a;
+	int min;
+	int max;
+	int IndexMinimum = 0;
+	a = CountList(theList);
+	
+	IntNode *MinNode = NodeAtIndex(theList, IndexMinimum);
+
+	
+	min = NodeAtIndex(theList, IndexMinimum)->value;
+
+
+	for (int k = 0; k < a; k++)
+	{
+
+		if (min >= MinNode->value)
+		{
+			min = MinNode->value;
+			IndexMinimum=k;
+		}
+		MinNode = MinNode->nextNode;
+
+	}
+	printf("Minimum %d\n", IndexMinimum);
+	return(IndexMinimum);
+}
+
+int doFindIndexMax(IntNode *theList) {
+	int a;
+	int max;
+	int IndexMaximum = 0;
+	a = CountList(theList);
+
+	IntNode *MaxNode = NodeAtIndex(theList, IndexMaximum);
+	
+	max = NodeAtIndex(theList, IndexMaximum)->value;
+
+	for (int k = 0; k < a; k++)
+	{
+		if (max <= MaxNode->value)
+		{
+			max = MaxNode->value;
+			IndexMaximum = k;
+		}
+
+		MaxNode = MaxNode->nextNode;
+	}
+	printf("Maximum %d\n", IndexMaximum);
+	return(IndexMaximum);
+}
+
+void doSorting(IntNode *theList, int IndexMin, int IndexMax) {
 	int a;
 	int j = 0;
+	int max;
 	int min;
-	int IndexMinimum = 0;
-	int IndexMaximum = 0;
+
 	int IndexRemoved = 0;
 	a = CountList(theList);
-	for (int j = 0; j < a; j++) {
+	int MinIndex;
+	int MaxIndex;
 
+	if (IndexMin > IndexMax) {
+		MinIndex = IndexMax;
+		MaxIndex = IndexMin;
+	}
+	else {
+		MinIndex = IndexMin;
+		MaxIndex = IndexMax;
+	}
+	int IndexMinimum = MinIndex;
+	for (int j = MinIndex; j < MaxIndex; j++) {
 		IntNode *MinNode = NodeAtIndex(theList, IndexMinimum);
 		min = NodeAtIndex(theList, IndexMinimum)->value;
-
-		for (int k = IndexMinimum; k < a; k++)
+				 
+		for (int k = IndexMinimum; k < IndexMax; k++)
 		{
 
 			if (min >= MinNode->value)
@@ -89,7 +152,7 @@ void doSorting(IntNode *theList) {
 				min = MinNode->value;
 				IndexRemoved = k;
 			}
-
+			
 			MinNode = MinNode->nextNode;
 
 		}
@@ -100,38 +163,4 @@ void doSorting(IntNode *theList) {
 	}
 	printf("Sorting List\n");
 	doPrintList(theList);
-}
-
-void doChangeValue(IntNode *theList) {
-	int a;
-	int min;
-	int max;
-	int IndexMinimum = 0;
-	int IndexMaximum = 0;
-	a = CountList(theList);
-	
-	IntNode *MinNode = NodeAtIndex(theList, IndexMinimum);
-	IntNode *MaxNode = NodeAtIndex(theList, IndexMaximum);
-	
-
-	for (int k = IndexMinimum; k < a; k++)
-	{
-
-		if (max <= MaxNode->value)
-		{
-			max = MaxNode->value;
-
-		}
-
-		if (min >= MinNode->value)
-		{
-			min = MinNode->value;
-		}
-
-		MinNode = MinNode->nextNode;
-		printf("Minimum%d\n", min);
-		printf("Maximum%d\n", max);
-
-
-	}
 }
