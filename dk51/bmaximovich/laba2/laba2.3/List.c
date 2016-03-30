@@ -26,6 +26,7 @@ IntList *CreateList()
 
 void FreeList(IntList *aList)
 {
+	// Check the input parameter
 	if (NULL == aList)
 	{
 		return;
@@ -42,7 +43,6 @@ void FreeList(IntList *aList)
 		free(theFreeNode);
 	}
 
-	//Free memory for the List structure
 	free(aList);
 }
 

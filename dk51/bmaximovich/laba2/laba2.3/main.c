@@ -17,42 +17,44 @@ void doPrintList(const IntList *aList);
 int main(int argc, const char * argv[])
 {
 	doTestList();
-
 	return 0;
 }
 
 void doTestList()
 {
-	printf("List ...\n");
-
+	printf("List\n");
+	printf("\n");
+	IntNode *theNode1 = CreateNode(1);
 	IntNode *theNode2 = CreateNode(2);
 	IntNode *theNode3 = CreateNode(3);
 	IntNode *theNode4 = CreateNode(4);
 	IntNode *theNode5 = CreateNode(5);
 	IntNode *theNode6 = CreateNode(6);
-
+	IntNode *theNode7 = CreateNode(7);
 	IntList *theList = CreateList();
-	printf("number of elements: %d\n", CountList(theList));
-
+	AddNode(theList, theNode1);
 	AddNode(theList, theNode2);
-	printf("number of elements: %d\n", CountList(theList));
 	AddNode(theList, theNode3);
-	printf("number of elements: %d\n", CountList(theList));
 	AddNode(theList, theNode4);
-	printf("number of elements: %d\n", CountList(theList));
 	AddNode(theList, theNode5);
-	printf("number of elements: %d\n", CountList(theList));
 	AddNode(theList, theNode6);
-	printf("number of elements: %d\n", CountList(theList));
+	AddNode(theList, theNode7);
+
+	doPrintList(theList);
 
 	IntList *theList1 = ÑreateDoubleList(theList);
-	printf("number of elements at DoubleList: %d\n", CountList(theList1));
+
+	printf("\n");
+	printf("doubleList\n");
+	printf("\n");
 
 	doPrintList(theList1);
 
 	FreeList(theList);
 
+	printf("\n");
 	printf("Done.\n");
+	system("pause");
 }
 
 void doPrintList(IntList *aList)
@@ -65,5 +67,4 @@ void doPrintList(IntList *aList)
 			printf("node[%d].value = %d\n", i, theNode->value);
 		}
 	}
-	system("pause");
 }

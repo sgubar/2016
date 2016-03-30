@@ -1,5 +1,5 @@
 //
-//  list.c
+//  doublelist.c
 // 
 //
 //  Created by Bogdan Maximovich on 23/03/16.

@@ -20,10 +20,9 @@ typedef struct IntList
 	IntNode *tail;
 	int count;
 }
-
 IntList;
 
-extern const int ListError;
+//Create a list
 
 IntList *CreateList();
 
@@ -36,5 +35,11 @@ int CountList(const IntList *aList);
 IntNode *IndexNode(const IntList *aList, int aIndex);
 
 IntList *CreateDoubleList(IntList *aList);
+IntList *SortOfTheList(IntList *aList, IntNode *aPrewNode, IntNode *aNewNode);
 
+IntList *MinMax(IntList *aList);
+int CountList(const IntList *aList);
+
+IntNode *InsertIndexNode(IntList *aList, IntNode *aNewNode, int anIndex);
+IntNode *RemoveIndexNode(IntList *aList, int anIndex);
 #endif /* List */
