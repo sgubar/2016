@@ -6,6 +6,7 @@
 
 charList *charListConstructor();
 void charListDestructor(charList *listToBeDeleted);
+void printCharList(const charList *inputList);
 int findMaxNode(const charList *inputList);
 int findMinNode(const charList *inputList);
 charNode *addNode(charList *inputList, charNode *newNode);
@@ -44,7 +45,7 @@ charNode *addNode(charList *inputList, charNode *newNode){
 	}
     if(NULL == inputList->left && NULL == inputList->right){
         inputList->left = inputList->right = newNode; //in case the input list is empty
-        newNode->prevNode = inputList->left;
+        newNode->prevNode = NULL;
     }else{
         charNode *rightNode = inputList->right; //save the right node
         inputList->right = newNode; //now the right node of the list is our new node
@@ -130,14 +131,14 @@ charList *swapList(charList *inputList){
         removeCharNodeAtIndex(inputList, minNodeIndex);
         removeCharNodeAtIndex(inputList, maxNodeIndex);
 
-      //  insertCharNodeAtIndex(inputList, minNode, maxNodeIndex);
-      //  insertCharNodeAtIndex(inputList, maxNode, minNodeIndex);
+        insertCharNodeAtIndex(inputList, minNode, maxNodeIndex);
+        insertCharNodeAtIndex(inputList, maxNode, minNodeIndex);
     }else{
         removeCharNodeAtIndex(inputList, maxNodeIndex);
         removeCharNodeAtIndex(inputList, minNodeIndex);
-
-      //  insertCharNodeAtIndex(inputList, maxNode, minNodeIndex);
-      //  insertCharNodeAtIndex(inputList, minNode, maxNodeIndex);
+        printf("Index of min is %d, max %d \n", minNodeIndex, maxNodeIndex);
+        //insertCharNodeAtIndex(inputList, maxNode, minNodeIndex);
+        //insertCharNodeAtIndex(inputList, minNode, maxNodeIndex);
     }
     return inputList;
 }
@@ -154,25 +155,45 @@ charNode *insertCharNodeAtIndex(charList *aList, charNode *aNewNode, int anIndex
 		aList->left = aList->right = aNewNode;
 	}else{
         charNode *theNode = charNodeAtIndex(aList, anIndex); //find a node with a given index
-        aNewNode->nextNode = theNode->nextNode; //new node should link to the next of found node
-        if(NULL == theNode->nextNode){ //if we are inserting aNewNode to the end of the list, edit list.tail
-            aList->right = aNewNode;
+        if(NULL == theNode->prevNode){
+            aList->left = aNewNode;
+            aNewNode->nextNode = theNode;
+            theNode->prevNode = aNewNode;
+        }else{
+            if(NULL == theNode->nextNode){ //if we are inserting aNewNode to the end of the list, edit list.tail
+                aList->right = theNode;
+                charNode *aPrevNode = theNode->prevNode;
+                aPrevNode->nextNode = aNewNode;
+                aNewNode->prevNode = aPrevNode;
+                aNewNode->nextNode = theNode;
+                theNode->prevNode = aNewNode;
+            } else {
+                    charNode *aPrevNode = theNode->prevNode;
+                    aPrevNode->nextNode = aNewNode;
+                    theNode->prevNode = aNewNode;
+                    aNewNode->nextNode = theNode;
+                    aNewNode->prevNode = aPrevNode;
+                }
+            }
         }
-        theNode->nextNode = aNewNode; //found node should link to the new node
-        aList->numOfNodes++; //so other functions would not freak out
-        return aNewNode;
-    }
+
+    aList->numOfNodes++; //so other functions would not freak out
+    return aNewNode;
 }
 
 charNode *removeCharNodeAtIndex(charList *aList, int anIndex){
     if(anIndex < aList->numOfNodes){
         charNode *theNode = charNodeAtIndex(aList, anIndex); //find a node with a given index
-        charNode *aNextNode = theNode->nextNode; //remember the next node
-
-        theNode->nextNode = aNextNode->nextNode; //break connection - aNextNode is being skipped
-
+        if(aList->right==theNode) aList->right=theNode->prevNode;
+        else if(aList->left==theNode) aList->left=theNode->nextNode;
+        else {
+            charNode *aNextNode = theNode->nextNode; //remember the next node
+            charNode *aPrevNode = theNode->prevNode; //and the previous one
+            aPrevNode->nextNode=aNextNode; //skip theNode
+            aNextNode->prevNode=aPrevNode;
+        }
         aList->numOfNodes -= 1;
 
-        return aNextNode;
+        return theNode;
     }
 }

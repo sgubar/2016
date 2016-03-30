@@ -9,12 +9,16 @@ int main()
     charNode *testNode1 = createCharNode('d');
     charNode *testNode2 = createCharNode('e');
     charNode *testNode3 = createCharNode('f');
+    charNode *nodeToBeInserted = createCharNode('z');
     charList *testList = charListConstructor();
     addNode(testList, testNode1);
     addNode(testList, testNode2);
     addNode(testList, testNode3);
     printCharList(testList);
-    printCharList(swapList(testList));
+    insertCharNodeAtIndex(testList, nodeToBeInserted, 2);
+    printf("Iserting \n");
+    printCharList(testList);
+    //printCharList(swapList(testList));
     printf("maxChar = %d\n", findMaxNode(testList));
     printf("minChar = %d\n", findMinNode(testList));
     return 0;
