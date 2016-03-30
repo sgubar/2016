@@ -21,12 +21,13 @@ charNode *charNodeAtIndex(const charList *aList, int anIndex);
 
 void printCharList(const charList *inputList);
 
-int findMaxNode(const charList *inputList);
-int findMinNode(const charList *inputList);
+charNode *findMaxNode(const charList *inputList);
+charNode *findMinNode(const charList *inputList);
+int maxNodeIndex(const charList *inputList);
 
 charNode *removeCharNodeAtIndex(charList *aList, int anIndex);
 charNode *insertCharNodeAtIndex(charList *aList, charNode *aNewNode, int anIndex);
-//charList arrangeCharList(charList *inputList);
+charList *arrangeCharList(charList *inputList);
 
 charList *swapList(charList *inputList);
 

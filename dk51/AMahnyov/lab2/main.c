@@ -6,20 +6,17 @@
 
 int main()
 {
-    charNode *testNode1 = createCharNode('d');
-    charNode *testNode2 = createCharNode('e');
-    charNode *testNode3 = createCharNode('f');
-    charNode *nodeToBeInserted = createCharNode('z');
+    charNode *testNode1 = createCharNode('a');
+    charNode *testNode2 = createCharNode('g');
+    charNode *testNode3 = createCharNode('z');
     charList *testList = charListConstructor();
     addNode(testList, testNode1);
     addNode(testList, testNode2);
     addNode(testList, testNode3);
     printCharList(testList);
-    insertCharNodeAtIndex(testList, nodeToBeInserted, 2);
-    printf("Iserting \n");
-    printCharList(testList);
+    //printf("Swapping\n");
     //printCharList(swapList(testList));
-    printf("maxChar = %d\n", findMaxNode(testList));
-    printf("minChar = %d\n", findMinNode(testList));
+    printf("Arranging\n");
+    arrangeCharList(testList);
     return 0;
 }

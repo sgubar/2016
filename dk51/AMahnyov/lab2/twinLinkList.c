@@ -7,11 +7,14 @@
 charList *charListConstructor();
 void charListDestructor(charList *listToBeDeleted);
 void printCharList(const charList *inputList);
-int findMaxNode(const charList *inputList);
-int findMinNode(const charList *inputList);
+charNode *findMaxNode(const charList *inputList);
+charNode *findMinNode(const charList *inputList);
 charNode *addNode(charList *inputList, charNode *newNode);
 charNode *removeCharNodeAtIndex(charList *aList, int anIndex);
 charNode *insertCharNodeAtIndex(charList *aList, charNode *aNewNode, int anIndex);
+charList *swapList(charList *inputList);
+charList *arrangeCharList(charList *inputList);
+int maxNodeIndex(const charList *inputList);
 
 charList *charListConstructor(){
     charList *newList = (charList *)malloc(sizeof(charList)); //memory allocation (!malloc returns a pointer!)
@@ -45,7 +48,6 @@ charNode *addNode(charList *inputList, charNode *newNode){
 	}
     if(NULL == inputList->left && NULL == inputList->right){
         inputList->left = inputList->right = newNode; //in case the input list is empty
-        newNode->prevNode = NULL;
     }else{
         charNode *rightNode = inputList->right; //save the right node
         inputList->right = newNode; //now the right node of the list is our new node
@@ -88,58 +90,53 @@ void printCharList(const charList *inputList){
 
 //it is pretty self-documentary, but it goes through the list and finds the maximum one
 //by comparing currentNode and updatable maxNode by ASCII table
-int findMaxNode(const charList *inputList){
+charNode *findMaxNode(const charList *inputList){
     charNode *currentNode = inputList->left;
     charNode *maxNode = currentNode;
-    int index = 0;
-    int indexOfMaxNode = 0;
     do{
         if(currentNode->letter > maxNode->letter){
             maxNode = currentNode;
-            indexOfMaxNode = index;
         }
         currentNode = currentNode->nextNode;
-        index++;
     }while(NULL != currentNode);
-    return indexOfMaxNode;
+    return maxNode;
+}
+
+int maxNodeIndex(const charList *inputList){
+    charNode *currentNode = inputList->left;
+    charNode *maxNode = currentNode;
+    int maxIndex = 0;
+    int i = 0;
+    do{
+        if(currentNode->letter > maxNode->letter){
+            maxNode = currentNode;
+            maxIndex = i;
+        }
+        i++;
+        currentNode = currentNode->nextNode;
+    }while(NULL != currentNode);
+    return maxIndex;
 }
 
 //the same stuff for minNode
-int findMinNode(const charList *inputList){
+charNode *findMinNode(const charList *inputList){
     charNode *currentNode = inputList->left;
     charNode *minNode = currentNode;
-    int index = 0;
-    int indexOfMinNode = 0;
     do{
         if(currentNode->letter < minNode->letter){
             minNode = currentNode;
-            indexOfMinNode = index;
         }
         currentNode = currentNode->nextNode;
-        index++;
     }while(NULL != currentNode);
-    return indexOfMinNode;
+    return minNode;
 }
 
 charList *swapList(charList *inputList){
-    int minNodeIndex = findMinNode(inputList);
-    int maxNodeIndex = findMaxNode(inputList);
-
-    charNode *minNode = charNodeAtIndex(inputList, minNodeIndex);
-    charNode *maxNode = charNodeAtIndex(inputList, maxNodeIndex);
-    if(minNodeIndex > maxNodeIndex){
-        removeCharNodeAtIndex(inputList, minNodeIndex);
-        removeCharNodeAtIndex(inputList, maxNodeIndex);
-
-        insertCharNodeAtIndex(inputList, minNode, maxNodeIndex);
-        insertCharNodeAtIndex(inputList, maxNode, minNodeIndex);
-    }else{
-        removeCharNodeAtIndex(inputList, maxNodeIndex);
-        removeCharNodeAtIndex(inputList, minNodeIndex);
-        printf("Index of min is %d, max %d \n", minNodeIndex, maxNodeIndex);
-        //insertCharNodeAtIndex(inputList, maxNode, minNodeIndex);
-        //insertCharNodeAtIndex(inputList, minNode, maxNodeIndex);
-    }
+    charNode *minNode = findMinNode(inputList);
+    charNode *maxNode = findMaxNode(inputList);
+    char minLetter = minNode->letter;
+    minNode->letter=maxNode->letter;
+    maxNode->letter=minLetter;
     return inputList;
 }
 
@@ -192,8 +189,19 @@ charNode *removeCharNodeAtIndex(charList *aList, int anIndex){
             aPrevNode->nextNode=aNextNode; //skip theNode
             aNextNode->prevNode=aPrevNode;
         }
-        aList->numOfNodes -= 1;
+        aList->numOfNodes--;
 
         return theNode;
     }
+}
+
+charList *arrangeCharList(charList *inputList){
+    charList *arrangedList = charListConstructor();
+    charNode *maxNode = NULL;
+    do{
+    maxNode = findMaxNode(inputList);
+    addNode(arrangedList, maxNode);
+    removeCharNodeAtIndex(inputList, maxNodeIndex(inputList));
+    }while(inputList->numOfNodes>0);
+    return arrangedList;
 }
