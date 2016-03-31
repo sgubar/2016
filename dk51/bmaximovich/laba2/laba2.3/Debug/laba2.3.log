@@ -1,16 +1,15 @@
-﻿Сборка начата 30.03.2016 20:36:35.
+﻿Сборка начата 31.03.2016 20:50:13.
      1>Проект "C:\Users\Богдан\Documents\2016\dk51\bmaximovich\laba2\laba2.3\laba2.3.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt DoubleList.c List.c main.c Node.c
-         Node.c
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt main.c
          main.c
-     1>c:\users\богдан\documents\2016\dk51\bmaximovich\laba2\laba2.3\main.c(45): warning C4013: СreateDoubleList: нет определения; предполагается "extern" с возвратом типа "int"
-     1>c:\users\богдан\documents\2016\dk51\bmaximovich\laba2\laba2.3\main.c(57): warning C4013: system: нет определения; предполагается "extern" с возвратом типа "int"
-     1>c:\users\богдан\documents\2016\dk51\bmaximovich\laba2\laba2.3\main.c(45): warning C4047: инициализация: "IntList *" отличается по уровням косвенного обращения от "int"
-     1>c:\users\богдан\documents\2016\dk51\bmaximovich\laba2\laba2.3\main.c(61): warning C4028: формальный параметр 1 отличается от объявления
-         List.c
-         DoubleList.c
-         Создание кода...
+     1>c:\users\богдан\documents\2016\dk51\bmaximovich\laba2\laba2.3\main.c(47): warning C4013: swapNodeAtList: нет определения; предполагается "extern" с возвратом типа "int"
+     1>c:\users\богдан\documents\2016\dk51\bmaximovich\laba2\laba2.3\main.c(47): warning C4047: функция: "const IntList *" отличается по уровням косвенного обращения от "int"
+     1>c:\users\богдан\documents\2016\dk51\bmaximovich\laba2\laba2.3\main.c(47): warning C4024: doPrintList: различные типы для формального и фактического параметров 1
+     1>c:\users\богдан\documents\2016\dk51\bmaximovich\laba2\laba2.3\main.c(49): warning C4013: СreateDoubleList: нет определения; предполагается "extern" с возвратом типа "int"
+     1>c:\users\богдан\documents\2016\dk51\bmaximovich\laba2\laba2.3\main.c(61): warning C4013: system: нет определения; предполагается "extern" с возвратом типа "int"
+     1>c:\users\богдан\documents\2016\dk51\bmaximovich\laba2\laba2.3\main.c(49): warning C4047: инициализация: "IntList *" отличается по уровням косвенного обращения от "int"
+     1>c:\users\богдан\documents\2016\dk51\bmaximovich\laba2\laba2.3\main.c(65): warning C4028: формальный параметр 1 отличается от объявления
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Богдан\Documents\2016\dk51\bmaximovich\laba2\Debug\laba2.3.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Богдан\Documents\2016\dk51\bmaximovich\laba2\Debug\laba2.3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Богдан\Documents\2016\dk51\bmaximovich\laba2\Debug\laba2.3.lib" /MACHINE:X86 Debug\DoubleList.obj
          Debug\List.obj
@@ -21,4 +20,4 @@
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:01.24
+Затраченное время: 00:00:00.45

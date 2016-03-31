@@ -34,12 +34,12 @@ int CountList(const IntList *aList);
 
 IntNode *IndexNode(const IntList *aList, int aIndex);
 
-IntList *CreateDoubleList(IntList *aList);
-IntList *SortOfTheList(IntList *aList, IntNode *aPrewNode, IntNode *aNewNode);
+//Create a New list with double value 
 
-IntList *MinMax(IntList *aList);
+IntList *CreateDoubleList(IntList *aList);
+
 int CountList(const IntList *aList);
 
-IntNode *InsertIndexNode(IntList *aList, IntNode *aNewNode, int anIndex);
-IntNode *RemoveIndexNode(IntList *aList, int anIndex);
+IntNode *MaxNode(const IntList *aList);
+IntNode *MinNode(const IntList *aList);
 #endif /* List */

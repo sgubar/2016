@@ -112,3 +112,34 @@ IntNode *IndexNode(const IntList *aList, int anIndex)
 
 	return theResult;
 }
+IntNode *findMaxNode(const IntList *aList) {
+	IntNode *currentNode = aList->head;
+	IntNode *maxNode = currentNode;
+	do {
+		if (currentNode->value >= maxNode->value) {
+			maxNode = currentNode;
+		}
+		currentNode = currentNode->nextNode;
+	} while (NULL != currentNode);
+	return maxNode;
+}
+IntNode *findMinNode(const IntList *inputList) {
+	IntNode *currentNode = inputList->head;
+	IntNode *minNode = currentNode;
+	do {
+		if (currentNode->value <= minNode->value) {
+			minNode = currentNode;
+		}
+		currentNode = currentNode->nextNode;
+	} while (NULL != currentNode);
+	return minNode;
+}
+
+IntList *swapNodeAtList(IntList *inputList) {
+	IntNode *minNode = findMinNode(inputList); //i use this, not do-while cycle for sake of simplicity
+	IntNode *maxNode = findMaxNode(inputList);
+	int minvalue = minNode->value;
+	minNode->value = maxNode->value;
+	maxNode->value = minvalue;
+	return inputList;
+}
