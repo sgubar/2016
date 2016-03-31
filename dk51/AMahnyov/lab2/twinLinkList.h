@@ -23,7 +23,7 @@ void printCharList(const charList *inputList);
 
 charNode *findMaxNode(const charList *inputList);
 charNode *findMinNode(const charList *inputList);
-int maxNodeIndex(const charList *inputList);
+charNode *ignoredMax(const charList *inputList, const int ignorance);
 
 charNode *removeCharNodeAtIndex(charList *aList, int anIndex);
 charNode *insertCharNodeAtIndex(charList *aList, charNode *aNewNode, int anIndex);

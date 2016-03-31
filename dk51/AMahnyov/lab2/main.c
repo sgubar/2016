@@ -17,6 +17,6 @@ int main()
     //printf("Swapping\n");
     //printCharList(swapList(testList));
     printf("Arranging\n");
-    arrangeCharList(testList);
+    printCharList(arrangeCharList(testList));
     return 0;
 }
