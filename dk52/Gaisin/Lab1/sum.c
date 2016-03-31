@@ -1,9 +1,11 @@
 #include <stdio.h>
 
 #include "sum.h"/*conect by using header file*/
+#include "fact.h"
 
-int dosum()
+int dosum(int A, int C)
 {
+#if 0
 	int p, e, sum = 1;
 	printf("enter again c\n");
 	scanf("%i", &e);
@@ -20,4 +22,13 @@ int dosum()
 	{
 		printf("error\n");
 	}
+#else
+	int theSum = 0;
+	for (int D = 0; D < C; D ++)
+	{
+		theSum += dofact(A + D);
+	}
+	
+	return theSum;
+#endif
 }

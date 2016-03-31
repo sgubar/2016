@@ -7,13 +7,20 @@
 
 int main ()
 {
-	int q, w, fac, pt, b, sum; /*declarations variables*/
+	int q, a, b,c; /*declarations variables*/
 	printf("enter a\n");
-	scanf("%i", &w);
-	int theFact = dofact(fac);/*appropriation variables theFact and other, value "fac" ...*/
-	int theCsqrt = docsqrt(sqrt(pt) / b);
-	int theSum = dosum(sum);
-	q = w * theCsqrt + theSum * theFact;
+	scanf("%i", &a);
+	scanf("%i", &c);
+	scanf("%i", &b);
+//	int theFact = dofact(fac);/*appropriation variables theFact and other, value "fac" ...*/
+//	int theCsqrt = docsqrt(sqrt(pt) / b);
+//	int theSum = dosum(w,c);
+	q = 0;
+	if (b != 0)
+	{
+		q = a * docsqrt(b, c)/b + dosum(a, c);
+	}
+	
 	printf("result %i\n", q);
 	return 0;
 }
