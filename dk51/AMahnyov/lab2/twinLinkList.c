@@ -1,6 +1,7 @@
 /*Copyright (c), 2016, Mahnyov Aleksander. All rights reserved*/
 
 #include <stdlib.h>
+#include <string.h>
 #include "twinLinkList.h"
 #include "twinLinkNode.h"
 
@@ -14,7 +15,7 @@ charNode *addNode(charList *inputList, charNode *newNode);
 charNode *removeCharNodeAtIndex(charList *aList, int anIndex);
 charNode *insertCharNodeAtIndex(charList *aList, charNode *aNewNode, int anIndex);
 charList *swapList(charList *inputList);
-charList *arrangeCharList(charList *inputList);
+void arrangeCharList(charList *inputList);
 
 charList *charListConstructor(){
     charList *newList = (charList *)malloc(sizeof(charList)); //memory allocation (!malloc returns a pointer!)
@@ -49,13 +50,17 @@ charNode *addNode(charList *inputList, charNode *newNode){
     if(NULL == inputList->left && NULL == inputList->right){
         inputList->left = inputList->right = newNode; //in case the input list is empty
     }else{
-        charNode *rightNode = inputList->right; //save the right node
-        inputList->right = newNode; //now the right node of the list is our new node
-        if(NULL != rightNode){
-            rightNode->nextNode = newNode; //old right node should link to the new right node
-            newNode->prevNode = rightNode; //new right node should back-link to the old right node
-        }
+//        charNode *rightNode = inputList->right; //save the right node
+//        inputList->right = newNode; //now the right node of the list is our new node
+//        if(NULL != rightNode){
+//            rightNode->nextNode = newNode; //old right node should link to the new right node
+//            newNode->prevNode = rightNode; //new right node should back-link to the old right node
+//        }
+				newNode->prevNode = inputList->right;
+				inputList->right->nextNode = newNode; //<! - in it place right != NULL
+				inputList->right = newNode;
     }
+
     inputList->numOfNodes++;
     return newNode;
 }
@@ -79,13 +84,24 @@ charNode *charNodeAtIndex(const charList *aList, int anIndex){
 	return theResult;
 }
 
-void printCharList(const charList *inputList){
-	for (int i = 0; i < inputList->numOfNodes; i++){
-		charNode *theNode = charNodeAtIndex(inputList, i);
-		if (NULL != theNode){
-			printf("node[%d].value = %c\n", i, theNode->letter);
-		}
+void printCharList(const charList *inputList)
+{
+	charNode *theNode = inputList->left;
+	int i = 0;
+	
+	while (NULL != theNode)
+	{
+		printf("node[%d].value = %c\n", i, theNode->letter);
+		theNode = theNode->nextNode;
+		i ++;
 	}
+	
+//	for (int i = 0; i < inputList->numOfNodes; i++){
+//		charNode *theNode = charNodeAtIndex(inputList, i);
+//		if (NULL != theNode){
+//			printf("node[%d].value = %c\n", i, theNode->letter);
+//		}
+//	}
 }
 
 //it is pretty self-documentary, but it goes through the list and finds the maximum one
@@ -200,19 +216,67 @@ charNode *removeCharNodeAtIndex(charList *aList, int anIndex){
 
         return theNode;
     }
+	
+	return NULL;
 }
 
-charList *arrangeCharList(charList *inputList){
-    int i = 0;
-    do{
-        printf("entered, i=%d\n", i);
-        charNode *maxNode = ignoredMax(inputList, i);
-        printf("Max: %c\n", maxNode->letter);
-        insertCharNodeAtIndex(inputList, maxNode, 0);
-        printf("inserted\n");
-        i++;
-    }while(i<6);
-
-    return inputList;
+void arrangeCharList(charList *inputList)
+{
+	// Do simple sorting
+	charNode *theNode = inputList->left; //<!- seems like 'left' is head
+	
+	while (NULL != theNode)
+	{
+		charNode *theSubNode = theNode->nextNode;
+	
+		while (NULL != theSubNode)
+		{
+			if (theNode->letter > theSubNode->letter)
+			{
+				//swap nodes
+				//1. Swap pointers
+			
+				charNode *theTmpNode = theNode;
+				if (NULL != theNode->prevNode)
+				{
+					theNode->prevNode->nextNode = theSubNode;
+				}
+				else
+				{
+					//the border case: update head
+					inputList->left = theSubNode;
+				}
+			
+				if (NULL != theSubNode->nextNode)
+				{
+					theSubNode->nextNode->prevNode = theNode;
+				}
+				else
+				{
+					//the border case: update tail.
+					inputList->right = theNode;
+				}
+			
+				charNode *theTmpNext = theNode->nextNode;
+				charNode *theTmpPrev = theNode->prevNode;
+			
+				theNode->nextNode = theSubNode->nextNode;
+				theNode->prevNode = (theNode != theSubNode->prevNode) ? theSubNode->prevNode : theSubNode;
+			
+				theSubNode->nextNode = (theSubNode != theTmpNext) ? theTmpNext : theNode;
+				theSubNode->prevNode = theTmpPrev;
+			
+				//3. Corrected local variables
+				theTmpNode = theNode;
+				theNode = theSubNode;
+				theSubNode = theTmpNode;
+			}
+		
+			theSubNode = theSubNode->nextNode;
+		}
+	
+		theNode = theNode->nextNode;
+	}
+	
 }
 // 3/31 - DK51.LR2.Mahnyov_Aleksander

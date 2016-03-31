@@ -27,7 +27,7 @@ charNode *ignoredMax(const charList *inputList, const int ignorance);
 
 charNode *removeCharNodeAtIndex(charList *aList, int anIndex);
 charNode *insertCharNodeAtIndex(charList *aList, charNode *aNewNode, int anIndex);
-charList *arrangeCharList(charList *inputList);
+void arrangeCharList(charList *inputList);
 
 charList *swapList(charList *inputList);
 
