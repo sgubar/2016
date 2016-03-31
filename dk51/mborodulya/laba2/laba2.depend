@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1459441021 source:c:\temp\laba2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"list.h"
+	"sortLib.h"
+	"node.h"
+
+1459438581 source:c:\temp\laba2\node.c
+	"node.h"
+	<stdlib.h>
+
+1459439300 c:\temp\laba2\node.h
+	<stdio.h>
+
+1459441077 source:c:\temp\laba2\list.c
+	"list.h"
+	"node.h"
+	<stdlib.h>
+
+1459439238 c:\temp\laba2\list.h
+	<stdio.h>
+
+1459440268 c:\temp\laba2\sortlib.h
+	<stdio.h>
+	"list.h"
+
+1459440256 source:c:\temp\laba2\sortlib.c
+	<stdio.h>
+	"list.h"
+	"node.h"
+
