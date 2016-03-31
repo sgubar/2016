@@ -1,0 +1,1 @@
+float factorial(int a);
