@@ -10,11 +10,11 @@
 #include "FunList.h"
 
 IntNode *CreateNode(int converting) {
-	IntNode *theResult = (IntNode *)malloc(sizeof(IntNode));
-	theResult->value = converting;
-	theResult->nextNode = NULL;
-	return theResult;
-}
+	IntNode *Result = (IntNode *)malloc(sizeof(IntNode));
+	Result->value = converting;
+	Result->nextNode = NULL;
+	return Result;
+} // создание ноды (выделение памяти)
 
 void FreeIntNode(IntNode *Node)
 {
@@ -22,40 +22,40 @@ void FreeIntNode(IntNode *Node)
 	{
 		free(Node);
 	}
-}
+} // если выделили, то и должны очистить 
 
-IntNode *AddNode(IntList *aList, IntNode *aNewNode)
+IntNode *AddNode(IntList *List, IntNode *NewNode)
 {
-	if (NULL == aList || NULL == aNewNode)
+	if (NULL == List || NULL == NewNode)
 	{
 		return NULL;
 	}
-	if (NULL == aList->head && NULL == aList->tail)
+	if (NULL == List->head && NULL == List->tail)
 	{
-		aList->head = aList->tail = aNewNode;
+		List->head = List->tail = NewNode;
 	}
 	else
 	{
-		IntNode *theTail = aList->tail;
-		aList->tail = aNewNode;
+		IntNode *theTail = List->tail;
+		List->tail = NewNode;
 
 		if (NULL != theTail)
 		{
-			theTail->nextNode = aList->tail;
+			theTail->nextNode = List->tail;
 		}
 	}
-	aList->count += 1;
-	return aNewNode;
-}
+	List->count += 1;
+	return NewNode;
+} // добавление ноды в список
 
-IntNode *NodeAtIndex(const IntList *aList, int anIndex)
+IntNode *NodeAtIndex(const IntList *List, int anIndex)
 {
 	IntNode *theResult = NULL;
 
-	if (NULL != aList && anIndex < aList->count)
+	if (NULL != List && anIndex < List->count)
 	{
 		int i = 0;
-		IntNode *theNode = aList->head;
+		IntNode *theNode = List->head;
 
 		do
 		{
@@ -72,12 +72,12 @@ IntNode *NodeAtIndex(const IntList *aList, int anIndex)
 	}
 
 	return theResult;
-}
+} // функция для нахождения ноды по индексу
 
-void distribution(IntNode *theList) {
+void distribution(IntNode *theList) {  //сортировка
 	int count;
 	int min;
-	int j = 0;
+	int i = 0;
 	int max = NodeAtIndex(theList, 0)->value;
 	int IndexMin = 0;
 	int IndexMax = 0;
@@ -86,7 +86,7 @@ void distribution(IntNode *theList) {
 	count = CountList(theList);
 	IntNode *TheNode = NodeAtIndex(theList, 0);
 
-	for (int b = 0; b < count; b++) {
+	for (int b = 0; b < count; b++) {  //цикл для нахождения максимального значения 
 		if (max < TheNode->value)
 		{
 			max = TheNode->value;
@@ -95,9 +95,9 @@ void distribution(IntNode *theList) {
 		TheNode = TheNode->nextNode;
 	}
 
-	printf("IndexMax = %d \n", IndexMax);
+	printf("IndexMax = %d \n", IndexMax); // вывод значения ноды в которой находится наш максимум
 	
-	for (int j = 0; j < IndexMax; j++) {
+	for (int i = 0; i < IndexMax; i++)  {	// цикл, который выставляет значения до максимального по возрастанию 
 
 		IntNode *MinNode = NodeAtIndex(theList, IndexMin);
 		min = NodeAtIndex(theList, IndexMin)->value;
@@ -123,33 +123,3 @@ void distribution(IntNode *theList) {
 	PrintList(theList);
 }
 
-void UpdatedValue(IntNode *theList) {
-	int count;
-	int min = 0;
-	int max = 0;
-	int IndexMin = 0;
-	int IndexMax = 0;
-	count = CountList(theList);
-
-	IntNode *MinNode = NodeAtIndex(theList, IndexMin);
-	IntNode *MaxNode = NodeAtIndex(theList, IndexMax);
-
-
-	for (int k = IndexMin; k < count; k++)
-	{
-
-		if (max <= MaxNode->value)
-		{
-			max = MaxNode->value;
-
-		}
-
-		if (min >= MinNode->value)
-		{
-			min = MinNode->value;
-		}
-
-		MinNode = MinNode->nextNode;
-		
-	}
-}

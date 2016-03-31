@@ -14,14 +14,14 @@ typedef struct __IntList
 
 IntList *Create_L();
 
-void FreeList(IntList *aList);
-int CountList(const IntList *aList);
-void PrintList(IntList *aList);
+void FreeList(IntList *List);
+int CountList(const IntList *List);
+void PrintList(IntList *List);
 
-IntNode *AddNode(IntList *aList, IntNode *aNewNode);
-IntNode *NodeAtIndex(const IntList *aList, int aIndex);
+IntNode *AddNode(IntList *List, IntNode *NewNode);
+IntNode *NodeAtIndex(const IntList *List, int aIndex);
 
-IntNode *InsertNode(IntList *aList, IntNode *aNewNode, int anIndex);
-IntNode *RemovedNode(IntList *aList, int anIndex);
+IntNode *InsertNode(IntList *List, IntNode *NewNode, int anIndex);
+IntNode *RemovedNode(IntList *List, int anIndex);
 
 #pragma once

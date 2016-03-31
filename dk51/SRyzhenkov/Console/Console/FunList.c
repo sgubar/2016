@@ -11,7 +11,7 @@
 
 const int ListError = -1;
 
-IntList *Create_L()
+IntList *Create_L()	// создание и выделение памяти для списка
 {
 	IntList *theList = (IntList *)malloc(sizeof(IntList));
 	theList->head = NULL; 
@@ -20,13 +20,13 @@ IntList *Create_L()
 	return theList;
 }
 
-void FreeList(IntList *aList)
+void FreeList(IntList *List)	//очистка списка
 {
-	if (NULL == aList)
+	if (NULL == List)
 	{
 		return;
 	}
-	IntNode *theNode = aList->head;
+	IntNode *theNode = List->head;
 
 	while (NULL != theNode)
 	{
@@ -34,26 +34,26 @@ void FreeList(IntList *aList)
 		theNode = theNode->nextNode;
 		free(theNodeToBeFree);
 	}
-	free(aList);
+	free(List);
 }
 
-int CountList(const IntList *aList)
+int CountList(const IntList *List)	
 {
 	int theResult = ListError;
 
-	if (NULL != aList)
+	if (NULL != List)
 	{
-		theResult = aList->count;
+		theResult = List->count;
 	}
 
 	return theResult;
 }
 
-void PrintList(IntList *aList)
+void PrintList(IntList *List)		//функция для вывода списка
 {
-	for (int i = 0; i < CountList(aList); i++)
+	for (int i = 0; i < CountList(List); i++)
 	{
-		IntNode *theNode = NodeAtIndex(aList, i);
+		IntNode *theNode = NodeAtIndex(List, i);
 		if (NULL != theNode)
 		{
 			printf("node[%d].value = %d\n", i, theNode->value);
@@ -61,52 +61,52 @@ void PrintList(IntList *aList)
 	}
 }
 
-IntNode *InsertNode(IntList *aList, IntNode *aNewNode, int anIndex) {
-	if (NULL == aList || NULL == aNewNode || anIndex>aList->count + 1)
+IntNode *InsertNode(IntList *List, IntNode *NewNode, int anIndex) {		//вствляет ноду по заданому индексу
+	if (NULL == List || NULL == NewNode || anIndex>List->count + 1)
 	{
 		return NULL;
 	}
 	else
 	{
 		if (0 == anIndex) {
-			aNewNode->nextNode = aList->head;
-			aList->head = aNewNode;
-			aList->count++;
-			return(aNewNode);
+			NewNode->nextNode = List->head;
+			List->head = NewNode;
+			List->count++;
+			return(NewNode);
 		}
 		else {
-			IntNode *theNode = NodeAtIndex(aList, anIndex);
-			IntNode *PreviosNode = NodeAtIndex(aList, anIndex - 1);
-			aNewNode->nextNode = PreviosNode->nextNode;
-			PreviosNode->nextNode = aNewNode;
-			aList->count++;
-			return aNewNode;
+			IntNode *theNode = NodeAtIndex(List, anIndex);
+			IntNode *PreviosNode = NodeAtIndex(List, anIndex - 1);
+			NewNode->nextNode = PreviosNode->nextNode;
+			PreviosNode->nextNode = NewNode;
+			List->count++;
+			return NewNode;
 		}
 	}
 }
 
-IntNode *RemovedNode(IntList *aList, int anIndex) {
-	if (anIndex < aList->count) {
-		if ((NULL == aList) || (anIndex>aList->count))
+IntNode *RemovedNode(IntList *List, int anIndex) {
+	if (anIndex < List->count) {
+		if ((NULL == List) || (anIndex>List->count))
 		{
 			return NULL;
 		}
 		else
 		{
 			if (anIndex == 0) {
-				IntNode *theNode = NodeAtIndex(aList, anIndex);
-				aList->head = NodeAtIndex(aList, anIndex + 1);
-				aList->count -= 1;
+				IntNode *theNode = NodeAtIndex(List, anIndex);
+				List->head = NodeAtIndex(List, anIndex + 1);
+				List->count -= 1;
 				return theNode;
 			}
 			else {
-				IntNode *theNode = NodeAtIndex(aList, anIndex);
-				IntNode *PreviosNode = NodeAtIndex(aList, anIndex - 1);
-				if (anIndex == aList->count) aList->tail = PreviosNode;
+				IntNode *theNode = NodeAtIndex(List, anIndex);
+				IntNode *PreviosNode = NodeAtIndex(List, anIndex - 1);
+				if (anIndex == List->count) List->tail = PreviosNode;
 				PreviosNode->nextNode = theNode->nextNode;
-				aList->count -= 1;
+				List->count -= 1;
 				return theNode;
 			}
 		}
 	}
-}
+}  // удаление ноды

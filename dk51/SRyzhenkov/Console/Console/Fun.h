@@ -12,7 +12,7 @@ struct __IntNode
 };
 
 IntNode *CreateNode(int converting);
-void FreeIntNode(IntNode *aNode);
+void FreeIntNode(IntNode *Node);
 void distribution(IntNode *theList);
-void UpdatedValue(IntNode *theList);
+//void UpdatedValue(IntNode *theList);
 #pragma once

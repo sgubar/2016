@@ -1,0 +1,16 @@
+﻿  Fun.c
+Fun.c(81): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+Fun.c(86): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+Fun.c(87): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+Fun.c(102): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+Fun.c(103): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+Fun.c(118): warning C4133: 'function': incompatible types - from 'IntNode *' to 'IntList *'
+Fun.c(123): warning C4133: 'function': incompatible types - from 'IntNode *' to 'IntList *'
+  FunList.c
+  Source.c
+Source.c(34): warning C4133: 'function': incompatible types - from 'IntList *' to 'IntNode *'
+  Generating code
+d:\документы\visual studio 2015\projects\console\console\funlist.c(112): warning C4715: 'RemovedNode': not all control paths return a value
+  All 13 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Console.vcxproj -> D:\Документы\Visual Studio 2015\Projects\Console\x64\Release\Console.exe
