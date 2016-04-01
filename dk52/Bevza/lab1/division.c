@@ -11,6 +11,7 @@
 #include "sum.h"
 int division () /*initialization of function "division"*/
 {
+int Division;
 	Division=SUM1()/SUM2(); /*calculating the division of function "SUM1" and "SUM2"*/
  return division;
 }
