@@ -10,17 +10,17 @@
 #include "powC.h"
 int PowC()
 {
-	int C=0, y=0;
+	int C=0, y=0, powC;
 	printf("Enter C\n");
 	scanf("%i", &C);
-	PowC=1;
+	powC=1;
 	y=0;
 	do {
-	PowC=PowC*5;
+	powC=powC*5;
 	y++;
 }
 	while (y!=C);
-	printf("PowC=%i\n", PowC);
-	return 0;
+	printf("PowC=%i\n", powC);
+	return PowC;
 }
 
