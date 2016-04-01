@@ -11,7 +11,7 @@
 int B;
 int FactorialB()
 {
-	int x=0;
+	int x=0, factorialB;
 	printf("Enter B\n");
 	scanf("%i", &B);
 	factorialB=1;
