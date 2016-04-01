@@ -14,12 +14,12 @@ int FactorialB()
 	int x=0;
 	printf("Enter B\n");
 	scanf("%i", &B);
-	FactorialB=1;
+	factorialB=1;
 	x=1;
 	do {
-	FactorialB=FactorialB*(B--);
+	factorialB=factorialB*(B--);
 }
 	while (B!=1);
-	printf("FactorialB=%i\n", FactorialB);
-	return 0;
+	printf("FactorialB=%i\n", factorialB);
+	return FactorialB;
 }
