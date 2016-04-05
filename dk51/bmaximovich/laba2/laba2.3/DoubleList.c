@@ -11,21 +11,11 @@
 #include <stdlib.h>
 #include "DoubleList.h"
 
-IntList *ÑreateDoubleList(IntList *aList)
+void *ÑreateDoubleList(IntList *aList, int i)
 {
-	IntList *theList = CreateList();
-	IntNode *theNode = aList->head;
-
-	while (theNode != NULL)
-	{
-		IntNode *theNode1 = CreateNode(theNode->value);
-		IntNode *theNode2 = CreateNode(theNode->value);
-		AddNode(theList, theNode1);
-		AddNode(theList, theNode2);
-		theNode = theNode->nextNode;
-
-	}
-	return theList;
-
+	int findNode = ValueNode(aList, i);
+	IntNode *R = IndexNode(aList, findNode);
+	IntNode *T = CreateNode(R->value);
+	SLInsertNodeAtIndex(aList, T, findNode);
 
 }

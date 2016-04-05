@@ -12,6 +12,6 @@
 
 #include <stdio.h>
 #include "list.h"
-IntList *CreateDoubleList(IntList *aList);
+void *ÑreateDoubleList(IntList *aList, int i);
 
 #endif /* DoubleList */

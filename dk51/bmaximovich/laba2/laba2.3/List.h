@@ -40,6 +40,9 @@ IntList *CreateDoubleList(IntList *aList);
 
 int CountList(const IntList *aList);
 
+int *ValueNode(const IntList *aList, int anValue);
+
 IntNode *MaxNode(const IntList *aList);
 IntNode *MinNode(const IntList *aList);
+IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex);
 #endif /* List */

@@ -112,6 +112,56 @@ IntNode *IndexNode(const IntList *aList, int anIndex)
 
 	return theResult;
 }
+IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
+{
+	// Check the input parameter
+	if (NULL == aList || NULL == aNewNode || anIndex>aList->count + 1)
+	{
+		return NULL;
+	}
+
+	else
+	{
+		if (0 == anIndex)
+		{
+			aNewNode->nextNode = aList->head;
+			aList->head = aNewNode;
+			aList->count += 1;
+		}
+		else
+		{
+			IntNode *PrevNode = IndexNode(aList, anIndex - 1);
+			if (anIndex == aList->count + 1) aList->tail = aNewNode;
+			else aNewNode->nextNode = PrevNode->nextNode;
+			PrevNode->nextNode = aNewNode;
+			aList->count += 1;
+		}
+		return(aNewNode);
+	}
+}
+int *ValueNode(const IntList *aList, int anValue)
+{
+	int i = 0;
+	if (NULL != aList)
+	{
+		IntNode *theNode = aList->head;
+
+		do
+		{
+			if (theNode->value == anValue)
+			{
+				break;
+			}
+
+			i++;
+			theNode = theNode->nextNode; // link to next node
+
+		} while (NULL != theNode);
+	}
+	return i;
+}
+
+
 IntNode *findMaxNode(const IntList *aList) {
 	IntNode *currentNode = aList->head;
 	IntNode *maxNode = currentNode;
@@ -136,7 +186,7 @@ IntNode *findMinNode(const IntList *inputList) {
 }
 
 IntList *swapNodeAtList(IntList *inputList) {
-	IntNode *minNode = findMinNode(inputList); //i use this, not do-while cycle for sake of simplicity
+	IntNode *minNode = findMinNode(inputList);
 	IntNode *maxNode = findMaxNode(inputList);
 	int minvalue = minNode->value;
 	minNode->value = maxNode->value;

@@ -46,14 +46,11 @@ void doTestList()
 	printf("\n");
 	doPrintList(swapNodeAtList(theList));
 
-	IntList *theList1 = ÑreateDoubleList(theList);
-
 	printf("\n");
 	printf("doubleList\n");
-	printf("\n");
-
-	doPrintList(theList1);
-
+	printf("\n"); 
+	ÑreateDoubleList(theList, 3);
+	doPrintList(theList);
 	FreeList(theList);
 
 	printf("\n");
