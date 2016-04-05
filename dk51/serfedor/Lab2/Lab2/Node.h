@@ -3,7 +3,7 @@
 //  Lab2
 //
 //  Created by Sergey Fedorenko on 3/23/16.
-//  Copyright Â© 2016 Sergey Fedorenko. All rights reserved.
+//  Copyright © 2016 Sergey Fedorenko. All rights reserved.
 //
 
 

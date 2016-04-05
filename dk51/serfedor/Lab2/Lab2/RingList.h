@@ -3,7 +3,7 @@
 //  Lab2
 //
 //  Created by Sergey Fedorenko on 3/23/16.
-//  Copyright Â© 2016 Sergey Fedorenko. All rights reserved.
+//  Copyright © 2016 Sergey Fedorenko. All rights reserved.
 //
 
 
@@ -22,15 +22,23 @@ typedef struct __RingList
 	int count;
 }RingList;
 
+
 extern const int kListError;
 
 RingList *CreateList();
+
+RingList *doList();
+
 void FreeList(RingList *aList);
 
 IntNode *AddNode(RingList *aList, IntNode *aNewNode);
 
 int SLCountList(const RingList *aList);
-IntNode *NodeAtIndex(const RingList *aList, int aIndex);
-RingList *MinMax(RingList *aList);
 
+IntNode *NodeAtIndex(const RingList *aList, int aIndex);
+
+void doPrintList(const RingList *aList);
+
+RingList *MinMax(RingList *aList);
+void doSortingValue(IntNode *theList, int IndexMin, int IndexMax);
 #endif /* RingList_h */
