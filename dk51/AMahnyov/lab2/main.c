@@ -6,12 +6,19 @@
 #include <string.h>
 
 static void doDemo();
+static void doTask();
 
 int main(int argc, char* argv[]){
-    if(argc > 1){
+    if(argc == 1){
         if(strcmp(argv[1], "demo")==0){
             doDemo();
         }
+
+        if(strcmp(argv[1], "task")==0){
+            doTask();
+        }
+    } else {
+        printf("Invalid syntax.\nlab2 <key>\nPossible keys: 'task', 'demo'\n");
     }
     return 0;
 }
@@ -36,4 +43,24 @@ static void doDemo(){
     //printCharList(testList);
     printf("Swapping\n");
     printCharList(swapList(testList));
+}
+
+static void doTask(){
+    FILE *inputFile;
+    char ch;
+    charList *theList = charListConstructor();
+    if((inputFile = fopen("input.txt", "r")) == NULL){
+        printf("Invalid file!\n");
+        exit(1);
+    }
+    while((ch=fgetc(inputFile)) != EOF){
+        charNode *nodeToAdd = createCharNode(ch);
+        addNode(theList, nodeToAdd);
+    }
+    if(checkIfSim(theList) == 0){
+        printf("Input file string is symmetrical\n");
+    }else{
+        printf("Input file string is not symmetrical\n");
+    }
+    fclose(inputFile);
 }
