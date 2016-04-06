@@ -1,5 +1,5 @@
 //  list.c
-// 
+//
 //
 //  Created by Bogdan Maximovich on 23/03/16.
 //  Copyright © 2016 Bogdan Maximovich. All rights reserved.
@@ -168,6 +168,7 @@ IntNode *RemovedNodeAtIndex(IntList *aList, int anIndex)
 int *ValueNode(const IntList *aList, int anValue)
 {
 	int i = 0;
+	int found = 0;
 	if (NULL != aList)
 	{
 		IntNode *theNode = aList->head;
@@ -176,6 +177,7 @@ int *ValueNode(const IntList *aList, int anValue)
 		{
 			if (theNode->value == anValue)
 			{
+			    found = 1;
 				break;
 			}
 
@@ -184,7 +186,11 @@ int *ValueNode(const IntList *aList, int anValue)
 
 		} while (NULL != theNode);
 	}
-	return i;
+	if(found == 1){
+        return i;
+	}else{
+        return -1;
+	}
 }
 
 

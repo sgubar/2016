@@ -1,6 +1,6 @@
 //
 //  Sorting.c
-//  
+//
 //
 //  Created by Bogdan Maximovich on 5/04/16.
 //  Copyright © 2016 Bogdan Maximovich. All rights reserved.
@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Node.h"
-#include "list.h"
+#include "List.h"
 #include "DoubleList.h"
 #include "Sorting.h"
 
@@ -39,7 +39,7 @@ void SortingNode(IntNode *theList)
 
 		}
 
-		InsertNode(theList, RemovedNode(theList, RemovedAtIndex), InMin);
+		InsertNodeAtIndex(theList, RemovedNodeAtIndex(theList, RemovedAtIndex), InMin);
 		InMin++;
 
 	}

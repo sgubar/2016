@@ -1,147 +1,21 @@
-﻿Сборка начата 06.04.2016 18:27:35.
-     1>Проект "C:\Users\Богдан\Desktop\laba2\laba2.3\laba2.3.vcxproj" в узле 2 (целевые объекты Build).
+﻿Сборка начата 06.04.2016 19:09:50.
+     1>Проект "C:\Users\Богдан\Documents\2016\dk51\bmaximovich\laba2\laba2.3\laba2.3.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt DoubleList.c List.c Node.c Sorting.c main.c
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt main.c
          main.c
-     1>c:\users\богдан\desktop\laba2\laba2.3\doublelist.h(15): error C2085: СreateDoubleList: отсутствует в списке формальных параметров
-     1>c:\users\богдан\desktop\laba2\laba2.3\main.c(14): error C2085: doTestList: отсутствует в списке формальных параметров
-     1>c:\users\богдан\desktop\laba2\laba2.3\main.c(15): error C2085: doPrintList: отсутствует в списке формальных параметров
-     1>c:\users\богдан\desktop\laba2\laba2.3\main.c(18): error C2085: main: отсутствует в списке формальных параметров
-     1>c:\users\богдан\desktop\laba2\laba2.3\main.c(18): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
-     1>c:\users\богдан\desktop\laba2\laba2.3\main.c(19): warning C4013: doTestList: нет определения; предполагается "extern" с возвратом типа "int"
-     1>c:\users\богдан\desktop\laba2\laba2.3\main.c(24): error C2371: doTestList: переопределение; различные базовые типы
-     1>c:\users\богдан\desktop\laba2\laba2.3\main.c(43): warning C4013: doPrintList: нет определения; предполагается "extern" с возвратом типа "int"
-     1>c:\users\богдан\desktop\laba2\laba2.3\main.c(47): warning C4013: swapNodeAtList: нет определения; предполагается "extern" с возвратом типа "int"
-     1>c:\users\богдан\desktop\laba2\laba2.3\main.c(54): warning C4013: СreateDoubleList: нет определения; предполагается "extern" с возвратом типа "int"
-     1>c:\users\богдан\desktop\laba2\laba2.3\main.c(62): warning C4013: system: нет определения; предполагается "extern" с возвратом типа "int"
-     1>c:\users\богдан\desktop\laba2\laba2.3\main.c(66): error C2371: doPrintList: переопределение; различные базовые типы
-         Sorting.c
-     1>c:\users\богдан\desktop\laba2\laba2.3\doublelist.h(15): error C2085: СreateDoubleList: отсутствует в списке формальных параметров
-     1>c:\users\богдан\desktop\laba2\laba2.3\sorting.h(16): error C2085: SortingNode: отсутствует в списке формальных параметров
-     1>c:\users\богдан\desktop\laba2\laba2.3\sorting.c(17): error C2085: SortingNode: отсутствует в списке формальных параметров
-     1>c:\users\богдан\desktop\laba2\laba2.3\sorting.c(17): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
-     1>c:\users\богдан\desktop\laba2\laba2.3\sorting.c(23): error C2065: theList: необъявленный идентификатор
-     1>c:\users\богдан\desktop\laba2\laba2.3\sorting.c(23): warning C4047: функция: "const IntList *" отличается по уровням косвенного обращения от "int"
-     1>c:\users\богдан\desktop\laba2\laba2.3\sorting.c(23): warning C4024: CountList: различные типы для формального и фактического параметров 1
-     1>c:\users\богдан\desktop\laba2\laba2.3\sorting.c(26): error C2065: theList: необъявленный идентификатор
-     1>c:\users\богдан\desktop\laba2\laba2.3\sorting.c(26): warning C4047: функция: "const IntList *" отличается по уровням косвенного обращения от "int"
-     1>c:\users\богдан\desktop\laba2\laba2.3\sorting.c(26): warning C4024: IndexNode: различные типы для формального и фактического параметров 1
-     1>c:\users\богдан\desktop\laba2\laba2.3\sorting.c(27): error C2065: theList: необъявленный идентификатор
-     1>c:\users\богдан\desktop\laba2\laba2.3\sorting.c(27): warning C4047: функция: "const IntList *" отличается по уровням косвенного обращения от "int"
-     1>c:\users\богдан\desktop\laba2\laba2.3\sorting.c(27): warning C4024: IndexNode: различные типы для формального и фактического параметров 1
-     1>c:\users\богдан\desktop\laba2\laba2.3\sorting.c(42): warning C4013: InsertNode: нет определения; предполагается "extern" с возвратом типа "int"
-     1>c:\users\богдан\desktop\laba2\laba2.3\sorting.c(42): error C2065: theList: необъявленный идентификатор
-     1>c:\users\богдан\desktop\laba2\laba2.3\sorting.c(42): warning C4013: RemovedNode: нет определения; предполагается "extern" с возвратом типа "int"
-     1>c:\users\богдан\desktop\laba2\laba2.3\sorting.c(47): warning C4013: doPrintList: нет определения; предполагается "extern" с возвратом типа "int"
-     1>c:\users\богдан\desktop\laba2\laba2.3\sorting.c(47): error C2065: theList: необъявленный идентификатор
-         Node.c
-         List.c
-     1>c:\users\богдан\desktop\laba2\laba2.3\node.h(14): error C2082: переопределение формального параметра "IntNode"
-     1>c:\users\богдан\desktop\laba2\laba2.3\node.h(23): error C2085: CreateNode: отсутствует в списке формальных параметров
-     1>c:\users\богдан\desktop\laba2\laba2.3\node.h(26): error C2085: FreeNode: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(58): error C2085: _calloc_base: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(65): error C2085: calloc: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(70): error C2085: _callnewh: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(77): error C2085: _expand: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(82): error C2085: _free_base: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(87): error C2085: free: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(93): error C2085: _malloc_base: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(99): error C2085: malloc: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(105): error C2085: _msize: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(112): error C2085: _realloc_base: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(119): error C2085: realloc: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(127): error C2085: _recalloc: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(132): error C2085: _aligned_free: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(139): error C2085: _aligned_malloc: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(147): error C2085: _aligned_offset_malloc: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(155): error C2085: _aligned_msize: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(164): error C2085: _aligned_offset_realloc: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(174): error C2085: _aligned_offset_recalloc: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(182): error C2085: _aligned_realloc: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_malloc.h(191): error C2085: _aligned_recalloc: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stddef.h(29): error C2085: _errno: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stddef.h(32): error C2085: _set_errno: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stddef.h(33): error C2085: _get_errno: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stddef.h(46): error C2085: __threadid: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stddef.h(48): error C2085: __threadhandle: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_search.h(30): error C2085: bsearch_s: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_search.h(38): error C2085: qsort_s: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_search.h(51): error C2085: bsearch: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_search.h(58): error C2085: qsort: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_search.h(68): error C2085: _lfind_s: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_search.h(77): error C2085: _lfind: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_search.h(87): error C2085: _lsearch_s: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_search.h(96): error C2085: _lsearch: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_search.h(191): error C2085: lfind: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_search.h(200): error C2085: lsearch: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(53): error C2085: _itow_s: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(67): error C2085: _itow: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(76): error C2085: _ltow_s: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(90): error C2085: _ltow: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(98): error C2085: _ultow_s: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(112): error C2085: _ultow: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(118): error C2085: wcstod: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(125): error C2085: _wcstod_l: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(132): error C2085: wcstol: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(140): error C2085: _wcstol_l: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(147): error C2085: wcstoll: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(155): error C2085: _wcstoll_l: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(162): error C2085: wcstoul: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(170): error C2085: _wcstoul_l: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(177): error C2085: wcstoull: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(185): error C2085: _wcstoull_l: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(191): error C2085: wcstold: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(198): error C2085: _wcstold_l: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(204): error C2085: wcstof: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(211): error C2085: _wcstof_l: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(216): error C2085: _wtof: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(222): error C2085: _wtof_l: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(227): error C2085: _wtoi: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(233): error C2085: _wtoi_l: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(238): error C2085: _wtol: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(244): error C2085: _wtol_l: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(249): error C2085: _wtoll: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(255): error C2085: _wtoll_l: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(263): error C2085: _i64tow_s: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(270): error C2085: _i64tow: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(278): error C2085: _ui64tow_s: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(285): error C2085: _ui64tow: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(290): error C2085: _wtoi64: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(296): error C2085: _wtoi64_l: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(303): error C2085: _wcstoi64: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(311): error C2085: _wcstoi64_l: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(318): error C2085: _wcstoui64: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(326): error C2085: _wcstoui64_l: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(337): error C2085: _wfullpath: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(349): error C2085: _wmakepath_s: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(367): error C2085: _wmakepath: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(371): error C2082: переопределение формального параметра "_wperror"
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(380): error C2085: _wsplitpath: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(392): error C2085: _wsplitpath_s: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(411): error C2085: _wdupenv_s: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(418): error C2085: _wgetenv: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(427): error C2085: _wgetenv_s: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(440): error C2085: _wputenv: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(446): error C2085: _wputenv_s: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(453): error C2085: _wsearchenv_s: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(467): error C2085: _wsearchenv: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\corecrt_wstdlib.h(471): error C2085: _wsystem: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdlib.h(37): error C2085: _swab: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdlib.h(50): error C2085: exit: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdlib.h(51): error C2085: _exit: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdlib.h(52): error C2085: _Exit: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdlib.h(53): error C2085: quick_exit: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdlib.h(54): error C2085: abort: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdlib.h(63): error C2085: _set_abort_behavior: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdlib.h(68): error C2085: _onexit_t: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdlib.h(139): error C2085: atexit: отсутствует в списке формальных параметров
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdlib.h(140): error C2061: синтаксическая ошибка: идентификатор "_onexit_t"
-     1>c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdlib.h(143): fatal error C1903: не удается восстановить после предыдущих ошибок; остановка компиляции
-         ВНУТРЕННЯЯ ОШИБКА КОМПИЛЯТОРА в "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe"
-             Выберите команду "Техническая поддержка" в меню "Справка" Visual C++ или
-             откройте справочный файл технической поддержки для получения доп. сведений
-     1>Сборка проекта "C:\Users\Богдан\Desktop\laba2\laba2.3\laba2.3.vcxproj" завершена (целевые объекты Build) с ошибкой.
+     1>c:\users\богдан\documents\2016\dk51\bmaximovich\laba2\laba2.3\main.c(47): warning C4013: swapNodeAtList: нет определения; предполагается "extern" с возвратом типа "int"
+     1>c:\users\богдан\documents\2016\dk51\bmaximovich\laba2\laba2.3\main.c(47): warning C4047: функция: "const IntList *" отличается по уровням косвенного обращения от "int"
+     1>c:\users\богдан\documents\2016\dk51\bmaximovich\laba2\laba2.3\main.c(47): warning C4024: doPrintList: различные типы для формального и фактического параметров 1
+     1>c:\users\богдан\documents\2016\dk51\bmaximovich\laba2\laba2.3\main.c(62): warning C4013: system: нет определения; предполагается "extern" с возвратом типа "int"
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Богдан\Documents\2016\dk51\bmaximovich\laba2\Debug\laba2.3.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Богдан\Documents\2016\dk51\bmaximovich\laba2\Debug\laba2.3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Богдан\Documents\2016\dk51\bmaximovich\laba2\Debug\laba2.3.lib" /MACHINE:X86 Debug\DoubleList.obj
+         Debug\List.obj
+         Debug\main.obj
+         Debug\Node.obj
+         Debug\Sorting.obj
+         laba2.3.vcxproj -> C:\Users\Богдан\Documents\2016\dk51\bmaximovich\laba2\Debug\laba2.3.exe
+     1>Сборка проекта "C:\Users\Богдан\Documents\2016\dk51\bmaximovich\laba2\laba2.3\laba2.3.vcxproj" завершена (целевые объекты Build).
 
-Ошибка сборки.
+Сборка успешно завершена.
 
-Затраченное время: 00:00:00.43
+Затраченное время: 00:00:00.44
