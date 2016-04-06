@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1459441783 source:c:\workspace\dk51\amahnyov\lab2\main.c
+1459884840 source:c:\workspace\dk51\amahnyov\lab2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"twinLinkList.h"
 	"twinLinkNode.h"
+	<string.h>
 
-1459440821 c:\workspace\dk51\amahnyov\lab2\twinlinklist.h
+1459884397 c:\workspace\dk51\amahnyov\lab2\twinlinklist.h
 	"twinLinkNode.h"
 
 1459271127 c:\workspace\dk51\amahnyov\lab2\twinlinknode.h
@@ -15,8 +16,9 @@
 	<stdio.h>
 	<stdlib.h>
 
-1459441658 source:c:\workspace\dk51\amahnyov\lab2\twinlinklist.c
+1459884909 source:c:\workspace\dk51\amahnyov\lab2\twinlinklist.c
 	<stdlib.h>
+	<string.h>
 	"twinLinkList.h"
 	"twinLinkNode.h"
 

@@ -27,8 +27,10 @@ charNode *ignoredMax(const charList *inputList, const int ignorance);
 
 charNode *removeCharNodeAtIndex(charList *aList, int anIndex);
 charNode *insertCharNodeAtIndex(charList *aList, charNode *aNewNode, int anIndex);
+
 void arrangeCharList(charList *inputList);
 
 charList *swapList(charList *inputList);
 
+int checkIfSim(const charList *inputList);
 #endif // TWINLINKLIST_H_INCLUDED
