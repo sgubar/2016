@@ -1,6 +1,6 @@
 //
 //  main.c
-//  
+//
 //
 //  Created by Bogdan Maximovich on 23/03/16.
 //  Copyright © 2016 Bogdan Maximovich. All rights reserved.
@@ -47,11 +47,11 @@ void doTestList()
 	doPrintList(swapNodeAtList(theList));
     printf("\n");
 	printf("doubleList\n");
-	printf("\n"); 
+	printf("\n");
 
 
 
-	ÑreateDoubleList(theList, 2);
+	CreateDoubleList(theList, 10);
 	doPrintList(theList);
 	FreeList(theList);
 
@@ -62,7 +62,7 @@ void doTestList()
 	system("pause");
 }
 
-void doPrintList(IntList *aList)
+void doPrintList(const IntList *aList)
 {
 	for (int i = 0; i < CountList(aList); i++)
 	{
