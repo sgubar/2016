@@ -44,5 +44,6 @@ int *ValueNode(const IntList *aList, int anValue);
 
 IntNode *MaxNode(const IntList *aList);
 IntNode *MinNode(const IntList *aList);
-IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex);
+IntNode *InsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex);
+IntNode *RemovedNodeAtIndex(IntList *aList, int anIndex)
 #endif /* List */

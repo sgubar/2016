@@ -45,16 +45,20 @@ void doTestList()
 	printf("Swapping\n");
 	printf("\n");
 	doPrintList(swapNodeAtList(theList));
-
-	printf("\n");
+    printf("\n");
 	printf("doubleList\n");
 	printf("\n"); 
-	ÑreateDoubleList(theList, 3);
+
+
+
+	ÑreateDoubleList(theList, 2);
 	doPrintList(theList);
 	FreeList(theList);
 
 	printf("\n");
 	printf("Done.\n");
+	printf("\n");
+
 	system("pause");
 }
 

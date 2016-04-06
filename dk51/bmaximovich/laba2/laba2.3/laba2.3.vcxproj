@@ -145,12 +145,14 @@
     <ClInclude Include="DoubleList.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="Sorting.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DoubleList.c" />
     <ClCompile Include="List.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="Node.c" />
+    <ClCompile Include="Sorting.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

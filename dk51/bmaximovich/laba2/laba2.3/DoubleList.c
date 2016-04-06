@@ -16,6 +16,6 @@ void *ÑreateDoubleList(IntList *aList, int i)
 	int findNode = ValueNode(aList, i);
 	IntNode *R = IndexNode(aList, findNode);
 	IntNode *T = CreateNode(R->value);
-	SLInsertNodeAtIndex(aList, T, findNode);
+	InsertNodeAtIndex(aList, T, findNode);
 
 }
