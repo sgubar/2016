@@ -1,17 +1,18 @@
 #pragma once
 //
-//  DoubleList.h
-//
+//  Sorting.h
+//  
 //
 //  Created by Bogdan Maximovich on 23/03/16.
 //  Copyright © 2016 Bogdan Maximovich. All rights reserved.
 //
 
-#ifndef DoubleList
-#define DoubleList
-
-#include <stdio.h>
+#ifndef Sorting
+#define Sorting
+#include "Node.h"
 #include "list.h"
-void *CreateDoubleList(IntList *aList, int i);
+#include <stdio.h>
 
-#endif /* DoubleList */
+void SortingNode(IntNode *theList);
+
+#endif /* Sorting */

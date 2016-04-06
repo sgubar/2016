@@ -1,5 +1,5 @@
 //  list.c
-// 
+//
 //
 //  Created by Bogdan Maximovich on 23/03/16.
 //  Copyright © 2016 Bogdan Maximovich. All rights reserved.
@@ -112,7 +112,7 @@ IntNode *IndexNode(const IntList *aList, int anIndex)
 
 	return theResult;
 }
-IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
+IntNode *InsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
 {
 	// Check the input parameter
 	if (NULL == aList || NULL == aNewNode || anIndex>aList->count + 1)
@@ -139,9 +139,36 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
 		return(aNewNode);
 	}
 }
+IntNode *RemovedNodeAtIndex(IntList *aList, int anIndex)
+{
+	if ((NULL == aList) || (anIndex>aList->count))
+	{
+		return NULL;
+	}
+	else
+	{
+		IntNode *RemovedNode = IndexNode(aList, anIndex);
+		if (0 == anIndex)
+		{
+			aList->head = IndexNode(aList, anIndex + 1);
+			aList->count -= 1;
+		}
+		else
+		{
+			IntNode *PrevNode = IndexNode(aList, anIndex - 1);
+			if (anIndex == aList->count) aList->tail = PrevNode;
+			PrevNode->nextNode = RemovedNode->nextNode;
+			aList->count -= 1;
+
+		}
+		return(RemovedNode);
+	}
+}
+
 int *ValueNode(const IntList *aList, int anValue)
 {
 	int i = 0;
+	int found = 0;
 	if (NULL != aList)
 	{
 		IntNode *theNode = aList->head;
@@ -150,6 +177,7 @@ int *ValueNode(const IntList *aList, int anValue)
 		{
 			if (theNode->value == anValue)
 			{
+			    found = 1;
 				break;
 			}
 
@@ -158,7 +186,11 @@ int *ValueNode(const IntList *aList, int anValue)
 
 		} while (NULL != theNode);
 	}
-	return i;
+	if(found == 1){
+        return i;
+	}else{
+        return -1;
+	}
 }
 
 

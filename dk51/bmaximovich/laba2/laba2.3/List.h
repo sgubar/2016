@@ -1,7 +1,7 @@
 #pragma once
 //
 //  List.h
-//  
+//
 //
 //  Created by Bogdan Maximovich on 23/03/16.
 //  Copyright © 2016 Bogdan Maximovich. All rights reserved.
@@ -11,10 +11,10 @@
 #define list
 
 #include <stdio.h>
+#include "Node.h"
+typedef struct __IntList IntList;
 
-typedef struct IntNode IntNode;
-
-typedef struct IntList
+typedef struct __IntList
 {
 	IntNode *head;
 	IntNode *tail;
@@ -34,9 +34,8 @@ int CountList(const IntList *aList);
 
 IntNode *IndexNode(const IntList *aList, int aIndex);
 
-//Create a New list with double value 
+//Create a New list with double value
 
-IntList *CreateDoubleList(IntList *aList);
 
 int CountList(const IntList *aList);
 
@@ -44,5 +43,6 @@ int *ValueNode(const IntList *aList, int anValue);
 
 IntNode *MaxNode(const IntList *aList);
 IntNode *MinNode(const IntList *aList);
-IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex);
+IntNode *InsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex);
+IntNode *RemovedNodeAtIndex(IntList *aList, int anIndex);
 #endif /* List */

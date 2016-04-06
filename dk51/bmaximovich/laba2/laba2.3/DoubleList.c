@@ -1,6 +1,6 @@
 //
 //  doublelist.c
-// 
+//
 //
 //  Created by Bogdan Maximovich on 23/03/16.
 //  Copyright © 2016 Bogdan Maximovich. All rights reserved.
@@ -11,11 +11,12 @@
 #include <stdlib.h>
 #include "DoubleList.h"
 
-void *ÑreateDoubleList(IntList *aList, int i)
+void *CreateDoubleList(IntList *aList, int i)
 {
 	int findNode = ValueNode(aList, i);
-	IntNode *R = IndexNode(aList, findNode);
-	IntNode *T = CreateNode(R->value);
-	SLInsertNodeAtIndex(aList, T, findNode);
-
+	if(findNode >= 0){
+        IntNode *R = IndexNode(aList, findNode);
+        IntNode *T = CreateNode(R->value);
+        InsertNodeAtIndex(aList, T, findNode);
+	}
 }
