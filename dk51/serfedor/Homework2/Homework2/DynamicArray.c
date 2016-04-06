@@ -20,8 +20,17 @@ DynamicIntArray *createDAInt(int aSize)
 }
 void freeDAInt(DynamicIntArray *anArray)
 {
-	free(anArray);
+	free(anArray->storage);
+	anArray->storage = NULL;
+	anArray->logicalSize = anArray->physicalSize = 0;
 }
 
 int valueAtIndex(int anIndex);
-void setValueAtIndex(int anValue, int anIndex);
+void setValueAtIndex(int anValue, int anIndex, DynamicIntArray *anArray)
+{
+	if (anArray->logicalSize == anArray->physicalSize) {
+		anArray->physicalSize *= 2;
+		anArray->storage = (int *)realloc(anArray->storage, anArray->physicalSize * sizeof(int));
+	}
+	anArray->storage[anArray->physicalSize++] = anValue;
+}
