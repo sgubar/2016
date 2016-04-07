@@ -21,7 +21,7 @@ typedef struct __dynamicIntArray
 DynamicIntArray *createDAInt(int aSize);
 void freeDAInt(DynamicIntArray *anArray);
 
-int valueAtIndex(int anIndex);
+int valueAtIndex(int anIndex, DynamicIntArray*anArray);
 void setValueAtIndex(int anValue, int anIndex);
 
 #endif /* DynamicArray_h */
