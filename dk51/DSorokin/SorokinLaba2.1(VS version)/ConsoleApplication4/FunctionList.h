@@ -1,3 +1,11 @@
+//
+//  FunctionList.h
+//  Lab2
+//
+//  Created by Sorokin Dmytro on 4/7/16.
+//  Copyright (C) 2016 Sorokin Dmytro. All rights reserved.
+//
+
 #pragma once
 #ifndef FUNCTIONLIST_H_INCLUDED
 #define FUNCTIONLIST_H_INCLUDED

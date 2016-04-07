@@ -1,3 +1,12 @@
+//
+//  FunctionList.c
+//  Lab2
+//
+//  Created by Sorokin Dmytro on 4/7/16.
+//  Copyright (C) 2016 Sorokin Dmytro. All rights reserved.
+//
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "Function.h"

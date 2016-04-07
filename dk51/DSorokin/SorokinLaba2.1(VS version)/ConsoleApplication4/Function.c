@@ -1,3 +1,14 @@
+//
+//  Function.c
+//  Lab2
+//
+//  Created by Sorokin Dmytro on 4/7/16.
+//  Copyright (C) 2016 Sorokin Dmytro. All rights reserved.
+//
+
+
+
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "Function.h"
@@ -92,7 +103,7 @@ int doFindIndexMin(IntNode *theList) {
 		MinNode = MinNode->nextNode;
 
 	}
-	printf("Minimum %d\n", IndexMinimum);
+	printf("\nMinimum %d\n", IndexMinimum);
 	return(IndexMinimum);
 }
 
@@ -116,11 +127,11 @@ int doFindIndexMax(IntNode *theList) {
 
 		MaxNode = MaxNode->nextNode;
 	}
-	printf("Maximum %d\n", IndexMaximum);
+	printf("\nMaximum %d\n", IndexMaximum);
 	return(IndexMaximum);
 }
 
-void doSorting(IntNode *theList, int IndexMin, int IndexMax) {
+void selectionSort(IntNode *theList, int IndexMin, int IndexMax) {
 	int a;
 	int j = 0;
 	int max;
@@ -142,8 +153,7 @@ void doSorting(IntNode *theList, int IndexMin, int IndexMax) {
 	int IndexMinimum = MinIndex;
 	for (int j = MinIndex; j < MaxIndex; j++) {
 		IntNode *MinNode = NodeAtIndex(theList, IndexMinimum);
-		min = NodeAtIndex(theList, IndexMinimum)->value;
-				 
+		min = NodeAtIndex(theList, IndexMinimum)->value;	 
 		for (int k = IndexMinimum; k < IndexMax; k++)
 		{
 
@@ -161,6 +171,27 @@ void doSorting(IntNode *theList, int IndexMin, int IndexMax) {
 		IndexMinimum++;
 
 	}
-	printf("Sorting List\n");
+	printf("\nselectionSort\n");
 	doPrintList(theList);
+}
+
+void insertionSort(IntNode *theList, int count)
+{
+	for (int theOut = 1; theOut < count; theOut++)
+	{
+		int theTmp = NodeAtIndex(theList, theOut)->value;
+		int theIn = theOut;
+
+		while (theIn > 0 && NodeAtIndex(theList, theIn-1)->value >= theTmp)
+		{
+			NodeAtIndex(theList, theIn)->value = NodeAtIndex(theList, theIn - 1)->value;
+			--theIn;
+		}
+
+		NodeAtIndex(theList, theIn)->value = theTmp;
+	}
+
+	printf("\ninsertionSort\n");
+	doPrintList(theList);
+
 }
