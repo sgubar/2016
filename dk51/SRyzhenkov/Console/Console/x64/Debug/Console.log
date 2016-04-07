@@ -1,3 +1,14 @@
-﻿  Source.c
-d:\документы\visual studio 2015\projects\console\console\source.c(33): warning C4133: 'function': incompatible types - from 'IntList *' to 'IntNode *'
-LINK : fatal error LNK1168: cannot open d:\документы\visual studio 2015\Projects\Console\x64\Debug\Console.exe for writing
+﻿  Fun.c
+d:\документы\visual studio 2015\projects\console\console\fun.c(81): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(86): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(87): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(102): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(103): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(118): warning C4133: 'function': incompatible types - from 'IntNode *' to 'IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(123): warning C4133: 'function': incompatible types - from 'IntNode *' to 'IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(133): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(135): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(136): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(137): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(142): warning C4133: 'function': incompatible types - from 'IntNode *' to 'IntList *'
+  Console.vcxproj -> d:\документы\visual studio 2015\Projects\Console\x64\Debug\Console.exe

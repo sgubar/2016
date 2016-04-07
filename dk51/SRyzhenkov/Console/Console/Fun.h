@@ -4,6 +4,7 @@
 //  Created by Ryzhenkov Serhii on 30/03/16.
 //  Copyright © 2016 Ryzhenkov Serhii. All rights reserved.
 
+
 typedef struct __IntNode IntNode;
 struct __IntNode
 {
@@ -14,5 +15,7 @@ struct __IntNode
 IntNode *CreateNode(int converting);
 void FreeIntNode(IntNode *Node);
 void distribution(IntNode *theList);
+void bubbleSort(IntNode *theList, int count);
+
 //void UpdatedValue(IntNode *theList);
 #pragma once

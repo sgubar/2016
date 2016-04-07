@@ -123,3 +123,21 @@ void distribution(IntNode *theList) {  //сортировка
 	PrintList(theList);
 }
 
+void bubbleSort(IntNode *theList, int CountList)
+{
+	
+	for (int theOut = CountList - 1; theOut > 1; theOut--)
+	{
+		for (int theIn = 0; theIn < theOut; theIn++)
+		{
+			if (NodeAtIndex(theList, theIn)->value > NodeAtIndex(theList, theIn+1)->value)
+			{
+				int theTmp = NodeAtIndex(theList, theIn)->value;
+				NodeAtIndex(theList, theIn)->value = NodeAtIndex(theList, theIn + 1)->value;
+				NodeAtIndex(theList, theIn + 1)->value = theTmp;
+			}
+		}
+	}
+	printf("bubbleSort\n");
+	PrintList(theList);
+}

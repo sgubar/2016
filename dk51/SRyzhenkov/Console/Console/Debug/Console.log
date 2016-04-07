@@ -1,4 +1,9 @@
-﻿  Fun.c
+﻿  Source.c
+d:\документы\visual studio 2015\projects\console\console\source.c(33): warning C4133: 'function': incompatible types - from 'IntList *' to 'IntNode *'
+d:\документы\visual studio 2015\projects\console\console\source.c(35): warning C4133: 'function': incompatible types - from 'IntList *' to 'IntNode *'
+d:\документы\visual studio 2015\projects\console\console\source.c(35): warning C4047: 'function': 'int' differs in levels of indirection from 'int (__cdecl *)(const IntList *)'
+d:\документы\visual studio 2015\projects\console\console\source.c(35): warning C4024: 'bubbleSort': different types for formal and actual parameter 2
+  Fun.c
 d:\документы\visual studio 2015\projects\console\console\fun.c(81): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
 d:\документы\visual studio 2015\projects\console\console\fun.c(86): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
 d:\документы\visual studio 2015\projects\console\console\fun.c(87): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
@@ -6,4 +11,11 @@ d:\документы\visual studio 2015\projects\console\console\fun.c(102): wa
 d:\документы\visual studio 2015\projects\console\console\fun.c(103): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
 d:\документы\visual studio 2015\projects\console\console\fun.c(118): warning C4133: 'function': incompatible types - from 'IntNode *' to 'IntList *'
 d:\документы\visual studio 2015\projects\console\console\fun.c(123): warning C4133: 'function': incompatible types - from 'IntNode *' to 'IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(133): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(135): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(136): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(137): warning C4133: 'function': incompatible types - from 'IntNode *' to 'const IntList *'
+d:\документы\visual studio 2015\projects\console\console\fun.c(141): warning C4129: 'S': unrecognized character escape sequence
+d:\документы\visual studio 2015\projects\console\console\fun.c(142): warning C4133: 'function': incompatible types - from 'IntNode *' to 'IntList *'
+  Generating Code...
   Console.vcxproj -> d:\документы\visual studio 2015\Projects\Console\Debug\Console.exe
