@@ -43,6 +43,7 @@ IntList *SortingNode(IntList *theList)
 		InMin++;
 
 	}
-	printf("Edited list\n");
+	printf("\n");
+	printf("Edited list\n\n");
 	return theList;
 }

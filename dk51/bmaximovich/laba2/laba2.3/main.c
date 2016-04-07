@@ -56,7 +56,7 @@ void doTestList()
 	doPrintList(theList);
 
 	printf("\n");
-	printf("doubleList\n\n");
+	printf("ListWithDoubleNode\n\n");
 
     printf("Enter node for double\n\n");
     scanf("%d/n",&CreateDoubleNode);
