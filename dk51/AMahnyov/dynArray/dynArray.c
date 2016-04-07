@@ -47,17 +47,24 @@ subArray *addSub(dynamicArray *anArray, subArray *aSub){
 }
 
 void writeToDA(dynamicArray *anArray, int index, int value){
-    int numOfSub = 0;
-    while(index<numOfSub){
-        numOfSub = 2^numOfSub;
+    if(NULL != anArray){
+        if(index > 0 || index <= (2^(anArray->arrSize))){
+            int numOfSub = 0;
+            while(index<numOfSub){
+                numOfSub = 2^numOfSub;
+            }
+            subArray *currentSub = anArray->firstSub;
+            for(int i = 0; i<numOfSub; i++){
+                currentSub=currentSub->nextArray;
+            }
+            int *aStorage = currentSub->storage;
+            int indexInSub = index-(2^numOfSub);
+            aStorage[indexInSub] = value;
+        }else{
+            subArray *subToAdd = createSubArray((anArray->arrSize)^2);
+            addSub(anArray, subToAdd);
+        }
     }
-    subArray *currentSub = anArray->firstSub;
-    for(int i = 0; i<numOfSub; i++){
-        currentSub=currentSub->nextArray;
-    }
-    int *aStorage = currentSub->storage;
-    int indexInSub = index-(2^numOfSub);
-    aStorage[indexInSub] = value;
 }
 
 int readFromDA(dynamicArray *anArray, int index){
