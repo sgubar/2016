@@ -110,3 +110,4 @@ IntNode *RemovedNode(IntList *List, int anIndex) {
 		}
 	}
 }  // удаление ноды
+
