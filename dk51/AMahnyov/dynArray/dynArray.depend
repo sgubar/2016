@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1460047294 source:c:\workspace\dk51\amahnyov\dynarray\main.c
+1460057244 source:c:\workspace\dk51\amahnyov\dynarray\main.c
 	<stdio.h>
 	<stdlib.h>
 	"dynArray.h"

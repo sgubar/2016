@@ -1,3 +1,4 @@
+/*Copyright (c), 2016, Mahnyov Aleksander. All rights reserved*/
 #ifndef DYNARRAY_H_INCLUDED
 #define DYNARRAY_H_INCLUDED
 #include <stdio.h>
