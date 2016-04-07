@@ -2,7 +2,7 @@
 //  RingList.c
 //  Lab2
 //
-//  Created by  on 3/23/16.
+//  Created by  on 4/7/16.
 //  Copyright © 2016 Sergey fedorenko. All rights reserved.
 //
 //
@@ -30,14 +30,14 @@ RingList *CreateList()
 RingList *doList()
 {
 
-	printf("Start to create a circular list \n");
+	printf("Start to create a Ring list \n");
 
 	IntNode *theNode0 = CreateNode(10);
-	IntNode *theNode1 = CreateNode(4);
+	IntNode *theNode1 = CreateNode(2);
 	IntNode *theNode2 = CreateNode(3);
 	IntNode *theNode4 = CreateNode(5);
-	IntNode *theNode5 = CreateNode(1);
-	IntNode *theNode6 = CreateNode(2);
+	IntNode *theNode5 = CreateNode(30);
+	IntNode *theNode6 = CreateNode(4);
 
 	RingList *theList = CreateList();
 
@@ -142,155 +142,118 @@ IntNode *NodeAtIndex(const RingList *aList, int anIndex)
 	return theResult;
 }
 
-IntNode *InsertNodeAtIndex(RingList *aList, IntNode *aNewNode, int anIndex){
-	if (NULL == aList || NULL == aNewNode){
+IntNode *InsertNodeAtIndex(RingList *aList, IntNode *aNewNode, int anIndex) {
+	if (NULL == aList || NULL == aNewNode || anIndex>aList->count + 1)
+	{
 		return NULL;
-	}
-
-	if (NULL == aList->head && NULL == aList->tail){
-		//The list is empty
-		aList->head = aList->tail = aNewNode;
-	}
-	else{
-		if (anIndex < aList->count){
-			int i = 0;
-			IntNode *theNode = aList->head;
-			do{
-				if (i == anIndex){ //<!- index was found
-					aNewNode->nextNode = theNode->nextNode;
-					theNode->nextNode = aNewNode;
-					aList->count += 1;
-					break;
-				}
-				i++; // increase index
-				theNode = theNode->nextNode; //<! - go to next node
-
-			} while (NULL != theNode);
-		}
-	}
-	return aNewNode;
-}
-
-IntNode *RemovedNodeAtIndex(RingList *aList, int anIndex){
-	if (anIndex < aList->count){
-		int i = 0;
-		IntNode *theNode = aList->head;
-		do{
-			if (i == anIndex){ //<!- index was found
-				IntNode *aNextNode = theNode->nextNode;
-				theNode->nextNode = aNextNode->nextNode;
-				free(aNextNode);
-				aList->count -= 1;
-				break;
-			}
-			i++; // increase index
-			theNode = theNode->nextNode; //<! - go to next node
-
-		} while (NULL != theNode);
-	}
-
-}
-
-RingList *MinMax(RingList *aList)
-{
-	IntNode *min = aList->head, *max = aList->head;
-	int minIndex, maxIndex;
-	for (int i = 1; i < aList->count; i++)
-	{
-		IntNode *theNode = NodeAtIndex(aList, i);
-		if (min->value > theNode->value)
-		{
-			min = theNode;
-			minIndex = i;
-		}
-		else
-		if (max->value < theNode->value)
-		{
-			max = theNode;
-			maxIndex = i;
-		}
-	}
-	if (minIndex < maxIndex)
-	{
-		RemovedNodeAtIndex(aList, maxIndex);
-		RemovedNodeAtIndex(aList, minIndex);
-		InsertNodeAtIndex(aList, max, minIndex);
-		InsertNodeAtIndex(aList, min, maxIndex);
 	}
 	else
 	{
-		RemovedNodeAtIndex(aList, minIndex);
-		RemovedNodeAtIndex(aList, maxIndex);
-		InsertNodeAtIndex(aList, min, maxIndex);
-		InsertNodeAtIndex(aList, max, minIndex);
-	}
-	return aList;
-}
-
-int doFindIndexMax(IntNode *theList) {
-	int a;
-	int max;
-	int IndexMaximum = 0;
-	a = CountList(theList);
-
-	IntNode *MaxNode = NodeAtIndex(theList, IndexMaximum);
-
-	max = NodeAtIndex(theList, IndexMaximum)->value;
-
-	for (int k = 0; k < a; k++)
-	{
-		if (max <= MaxNode->value)
-		{
-			max = MaxNode->value;
-			IndexMaximum = k;
+		if (0 == anIndex) {
+			aNewNode->nextNode = aList->head;
+			aList->head = aNewNode;
+			aList->count++;
+			return(aNewNode);
 		}
-
-		MaxNode = MaxNode->nextNode;
+		else {
+			IntNode *theNode = NodeAtIndex(aList, anIndex);
+			IntNode *PreviosNode = NodeAtIndex(aList, anIndex - 1);
+			aNewNode->nextNode = PreviosNode->nextNode;
+			PreviosNode->nextNode = aNewNode;
+			aList->count++;
+			return aNewNode;
+		}
 	}
-	printf("Maximum %d\n", IndexMaximum);
-	return(IndexMaximum);
 }
-void doSortingValue(IntNode *theList, int IndexMin, int IndexMax) {
-	int a = 0;
-	int b = 0;
-	int max;
-	int min;
 
-	int IndexRemoved = 0;
+IntNode *RemovedNodeAtIndex(RingList *aList, int anIndex) {
+	if (anIndex < aList->count) {
+		if ((NULL == aList) || (anIndex>aList->count))
+		{
+			return NULL;
+		}
+		else
+		{
+			if (anIndex == 0) {
+				IntNode *theNode = NodeAtIndex(aList, anIndex);
+				aList->head = NodeAtIndex(aList, anIndex + 1);
+				aList->count -= 1;
+				return theNode;
+			}
+			else {
+				IntNode *theNode = NodeAtIndex(aList, anIndex);
+				IntNode *PreviosNode = NodeAtIndex(aList, anIndex - 1);
+				if (anIndex == aList->count) aList->tail = PreviosNode;
+				PreviosNode->nextNode = theNode->nextNode;
+				aList->count -= 1;
+				return theNode;
+			}
+		}
+	}
+}
+
+IntNode *findMinNode(const RingList *inputList) {
+	IntNode *currentNode = inputList->head;
+	IntNode *minNode = currentNode;
+	do {
+		if (currentNode->value <= minNode->value) {
+			minNode = currentNode;
+		}
+		currentNode = currentNode->nextNode;
+	} while (NULL != currentNode);
+	return minNode;
+}
+
+IntNode *findMaxNode(const RingList *aList) {
+	IntNode *currentNode = aList->head;
+	IntNode *maxNode = currentNode;
+	do {
+		if (currentNode->value >= maxNode->value) {
+			maxNode = currentNode;
+		}
+		currentNode = currentNode->nextNode;
+	} while (NULL != currentNode);
+	return maxNode;
+}
+
+RingList *swapNodeAtList(RingList *inputList) {
+	IntNode *minNode = findMinNode(inputList);
+	IntNode *maxNode = findMaxNode(inputList);
+	int minvalue = minNode->value;
+	minNode->value = maxNode->value;
+	maxNode->value = minvalue;
+	return inputList;
+}
+
+void doSortingValue(IntNode *theList) {
+	int a, min;
+	int j = 0;
+	int InMin = 0;
+	int InMax = 0;
+	int RemovedAtIndex = 0;
 	a = CountList(theList);
-	int MinIndex;
-	int MaxIndex;
+	for (int j = 0; j < a; j++) {
 
-	if (IndexMin > IndexMax) {
-		MinIndex = IndexMax;
-		MaxIndex = IndexMin;
-	}
-	else {
-		MinIndex = IndexMin;
-		MaxIndex = IndexMax;
-	}
-	int IndexMinimum = MinIndex;
-	for (int b = MinIndex; b < MaxIndex; b++) {
-		IntNode *MinNode = NodeAtIndex(theList, IndexMinimum);
-		min = NodeAtIndex(theList, IndexMinimum)->value;
+		IntNode *TheMinNode = NodeAtIndex(theList, InMin);
+		min = NodeAtIndex(theList, InMin)->value;
 
-		for (int k = IndexMinimum; k < IndexMax; k++)
+		for (int k = InMin; k < a; k++)
 		{
 
-			if (min >= MinNode->value)
+			if (min >= TheMinNode->value)
 			{
-				min = MinNode->value;
-				IndexRemoved = k;
+				min = TheMinNode->value;
+				RemovedAtIndex = k;
 			}
 
-			MinNode = MinNode->nextNode;
+			TheMinNode = TheMinNode->nextNode;
 
 		}
 
-		InsertNode(theList, RemovedNode(theList, IndexRemoved), IndexMinimum);
-		IndexMinimum++;
+		InsertNodeAtIndex(theList, RemovedNodeAtIndex(theList, RemovedAtIndex), InMin);
+		InMin++;
 
 	}
-	printf("List after sorting\n");
-	doPrintList(theList);
+
 }
+

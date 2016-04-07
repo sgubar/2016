@@ -1,9 +1,9 @@
 //
 //  Node.c
-//  demoList
+//  Lab2
 //
-//  Created by Sergey Fedorenko on 3/2/16.
-//  Copyright © 2016 Slava Gubar. All rights reserved.
+//  Created by Sergey Fedorenko on 4/7/16.
+//  Copyright © 2016 Sergey Fedorenko. All rights reserved.
 //
 
 #include "Node.h"

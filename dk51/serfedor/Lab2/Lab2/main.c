@@ -2,7 +2,7 @@
 //  main.c
 //  Lab2
 //
-//  Created by Sergey Fedorenko on 3/23/16.
+//  Created by Sergey Fedorenko on 7/4/16.
 //  Copyright © 2016 Sergey Fedorenko. All rights reserved.
 //
 
@@ -10,20 +10,22 @@
 #include "Node.h"
 #include "RingList.h"
 
-//void doRingList();
-//void doPrintList(const RingList *aList);
-
 int main(int argc, const char * argv[])
 {
+	int count=0;
 	RingList *theList = doList();
 	doPrintList(theList);
 	printf("\n");
-	MinMax(theList);
+	
+	printf("List after swapping Node\n");
+	doPrintList(swapNodeAtList(theList));
+	
+	doSortingValue(theList);
 	printf("\n");
+	printf("List after sorting Node\n");
 	doPrintList(theList);
-	int IndexMaximum;
-	int IndexMinimum;
-	doSortingValue(theList, IndexMinimum, IndexMaximum);
+
+	
 	system("pause");
 }
 

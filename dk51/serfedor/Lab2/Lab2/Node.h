@@ -2,7 +2,7 @@
 //  Node.h
 //  Lab2
 //
-//  Created by Sergey Fedorenko on 3/23/16.
+//  Created by Sergey Fedorenko on 7/4/16.
 //  Copyright © 2016 Sergey Fedorenko. All rights reserved.
 //
 

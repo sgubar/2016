@@ -1,30 +1,21 @@
-﻿Сборка начата 05.04.2016 20:44:01.
-     1>Проект "C:\Users\Home\documents\visual studio 2013\Projects\Lab2\Lab2\Lab2.vcxproj" в узле 2 (целевые объекты Rebuild).
+﻿Сборка начата 07.04.2016 21:53:43.
+     1>Проект "C:\Users\Home\Documents\GitHub\2016\dk51\serfedor\Lab2\Lab2\Lab2.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         D:\VC2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt main.c Node.c RingList.c
+         D:\VC2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt RingList.c
          RingList.c
-     1>c:\users\home\documents\visual studio 2013\projects\lab2\lab2\ringlist.c(50): warning C4013: CountList: нет определения; предполагается "extern" с возвратом типа "int"
-     1>c:\users\home\documents\visual studio 2013\projects\lab2\lab2\ringlist.c(234): warning C4133: функция: несовместимые типы - из "IntNode *" в "const RingList *"
-     1>c:\users\home\documents\visual studio 2013\projects\lab2\lab2\ringlist.c(236): warning C4133: функция: несовместимые типы - из "IntNode *" в "const RingList *"
-     1>c:\users\home\documents\visual studio 2013\projects\lab2\lab2\ringlist.c(238): warning C4133: функция: несовместимые типы - из "IntNode *" в "const RingList *"
-     1>c:\users\home\documents\visual studio 2013\projects\lab2\lab2\ringlist.c(260): warning C4133: функция: несовместимые типы - из "IntNode *" в "const RingList *"
-     1>c:\users\home\documents\visual studio 2013\projects\lab2\lab2\ringlist.c(274): warning C4133: функция: несовместимые типы - из "IntNode *" в "const RingList *"
-     1>c:\users\home\documents\visual studio 2013\projects\lab2\lab2\ringlist.c(275): warning C4133: функция: несовместимые типы - из "IntNode *" в "const RingList *"
-     1>c:\users\home\documents\visual studio 2013\projects\lab2\lab2\ringlist.c(290): warning C4013: InsertNode: нет определения; предполагается "extern" с возвратом типа "int"
-     1>c:\users\home\documents\visual studio 2013\projects\lab2\lab2\ringlist.c(290): warning C4013: RemovedNode: нет определения; предполагается "extern" с возвратом типа "int"
-     1>c:\users\home\documents\visual studio 2013\projects\lab2\lab2\ringlist.c(295): warning C4133: функция: несовместимые типы - из "IntNode *" в "const RingList *"
-     1>c:\users\home\documents\visual studio 2013\projects\lab2\lab2\ringlist.c(256): warning C4101: max: неиспользованная локальная переменная
-         Node.c
-         main.c
-     1>c:\users\home\documents\visual studio 2013\projects\lab2\lab2\main.c(26): warning C4133: функция: несовместимые типы - из "RingList *" в "IntNode *"
-     1>c:\users\home\documents\visual studio 2013\projects\lab2\lab2\main.c(27): warning C4013: system: нет определения; предполагается "extern" с возвратом типа "int"
-     1>c:\users\home\documents\visual studio 2013\projects\lab2\lab2\main.c(33): warning C4013: CountList: нет определения; предполагается "extern" с возвратом типа "int"
-         Создание кода...
-     1>c:\users\home\documents\visual studio 2013\projects\lab2\lab2\main.c(26): error C4700: использована неинициализированная локальная переменная "IndexMaximum"
-     1>c:\users\home\documents\visual studio 2013\projects\lab2\lab2\main.c(26): error C4700: использована неинициализированная локальная переменная "IndexMinimum"
-     1>c:\users\home\documents\visual studio 2013\projects\lab2\lab2\ringlist.c(192): warning C4716: RemovedNodeAtIndex: должна возвращать значение
-     1>Сборка проекта "C:\Users\Home\documents\visual studio 2013\Projects\Lab2\Lab2\Lab2.vcxproj" завершена (целевые объекты Rebuild) с ошибкой.
+     1>c:\users\home\documents\github\2016\dk51\serfedor\lab2\lab2\ringlist.c(50): warning C4013: CountList: нет определения; предполагается "extern" с возвратом типа "int"
+     1>c:\users\home\documents\github\2016\dk51\serfedor\lab2\lab2\ringlist.c(234): warning C4133: функция: несовместимые типы - из "IntNode *" в "const RingList *"
+     1>c:\users\home\documents\github\2016\dk51\serfedor\lab2\lab2\ringlist.c(237): warning C4133: функция: несовместимые типы - из "IntNode *" в "const RingList *"
+     1>c:\users\home\documents\github\2016\dk51\serfedor\lab2\lab2\ringlist.c(238): warning C4133: функция: несовместимые типы - из "IntNode *" в "const RingList *"
+     1>c:\users\home\documents\github\2016\dk51\serfedor\lab2\lab2\ringlist.c(253): warning C4133: функция: несовместимые типы - из "IntNode *" в "RingList *"
+     1>c:\users\home\documents\github\2016\dk51\serfedor\lab2\lab2\ringlist.c(193): warning C4715: RemovedNodeAtIndex: значение возвращается не при всех путях выполнения
+       Link:
+         D:\VC2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Home\Documents\GitHub\2016\dk51\serfedor\Lab2\Debug\Lab2.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Home\Documents\GitHub\2016\dk51\serfedor\Lab2\Debug\Lab2.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Home\Documents\GitHub\2016\dk51\serfedor\Lab2\Debug\Lab2.lib" /MACHINE:X86 Debug\main.obj
+         Debug\Node.obj
+         Debug\RingList.obj
+         Lab2.vcxproj -> C:\Users\Home\Documents\GitHub\2016\dk51\serfedor\Lab2\Debug\Lab2.exe
+     1>Сборка проекта "C:\Users\Home\Documents\GitHub\2016\dk51\serfedor\Lab2\Lab2\Lab2.vcxproj" завершена (целевые объекты Build).
 
-Ошибка сборки.
+Сборка успешно завершена.
 
-Затраченное время: 00:00:01.14
+Затраченное время: 00:00:00.27

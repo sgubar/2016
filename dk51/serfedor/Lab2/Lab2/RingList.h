@@ -2,7 +2,7 @@
 //  RingList.h
 //  Lab2
 //
-//  Created by Sergey Fedorenko on 3/23/16.
+//  Created by Sergey Fedorenko on 7/4/16.
 //  Copyright © 2016 Sergey Fedorenko. All rights reserved.
 //
 
@@ -39,6 +39,6 @@ IntNode *NodeAtIndex(const RingList *aList, int aIndex);
 
 void doPrintList(const RingList *aList);
 
-RingList *MinMax(RingList *aList);
-void doSortingValue(IntNode *theList, int IndexMin, int IndexMax);
+void doSortingValue(IntNode *theList);
+
 #endif /* RingList_h */
