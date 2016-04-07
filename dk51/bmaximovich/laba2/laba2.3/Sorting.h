@@ -1,4 +1,3 @@
-#pragma once
 //
 //  Sorting.h
 //
