@@ -14,7 +14,7 @@
 void doTestList();
 void doPrintList(const IntList *aList);
 
-int main(int argc, const char * argv[])
+int main()
 {
 	doTestList();
 	return 0;
@@ -22,8 +22,11 @@ int main(int argc, const char * argv[])
 
 void doTestList()
 {
+	int CreateDoubleNode = 0;
+
 	printf("List\n");
 	printf("\n");
+
 	IntNode *theNode1 = CreateNode(1);
 	IntNode *theNode2 = CreateNode(2);
 	IntNode *theNode3 = CreateNode(3);
@@ -31,7 +34,9 @@ void doTestList()
 	IntNode *theNode5 = CreateNode(5);
 	IntNode *theNode6 = CreateNode(6);
 	IntNode *theNode7 = CreateNode(7);
+
 	IntList *theList = CreateList();
+
 	AddNode(theList, theNode1);
 	AddNode(theList, theNode2);
 	AddNode(theList, theNode3);
@@ -42,22 +47,27 @@ void doTestList()
 
 	doPrintList(theList);
 	printf("\n");
-	printf("Swapping\n");
-	printf("\n");
+	printf("Swapping\n\n");
+
 	doPrintList(swapNodeAtList(theList));
+
     printf("\n");
-	printf("doubleList\n");
-	printf("\n");
-
-
-
-	CreateDoubleList(theList, 10);
+	SortingNode(theList);
 	doPrintList(theList);
-	FreeList(theList);
 
 	printf("\n");
-	printf("Done.\n");
+	printf("ListWithDoubleNode\n\n");
+
+    printf("Enter node for double\n\n");
+    scanf("%d/n",&CreateDoubleNode);
+    printf("\n");
+    CreateDoubleList(theList, CreateDoubleNode);
+	doPrintList(theList);
+
 	printf("\n");
+	printf("Done.\n\n");
+
+    FreeList(theList);
 
 	system("pause");
 }

@@ -53,7 +53,6 @@ IntNode *AddNode(IntList *aList, IntNode *aNewNode)
 	return aNewNode;
 }
 
-
 IntNode *NodeAtIndex(const IntList *aList, int anIndex)
 {
 	IntNode *theResult = NULL;

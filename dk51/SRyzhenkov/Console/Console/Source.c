@@ -10,8 +10,8 @@
 #include "FunList.h"
 
 int main(int argc, const char * argv[])   //Принимаем аргументы
-{
-
+{	
+	int count;
 	if (1 == argc)						// цикл проверки на присутствие аргументов
 	{
 		printf("Error");
@@ -32,6 +32,9 @@ int main(int argc, const char * argv[])   //Принимаем аргументы
 
 	distribution(theList);		// функция для сортировки
 	//UpdatedValue(theList);
+	count = CountList(theList);
+	bubbleSort(theList, count);
 
 	system("pause");
 }
+

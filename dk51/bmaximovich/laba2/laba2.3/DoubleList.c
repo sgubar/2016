@@ -18,5 +18,9 @@ void *CreateDoubleList(IntList *aList, int i)
         IntNode *R = IndexNode(aList, findNode);
         IntNode *T = CreateNode(R->value);
         InsertNodeAtIndex(aList, T, findNode);
+	} else {
+	    printf("\n");
+        printf("Not found this node\n");
+        printf("\n");
 	}
 }

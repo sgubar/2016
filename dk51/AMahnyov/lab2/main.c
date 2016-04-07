@@ -9,17 +9,17 @@ static void doDemo();
 static void doTask();
 
 int main(int argc, char* argv[]){
-    if(argc == 1){
-        if(strcmp(argv[1], "demo")==0){
+    //if(argc >= 1){
+     //   if(strcmp(argv[1], "demo")==0){
             doDemo();
-        }
+     //   }
 
-        if(strcmp(argv[1], "task")==0){
+     //   if(strcmp(argv[1], "task")==0){
             doTask();
-        }
-    } else {
+      //  }
+   // } else {
         printf("Invalid syntax.\nlab2 <key>\nPossible keys: 'task', 'demo'\n");
-    }
+   // }
     return 0;
 }
 
@@ -27,8 +27,8 @@ static void doDemo(){
     charNode *testNode0 = createCharNode('a');
     charNode *testNode1 = createCharNode('b');
     charNode *testNode2 = createCharNode('c');
-    charNode *testNode3 = createCharNode('b');
-    charNode *testNode4 = createCharNode('a');
+    charNode *testNode3 = createCharNode('d');
+    charNode *testNode4 = createCharNode('e');
     charList *testList = charListConstructor();
     addNode(testList, testNode0);
     addNode(testList, testNode1);
@@ -38,9 +38,9 @@ static void doDemo(){
     int error = checkIfSim(testList);
     printf("check: %d\n", error);
     printCharList(testList);
-    //printf("Arranging\n");
-	//arrangeCharList(testList);
-    //printCharList(testList);
+    printf("Arranging\n");
+	arrangeCharList(testList);
+    printCharList(testList);
     printf("Swapping\n");
     printCharList(swapList(testList));
 }

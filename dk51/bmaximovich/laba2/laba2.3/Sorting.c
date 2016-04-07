@@ -13,7 +13,7 @@
 #include "DoubleList.h"
 #include "Sorting.h"
 
-void SortingNode(IntNode *theList)
+IntList *SortingNode(IntList *theList)
 {
 	int a, min;
 	int j = 0;
@@ -29,7 +29,7 @@ void SortingNode(IntNode *theList)
 		for (int k = InMin; k < a; k++)
 		{
 
-			if (min >= TheMinNode->value)
+			if (min <= TheMinNode->value)
 			{
 				min = TheMinNode->value;
 				RemovedAtIndex = k;
@@ -43,6 +43,7 @@ void SortingNode(IntNode *theList)
 		InMin++;
 
 	}
-	printf("Edited list\n");
-	doPrintList(theList);
+	printf("\n");
+	printf("Edited list\n\n");
+	return theList;
 }

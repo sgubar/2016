@@ -2,7 +2,7 @@
 //  SingleList.h
 //  Lab2
 //
-//  Created by Timoshenko Serj on 3/29/16.
+//  Created by Timoshenko Serj on 4/7/16.
 //  Copyright (C) 2016 Timoshenko Serj. All rights reserved.
 //
 
@@ -34,7 +34,7 @@ IntNode *NodeAtIndex(const IntList *aList, int anIndex);
 IntNode *InsertNode(IntList *aList, IntNode *aNewNode, int anIndex);
 IntNode *RemovedNode(IntList *aList, int anIndex);
 void TheMinAndTheMax(IntNode *theList);
-
+void theBubbleSorting(IntNode *theList, int CountList(theList));
 
 #endif
 

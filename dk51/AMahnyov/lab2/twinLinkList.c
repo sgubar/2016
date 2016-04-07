@@ -106,18 +106,6 @@ charNode *findMaxNode(const charList *inputList){
     return maxNode;
 }
 
-charNode *ignoredMax(const charList *inputList, const int ignorance){
-    charNode *currentNode = charNodeAtIndex(inputList, ignorance);
-    charNode *maxNode = currentNode;
-    do{
-        if(currentNode->letter >= maxNode->letter){
-            maxNode = currentNode;
-        }
-        currentNode = currentNode->nextNode;
-    }while(NULL != currentNode);
-    return maxNode;
-}
-
 //the same stuff for minNode
 charNode *findMinNode(const charList *inputList){
     charNode *currentNode = inputList->left;

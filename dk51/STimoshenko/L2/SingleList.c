@@ -2,7 +2,7 @@
 //  SingleList.c
 //  Lab2
 //
-//  Created by Timoshenko Serj on 3/29/16.
+//  Created by Timoshenko Serj on 4/7/16.
 //  Copyright (C) 2016 Timoshenko Serj. All rights reserved.
 //
 
@@ -144,6 +144,24 @@ void TheMinAndTheMax(IntNode *theList) {
 		InMin++;
 
 	}
-	printf("Edited list\n");
+	printf("Edited list\n\n");
 	doPrintList(theList);
+}
+
+void theBubbleSorting(IntNode *theList, int Count)//funcion for sorting list(the bubble sorting)
+{
+	for (int theWord = Count - 1; theWord > 1; theWord--)
+	{
+		for (int anIndex = 0; anIndex < theWord; anIndex++)//cycle from the first element to the last, with the increase in the index by 1
+		{
+			if (NodeAtIndex(theList, anIndex)-> value > NodeAtIndex(theList, anIndex + 1)->value)//if the value of the current node more than the value of the next node- assign value current node to the next node.
+			{
+				int theTmp = NodeAtIndex(theList, anIndex)->value;//variable, which stores the maximum value of the list
+					NodeAtIndex(theList, anIndex)->value = NodeAtIndex(theList, anIndex + 1)->value;
+					NodeAtIndex(theList, anIndex + 1)->value = theTmp;
+			}
+		}
+	}
+printf("The bubble sorting\n\n");
+doPrintList(theList);
 }
