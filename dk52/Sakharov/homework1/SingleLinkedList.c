@@ -123,7 +123,7 @@ IntNode *SLNodeAtIndex(const IntList *aList, int anIndex)
 	
 	return theResult;
 }
-IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex);//Insert node at index func realization 
+IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)//Insert node at index func realization 
 {
       if (SLCountList(const IntList *aList) < anIndex ||aList == NULL || aNewNode ==NULL) // check: if number of elemnets > than variable anIndex||list is empty||existance of our Node
         
@@ -148,7 +148,7 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex);//I
         
         return aNewNode;
     }
-      
+} 
 IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)//node removing at index func realization
 {
 if(SLCountList(const IntList *aList) < anIndex)//check if our element exists 
