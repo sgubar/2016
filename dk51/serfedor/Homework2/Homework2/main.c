@@ -17,29 +17,29 @@ int main()
 
 void DynAr() {
 	printf("Create dynamic with integer value\n");
-	DynamicIntArray *anArray = createDAInt(10);
+	DynamicIntArray *anArray = createDAInt(5);
 	printDAsize(anArray);
 
-	printf("\nAdd number 5 at index 0\n");
 	setValueAtIndex(5, 0, anArray);
-	printf("Index[0] = %d\n", valueAtIndex(0, anArray));
-	printDAsize(anArray);
-
-	printf("\nAdd number 2 at index 1\n");
 	setValueAtIndex(2, 1, anArray);
-	printf("Index[1] = %d\n", valueAtIndex(1, anArray));
-	printDAsize(anArray);
-
-	printf("\nAdd number 10 at index 2\n");
 	setValueAtIndex(10, 2, anArray);
+	setValueAtIndex(1, 3, anArray);	
+	setValueAtIndex(13, 4, anArray);
+	
 	printf("Index[2] = %d\n", valueAtIndex(2, anArray));
+
+	printDAsize(anArray);
+	setValueAtIndex(3, 6, anArray);
+	setValueAtIndex(7, 5, anArray);
+	setValueAtIndex(8, 7, anArray);
+
+	printf("Index[7] = %d\n", valueAtIndex(7, anArray));
+
 	printDAsize(anArray);
 
-	printf("\nAdd number 20 at index 3\n");
-	setValueAtIndex(20, 3, anArray);
-	printf("Index[3] = %d\n", valueAtIndex(3, anArray));
-	printDAsize(anArray);
 	freeDAInt(anArray);
+
+	printDAsize(anArray);
 }
 void printDAsize(DynamicIntArray *anArray) 
 {

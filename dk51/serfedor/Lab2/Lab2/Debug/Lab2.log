@@ -1,4 +1,4 @@
-﻿Сборка начата 07.04.2016 21:53:43.
+﻿Сборка начата 08.04.2016 8:04:56.
      1>Проект "C:\Users\Home\Documents\GitHub\2016\dk51\serfedor\Lab2\Lab2\Lab2.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
          D:\VC2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt RingList.c
@@ -18,4 +18,4 @@
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:00.27
+Затраченное время: 00:00:00.48
