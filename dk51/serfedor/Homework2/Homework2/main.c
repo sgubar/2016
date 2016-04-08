@@ -32,7 +32,7 @@ void DynAr() {
 	setValueAtIndex(3, 6, anArray);
 	setValueAtIndex(7, 5, anArray);
 	setValueAtIndex(8, 7, anArray);
-
+	printf("\n");
 	printf("Index[7] = %d\n", valueAtIndex(7, anArray));
 
 	printDAsize(anArray);
