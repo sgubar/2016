@@ -20,6 +20,8 @@ void doTestSLList()
 	IntNode *theNode2 = SLCreateNodeWithIntValue(2);
 	IntNode *theNode4 = SLCreateNodeWithIntValue(4);
 
+	IntNode *theNode1 = SLCreateNodeWithIntValue(1);
+
 	IntList *theList = SLCreateList();
 	printf("number of elements: %d\n", SLCountList(theList));
 
@@ -28,6 +30,14 @@ void doTestSLList()
 
 	SLAddNode(theList, theNode4);
 	printf("number of elements: %d\n", SLCountList(theList));
+
+	SLInsertNodeAtIndex(theList, theNode1, 0);
+	printf("number of elements: %d\n", SLCountList(theList));
+
+	doPrintSLList(theList);
+
+	printf("Removing the node\n");
+	SLRemovedNodeAtIndex(theList, 2);
 
 	doPrintSLList(theList);
 

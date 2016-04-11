@@ -115,3 +115,54 @@ IntNode *SLNodeAtIndex(const IntList *aList, int anIndex)
 
 	return theResult;
 }
+
+IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
+{
+	if ( aList == NULL || aNewNode == NULL || anIndex>aList->count + 1)
+	{
+		return NULL;
+	}
+
+	else
+	{
+		if (anIndex == 0)
+		{
+			aNewNode->nextNode = aList->head;
+			aList->head = aNewNode;
+			aList->count += 1;
+		}
+		else
+		{
+			IntNode *PrevNode = SLNodeAtIndex(aList, anIndex - 1);
+			if (aList->count + 1 == anIndex ) aList->tail = aNewNode;
+			else aNewNode->nextNode = PrevNode->nextNode;
+			PrevNode->nextNode = aNewNode;
+			aList->count += 1;
+		}
+		return(aNewNode);
+	}
+}
+IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)
+{
+	if ((aList == NULL) || (anIndex>aList->count))
+	{
+		return NULL;
+	}
+	else
+	{
+		IntNode *RemovedNode = SLNodeAtIndex(aList, anIndex);
+		if (anIndex == 0)
+		{
+			aList->head = SLNodeAtIndex(aList, anIndex + 1);
+			aList->count -= 1;
+		}
+		else
+		{
+			IntNode *PrevNode = SLNodeAtIndex(aList, anIndex - 1);
+			if (aList->count == anIndex) aList->tail = PrevNode;
+			PrevNode->nextNode = RemovedNode->nextNode;
+			aList->count -= 1;
+		}
+		return(RemovedNode);
+	}
+}
