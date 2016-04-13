@@ -95,6 +95,7 @@ void printCharList(const charList *inputList)
 //it is pretty self-documentary, but it goes through the list and finds the maximum one
 //by comparing currentNode and updatable maxNode by ASCII table
 charNode *findMaxNode(const charList *inputList){
+    if(NULL == inputList) return NULL;
     charNode *currentNode = inputList->left;
     charNode *maxNode = currentNode;
     do{
@@ -108,6 +109,7 @@ charNode *findMaxNode(const charList *inputList){
 
 //the same stuff for minNode
 charNode *findMinNode(const charList *inputList){
+    if(NULL == inputList) return NULL;
     charNode *currentNode = inputList->left;
     charNode *minNode = currentNode;
     do{
@@ -120,6 +122,7 @@ charNode *findMinNode(const charList *inputList){
 }
 
 charList *swapList(charList *inputList){
+    if(NULL == inputList) return NULL;
     charNode *minNode = findMinNode(inputList); //i use this, not do-while cycle for sake of simplicity
     charNode *maxNode = findMaxNode(inputList);
     char minLetter = minNode->letter;

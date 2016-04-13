@@ -17,7 +17,7 @@ typedef struct tagDynArray{
     int arrSize;
 }dynamicArray;
 
-dynamicArray *createDynArray(int aSize);
+dynamicArray *createDynArray();
 void freeDynArray(dynamicArray *anArray);
 
 subArray *createSubArray(int aSize);
