@@ -9,17 +9,17 @@ static void doDemo();
 static void doTask();
 
 int main(int argc, char* argv[]){
-    //if(argc >= 1){
-     //   if(strcmp(argv[1], "demo")==0){
+    if(argc >= 1){
+        if(strcmp(argv[1], "demo")==0){
             doDemo();
-     //   }
+        }
 
-     //   if(strcmp(argv[1], "task")==0){
+        if(strcmp(argv[1], "task")==0){
             doTask();
-      //  }
-   // } else {
+        }
+    } else {
         printf("Invalid syntax.\nlab2 <key>\nPossible keys: 'task', 'demo'\n");
-   // }
+    }
     return 0;
 }
 
