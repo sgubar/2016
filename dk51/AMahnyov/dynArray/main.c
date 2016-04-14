@@ -4,9 +4,11 @@
 #include "dynArray.h"
 
 int main(){
-    dynamicArray *testDynArray = createDynArray(2);
+    dynamicArray *testDynArray = createDynArray();
     //printf("Writing in bounds.\n");
     writeToDA(testDynArray, 0, 1);
+	 writeToDA(testDynArray, 15, 34);
+	 writeToDA(testDynArray, 25, 44);
     //writeToDA(testDynArray, 1, 6);
     //writeToDA(testDynArray, 2, 4);
     printf("%d\n", readFromDA(testDynArray, 0));
