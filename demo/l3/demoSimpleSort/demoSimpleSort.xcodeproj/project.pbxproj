@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		731F11371CC6C70A00588078 /* shellSort.c in Sources */ = {isa = PBXBuildFile; fileRef = 731F11351CC6C70A00588078 /* shellSort.c */; };
 		734594C71CB5B06000C1B426 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 734594C61CB5B06000C1B426 /* main.c */; };
 		734594CF1CB5B0AB00C1B426 /* SimpleSort.c in Sources */ = {isa = PBXBuildFile; fileRef = 734594CD1CB5B0AB00C1B426 /* SimpleSort.c */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		731F11351CC6C70A00588078 /* shellSort.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shellSort.c; sourceTree = "<group>"; };
+		731F11361CC6C70A00588078 /* shellSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shellSort.h; sourceTree = "<group>"; };
 		734594C31CB5B06000C1B426 /* demoSimpleSort */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = demoSimpleSort; sourceTree = BUILT_PRODUCTS_DIR; };
 		734594C61CB5B06000C1B426 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		734594CD1CB5B0AB00C1B426 /* SimpleSort.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SimpleSort.c; sourceTree = "<group>"; };
@@ -63,6 +66,8 @@
 				734594C61CB5B06000C1B426 /* main.c */,
 				734594CD1CB5B0AB00C1B426 /* SimpleSort.c */,
 				734594CE1CB5B0AB00C1B426 /* SimpleSort.h */,
+				731F11351CC6C70A00588078 /* shellSort.c */,
+				731F11361CC6C70A00588078 /* shellSort.h */,
 			);
 			path = demoSimpleSort;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				731F11371CC6C70A00588078 /* shellSort.c in Sources */,
 				734594C71CB5B06000C1B426 /* main.c in Sources */,
 				734594CF1CB5B0AB00C1B426 /* SimpleSort.c in Sources */,
 			);
@@ -245,6 +251,7 @@
 				734594CC1CB5B06000C1B426 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
