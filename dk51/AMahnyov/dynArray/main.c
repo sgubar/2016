@@ -11,7 +11,7 @@ int main(){
 	 writeToDA(testDynArray, 25, 44);
     //writeToDA(testDynArray, 1, 6);
     //writeToDA(testDynArray, 2, 4);
-    printf("%d\n", readFromDA(testDynArray, 0));
+    printf("%d\n", readFromDA(testDynArray, 15));
    // printf("%d\n", readFromDA(testDynArray, 1));
     //printf("%d\n", readFromDA(testDynArray, 2));
     //printf("Writing outside bounds\n");

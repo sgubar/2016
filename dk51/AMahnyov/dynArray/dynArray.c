@@ -58,7 +58,7 @@ subArray *addSub(dynamicArray *anArray, subArray *aSub)
 	 {
         return NULL;
     }
-	
+
 	 if(anArray->arrSize == 0)
 	 {
         anArray->firstSub = anArray->lastSub = aSub;
@@ -87,50 +87,32 @@ void writeToDA(dynamicArray *anArray, int index, int value)
 	 { //Outside bounds
 		//works the same way as the inside writing...
 		printf("Writing outside bounds\n");
-		
+
 		//create required additional subarrays
 		prepareArrayWithIndex(anArray, index);
 		setValueAtIndex(anArray, index, value);
     }
 }
-//should return the number of cells in a subbarray of a given number
-static int getNumOfCells(int z){
-    int a = 0;
-    z--;
-    for(int i = 0; i<z; i++){
-        a = a*2+2;
-    }
-    return a;
-}
-//should return the index of the first cell in a subbarray of a given number
-static int getFirstCellNumber(int z){
-    int a = 0;
-    for(int i = 0; i<z; i++){
-        a = a*2+1;
-    }
-    return a;
-}
 
 int readFromDA(dynamicArray *anArray, int index){
-    //if(index < getNumOfCells(anArray->arrSize)){ //<-This does not work
-       int subNumber = 0;
-       while(getFirstCellNumber(subNumber)<index){
-           subNumber++;
-       }
-       subArray *currentSub = anArray->firstSub;
-       for(int i = 0; i<subNumber; i++){
-           currentSub = currentSub->nextArray;
-       }
-       return(currentSub->storage[index-getFirstCellNumber(subNumber)]);
-    //}
-return NULL;
+    subArray *theSlot = anArray->firstSub;
+	while (NULL != theSlot)
+	{
+		if (index < theSlot->subSize)
+		{
+			return theSlot->storage[index];
+		}
+		index -= (theSlot->subSize - 1);
+		theSlot = theSlot->nextArray;
+	}
+	return NULL;
 }
 
 #pragma mark -
 int getNumOfAvailableCells(dynamicArray *anArray)
 {
 	int theResult = 0;
-	
+
 	if (anArray->arrSize > 0)
 	{
 		subArray *theSubArray = anArray->firstSub;
@@ -140,7 +122,7 @@ int getNumOfAvailableCells(dynamicArray *anArray)
 			theSubArray = theSubArray->nextArray;
 		}
 	}
-	
+
 	return theResult;
 }
 
@@ -154,13 +136,13 @@ subArray *getRequiredSlotForIndex(dynamicArray *anArray, int *ioOffset)
 		{
 			break;
 		}
-	
+
 		index -= (theSlot->subSize - 1);
 		theSlot = theSlot->nextArray;
 	}
 
 	*ioOffset = index;
-	
+
 	return theSlot;
 }
 
@@ -174,7 +156,7 @@ void setValueAtIndex(dynamicArray *anArray, int anIndex, int aValue)
 			theSlot->storage[anIndex] = aValue;
 			break;
 		}
-	
+
 		anIndex -= (theSlot->subSize - 1);
 		theSlot = theSlot->nextArray;
 	}
@@ -186,15 +168,15 @@ void prepareArrayWithIndex(dynamicArray *anArray, int anIndex)
 	{
 		//calculate a size
 		int theSize = 10; //<!-- by default
-		
+
 		if (NULL != anArray->lastSub)
 		{
 			theSize = anArray->lastSub->subSize * 2;
 		}
-	
+
 		subArray *theSlot = createSubArray(theSize);
 		addSub(anArray, theSlot);
-	
+
 		anIndex -= theSize;
 	}
 }
