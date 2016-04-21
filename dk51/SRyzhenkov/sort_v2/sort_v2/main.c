@@ -6,7 +6,7 @@ int *CreateArray(int Size);
 
 int main()
 {
-	int sizeArray = 20000;
+	int sizeArray = 1000;
 	//printf_s("SizeArray: \n", &sizeArray);
 	//scanf_s("10 = ", &sizeArray);
 	//printf_s("SizeArray: \n", &sizeArray);

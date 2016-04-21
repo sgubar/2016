@@ -1,12 +1,13 @@
 #include "Sorting.h"
 #include <time.h>
-
+#include <stdio.h>
 
 void bubbleSort(int anArray[], int aSize)
 {
-	clock_t start_t, end_t;
+	FILE * ptr = fopen("Plot.csv", "w+");
+	clock_t start_t1, end_t1;
 
-	start_t = clock();
+	start_t1 = clock();
 
 	for (int theOut = aSize - 1; theOut > 1; theOut--)
 	{
@@ -21,17 +22,20 @@ void bubbleSort(int anArray[], int aSize)
 		}
 	}
 
-	end_t = clock();
-	printf("Going to scan a big loop, start_t = %ld\n", start_t);
-	printf("Going to scan a big loop, start_t = %ld\n", end_t);
-	printf("time of Selection sorting: %.3lf\n", (double)(end_t - start_t) / CLOCKS_PER_SEC);
+	end_t1 = clock();
+	printf("Going to scan a big loop, start_t = %ld\n", start_t1);
+	printf("Going to scan a big loop, start_t = %ld\n", end_t1);
+	fprintf(ptr, "Методи сортування;\nСортування бульбашкою; %.3lf\n", (double)(end_t1 - start_t1) / CLOCKS_PER_SEC);
+	printf("time of Selection sorting: %.3lf\n", (double)(end_t1 - start_t1) / CLOCKS_PER_SEC);
+	fclose(ptr);
 }
 
 void selectionSort(int anArray[], int aSize)
-{
-	clock_t start_t, end_t;
+{	
+	FILE * ptr = fopen("Plot.csv", "a+");
+	clock_t start_t2, end_t2;
 
-	start_t = clock();
+	start_t2 = clock();
 
 	for (int theOut = 0; theOut < aSize - 1; theOut++)
 	{
@@ -50,17 +54,20 @@ void selectionSort(int anArray[], int aSize)
 		anArray[theMinIndex] = theTmp;
 	}
 
-	end_t = clock();
-	printf("Going to scan a big loop, start_t = %ld\n", start_t);
-	printf("Going to scan a big loop, start_t = %ld\n", end_t);
-	printf("time of Selection sorting: %.3lf\n", (double)(end_t - start_t) / CLOCKS_PER_SEC);
+	end_t2 = clock();
+	printf("Going to scan a big loop, start_t = %ld\n", start_t2);
+	printf("Going to scan a big loop, start_t = %ld\n", end_t2);
+	fprintf(ptr, "Сортування методом вибору; %.3lf\n", (double)(end_t2 - start_t2) / CLOCKS_PER_SEC);
+	printf("time of Selection sorting: %.3lf\n", (double)(end_t2 - start_t2) / CLOCKS_PER_SEC);
+	fclose(ptr);
 }
 
 void insertionSort(int anArray[], int aSize)
 {	
-	clock_t start_t, end_t;
+	FILE * ptr = fopen("Plot.csv", "a+");
+	clock_t start_t3, end_t3;
 
-	start_t = clock();
+	start_t3 = clock();
 
 	for (int theOut = 1; theOut < aSize; theOut++)
 	{
@@ -75,15 +82,18 @@ void insertionSort(int anArray[], int aSize)
 
 		anArray[theIn] = theTmp;
 	}
-	end_t = clock();
-	printf("Going to scan a big loop, start_t = %ld\n", start_t);
-	printf("Going to scan a big loop, start_t = %ld\n", end_t);
-	printf("time of Selection sorting: %.3lf\n", (double)(end_t - start_t) / CLOCKS_PER_SEC);
+	end_t3 = clock();
+	printf("Going to scan a big loop, start_t = %ld\n", start_t3);
+	printf("Going to scan a big loop, start_t = %ld\n", end_t3);
+	fprintf(ptr, "Сортування вставкою; %.3lf\n", (double)(end_t3 - start_t3) / CLOCKS_PER_SEC);
+	printf("time of Selection sorting: %.3lf\n", (double)(end_t3 - start_t3) / CLOCKS_PER_SEC);
+	fclose(ptr);
 }
 
 void shellSort(int anArray[], int aCount)
 {
-	clock_t start_t, end_t;
+	FILE * ptr = fopen("Plot.csv", "a+");
+	clock_t start_t4, end_t4;
 	int theInner = 0;
 	int theOuter = 0;
 	int theH = 1; // start h = 1
@@ -95,7 +105,7 @@ void shellSort(int anArray[], int aCount)
 	}
 	
 
-	start_t = clock();
+	start_t4 = clock();
 	//2. Sequental decrease h to 1
 	while (theH > 0)
 	{
@@ -116,8 +126,10 @@ void shellSort(int anArray[], int aCount)
 
 		theH = (theH - 1) / 3; //decrease h
 	}
-	end_t = clock();
-	printf("Going to scan a big loop, start_t = %ld\n", start_t);
-	printf("Going to scan a big loop, start_t = %ld\n", end_t);
-	printf("time of Selection sorting: %.3lf\n", (double)(end_t - start_t) / CLOCKS_PER_SEC);
+	end_t4 = clock();
+	printf("Going to scan a big loop, start_t = %ld\n", start_t4);
+	printf("Going to scan a big loop, start_t = %ld\n", end_t4);
+	fprintf(ptr, "Сортування Шелла; %.3lf\n", (double)(end_t4 - start_t4) / CLOCKS_PER_SEC);
+	printf("time of Selection sorting: %.3lf\n", (double)(end_t4 - start_t4) / CLOCKS_PER_SEC);
+	fclose(ptr);
 }
