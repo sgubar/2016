@@ -25,3 +25,4 @@ int SUM2 () /*initialization of function "SUM2"*/
 		printf("Error. SUM2=0\n"); /*Checing the value of SUM2. Print at screen "Error. SUM2=0" if value of function "SUM2" is 0*/
 	}
 	return SUM2;
+}
