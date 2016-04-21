@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1461186557 source:c:\workspace\dk51\amahnyov\lab3\shellsort.c
+	"shellSort.h"
+
+1461186557 c:\workspace\dk51\amahnyov\lab3\shellsort.h
+	<stdio.h>
+
+1460047326 source:c:\workspace\dk51\amahnyov\lab3\simplesort.c
+	"SimpleSort.h"
+
+1460047326 c:\workspace\dk51\amahnyov\lab3\simplesort.h
+	<stdio.h>
+
+1461252427 source:c:\workspace\dk51\amahnyov\lab3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"shellSort.h"
+	"SimpleSort.h"
+
+1461255294 source:c:\workspace\dk51\amahnyov\lab3\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<graphics.h>
+	"shellSort.h"
+	"SimpleSort.h"
+
