@@ -95,16 +95,18 @@ void writeToDA(dynamicArray *anArray, int index, int value)
 }
 
 int readFromDA(dynamicArray *anArray, int index){
-    subArray *theSlot = anArray->firstSub;
-	while (NULL != theSlot)
-	{
-		if (index < theSlot->subSize)
-		{
-			return theSlot->storage[index];
-		}
-		index -= (theSlot->subSize - 1);
-		theSlot = theSlot->nextArray;
-	}
+    if(index <= getNumOfAvailableCells(anArray)){
+        subArray *theSlot = anArray->firstSub;
+            while (NULL != theSlot)
+            {
+            if (index < theSlot->subSize)
+            {
+                return theSlot->storage[index];
+            }
+            index -= (theSlot->subSize - 1);
+            theSlot = theSlot->nextArray;
+            }
+    }
 	return NULL;
 }
 

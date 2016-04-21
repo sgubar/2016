@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1461186802 source:c:\workspace\dk51\amahnyov\dynarray\main.c
+1461187150 source:c:\workspace\dk51\amahnyov\dynarray\main.c
 	<stdio.h>
 	<stdlib.h>
 	"dynArray.h"
 
-1461187116 source:c:\workspace\dk51\amahnyov\dynarray\dynarray.c
+1461233617 source:c:\workspace\dk51\amahnyov\dynarray\dynarray.c
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
