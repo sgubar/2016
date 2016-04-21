@@ -37,7 +37,6 @@ int main(int argc, const char * argv[])
     printf("\n");
 	clock_t theEnd1 = clock();
 	printArray(theArray, ARRAY_SIZE(theArray));
-	printf("\ntime of bubble sorting: %.10\n\n", (double)(theEnd1 - theStart1) / CLOCKS_PER_SEC);
 
 /*........................................................................................................*/
 
@@ -57,7 +56,6 @@ int main(int argc, const char * argv[])
 	clock_t theEnd2 = clock();
 	 printf("\n");
 	printArray(theArray2, ARRAY_SIZE(theArray2));
-	printf("\ntime of selection sorting: %.10lf\n", (double)(theEnd2 - theStart2) / CLOCKS_PER_SEC);
 
 /*........................................................................................................*/
 
@@ -77,7 +75,6 @@ int main(int argc, const char * argv[])
 	clock_t theEnd3 = clock();
 	 printf("\n");
 	printArray(theArray3, ARRAY_SIZE(theArray3));
-	printf("\ntime of insertion sorting: %.10lf\n\n", (double)(theEnd3 - theStart3) / CLOCKS_PER_SEC);
 
 /*........................................................................................................*/
 
@@ -97,7 +94,12 @@ int main(int argc, const char * argv[])
 	 printf("\n");
 	printArray(theArray4, ARRAY_SIZE(theArray4));
 
-	printf("\ntime of Shell sorting: %.10lf\n\n", (double)(theEnd4 - theStart4) / CLOCKS_PER_SEC);
+/*........................................................................................................*/
+
+    printf("\ntime of bubble sorting: %.10lf\n", (double)(theEnd1 - theStart1) / CLOCKS_PER_SEC);
+    printf("\ntime of selection sorting: %.10lf\n", (double)(theEnd2 - theStart2) / CLOCKS_PER_SEC);
+    printf("\ntime of insertion sorting: %.10lf\n", (double)(theEnd3 - theStart3) / CLOCKS_PER_SEC);
+	printf("\ntime of Shell sorting: %.10lf\n", (double)(theEnd4 - theStart4) / CLOCKS_PER_SEC);
 
 	return 0;
 
