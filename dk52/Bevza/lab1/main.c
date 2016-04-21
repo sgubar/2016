@@ -13,9 +13,9 @@
 #include "division.h"
 int main()
 {
-	int Q;
-	Q=division()+FactorialB();
-	printf("Q=%i", Q);
+	int Q=0; /*a temporary variable initialization*/
+	Q=division()+FactorialB(); /*calculating functions "division" and "FactorialB". The last operation at the task*/
+	printf("Q=%i", Q); /*display the result of the task*/
 	return 0;
 }
 
