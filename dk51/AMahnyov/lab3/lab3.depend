@@ -5,7 +5,7 @@
 1461186557 c:\workspace\dk51\amahnyov\lab3\shellsort.h
 	<stdio.h>
 
-1460047326 source:c:\workspace\dk51\amahnyov\lab3\simplesort.c
+1461259472 source:c:\workspace\dk51\amahnyov\lab3\simplesort.c
 	"SimpleSort.h"
 
 1460047326 c:\workspace\dk51\amahnyov\lab3\simplesort.h
@@ -18,7 +18,7 @@
 	"shellSort.h"
 	"SimpleSort.h"
 
-1461255294 source:c:\workspace\dk51\amahnyov\lab3\main.cpp
+1461263297 source:c:\workspace\dk51\amahnyov\lab3\main.cpp
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
