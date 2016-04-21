@@ -1,102 +1,21 @@
-﻿Сборка начата 21.04.2016 21:21:36.
+﻿Сборка начата 22.04.2016 0:05:56.
      1>Проект "C:\Users\Богдан\Desktop\Laba3\Laba3\Laba3.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt Main.c
          Main.c
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(21): error C2085: theArray: отсутствует в списке формальных параметров
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(21): error C2143: синтаксическая ошибка: отсутствие ";" перед "="
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(22): error C2143: синтаксическая ошибка: отсутствие ")" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(22): error C2143: синтаксическая ошибка: отсутствие "{" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(22): error C2059: синтаксическая ошибка: строка
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(22): error C2059: синтаксическая ошибка: )
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(24): error C2059: синтаксическая ошибка: (
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(24): error C2143: синтаксическая ошибка: отсутствие ")" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(24): error C2143: синтаксическая ошибка: отсутствие "{" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(24): error C2059: синтаксическая ошибка: sizeof
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(25): error C2099: инициализатор не является константой
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(26): error C2059: синтаксическая ошибка: (
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(26): error C2143: синтаксическая ошибка: отсутствие ")" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(26): error C2143: синтаксическая ошибка: отсутствие "{" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(26): error C2059: синтаксическая ошибка: sizeof
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(27): error C2099: инициализатор не является константой
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(28): error C2059: синтаксическая ошибка: (
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(28): error C2143: синтаксическая ошибка: отсутствие ")" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(28): error C2143: синтаксическая ошибка: отсутствие "{" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(28): error C2059: синтаксическая ошибка: sizeof
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(29): error C2143: синтаксическая ошибка: отсутствие ")" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(29): error C2143: синтаксическая ошибка: отсутствие "{" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(29): error C2059: синтаксическая ошибка: строка
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(31): error C2143: синтаксическая ошибка: отсутствие ")" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(31): error C2143: синтаксическая ошибка: отсутствие "{" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(31): error C2059: синтаксическая ошибка: строка
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(31): error C2059: синтаксическая ошибка: )
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(33): error C2059: синтаксическая ошибка: (
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(33): error C2143: синтаксическая ошибка: отсутствие ")" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(33): error C2143: синтаксическая ошибка: отсутствие "{" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(33): error C2059: синтаксическая ошибка: sizeof
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(34): error C2099: инициализатор не является константой
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(35): error C2059: синтаксическая ошибка: (
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(35): error C2143: синтаксическая ошибка: отсутствие ")" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(35): error C2143: синтаксическая ошибка: отсутствие "{" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(35): error C2059: синтаксическая ошибка: sizeof
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(36): error C2099: инициализатор не является константой
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(37): error C2059: синтаксическая ошибка: (
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(37): error C2143: синтаксическая ошибка: отсутствие ")" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(37): error C2143: синтаксическая ошибка: отсутствие "{" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(37): error C2059: синтаксическая ошибка: sizeof
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(38): error C2143: синтаксическая ошибка: отсутствие ")" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(38): error C2143: синтаксическая ошибка: отсутствие "{" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(38): error C2059: синтаксическая ошибка: строка
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(40): error C2143: синтаксическая ошибка: отсутствие ")" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(40): error C2143: синтаксическая ошибка: отсутствие "{" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(40): error C2059: синтаксическая ошибка: строка
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(40): error C2059: синтаксическая ошибка: )
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(42): error C2059: синтаксическая ошибка: (
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(42): error C2143: синтаксическая ошибка: отсутствие ")" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(42): error C2143: синтаксическая ошибка: отсутствие "{" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(42): error C2059: синтаксическая ошибка: sizeof
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(44): error C2099: инициализатор не является константой
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(45): error C2059: синтаксическая ошибка: (
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(45): error C2143: синтаксическая ошибка: отсутствие ")" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(45): error C2143: синтаксическая ошибка: отсутствие "{" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(45): error C2059: синтаксическая ошибка: sizeof
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(46): error C2099: инициализатор не является константой
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(47): error C2059: синтаксическая ошибка: (
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(47): error C2143: синтаксическая ошибка: отсутствие ")" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(47): error C2143: синтаксическая ошибка: отсутствие "{" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(47): error C2059: синтаксическая ошибка: sizeof
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(48): error C2143: синтаксическая ошибка: отсутствие ")" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(48): error C2143: синтаксическая ошибка: отсутствие "{" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(48): error C2059: синтаксическая ошибка: строка
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(50): error C2143: синтаксическая ошибка: отсутствие ")" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(50): error C2143: синтаксическая ошибка: отсутствие "{" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(50): error C2059: синтаксическая ошибка: строка
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(50): error C2059: синтаксическая ошибка: )
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(52): error C2059: синтаксическая ошибка: (
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(52): error C2143: синтаксическая ошибка: отсутствие ")" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(52): error C2143: синтаксическая ошибка: отсутствие "{" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(52): error C2059: синтаксическая ошибка: sizeof
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(54): error C2099: инициализатор не является константой
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(55): error C2059: синтаксическая ошибка: (
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(55): error C2143: синтаксическая ошибка: отсутствие ")" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(55): error C2143: синтаксическая ошибка: отсутствие "{" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(55): error C2059: синтаксическая ошибка: sizeof
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(56): error C2099: инициализатор не является константой
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(57): error C2059: синтаксическая ошибка: (
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(57): error C2143: синтаксическая ошибка: отсутствие ")" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(57): error C2143: синтаксическая ошибка: отсутствие "{" перед "sizeof"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(57): error C2059: синтаксическая ошибка: sizeof
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(59): error C2143: синтаксическая ошибка: отсутствие ")" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(59): error C2143: синтаксическая ошибка: отсутствие "{" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(59): error C2059: синтаксическая ошибка: строка
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(61): error C2143: синтаксическая ошибка: отсутствие ")" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(61): error C2143: синтаксическая ошибка: отсутствие "{" перед "строка"
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(61): error C2059: синтаксическая ошибка: строка
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(61): error C2059: синтаксическая ошибка: )
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(62): error C2059: синтаксическая ошибка: return
-     1>c:\users\богдан\desktop\laba3\laba3\main.c(63): error C2059: синтаксическая ошибка: }
-     1>Сборка проекта "C:\Users\Богдан\Desktop\Laba3\Laba3\Laba3.vcxproj" завершена (целевые объекты Build) с ошибкой.
+     1>c:\users\богдан\desktop\laba3\laba3\main.c(26): warning C4244: функция: преобразование "time_t" в "unsigned int", возможна потеря данных
+     1>c:\users\богдан\desktop\laba3\laba3\main.c(42): warning C4244: функция: преобразование "time_t" в "unsigned int", возможна потеря данных
+     1>c:\users\богдан\desktop\laba3\laba3\main.c(57): warning C4244: функция: преобразование "time_t" в "unsigned int", возможна потеря данных
+     1>c:\users\богдан\desktop\laba3\laba3\main.c(73): warning C4244: функция: преобразование "time_t" в "unsigned int", возможна потеря данных
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Богдан\Desktop\Laba3\Debug\Laba3.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Богдан\Desktop\Laba3\Debug\Laba3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Богдан\Desktop\Laba3\Debug\Laba3.lib" /MACHINE:X86 Debug\BubbleSort.obj
+         Debug\InsertionSort.obj
+         Debug\Main.obj
+         Debug\SelectionSort.obj
+         Debug\ShellSort.obj
+         Laba3.vcxproj -> C:\Users\Богдан\Desktop\Laba3\Debug\Laba3.exe
+     1>Сборка проекта "C:\Users\Богдан\Desktop\Laba3\Laba3\Laba3.vcxproj" завершена (целевые объекты Build).
 
-Ошибка сборки.
+Сборка успешно завершена.
 
-Затраченное время: 00:00:00.35
+Затраченное время: 00:00:00.52

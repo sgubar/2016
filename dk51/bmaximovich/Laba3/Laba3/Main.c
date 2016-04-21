@@ -7,11 +7,13 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 #include "BubbleSort.h"
 #include "InsertionSort.h"
 #include "SelectionSort.h"
 #include "ShellSort.h"
+
 
 #define ARRAY_SIZE(a) (sizeof(theArray)/sizeof(theArray[0]))
 
@@ -19,8 +21,13 @@ static void printArray(int anArray[], int aSize);
 
 int main(int argc, const char * argv[])
 {
-	int theArray[] = { 77, 99, 44, 55, 22, 88, 11, 0, 66, 33 };
+	int theArray[1000];
+	{
+		srand(time(NULL));
 
+	for (int i = 0; i < 1000; i++)
+		theArray[i] = 0 + rand() % 1000;
+	}
 	printf("Test bubble sorting\n");
     printArray(theArray, ARRAY_SIZE(theArray));
 	clock_t theStart1 = clock();
@@ -30,7 +37,13 @@ int main(int argc, const char * argv[])
 	printf("time of bubble sorting: %.10lf\n", (double)(theEnd1 - theStart1) / CLOCKS_PER_SEC);
 
 	printf("\nTest selection sorting\n");
-	int theArray2[] = { 77, 99, 44, 55, 22, 88, 11, 0, 66, 33 };
+	int theArray2[1000];
+	{
+		srand(time(NULL));
+
+		for (int i = 0; i < 1000; i++)
+			theArray2[i] = 0 + rand() % 1000;
+	}
 	printArray(theArray2, ARRAY_SIZE(theArray2));
 	clock_t theStart2 = clock();
 	SelectionSort(theArray2, ARRAY_SIZE(theArray2));
@@ -39,7 +52,13 @@ int main(int argc, const char * argv[])
 	printf("time of selection sorting: %.10lf\n", (double)(theEnd2 - theStart2) / CLOCKS_PER_SEC);
 
 	printf("\nTest insertion sorting\n");
-	int theArray3[] = { 77, 99, 44, 55, 22, 88, 11, 0, 66, 33 };
+	int theArray3[1000];
+	{
+		srand(time(NULL));
+
+		for (int i = 0; i < 1000; i++)
+			theArray3[i] = 0 + rand() % 1000;
+	}
 	printArray(theArray3, ARRAY_SIZE(theArray3));
 
 	clock_t theStart3 = clock();
@@ -49,7 +68,13 @@ int main(int argc, const char * argv[])
 	printf("time of insertion sorting: %.10lf\n", (double)(theEnd3 - theStart3) / CLOCKS_PER_SEC);
 
 	printf("\nTest Shell sorting\n");
-	int theArray4[] = { 77, 99, 44, 55, 22, 88, 11, 0, 66, 33 };
+	int theArray4[1000];
+	{
+		srand(time(NULL));
+
+		for (int i = 0; i < 1000; i++)
+			theArray4[i] = 0 + rand() % 1000;
+	}
 	printArray(theArray4, ARRAY_SIZE(theArray4));
 
 	clock_t theStart4 = clock();
