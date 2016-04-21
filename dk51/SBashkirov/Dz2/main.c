@@ -38,9 +38,9 @@ void testDA() {
 	printf("Index[1] = %d\n", valueAtIndex(1, anArray));
 	printDAsize(anArray);
 
-	printf("\nAdd number 20 at index 100\n");
-	setValueAtIndex(20, 100, anArray);
-	printf("Index[100] = %d\n", valueAtIndex(100, anArray));
+	printf("\nAdd number 20 at index 20\n");
+	setValueAtIndex(20, 20, anArray);
+	printf("Index[20] = %d\n", valueAtIndex(20, anArray));
 	printDAsize(anArray);
 	freeDAInt(anArray);
 
