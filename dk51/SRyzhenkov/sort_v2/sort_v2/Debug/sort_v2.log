@@ -1,10 +1,8 @@
-﻿  Sorting.c
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\sorting.c(7): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\sorting.c(35): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\sorting.c(67): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\sorting.c(95): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
-  sort_v2.vcxproj -> D:\Документы\Visual Studio 2015\Projects\sort_v2\Debug\sort_v2.exe
+﻿  main.c
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(37): warning C4013: 'system' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(40): warning C4068: unknown pragma
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(43): warning C4013: 'srand' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(43): warning C4013: 'time' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(44): warning C4013: 'malloc' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(46): warning C4013: 'rand' undefined; assuming extern returning int
+  sort_v2.vcxproj -> d:\документы\visual studio 2015\Projects\sort_v2\Debug\sort_v2.exe
