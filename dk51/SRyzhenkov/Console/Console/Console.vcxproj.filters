@@ -18,18 +18,18 @@
     <ClCompile Include="Source.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Fun.c">
+    <ClCompile Include="List.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FunList.c">
+    <ClCompile Include="Myfunction.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Fun.h">
+    <ClInclude Include="List.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="FunList.h">
+    <ClInclude Include="Myfunction.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

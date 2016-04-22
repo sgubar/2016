@@ -6,8 +6,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "Fun.h"
-#include "FunList.h"
+#include "Myfunction.h"
+#include "List.h"
 
 int main(int argc, const char * argv[])   //Принимаем аргументы
 {	
