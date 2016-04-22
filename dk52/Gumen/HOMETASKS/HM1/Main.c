@@ -3,7 +3,7 @@
 //  demoList
 //
 //  Created by Slava Gubar on 3/1/16.
-//  Copyright © 2016 Slava Gubar. All rights reserved.
+//  Copyright Â© 2016 Slava Gubar. All rights reserved.
 //
 
 #include <stdio.h>
@@ -67,7 +67,7 @@ int doTestSLList()
 
 	doPrintSLList(theList);
 
-	printf("Node at which index do you want to remove? \n");
+	printf("Node at which index do you want to remove? ");
 	scanf_s("%d", &indexTOremove);
 
 	SLRemovedNodeAtIndex(theList, indexTOremove);
