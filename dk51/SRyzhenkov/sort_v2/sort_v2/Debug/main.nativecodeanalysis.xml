@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>d:\документы\visual studio 2015\projects\sort_v2\sort_v2\</FILEPATH>
+      <FILENAME>main.c</FILENAME>
+      <LINE>18</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>6262</DEFECTCODE>
+    <DESCRIPTION>Function uses '1600008' bytes of stack:  exceeds /analyze:stacksize '16384'.  Consider moving some data to heap.</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>18</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>d:\документы\visual studio 2015\projects\sort_v2\sort_v2\</FILEPATH>
+      <FILENAME>main.c</FILENAME>
+      <LINE>47</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>28278</DEFECTCODE>
+    <DESCRIPTION>Function system appears with no prototype in scope.  Only limited analysis can be performed. Include the appropriate header or add a prototype. This warning also occurs if parameter or return types are omitted in a function definition.</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>18</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>d:\документы\visual studio 2015\projects\sort_v2\sort_v2\</FILEPATH>
+      <FILENAME>main.c</FILENAME>
+      <LINE>53</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>28278</DEFECTCODE>
+    <DESCRIPTION>Function time appears with no prototype in scope.  Only limited analysis can be performed. Include the appropriate header or add a prototype. This warning also occurs if parameter or return types are omitted in a function definition.</DESCRIPTION>
+    <FUNCTION>CreateArray</FUNCTION>
+    <DECORATED>CreateArray</DECORATED>
+    <FUNCLINE>52</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>d:\документы\visual studio 2015\projects\sort_v2\sort_v2\</FILEPATH>
+      <FILENAME>main.c</FILENAME>
+      <LINE>53</LINE>
+      <COLUMN>6</COLUMN>
+    </SFA>
+    <DEFECTCODE>28278</DEFECTCODE>
+    <DESCRIPTION>Function srand appears with no prototype in scope.  Only limited analysis can be performed. Include the appropriate header or add a prototype. This warning also occurs if parameter or return types are omitted in a function definition.</DESCRIPTION>
+    <FUNCTION>CreateArray</FUNCTION>
+    <DECORATED>CreateArray</DECORATED>
+    <FUNCLINE>52</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>d:\документы\visual studio 2015\projects\sort_v2\sort_v2\</FILEPATH>
+      <FILENAME>main.c</FILENAME>
+      <LINE>54</LINE>
+      <COLUMN>29</COLUMN>
+    </SFA>
+    <DEFECTCODE>28278</DEFECTCODE>
+    <DESCRIPTION>Function malloc appears with no prototype in scope.  Only limited analysis can be performed. Include the appropriate header or add a prototype. This warning also occurs if parameter or return types are omitted in a function definition.</DESCRIPTION>
+    <FUNCTION>CreateArray</FUNCTION>
+    <DECORATED>CreateArray</DECORATED>
+    <FUNCLINE>52</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

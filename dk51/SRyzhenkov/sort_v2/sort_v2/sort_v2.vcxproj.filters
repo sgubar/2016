@@ -21,9 +21,15 @@
     <ClCompile Include="Sorting.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Case.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sorting.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Case.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

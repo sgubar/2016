@@ -139,3 +139,4 @@ void shellSort(int anArray[], int aCount)
 	printf("time of Selection sorting: %.3lf\n", (double)(end_t4 - start_t4) / CLOCKS_PER_SEC);
 	fclose(ptr);
 }
+

@@ -10,7 +10,7 @@ typedef struct __IntList
 	IntNode *head;
 	IntNode *tail;
 	int count;
-}IntList;
+}IntList;//
 
 IntList *Create_L();
 
