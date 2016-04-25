@@ -21,7 +21,7 @@ void main()
 	bubbleSort(a, ARRAY_SIZE(a));
 	clock_t theEndt = clock();
 	printArray(a, ARRAY_SIZE(a));
-	printf ("time of bubble sorting: %.10lf\n", (double)(theEndt - theStartt)/CLOCKS_PER_SEC);
+	printf ("time of Bubble sorting: %.10lf\n", (double)(theEndt - theStartt)/CLOCKS_PER_SEC);
 
 	gen_array(a);
 
@@ -43,7 +43,7 @@ void main()
 	insertionSort(a, ARRAY_SIZE(a));
 	clock_t theEnd0 = clock();
 	printArray(a, ARRAY_SIZE(a));
-	printf ("time of Selection sorting: %.10lf\n", (double)(theEnd0 - theStart0)/CLOCKS_PER_SEC);
+	printf ("time of Inserton sorting: %.10lf\n", (double)(theEnd0 - theStart0)/CLOCKS_PER_SEC);
 
 	gen_array(a);
 
