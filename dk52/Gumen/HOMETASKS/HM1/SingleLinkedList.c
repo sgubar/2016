@@ -44,8 +44,9 @@ void SLFreeList(IntList *aList)
 	
 	while (NULL != theNode)
 	{
-		SLFreeIntNode(theNode);
-		printf("HI");
+		IntNode *theTmpNode = theNode;
+		theNode = theNode->nextNode;
+		SLFreeIntNode(theTmpNode);
 	}
 
 	//2. Free memory for the List structure
@@ -180,31 +181,53 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
 
 IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)
 {
+	
 
-	if (NULL != aList && anIndex <= aList->count) //check for errors
+	if (NULL != aList && anIndex < aList->count) //check for errors
 	{
 		int i = 0;
 		IntNode *theNodePrev = NULL;
-		IntNode *theNodeNext = NULL;
 		IntNode *NodeToFree = NULL;
 		IntNode *theNode = aList->head;
 
-		do //insert node between the first and the last nodes of the list
+		
+		
+		if (anIndex == 0)// to remove the first node in the list
 		{
-			if (i == (anIndex - 1))
+			NodeToFree = theNode;
+			IntNode *Tmp = NodeToFree;
+			aList->head = Tmp->nextNode;
+			SLFreeIntNode(NodeToFree);
+			return 0;
+		}
+
+		if (anIndex == (aList->count-2) ) //to remove the last node in the list
+		{
+			theNodePrev = theNode;
+			theNode = theNode->nextNode;
+			NodeToFree = theNode;
+			aList->tail = theNodePrev;
+			SLFreeIntNode(NodeToFree);
+			return 0;
+		}
+
+		do //to remove the node between the first and the last one
+		{
+			
+			if (i == (anIndex - 1))//find the node before the one to remove
 			{
 				theNodePrev = theNode;
 				NodeToFree = theNodePrev->nextNode;
 				
-				printf("1\n");
+				
 			}
-			if (i == (anIndex))
+			if (i == (anIndex))//find the node to remove
 			{
 				theNode = NodeToFree;
 				theNodePrev->nextNode = NodeToFree->nextNode;
 				SLFreeIntNode(NodeToFree);
 				aList->count -= 1;
-				printf("2\n");
+				
 				break;
 			}
 			
@@ -216,4 +239,12 @@ IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)
 		
 		return 0;
 	}
+
+	else
+
+	{
+		printf("Error: invalid index.\n");
+	}
+
+	return 0;
 }

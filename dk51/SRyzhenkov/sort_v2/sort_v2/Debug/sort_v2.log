@@ -1,8 +1,33 @@
 ﻿  main.c
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(37): warning C4013: 'system' undefined; assuming extern returning int
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(40): warning C4068: unknown pragma
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(43): warning C4013: 'srand' undefined; assuming extern returning int
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(43): warning C4013: 'time' undefined; assuming extern returning int
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(44): warning C4013: 'malloc' undefined; assuming extern returning int
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(46): warning C4013: 'rand' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(27): warning C4013: 'Sorting_5000' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(30): warning C4013: 'Sorting_100' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(33): warning C4013: 'Sorting_1000' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(36): warning C4013: 'Sorting_10000' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(40): warning C4013: 'system' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(23): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(43): warning C4068: unknown pragma
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(46): warning C4013: 'srand' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(46): warning C4013: 'time' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(47): warning C4013: 'malloc' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(49): warning C4013: 'rand' undefined; assuming extern returning int
+  Case.c
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(9): warning C4013: 'CreateArray' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(23): warning C4013: 'bubbleSort' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(26): warning C4013: 'selectionSort' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(28): warning C4013: 'insertionSort' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(29): warning C4013: 'shellSort' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(9): warning C4047: 'initializing': 'int *' differs in levels of indirection from 'int'
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(8): warning C4101: 'arrSize': unreferenced local variable
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(35): warning C4047: 'initializing': 'int *' differs in levels of indirection from 'int'
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(34): warning C4101: 'arrSize': unreferenced local variable
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(61): warning C4047: 'initializing': 'int *' differs in levels of indirection from 'int'
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(60): warning C4101: 'arrSize': unreferenced local variable
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(87): warning C4047: 'initializing': 'int *' differs in levels of indirection from 'int'
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(86): warning C4101: 'arrSize': unreferenced local variable
+  Generating Code...
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(30): warning C4716: 'Sorting_5000': must return a value
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(56): warning C4716: 'Sorting_100': must return a value
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(82): warning C4716: 'Sorting_1000': must return a value
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(108): warning C4716: 'Sorting_10000': must return a value
   sort_v2.vcxproj -> d:\документы\visual studio 2015\Projects\sort_v2\Debug\sort_v2.exe
