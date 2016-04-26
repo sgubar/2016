@@ -31,7 +31,7 @@ void bubbleSort(int anArray[], int aSize)
 	end_t1 = clock();
 	printf("Going to scan a big loop, start_t = %ld\n", start_t1);
 	printf("Going to scan a big loop, start_t = %ld\n", end_t1);
-	fprintf(ptr, "Методи сортування;\nСортування бульбашкою %.3lf\n", (double)(end_t1 - start_t1) / CLOCKS_PER_SEC);
+	fprintf(ptr, "Методи сортування;\nСортування бульбашкою; %.3lf; %i\n", (double)(end_t1 - start_t1) / CLOCKS_PER_SEC, aSize);
 	printf("time of Selection sorting: %.3lf\n", (double)(end_t1 - start_t1) / CLOCKS_PER_SEC);
 	fclose(ptr);
 }
@@ -63,7 +63,7 @@ void selectionSort(int anArray[], int aSize)
 	end_t2 = clock();
 	printf("Going to scan a big loop, start_t = %ld\n", start_t2);
 	printf("Going to scan a big loop, start_t = %ld\n", end_t2);
-	fprintf(ptr, "Сортування методом вибору %.3lf\n", (double)(end_t2 - start_t2) / CLOCKS_PER_SEC);
+	fprintf(ptr, "Сортування методом вибору; %.3lf \n", (double)(end_t2 - start_t2) / CLOCKS_PER_SEC);
 	printf("time of Selection sorting: %.3lf\n", (double)(end_t2 - start_t2) / CLOCKS_PER_SEC);
 	fclose(ptr);
 }
@@ -91,7 +91,7 @@ void insertionSort(int anArray[], int aSize)
 	end_t3 = clock();
 	printf("Going to scan a big loop, start_t = %ld\n", start_t3);
 	printf("Going to scan a big loop, start_t = %ld\n", end_t3);
-	fprintf(ptr, "Сортування вставкою %.3lf\n", (double)(end_t3 - start_t3) / CLOCKS_PER_SEC);
+	fprintf(ptr, "Сортування вставкою; %.3lf \n", (double)(end_t3 - start_t3) / CLOCKS_PER_SEC);
 	printf("time of Selection sorting: %.3lf\n", (double)(end_t3 - start_t3) / CLOCKS_PER_SEC);
 	fclose(ptr);
 }
@@ -135,7 +135,7 @@ void shellSort(int anArray[], int aCount)
 	end_t4 = clock();
 	printf("Going to scan a big loop, start_t = %ld\n", start_t4);
 	printf("Going to scan a big loop, start_t = %ld\n", end_t4);
-	fprintf(ptr, "Сортування Шелла %.3lf\n", (double)(end_t4 - start_t4) / CLOCKS_PER_SEC);
+	fprintf(ptr, "Сортування Шелла; %.3lf \n", (double)(end_t4 - start_t4) / CLOCKS_PER_SEC);
 	printf("time of Selection sorting: %.3lf\n", (double)(end_t4 - start_t4) / CLOCKS_PER_SEC);
 	fclose(ptr);
 }
