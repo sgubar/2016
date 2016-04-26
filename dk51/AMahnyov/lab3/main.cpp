@@ -14,7 +14,7 @@ static void drawGraph(float inputArray[5][5]);
 static void drawTable(float inputArray[5][5]);
 static void drawGrid();
 static void launchGraphics();
-
+static int compare (const void * a, const void * b);
 
 int main(){
     printf("Starting sorting comparation.\n");
@@ -24,18 +24,18 @@ int main(){
     int *theTestArray3 = generateArray(8000);
     int *theTestArray4 = generateArray(10000);
     float results[5][5] = {
-    {runTest(0, theTestArray0, 1000), runTest(1, theTestArray0, 1000), runTest(2, theTestArray0, 1000), runTest(3, theTestArray0, 1000), runTest(3, theTestArray0, 1000)},
-    {runTest(0, theTestArray1, 2000), runTest(1, theTestArray1, 2000), runTest(2, theTestArray1, 2000), runTest(3, theTestArray1, 2000), runTest(3, theTestArray1, 2000)},
-    {runTest(0, theTestArray2, 4000), runTest(1, theTestArray2, 4000), runTest(2, theTestArray2, 4000), runTest(3, theTestArray2, 4000), runTest(3, theTestArray2, 4000)},
-    {runTest(0, theTestArray3, 8000), runTest(1, theTestArray3, 8000), runTest(2, theTestArray3, 8000), runTest(3, theTestArray3, 8000), runTest(3, theTestArray3, 8000)},
-    {runTest(0, theTestArray4, 10000), runTest(1, theTestArray4, 10000), runTest(2, theTestArray4, 10000), runTest(3, theTestArray4, 10000), runTest(3, theTestArray4, 10000)}
+    {runTest(0, theTestArray0, 1000), runTest(1, theTestArray0, 1000), runTest(2, theTestArray0, 1000), runTest(3, theTestArray0, 1000), runTest(4, theTestArray0, 1000)},
+    {runTest(0, theTestArray1, 2000), runTest(1, theTestArray1, 2000), runTest(2, theTestArray1, 2000), runTest(3, theTestArray1, 2000), runTest(4, theTestArray1, 2000)},
+    {runTest(0, theTestArray2, 4000), runTest(1, theTestArray2, 4000), runTest(2, theTestArray2, 4000), runTest(3, theTestArray2, 4000), runTest(4, theTestArray2, 4000)},
+    {runTest(0, theTestArray3, 8000), runTest(1, theTestArray3, 8000), runTest(2, theTestArray3, 8000), runTest(3, theTestArray3, 8000), runTest(4, theTestArray3, 8000)},
+    {runTest(0, theTestArray4, 10000), runTest(1, theTestArray4, 10000), runTest(2, theTestArray4, 10000), runTest(3, theTestArray4, 10000), runTest(4, theTestArray4, 10000)}
     };
     drawTable(results);
     system("pause");
     printf("Launching graphics...\n");
     launchGraphics();
     drawGraph(results);
-    printf("\n\n\n\n");
+    printf("\n\n\n\n\n");
     system("pause");
     closegraph();
     return 0;
@@ -69,6 +69,8 @@ static float runTest(int sortType, const int theTestArray[], const int arrSize){
         break;
         case 3:
             shellSort(testArray, arrSize);
+        case 4:
+            qsort(testArray, arrSize, sizeof(int), compare);
         break;
     }
     clock_t finish0 = clock();
@@ -78,12 +80,13 @@ static float runTest(int sortType, const int theTestArray[], const int arrSize){
 
 static void drawGraph(float inputArray[5][5]){
     int k = getmaxy()/inputArray[4][0];
-    for(int z = 0; z<4; z++){
+    for(int z = 0; z<5; z++){
         switch(z){
             case 0: setcolor(RED); txTextOut(5, 0, "Bubble - red"); break;
             case 1: setcolor(BLUE); txTextOut(5, 30, "Selection - blue"); break;
             case 2: setcolor(GREEN); txTextOut(5, 60, "Insertion - green"); break;
             case 3: setcolor(YELLOW); txTextOut(5, 90, "Shell - yellow"); break;
+            case 4: setcolor(CYAN); txTextOut(5, 120, "QSort - cyan"); break;
         }
         float value0 = inputArray[0][z];
         float value1 = inputArray[1][z];
@@ -136,4 +139,8 @@ static void drawGrid(){
     txTextOut(getmaxx()*4/5+3, 0, "8000");
     line(getmaxx()-1, 0, getmaxx()-1, getmaxy());
     txTextOut(getmaxx()-50, 0, "10000");
+}
+
+static int compare (const void * a, const void * b){
+  return ( *(int*)a - *(int*)b );
 }
