@@ -24,4 +24,7 @@ void freeDAInt(DynamicIntArray *anArray);
 int valueAtIndex(DynamicIntArray *anArray, int anIndex);
 void setValueAtIndex(DynamicIntArray *anArray, int anValue, int anIndex);
 
+void printDynamicIntArraysize(DynamicIntArray *anArray);
+
 #endif /* DynamicArray_h */
+
