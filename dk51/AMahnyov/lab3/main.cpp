@@ -3,7 +3,6 @@
 #include <time.h>
 #include <graphics.h>
 #include <locale>
-
 extern "C" {
 #include "shellSort.h"
 #include "SimpleSort.h"
@@ -13,10 +12,11 @@ static int *generateArray(int size);
 static float runTest(int sortType, const int theTestArray[], const int arrSize);
 static void drawGraph(float inputArray[5][5]);
 static void drawTable(float inputArray[5][5]);
+static void drawGrid();
+static void launchGraphics();
 
 
 int main(){
-
     printf("Starting sorting comparation.\n");
     int *theTestArray0 = generateArray(1000);
     int *theTestArray1 = generateArray(2000);
@@ -33,10 +33,9 @@ int main(){
     drawTable(results);
     system("pause");
     printf("Launching graphics...\n");
-    int gdriver = DETECT, gmode, errorcode;
-    initgraph(&gdriver, &gmode, "");
-    setviewport(0, 0, getmaxx(), getmaxy(), 0);
+    launchGraphics();
     drawGraph(results);
+    printf("\n\n\n\n");
     system("pause");
     closegraph();
     return 0;
@@ -78,23 +77,25 @@ static float runTest(int sortType, const int theTestArray[], const int arrSize){
 }
 
 static void drawGraph(float inputArray[5][5]){
-    int k = getmaxy()/inputArray[3][0];
+    int k = getmaxy()/inputArray[4][0];
     for(int z = 0; z<4; z++){
         switch(z){
-            case 0: printf("Bubble - red\n"); setcolor(RED); break;
-            case 1: printf("Selection - blue\n"); setcolor(BLUE); break;
-            case 2: printf("Insertion - green\n"); setcolor(GREEN); break;
-            case 3: printf("Shell - yellow\n"); setcolor(YELLOW); break;
+            case 0: setcolor(RED); txTextOut(5, 0, "Bubble - red"); break;
+            case 1: setcolor(BLUE); txTextOut(5, 30, "Selection - blue"); break;
+            case 2: setcolor(GREEN); txTextOut(5, 60, "Insertion - green"); break;
+            case 3: setcolor(YELLOW); txTextOut(5, 90, "Shell - yellow"); break;
         }
         float value0 = inputArray[0][z];
         float value1 = inputArray[1][z];
         float value2 = inputArray[2][z];
         float value3 = inputArray[3][z];
+        float value4 = inputArray[4][z];
         //x1 y1 x2 y2
-        line(0, getmaxy(), getmaxx()/4, (int)(getmaxy()-value0*k));
-        line(getmaxx()/4, (int)(getmaxy()-value0*k), getmaxx()*2/4, (int)(getmaxy()-value1*k));
-        line(getmaxx()*2/4, (int)(getmaxy()-value1*k), getmaxx()*3/4, (int)(getmaxy()-value2*k));
-        line(getmaxx()*3/4, (int)(getmaxy()-value2*k), getmaxx(), (int)(getmaxy()-value3*k));
+        line(0, getmaxy(), getmaxx()/5, (int)(getmaxy()-value0*k));
+        line(getmaxx()/5, (int)(getmaxy()-value0*k), getmaxx()*2/5, (int)(getmaxy()-value1*k));
+        line(getmaxx()*2/5, (int)(getmaxy()-value1*k), getmaxx()*3/5, (int)(getmaxy()-value2*k));
+        line(getmaxx()*3/5, (int)(getmaxy()-value2*k), getmaxx()*4/5, (int)(getmaxy()-value3*k));
+        line(getmaxx()*4/5, (int)(getmaxy()-value3*k), getmaxx(), (int)(getmaxy()-value4*k));
         moveto(0, getmaxy());
     }
 }
@@ -113,4 +114,26 @@ static void drawTable(float inputArray[5][5]){
     printf("=============================================================================\n");
     printf("|  10000   |%.10f|%.10f|%.10f|%.10f|%.10f|\n", inputArray[4][0], inputArray[4][1], inputArray[4][2], inputArray[4][3], inputArray[4][4]);
     printf("=============================================================================\n");
+}
+
+static void launchGraphics(){
+    int gdriver = DETECT, gmode, errorcode;
+    initgraph(&gdriver, &gmode, "");
+    setviewport(0, 0, getmaxx(), getmaxy(), 0);
+    setlinestyle(0, 0, 3);
+    settextstyle(0, 0, 3);
+    drawGrid();
+}
+//x1 y1 x2 y2
+static void drawGrid(){
+    line(getmaxx()/5, 0, getmaxx()/5, getmaxy());
+    txTextOut(getmaxx()/5+3, 0, "1000");
+    line(getmaxx()*2/5, 0, getmaxx()*2/5, getmaxy());
+    txTextOut(getmaxx()*2/5+3, 0, "2000");
+    line(getmaxx()*3/5, 0, getmaxx()*3/5, getmaxy());
+    txTextOut(getmaxx()*3/5+3, 0, "4000");
+    line(getmaxx()*4/5, 0, getmaxx()*4/5, getmaxy());
+    txTextOut(getmaxx()*4/5+3, 0, "8000");
+    line(getmaxx()-1, 0, getmaxx()-1, getmaxy());
+    txTextOut(getmaxx()-50, 0, "10000");
 }
