@@ -9,9 +9,9 @@
 
 #include <stdio.h>
 
+int Sorting_500(500);
+int Sorting_1000(1000); 
 int Sorting_5000(5000);
-int Sorting_100(100); 
-int Sorting_1000(1000);
 int Sorting_10000(10000);
 
 #endif /*Case_h */

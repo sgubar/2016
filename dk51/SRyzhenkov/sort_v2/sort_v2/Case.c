@@ -4,12 +4,13 @@
 //  Created by Ryzhenkov Serhii on 22/04/16.
 //  Copyright © 2016 Ryzhenkov Serhii. All rights reserved.
 
-#define SIZE_ARRAY_0 (5000)
-#define SIZE_ARRAY_1 (100)
-#define SIZE_ARRAY_2 (1000)
+#define SIZE_ARRAY_0 (500)
+#define SIZE_ARRAY_1 (1000)
+#define SIZE_ARRAY_2 (5000)
 #define SIZE_ARRAY_3 (10000)
 
-int Sorting_5000() {
+
+int Sorting_500() {
 
 	int arrSize;
 	int *SortArray = CreateArray(SIZE_ARRAY_0);
@@ -35,7 +36,7 @@ int Sorting_5000() {
 	shellSort(ShellArray, SIZE_ARRAY_0);
 }
 
-int Sorting_100() {
+int Sorting_1000() {
 
 	int arrSize;
 	int *SortArray = CreateArray(SIZE_ARRAY_1);
@@ -61,7 +62,7 @@ int Sorting_100() {
 	shellSort(ShellArray, SIZE_ARRAY_1);
 }
 
-int Sorting_1000() {
+int Sorting_5000() {
 
 	int arrSize;
 	int *SortArray = CreateArray(SIZE_ARRAY_2);

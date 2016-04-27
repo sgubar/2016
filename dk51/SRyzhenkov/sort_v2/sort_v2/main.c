@@ -18,25 +18,39 @@ int main()
 	scanf("Size = %d \n", &sizeArray);
 	printf("SizeArray: %d \n", sizeArray);
 	*/
+
+
 	int arrSize;
+	FILE * ptr = fopen("Plot.csv", "w+");
+	fclose(ptr);
+	while (1)
+		{
+			//—читывание слова
+			//обработка
+			//проверка выхода
+			//и т.д.
 	
 	scanf("%i", &arrSize);
 	switch (arrSize)
 	{
 	case 1:
-		Sorting_5000();
+		Sorting_500();
 	break;
 	case 2:
-		Sorting_100();
+		Sorting_1000();
 		break;
 	case 3:
-		Sorting_1000();
+		Sorting_5000();
 		break;
 	case 4:
 		Sorting_10000();
 		break;
+	case 5:
+		exit(0);
+		break;
 	}
-
+	}
+	return 0;
 	system("pause");
 }
 
