@@ -1,19 +1,12 @@
-﻿  Case.c
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(16): warning C4013: 'CreateArray' undefined; assuming extern returning int
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(30): warning C4013: 'bubbleSort' undefined; assuming extern returning int
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(33): warning C4013: 'selectionSort' undefined; assuming extern returning int
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(35): warning C4013: 'insertionSort' undefined; assuming extern returning int
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(36): warning C4013: 'shellSort' undefined; assuming extern returning int
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(16): warning C4047: 'initializing': 'int *' differs in levels of indirection from 'int'
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(15): warning C4101: 'arrSize': unreferenced local variable
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(42): warning C4047: 'initializing': 'int *' differs in levels of indirection from 'int'
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(41): warning C4101: 'arrSize': unreferenced local variable
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(68): warning C4047: 'initializing': 'int *' differs in levels of indirection from 'int'
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(67): warning C4101: 'arrSize': unreferenced local variable
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(94): warning C4047: 'initializing': 'int *' differs in levels of indirection from 'int'
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(93): warning C4101: 'arrSize': unreferenced local variable
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(115): warning C4716: 'Sorting_10000': must return a value
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(89): warning C4716: 'Sorting_5000': must return a value
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(63): warning C4716: 'Sorting_1000': must return a value
-d:\документы\visual studio 2015\projects\sort_v2\sort_v2\case.c(37): warning C4716: 'Sorting_500': must return a value
+﻿  main.c
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(45): warning C4013: 'Sorting_500' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(48): warning C4013: 'Sorting_1000' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(51): warning C4013: 'Sorting_5000' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(54): warning C4013: 'Sorting_10000' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(32): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(41): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(66): warning C4068: unknown pragma
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(69): warning C4013: 'time' undefined; assuming extern returning int
   sort_v2.vcxproj -> d:\документы\visual studio 2015\Projects\sort_v2\Debug\sort_v2.exe
