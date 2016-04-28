@@ -8,12 +8,16 @@
 
 #include <stdio.h>
 #include <time.h>
+#include <math.h>
+#include <stdlib.h>
 #include "SimpleSort.h"
 #include "shellSort.h"
+#include "quickSort.h"
 
-#define ARRAY_SIZE(a) (sizeof(theArray)/sizeof(theArray[0]))
+#define ARRAY_SIZE(a) (sizeof(a)/sizeof(a[0]))
 
 static void printArray(int anArray[], int aSize);
+static void fillArray(int anArray[], int aSize, int aPivot);
 
 int main(int argc, const char * argv[])
 {
@@ -52,6 +56,29 @@ int main(int argc, const char * argv[])
 	
 	printf ("time of Shell sorting: %.10lf\n", (double)(theEnd - theStart)/CLOCKS_PER_SEC);
 	
+	printf ("Start to make partition of the array\n");
+	int the20Array[20];
+	int thePivot = 99; //make the pivot as avarage VALUE
+	fillArray(the20Array, ARRAY_SIZE(the20Array), thePivot);
+	printArray(the20Array, ARRAY_SIZE(the20Array));
+	
+	printf("Finish the partition with a pivot: %d\n", partitionIt(the20Array, 0,
+				ARRAY_SIZE(the20Array) - 1, thePivot));
+	
+	printArray(the20Array, ARRAY_SIZE(the20Array));
+
+	printf("\nTest Quick sorting\n");
+	int theQuickArray[20];
+	fillArray(theQuickArray, ARRAY_SIZE(theQuickArray), 99);
+	printArray(theQuickArray, ARRAY_SIZE(theQuickArray));
+	
+	clock_t theStartQuick = clock();
+	quickSort(theQuickArray, 0, ARRAY_SIZE(theQuickArray) - 1);
+	clock_t theEndQuick = clock();
+	printArray(theQuickArray, ARRAY_SIZE(theQuickArray));
+	
+	printf ("time of Quick sorting: %.10lf\n", (double)(theEndQuick - theStartQuick)/CLOCKS_PER_SEC);
+	
 	printf("Hello, World!\n");
 	return 0;
 }
@@ -66,4 +93,13 @@ void printArray(int anArray[], int aSize)
 	}
 
 	printf("}\n");
+}
+
+void fillArray(int anArray[], int aSize, int aPivot)
+{
+	srand(0);
+	for (int i = 0; i < aSize; i++)
+	{
+		anArray[i] = rand() % (2 * aPivot);
+	}
 }
