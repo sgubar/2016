@@ -63,22 +63,22 @@ int main(int argc, const char * argv[])
 	printArray(the20Array, ARRAY_SIZE(the20Array));
 	
 	printf("Finish the partition with a pivot: %d\n", partitionIt(the20Array, 0,
-				ARRAY_SIZE(the20Array) - 1, thePivot));
+				ARRAY_SIZE(the20Array) - 1, 99));
 	
 	printArray(the20Array, ARRAY_SIZE(the20Array));
 
 	printf("\nTest Quick sorting\n");
 	int theQuickArray[20];
-	fillArray(theQuickArray, ARRAY_SIZE(theQuickArray), 99);
+	fillArray(theQuickArray, ARRAY_SIZE(theQuickArray), 100);
 	printArray(theQuickArray, ARRAY_SIZE(theQuickArray));
 	
 	clock_t theStartQuick = clock();
-	quickSort(theQuickArray, 0, ARRAY_SIZE(theQuickArray) - 1);
+	quickSort2(theQuickArray, 0, ARRAY_SIZE(theQuickArray) - 1);
 	clock_t theEndQuick = clock();
 	printArray(theQuickArray, ARRAY_SIZE(theQuickArray));
 	
 	printf ("time of Quick sorting: %.10lf\n", (double)(theEndQuick - theStartQuick)/CLOCKS_PER_SEC);
-	
+
 	printf("Hello, World!\n");
 	return 0;
 }
