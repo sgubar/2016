@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <time.h> /*This library is used in order for that would take the time*/
+#include <stdlib.h> /*This library is used in order to create with a array of random numbers*/
+
+#include "quickSort.h"
 #include "SimpleSort.h"
 #include "shellSort.h"
-#include <stdlib.h> /*This library is used in order to create with a array of random numbers*/
 
 #define ARRAY_SIZE(a) (sizeof(a)/sizeof(a[0]))
 
@@ -62,6 +64,17 @@ void main()
 	clock_t theEnd = clock(); /*finish clock*/
 	printArray(a, ARRAY_SIZE(a));
 	printf ("time of Shell sorting: %.10lf\n", (double)(theEnd - theStart)/CLOCKS_PER_SEC);
+	
+	gen_array(a);
+
+	printf("\nTest quickSort\n");
+	printArray(a, ARRAY_SIZE(a));
+
+	clock_t theStart3 = clock();
+	quickSort(a, ARRAY_SIZE(a));
+	clock_t theEnd3 = clock();
+	printArray(a, ARRAY_SIZE(a));
+	printf ("time of quickSort : %.10lf\n", (double)(theEnd3 - theStart3)/CLOCKS_PER_SEC);
 }
 
 void printArray(int anArray[], int aSize)
