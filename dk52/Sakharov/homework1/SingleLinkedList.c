@@ -130,9 +130,9 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)//In
             return NULL;
 	
 
-      if (anIndex == 0 && aList->head == NULL && aList->tail == NULL )//our list is empty so we will insert in the head
+      if (anIndex == 0 && aList->head == NULL && aList->tail == NULL )//our list is empty 
         	
-            aList->head = aNewNode;
+            aList->head= aList->tail = aNewNode;
         
     else
     {
