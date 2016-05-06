@@ -125,7 +125,7 @@ IntNode *SLNodeAtIndex(const IntList *aList, int anIndex)
 }
 IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)//Insert node at index func realization 
 {
-      if (SLCountList(const IntList *aList) < anIndex ||aList == NULL || aNewNode ==NULL) // check: if number of elemnets > than variable anIndex||list is empty||existance of our Node
+      if (SLCountList(aList) < anIndex ||aList == NULL || aNewNode ==NULL) // check: if number of elemnets > than variable anIndex||list is empty||existance of our Node
         
             return NULL;
 	
@@ -136,14 +136,11 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)//In
         
     else
     {
-        IntNode *theNode = SLNodeAtIndex(aList, anIndex); //a node with an index to insert
-        
-        aNewNode-> nextNode = theNode->nextNode; //now next node of our new one is theNode
-        
+                
         IntNode *theNode = SLNodeAtIndex(aList, anIndex-1);
         
-        theNode-> nextNode = aNewNode; //previous node will connect to the new one
-        
+        aNewNode->nextNode=theNode->nextNode; //new node will connect to the nextone
+        theNode->nextNode= aNewNode; //prev node connecte to the new one       
         aList->count += 1;
         
         return aNewNode;
@@ -151,15 +148,14 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)//In
 } 
 IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)//node removing at index func realization
 {
-if(SLCountList(const IntList *aList) < anIndex)//check if our element exists 
+if( SLCountList(aList) < anIndex)//check if our element exists 
     return NULL;
 else
     {
-        IntNode *theNodePlusOne = SLNodeAtIndex(aList, anIndex +1);//node that stands after node we want
-  
+          
         IntNode *theNode = SLNodeAtIndex(aList, anIndex -1);//node that stands before node that we want to delete
 
-        theNode->nextNode=theNodePlusOne;
+        theNode->nextNode=theNode->nextNode->nextNode;//connect prev node to the next node
     
         aList->count--;
   
