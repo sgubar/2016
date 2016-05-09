@@ -10,9 +10,12 @@
 #define ARRAY_SIZE(a) (sizeof(a)/sizeof(a[0]))
 
 #include <stdio.h>
+#include "fillArray.h"
 #include "SimpleSort.h"
 #include "shellSort.h"
 #include "quickSort.h"
+
+
 
 int main()
 {
@@ -33,28 +36,26 @@ int main()
 	} while (operation != 1 && operation != 2 && operation != 3 && operation != 4 && operation != 5);
 	// Output operation on the screen
 	if (operation == 1) {
-		int aSize = 500;
 		int anArray[500];
-		fillArray(aSize);
-		time_to_sort();
+		int aSize = ARRAY_SIZE(anArray);
+		fillArray(anArray, aSize);
+			printf("{");
+			for (int i = 0; i < aSize; i++)
+			{
+				printf(" %d ", anArray[i]);
+			}
+
+			printf("}\n");
+			system("pause");
 	}
 	else if (operation == 2) {
-		int aSize = 1000;
 		int anArray[1000];
-		fillArray(aSize);
-		time_to_sort();
+		int aSize = ARRAY_SIZE(anArray);
+		fillArray(anArray, aSize);
 	}
 	else if (operation == 3) {
-		int aSize = 10000;
-		int anArray[10000];
-		fillArray(aSize);
-		time_to_sort();
 	}
 	else if (operation == 4) {
-		int aSize = 50000;
-		int anArray[50000];
-		fillArray(aSize);
-		time_to_sort();
 	}
 	else if (operation == 5) {
 		return 0;
