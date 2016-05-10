@@ -14,6 +14,5 @@
 extern const unsigned kNotFound;
 
 unsigned line_find(int anArray[], int aSize, int aKey);
-unsigned bi_find(int anArray[], int aSize, int aKey);
 
 #endif /* find_h */

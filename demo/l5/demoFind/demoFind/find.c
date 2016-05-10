@@ -26,39 +26,3 @@ unsigned line_find(int anArray[], int aSize, int aKey)
 	return theResult;
 }
 
-
-unsigned bi_find(int anArray[], int aSize, int aKey)
-{
-	unsigned theResult = kNotFound;
-	unsigned theLowerBound = 0;
-	unsigned theUpperBound = aSize - 1;
-	unsigned theCurIn = 0;
-	
-	while (1)
-	{
-		theCurIn = (theLowerBound + theUpperBound) / 2;
-		if (anArray[theCurIn] == aKey) //<!- an element was found
-		{
-			theResult = theCurIn;
-			break;
-		}
-		else if (theLowerBound > theUpperBound) //<!- all elements were viewed
-		{
-			break;
-		}
-		else
-		{
-			if (anArray[theCurIn] < aKey)
-			{
-				theLowerBound = theCurIn + 1; //!<- in upper position
-			}
-			else
-			{
-				theUpperBound = theCurIn - 1; //!<- in lower position
-			}
-		}
-	
-	}
-	
-	return theResult;
-}
