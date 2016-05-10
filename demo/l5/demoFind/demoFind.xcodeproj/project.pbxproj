@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7398CC791CE274B1009476D6 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 7398CC781CE274B1009476D6 /* main.c */; };
 		7398CC811CE274DF009476D6 /* find.c in Sources */ = {isa = PBXBuildFile; fileRef = 7398CC7F1CE274DF009476D6 /* find.c */; };
+		7398CC841CE27A2B009476D6 /* ordArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 7398CC821CE27A2B009476D6 /* ordArray.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		7398CC781CE274B1009476D6 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		7398CC7F1CE274DF009476D6 /* find.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = find.c; sourceTree = "<group>"; };
 		7398CC801CE274DF009476D6 /* find.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = find.h; sourceTree = "<group>"; };
+		7398CC821CE27A2B009476D6 /* ordArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ordArray.c; sourceTree = "<group>"; };
+		7398CC831CE27A2B009476D6 /* ordArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ordArray.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				7398CC781CE274B1009476D6 /* main.c */,
 				7398CC7F1CE274DF009476D6 /* find.c */,
 				7398CC801CE274DF009476D6 /* find.h */,
+				7398CC821CE27A2B009476D6 /* ordArray.c */,
+				7398CC831CE27A2B009476D6 /* ordArray.h */,
 			);
 			path = demoFind;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7398CC841CE27A2B009476D6 /* ordArray.c in Sources */,
 				7398CC811CE274DF009476D6 /* find.c in Sources */,
 				7398CC791CE274B1009476D6 /* main.c in Sources */,
 			);
