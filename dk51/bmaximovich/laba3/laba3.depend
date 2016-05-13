@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1461276923 source:c:\users\Богдан\desktop\laba3\bubblesort.c
+	"BubbleSort.h"
+
+1461276923 c:\users\Богдан\desktop\laba3\bubblesort.h
+	<stdio.h>
+
+1461276923 source:c:\users\Богдан\desktop\laba3\insertionsort.c
+	"InsertionSort.h"
+
+1461276923 c:\users\Богдан\desktop\laba3\insertionsort.h
+	<stdio.h>
+
+1461276923 source:c:\users\Богдан\desktop\laba3\selectionsort.c
+	"SelectionSort.h"
+
+1461276923 c:\users\Богдан\desktop\laba3\selectionsort.h
+	<stdio.h>
+
+1461276923 source:c:\users\Богдан\desktop\laba3\shellsort.c
+	"ShellSort.h"
+
+1461276923 c:\users\Богдан\desktop\laba3\shellsort.h
+	<stdio.h>
+
+1463159854 source:c:\users\Богдан\desktop\laba3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"BubbleSort.h"
+	"InsertionSort.h"
+	"SelectionSort.h"
+	"ShellSort.h"
+	"quickSort.h"
+
+1463159170 source:c:\users\Богдан\desktop\laba3\quicksort.c
+	"quickSort.h"
+
+1463159170 c:\users\Богдан\desktop\laba3\quicksort.h
+	<stdio.h>
+
