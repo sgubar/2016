@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 #include "BubbleSort.h"
 #include "InsertionSort.h"
 #include "SelectionSort.h"
@@ -16,13 +17,13 @@
 #include "quickSort.h"
 
 #define ARRAY_SIZE(a) (sizeof(theArray)/sizeof(theArray[0]))
-
+#define ArraySize 10000
 static void printArray(int anArray[], int aSize);
 static void fillArray(int anArray[], int aSize, int aPivot);
 int main(int argc, const char * argv[])
 {
 	/*..................................................................................................*/
-	const int ArraySize=5000;
+
 	int theArray[ArraySize];
 	int Number;
 	int theArray1[ArraySize];
@@ -38,6 +39,7 @@ int main(int argc, const char * argv[])
         theArray2[Number]=theArray[Number];
         theArray3[Number]=theArray[Number];
         theArray4[Number]=theArray[Number];
+        theArray5[Number]=theArray[Number];
 	}
 
 	printf("\nTest bubble sorting\n\n");
@@ -106,9 +108,9 @@ int main(int argc, const char * argv[])
     printf("\ntime of bubble sorting: %.10f\n", (double)(theEnd1 - theStart1) / CLOCKS_PER_SEC);
     printf("\ntime of selection sorting: %.10f\n", (double)(theEnd2 - theStart2) / CLOCKS_PER_SEC);
     printf("\ntime of insertion sorting: %.10f\n", (double)(theEnd3 - theStart3) / CLOCKS_PER_SEC);
-	printf("\ntime of Shell sorting: %.10f\n\n", (double)(theEnd4 - theStart4) / CLOCKS_PER_SEC);
+	printf("\ntime of Shell sorting: %.20f\n\n", (double)(theEnd4 - theStart4) / CLOCKS_PER_SEC);
 	printf("Finish the partition with a pivot: %d\n", partitionIt(theArray5, 0, ARRAY_SIZE(theArray5) - 1, 99));
-	printf ("time of Quick sorting: %.10lf\n", (double)(theEnd5 - theStart5)/CLOCKS_PER_SEC);
+	printf ("time of Quick sorting: %.20f\n", (double)(theEnd5 - theStart5)/CLOCKS_PER_SEC);
 	//return 0;
 
 	system("pause");
@@ -122,4 +124,12 @@ void printArray(int anArray[], int aSize)
 	}
 
 	printf("}\n");
+}
+void fillArray(int anArray[], int aSize, int aPivot)
+{
+srand(0);
+for (int i = 0; i < aSize; i++)
+{
+anArray[i] = rand() % (2 * aPivot);
+}
 }

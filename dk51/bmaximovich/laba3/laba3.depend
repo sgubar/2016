@@ -23,10 +23,11 @@
 1461276923 c:\users\Богдан\desktop\laba3\shellsort.h
 	<stdio.h>
 
-1463159854 source:c:\users\Богдан\desktop\laba3\main.c
+1463163559 source:c:\users\Богдан\desktop\laba3\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
+	<math.h>
 	"BubbleSort.h"
 	"InsertionSort.h"
 	"SelectionSort.h"
