@@ -2,7 +2,7 @@
 //
 //
 //  Created by Bogdan Maximovich on 23/03/16.
-//  Copyright © 2016 Bogdan Maximovich. All rights reserved.
+//  Copyright Â© 2016 Bogdan Maximovich. All rights reserved.
 //
 
 #include "list.h"
@@ -137,25 +137,27 @@ void *InsertNodeAtIndex(IntList *InsertList, IntNode *InsertNode, int index)
 }
 void *RemovedNodeAtIndex(IntList *InsertList, int InsertNode)
 {
-if (NULL != InsertList && InsertNode<InsertList->count&&InsertNode>=0)
+        if (NULL != InsertList && InsertNode<InsertList->count&&InsertNode>=0)
 {
-IntNode *RemovedNode = IndexNode(InsertList, InsertNode);
-if (0 != InsertNode)
+   IntNode *RemovedNode = IndexNode(InsertList, InsertNode);
+        if (0 != InsertNode)
 {
-IntNode *PrevNode = IndexNode(InsertList, InsertNode - 1);
-if (InsertNode == InsertList->count) InsertList->tail = PrevNode;
-PrevNode->nextNode = RemovedNode->nextNode;
-InsertList->count -= 1;
+   IntNode *PrevNode = IndexNode(InsertList, InsertNode - 1);
+       if (InsertNode == InsertList->count) InsertList->tail = PrevNode;
+   PrevNode->nextNode = RemovedNode->nextNode;
+   InsertList->count -= 1;
 }
-else
+       else
 {
+	
 InsertList->head = IndexNode(InsertList, InsertNode + 1);
 InsertList->count -= 1;
+
 }
 }
-else
+      else
 {
-return NULL;
+       return NULL;
 }
 }
 
