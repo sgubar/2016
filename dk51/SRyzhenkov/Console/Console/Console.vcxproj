@@ -146,13 +146,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Fun.c" />
-    <ClCompile Include="FunList.c" />
+    <ClCompile Include="Myfunction.c" />
+    <ClCompile Include="List.c" />
     <ClCompile Include="Source.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Fun.h" />
-    <ClInclude Include="FunList.h" />
+    <ClInclude Include="Myfunction.h" />
+    <ClInclude Include="List.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

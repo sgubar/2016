@@ -35,9 +35,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="SimpleSort.h" />
-		<Unit filename="main.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="main.cpp" />
 		<Unit filename="shellSort.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -1,0 +1,11 @@
+﻿  main.c
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(8): warning C4013: 'srand' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(8): warning C4013: 'time' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(9): warning C4013: 'malloc' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(9): warning C4312: 'type cast': conversion from 'int' to 'int *' of greater size
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(11): warning C4013: 'rand' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(30): warning C4013: 'system' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(33): warning C4068: unknown pragma
+  Sorting.c
+  Generating Code...
+d:\документы\visual studio 2015\projects\sort_v2\sort_v2\main.c(21): error C4700: uninitialized local variable 'sizeArray' used

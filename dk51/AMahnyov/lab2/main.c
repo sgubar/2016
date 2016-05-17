@@ -7,6 +7,7 @@
 
 static void doDemo();
 static void doTask();
+static void doHW();
 
 int main(int argc, char* argv[]){
     if(argc >= 1){
@@ -16,6 +17,10 @@ int main(int argc, char* argv[]){
 
         if(strcmp(argv[1], "task")==0){
             doTask();
+        }
+
+        if(strcmp(argv[1], "hw")==0){
+            doHW();
         }
     } else {
         printf("Invalid syntax.\nlab2 <key>\nPossible keys: 'task', 'demo'\n");
@@ -43,6 +48,24 @@ static void doDemo(){
     printCharList(testList);
     printf("Swapping\n");
     printCharList(swapList(testList));
+}
+
+static void doHW(){
+    charNode *testNode0 = createCharNode('b');
+    charNode *testNode1 = createCharNode('a');
+    charNode *testNode2 = createCharNode('c');
+    charNode *testNode3 = createCharNode('e');
+    charNode *testNode4 = createCharNode('d');
+    charList *testList = charListConstructor();
+    addNode(testList, testNode0);
+    addNode(testList, testNode1);
+    addNode(testList, testNode2);
+    addNode(testList, testNode3);
+    addNode(testList, testNode4);
+    printCharList(testList);
+    printf("\n");
+    doHWSort(testList);
+    printCharList(testList);
 }
 
 static void doTask(){

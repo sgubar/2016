@@ -35,7 +35,7 @@ int main(int argc,char *argv[])
 			NodeSorting(theList, atof(argv[2]), atof(argv[3]), atof(argv[4]));
 			printf("After sorting\n");
 			PrintList(theList);
-			printf("insertion Sort:\n");
+			printf("\nDZ 3\ninsertion Sort:\n");
 			insertionSort(theList);
 			PrintList(theList);
 		}

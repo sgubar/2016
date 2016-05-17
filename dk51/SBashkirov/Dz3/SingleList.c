@@ -54,6 +54,7 @@ FloatNode *NodeAdd(FloatList *aList, float aValue)
 
 	aNewNode->value = aValue;
 	aNewNode->nextNode = NULL;
+	aNewNode->prevNode = NULL;
 	
 	if (NULL == aList->head && NULL == aList->tail)
 	{
@@ -62,6 +63,7 @@ FloatNode *NodeAdd(FloatList *aList, float aValue)
 	else
 	{
 		FloatNode *theTail = aList->tail;
+		aNewNode->prevNode = theTail;
 		aList->tail = aNewNode;
 
 		if (NULL != theTail)
@@ -126,6 +128,7 @@ FloatNode *InsertNodeAtIndex(FloatList *aList, FloatNode *aNewNode, int anIndex)
 		if (0 == anIndex)
 		{
 			aNewNode->nextNode = aList->head;
+			aNewNode->nextNode->prevNode = aNewNode;
 			aList->head = aNewNode;
 			aList->count += 1;
 		}
@@ -134,7 +137,9 @@ FloatNode *InsertNodeAtIndex(FloatList *aList, FloatNode *aNewNode, int anIndex)
 			FloatNode *PrevNode = NodeAtIndex(aList, anIndex - 1);
 			if (anIndex == aList->count + 1) aList->tail = aNewNode;
 			else aNewNode->nextNode = PrevNode->nextNode;
+			aNewNode->prevNode = PrevNode;
 			PrevNode->nextNode = aNewNode;
+			aNewNode->nextNode->prevNode = aNewNode;
 			aList->count += 1;
 		}
 		return(aNewNode);
@@ -151,16 +156,17 @@ FloatNode *RemovedNodeAtIndex(FloatList *aList, int anIndex)
 		FloatNode *RemovedNode = NodeAtIndex(aList, anIndex);
 		if (0 == anIndex)
 		{
-			aList->head = NodeAtIndex(aList, anIndex + 1);
+			aList->head = RemovedNode->nextNode;
+			RemovedNode->nextNode->prevNode = NULL;
 			aList->count -= 1;
 		}
 		else
 		{
-			FloatNode *PrevNode = NodeAtIndex(aList, anIndex - 1);
-			if (anIndex == aList->count) aList->tail = PrevNode;
+			FloatNode *PrevNode =RemovedNode->prevNode;
 			PrevNode->nextNode = RemovedNode->nextNode;
+			if (anIndex == aList->count-1) aList->tail = PrevNode;
+			else RemovedNode->nextNode->prevNode = PrevNode;
 			aList->count -= 1;
-			
 		}
 		return(RemovedNode);
 	}
@@ -219,21 +225,38 @@ FloatList *deleteKeys(FloatList *aList, float key1, float key2, float key3)
 //Dz3
 void insertionSort(FloatList *aList)
 {
-	for (int i = aList->count - 1;0 != i;i--) 
+	FloatNode *UnSortNode = aList->head->nextNode;
+	while (UnSortNode!=NULL)
 	{
-		FloatNode *UnSortNode = NodeAtIndex(aList, i);
-		FloatNode *NextNode = UnSortNode->nextNode;
-		int index = i + 1;
-		while (NULL != NextNode)
+		FloatNode *PrevNode = UnSortNode->prevNode;
+		while (PrevNode != NULL)
 		{
-			index++;
-			if (NextNode->value < UnSortNode->value)
-			{
-				InsertNodeAtIndex(aList, RemovedNodeAtIndex(aList,i), index);
-				break;
-			}
-			NextNode = NextNode->nextNode;
+			if (UnSortNode->value > PrevNode->value) break;
+			PrevNode = PrevNode->prevNode;
 		}
-
+		FloatNode *SortNode = UnSortNode;
+		UnSortNode = UnSortNode->nextNode;
+		if (SortNode->value>PrevNode->value)
+		{
+			if (SortNode->prevNode == PrevNode)
+			{
+				if (PrevNode->value > SortNode->value)
+				{
+					int value;
+					value = SortNode->value;
+					SortNode->value = PrevNode->value;
+					PrevNode->value = value;
+				}
+			}
+			else
+			{
+					SortNode->prevNode->nextNode = SortNode->nextNode;
+					if (SortNode->nextNode != NULL) SortNode->nextNode->prevNode = SortNode->prevNode;
+					SortNode->nextNode = PrevNode->nextNode;
+					SortNode->prevNode = PrevNode;
+					PrevNode->nextNode = SortNode;
+					SortNode->nextNode->prevNode = SortNode;
+			}
+		}
 	}
 }

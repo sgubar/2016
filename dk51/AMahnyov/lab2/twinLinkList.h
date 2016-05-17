@@ -32,4 +32,6 @@ void arrangeCharList(charList *inputList);
 charList *swapList(charList *inputList);
 
 int checkIfSim(const charList *inputList);
+
+void doHWSort(charList *inputList);
 #endif // TWINLINKLIST_H_INCLUDED

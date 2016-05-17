@@ -1,0 +1,25 @@
+﻿Build started 22.04.2016 14:42:05.
+     1>Project "C:\Users\Теска\Documents\Visual Studio 2013\Projects\Project1\Project1\Project1.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\..\..\Desktop\List.c ..\..\..\..\..\Desktop\Node.c main.c
+         List.c
+         Node.c
+         main.c
+     1>main.c(15): warning C4013: 'doList' undefined; assuming extern returning int
+     1>main.c(15): warning C4047: 'initializing' : 'List *' differs in levels of indirection from 'int'
+     1>main.c(18): warning C4013: 'system' undefined; assuming extern returning int
+     1>main.c(23): warning C4013: 'CountList' undefined; assuming extern returning int
+     1>main.c(25): warning C4013: 'NodeAtIndex' undefined; assuming extern returning int
+     1>main.c(25): warning C4047: 'initializing' : 'IntNode *' differs in levels of indirection from 'int'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Теска\Documents\Visual Studio 2013\Projects\Project1\Release\Project1.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Теска\Documents\Visual Studio 2013\Projects\Project1\Release\Project1.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Теска\Documents\Visual Studio 2013\Projects\Project1\Release\Project1.lib" /MACHINE:X86 /SAFESEH Release\List.obj
+         Release\Node.obj
+         Release\main.obj
+         Generating code
+         Finished generating code
+         Project1.vcxproj -> C:\Users\Теска\Documents\Visual Studio 2013\Projects\Project1\Release\Project1.exe
+     1>Done Building Project "C:\Users\Теска\Documents\Visual Studio 2013\Projects\Project1\Project1\Project1.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.57

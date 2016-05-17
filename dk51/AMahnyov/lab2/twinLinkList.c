@@ -10,13 +10,13 @@ void charListDestructor(charList *listToBeDeleted);
 void printCharList(const charList *inputList);
 charNode *findMaxNode(const charList *inputList);
 charNode *findMinNode(const charList *inputList);
-charNode *ignoredMax(const charList *inputList, const int ignorance);
 charNode *addNode(charList *inputList, charNode *newNode);
 charNode *removeCharNodeAtIndex(charList *aList, int anIndex);
 charNode *insertCharNodeAtIndex(charList *aList, charNode *aNewNode, int anIndex);
 charList *swapList(charList *inputList);
 void arrangeCharList(charList *inputList);
 int checkIfSim(const charList *inputList);
+void doHWSort(charList *inputList);
 
 charList *charListConstructor(){
     charList *newList = (charList *)malloc(sizeof(charList)); //memory allocation (!malloc returns a pointer!)
@@ -271,5 +271,40 @@ int checkIfSim(const charList *inputList){
         }
     }while(currentLeftNode!=currentRightNode);
     return 0;
+}
+
+void doHWSort(charList *inputList){
+    if(NULL == inputList) return NULL;
+    charNode *currentNode = inputList->left;
+    int oddNode = 0;
+    for(int ignorance = 0; ignorance<inputList->numOfNodes; ignorance++){
+        currentNode = charNodeAtIndex(inputList, ignorance);
+        charNode *maxNode = currentNode;
+        do{
+            if(currentNode->letter >= maxNode->letter){
+                maxNode = currentNode;
+            }
+            currentNode = currentNode->nextNode;
+        }while(NULL != currentNode);
+        charNode *nodeToInsert = createCharNode(maxNode->letter);
+        if(inputList->right == maxNode){
+            inputList->right = maxNode->prevNode;
+            maxNode->prevNode->nextNode = NULL;
+            oddNode = 1;
+        }
+        if(inputList->left == maxNode){
+            inputList->left = maxNode->nextNode;
+            maxNode->nextNode->prevNode = NULL;
+            oddNode = 1;
+        }
+        if(inputList->left != maxNode && inputList->right != maxNode && oddNode == 0){
+            maxNode->nextNode->prevNode = maxNode->prevNode;
+            maxNode->prevNode->nextNode = maxNode->nextNode;
+        }
+        inputList->numOfNodes--;
+        freeCharNode(maxNode);
+        insertCharNodeAtIndex(inputList, nodeToInsert, 0);
+        oddNode = 0;
+    }
 }
 // 3/31 - DK51.LR2.Mahnyov_Aleksander

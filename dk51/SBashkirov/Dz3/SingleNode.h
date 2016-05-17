@@ -17,6 +17,7 @@ struct __FloatNode
 {
 	float value;
 	FloatNode *nextNode;
+	FloatNode *prevNode;
 };
 
 #endif 

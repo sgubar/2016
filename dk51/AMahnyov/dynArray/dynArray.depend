@@ -13,3 +13,17 @@
 1460545063 c:\workspace\dk51\amahnyov\dynarray\dynarray.h
 	<stdio.h>
 
+1461276922 source:c:\users\Богдан\documents\2016\2016\dk51\amahnyov\dynarray\dynarray.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"dynArray.h"
+
+1461276922 c:\users\Богдан\documents\2016\2016\dk51\amahnyov\dynarray\dynarray.h
+	<stdio.h>
+
+1461276922 source:c:\users\Богдан\documents\2016\2016\dk51\amahnyov\dynarray\main.c
+	<stdio.h>
+	<stdlib.h>
+	"dynArray.h"
+

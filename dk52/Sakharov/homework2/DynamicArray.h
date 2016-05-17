@@ -16,6 +16,9 @@ typedef struct __dynamicIntArray
 	int *storage;
 	int physicalSize;
 	int logicalSize;
+        short storvalidity;
+        DynamicIntArray.storvalidity=0;//flag of storage validity
+
 }DynamicIntArray;
 
 DynamicIntArray *createDAInt(int aSize);
@@ -24,4 +27,6 @@ void freeDAInt(DynamicIntArray *anArray);
 int valueAtIndex(int anIndex,DynamicIntArray *anArray);
 void setValueAtIndex(int anValue, int anIndex,DynamicIntArray *anArray);
 
+
+int infofunc(DynamicIntArray *anArray);
 #endif /* DynamicArray_h */
