@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1460022566 source:c:\users\Богдан\desktop\dz1\doublelist.c
+	"list.h"
+	"Node.h"
+	<stdlib.h>
+	"DoubleList.h"
+
+1463324643 c:\users\Богдан\desktop\dz1\list.h
+	<stdio.h>
+	"Node.h"
+
+1460025261 c:\users\Богдан\desktop\dz1\node.h
+	<stdio.h>
+
+1460025261 c:\users\Богдан\desktop\dz1\doublelist.h
+	<stdio.h>
+	"list.h"
+
+1463324709 source:c:\users\Богдан\desktop\dz1\main.c
+	<stdio.h>
+	"Node.h"
+	"list.h"
+	"DoubleList.h"
+
+1463324629 source:c:\users\Богдан\desktop\dz1\list.c
+	"list.h"
+	"Node.h"
+	<stdlib.h>
+	"DoubleList.h"
+
+1459965300 source:c:\users\Богдан\desktop\dz1\node.c
+	"Node.h"
+	<stdlib.h>
+
+1461339025 source:c:\users\Богдан\desktop\dz1\sorting.c
+	<stdio.h>
+	<stdlib.h>
+	"Node.h"
+	"List.h"
+	"DoubleList.h"
+	"Sorting.h"
+
+1461339012 c:\users\Богдан\desktop\dz1\sorting.h
+	"Node.h"
+	"list.h"
+	<stdio.h>
+

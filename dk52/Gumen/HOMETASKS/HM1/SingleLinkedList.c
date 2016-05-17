@@ -142,7 +142,7 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
 
 		if (anIndex == 0) ////insert node in the beginning of the list;
 		{
-			IntNode *theHead = aList->head;
+			//IntNode *theHead = aList->head;
 			aList->head = aNewNode;
 			aNewNode->nextNode = theNode;
 		}
@@ -201,18 +201,9 @@ IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)
 			return NodeToFree;
 		}
 
-		if (anIndex == (aList->count-2) ) //to remove the last node in the list
-		{
-			theNodePrev = theNode;
-			theNode = theNode->nextNode;
-			NodeToFree = theNode;
-			aList->tail = theNodePrev;
-			aList->count -= 1;
-			return NodeToFree;
-							
-		}
 
-		do //to remove the node between the first and the last one
+
+		do //to remove other nodes
 		{
 			
 			if (i == (anIndex - 1))//find the node before the one to remove
@@ -223,7 +214,7 @@ IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)
 			}
 			if (i == (anIndex))//find the node to remove
 			{
-				theNode = NodeToFree;
+				NodeToFree = theNode;
 				theNodePrev->nextNode = NodeToFree->nextNode;
 				aList->count -= 1;
 				break;
@@ -245,4 +236,11 @@ IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)
 	}
 
 	return 0;
+}
+
+void ListInfo(IntList *theList)
+{
+	printf("The list info:\n");
+	printf("theList->head: %d\n", theList->head);
+	printf("theList->tail->nextNode: %d\n", theList->tail->nextNode);
 }

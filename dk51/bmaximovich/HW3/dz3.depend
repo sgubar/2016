@@ -1,0 +1,114 @@
+# depslib dependency file v1.0
+1460022566 source:c:\users\Богдан\desktop\dz3\doublelist.c
+	"list.h"
+	"Node.h"
+	<stdlib.h>
+	"DoubleList.h"
+
+1460025261 c:\users\Богдан\desktop\dz3\list.h
+	<stdio.h>
+	"Node.h"
+
+1460025261 c:\users\Богдан\desktop\dz3\node.h
+	<stdio.h>
+
+1460025261 c:\users\Богдан\desktop\dz3\doublelist.h
+	<stdio.h>
+	"list.h"
+
+1459965300 source:c:\users\Богдан\desktop\dz3\list.c
+	"list.h"
+	"Node.h"
+	<stdlib.h>
+	"DoubleList.h"
+
+1446671344 source:c:\users\Богдан\desktop\dz3\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1459965300 source:c:\users\Богдан\desktop\dz3\node.c
+	"Node.h"
+	<stdlib.h>
+
+1460055069 source:c:\users\Богдан\desktop\dz3\sorting.c
+	<stdio.h>
+	<stdlib.h>
+	"Node.h"
+	"List.h"
+	"DoubleList.h"
+	"Sorting.h"
+
+1460025261 c:\users\Богдан\desktop\dz3\sorting.h
+	"Node.h"
+	"list.h"
+	<stdio.h>
+
+1460022568 source:c:\users\Богдан\desktop\Нова папка (3)\doublelist.c
+	"list.h"
+	"Node.h"
+	<stdlib.h>
+	"DoubleList.h"
+
+1460025262 c:\users\Богдан\desktop\Нова папка (3)\list.h
+	<stdio.h>
+	"Node.h"
+
+1460025262 c:\users\Богдан\desktop\Нова папка (3)\node.h
+	<stdio.h>
+
+1460025262 c:\users\Богдан\desktop\Нова папка (3)\doublelist.h
+	<stdio.h>
+	"list.h"
+
+1459965302 source:c:\users\Богдан\desktop\Нова папка (3)\list.c
+	"list.h"
+	"Node.h"
+	<stdlib.h>
+	"DoubleList.h"
+
+1460022568 source:e:\Нова папка (3)\doublelist.c
+	"list.h"
+	"Node.h"
+	<stdlib.h>
+	"DoubleList.h"
+
+1460025262 e:\Нова папка (3)\list.h
+	<stdio.h>
+	"Node.h"
+
+1460025262 e:\Нова папка (3)\node.h
+	<stdio.h>
+
+1460025262 e:\Нова папка (3)\doublelist.h
+	<stdio.h>
+	"list.h"
+
+1459965302 source:e:\Нова папка (3)\list.c
+	"list.h"
+	"Node.h"
+	<stdlib.h>
+	"DoubleList.h"
+
+1463334538 source:e:\Нова папка (3)\main.c
+	<stdio.h>
+	"Node.h"
+	"list.h"
+	"DoubleList.h"
+
+1459965302 source:e:\Нова папка (3)\node.c
+	"Node.h"
+	<stdlib.h>
+
+1463334260 source:e:\Нова папка (3)\sorting.c
+	<stdio.h>
+	<stdlib.h>
+	"Node.h"
+	"List.h"
+	"DoubleList.h"
+	"Sorting.h"
+
+1460025262 e:\Нова папка (3)\sorting.h
+	"Node.h"
+	"list.h"
+	<stdio.h>
+
