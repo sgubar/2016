@@ -18,7 +18,7 @@
 #define ARRAY_SIZE(a) (sizeof(theArray)/sizeof(theArray[0]))
 #define ArraySize 30000
 static void printArray(int anArray[], int aSize);
-static void fillArray(int anArray[], int aSize, int aPivot);
+
 int main(int argc, const char * argv[])
 {
 		int theArray[ArraySize];
@@ -78,7 +78,7 @@ int main(int argc, const char * argv[])
 	clock_t theEnd5 = clock();
 	printf(" 100 percent. Done\n\n");
 
-// ^The Shell sort // 
+// The Shell sort // 
 
 
 // Results:
