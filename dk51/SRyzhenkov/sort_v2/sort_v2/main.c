@@ -9,41 +9,31 @@
 #include "Sorting.h"
 #include <Windows.h>
 
-void printArray(int anArray[], int aSize);
+
 int *CreateArray(int Size);
 
 int main(int argc, char* argv[])
 {
-	/*int sizeArray;
-	printf("SizeArray:  %d \n", sizeArray);
-	scanf("Size = %d \n", &sizeArray);
-	printf("SizeArray: %d \n", sizeArray);
-	*/
+	
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	printf("Добро пожаловать!!\n");
 	printf("В данной программе у вас есть возможность сравнить\nзатраты времени на сортировку массивов с разным количеством данных,\nразными видами сортировок.");
-	printf("\nСортировка выполняется 5ю видами:\n1) Сортировка пузырьком\n2) Сортировка выбором\n3) Сортировка вставкой\n4) Сортировка Шелла\n5) Быстрая сортировка(Приносим свои извинения, на данный момент не доступна,\nнаходится на стадии разработки)");
+	printf("\nСортировка выполняется 5ю видами:\n1) Сортировка пузырьком\n2) Сортировка выбором\n3) Сортировка вставкой\n4) Сортировка Шелла\n5) Быстрая сортировка v1 i v2");
 	printf("\nВам доступны для сравненния 4 разных массива:\n1) Имеет 500 элементов\n2) Имеет 1000 элементов\n3) Имеет 5000 элементов\n4) Имеет 10000 элементов");
 	printf("\nДля сортировки желаемого количества элементов,\nнажмите на соответствующую клавишу вашей клавиатуры,\nесли вы хотите выйти из программы, нажмите клавишу 5.\n");
-	printf("\nБлагодарим вас, за использование нашей программы.\n");
+
 
 	int arrSize;
 	FILE * ptr = fopen("Plot.csv", "w+");
 	fclose(ptr);
-	while (1)
-		{
-			//Считывание слова
-			//обработка
-			//проверка выхода
-			//и т.д.
-	
+	while (1){
+
 	scanf("%i", &arrSize);
 	switch (arrSize)
 	{
 	case 1:
 		Sorting_500();
-	break;
+		break;
 	case 2:
 		Sorting_1000();
 		break;
@@ -54,7 +44,6 @@ int main(int argc, char* argv[])
 		Sorting_10000();
 		break;
 	case 5:
-	//	printf("\nБлагодарим вас, за использование нашей программы.\n");
 		exit(0);
 		break;
 	}
@@ -74,14 +63,4 @@ int *CreateArray(int size) {
 	return anArray;
 }
 
-void printArray(int anArray[], int aSize)
-{
-	printf("{");
-	for (int i = 0; i < aSize; i++)
-	{
-		printf(" %d ", anArray[i]);
-	}
-
-	printf("}\n");
-}
 

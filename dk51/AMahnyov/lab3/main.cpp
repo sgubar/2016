@@ -1,3 +1,4 @@
+/*Copyright (c), 2016, Mahnyov Aleksander. All rights reserved*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -34,6 +35,7 @@ int main(){
     system("pause");
     printf("Launching graphics...\n");
     launchGraphics();
+    drawGrid();
     drawGraph(results);
     printf("\n\n\n\n\n");
     system("pause");
@@ -52,11 +54,11 @@ static int *generateArray(int size){
 }
 
 static float runTest(int sortType, const int theTestArray[], const int arrSize){
-    clock_t start0 = clock();
     int testArray[arrSize];
     for(int i = 0; i<arrSize; i++){
         testArray[i] = theTestArray[i];
     }
+    clock_t start0 = clock();
     switch(sortType){
         case 0:
             bubbleSort(testArray, arrSize);
@@ -125,7 +127,6 @@ static void launchGraphics(){
     setviewport(0, 0, getmaxx(), getmaxy(), 0);
     setlinestyle(0, 0, 3);
     settextstyle(0, 0, 3);
-    drawGrid();
 }
 //x1 y1 x2 y2
 static void drawGrid(){

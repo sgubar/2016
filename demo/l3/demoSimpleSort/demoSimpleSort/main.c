@@ -80,7 +80,8 @@ int main(int argc, const char * argv[])
 	printf ("time of Quick sorting: %.10lf\n", (double)(theEndQuick - theStartQuick)/CLOCKS_PER_SEC);
 
 	printf("Hello, World!\n");
-	return 0;
+	
+	system("pause");
 }
 
 #pragma mark -
