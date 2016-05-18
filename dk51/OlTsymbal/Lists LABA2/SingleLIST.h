@@ -1,3 +1,10 @@
+//
+//  SingleList.h
+//  List Laba2
+//
+//  Created by Tsymbal Olexandr on 19/05/16.
+//  Copyright © 2016 OlTsymbal. All rights reserved.
+//
 #ifndef SingleLIST_h
 #define SingleLIST_h
 
@@ -6,11 +13,11 @@
 // Predeclaration
 typedef struct __MyNode MyNode;
 
-typedef struct _MyList
+typedef struct _MyList//declaration the struct 
 {
-	MyNode *top;
-	MyNode *bottom;
-	int count;
+	MyNode *top;// pointer to top of list
+	MyNode *bottom;//pointer to bottom of list 
+	int count;// number elements in list
 }MyList;
 
 MyList *CreateANewList();

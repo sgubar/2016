@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="function.h" />
     <ClInclude Include="SingleLIST.h" />
     <ClInclude Include="SingleNODE.h" />
   </ItemGroup>

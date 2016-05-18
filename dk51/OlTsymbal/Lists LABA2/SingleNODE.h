@@ -1,4 +1,10 @@
-
+//
+//  SingleNode.c
+//  List Laba2
+//
+//  Created by Tsymbal Olexandr on 19/05/16.
+//  Copyright © 2016 OlTsymbal. All rights reserved.
+//
 #ifndef SingleNODE_h
 #define SingleNODE_h
 
