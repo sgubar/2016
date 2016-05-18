@@ -20,12 +20,12 @@ int main()
 
 void testDA() {
 	printf("Create dynamic massive\n");
-	DynamicIntArray *anArray = createDAInt(10);
+	DynamicIntArray *anArray = createDAInt(15);
 	printDAsize(anArray);
 
-	printf("\nAdd number 5 at index 2\n");
-	setValueAtIndex(5, 2, anArray);
-	printf("Index[2] = %d\n", valueAtIndex(2, anArray));
+	printf("\nAdd number 1 at index 1\n");
+	setValueAtIndex(1, 1, anArray);
+	printf("Index[1] = %d\n", valueAtIndex(1, anArray));
 	printDAsize(anArray);
 
 	printf("\nAdd number 2 at index 0\n");
@@ -33,14 +33,14 @@ void testDA() {
 	printf("Index[0] = %d\n", valueAtIndex(0, anArray));
 	printDAsize(anArray);
 
-	printf("\nAdd number 140 at index 1\n");
-	setValueAtIndex(140, 1, anArray);
-	printf("Index[1] = %d\n", valueAtIndex(1, anArray));
+	printf("\nAdd number 666 at index 3\n");
+	setValueAtIndex(666, 3, anArray);
+	printf("Index[3] = %d\n", valueAtIndex(3, anArray));
 	printDAsize(anArray);
 
-	printf("\nAdd number 20 at index 20\n");
-	setValueAtIndex(20, 20, anArray);
-	printf("Index[20] = %d\n", valueAtIndex(20, anArray));
+	printf("\nAdd number 25 at index 25\n");
+	setValueAtIndex(25, 25, anArray);
+	printf("Index[25] = %d\n", valueAtIndex(25, anArray));
 	printDAsize(anArray);
 	freeDAInt(anArray);
 
