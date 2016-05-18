@@ -1,13 +1,10 @@
-﻿Сборка начата 23.03.2016 21:19:01.
+﻿Сборка начата 19.05.2016 1:43:37.
      1>Проект "C:\Users\User\documents\visual studio 2015\Projects\demoList\demoList\demoList.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt SingleLinkedList.c main.c
-         main.c
-     1>c:\users\user\documents\visual studio 2015\projects\demolist\demolist\main.c(58): warning C4013: system: нет определения; предполагается "extern" с возвратом типа "int"
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt SingleLinkedList.c
          SingleLinkedList.c
      1>c:\users\user\documents\visual studio 2015\projects\demolist\demolist\singlelinkedlist.c(97): warning C4047: return: "int" отличается по уровням косвенного обращения от "void *"
-         Создание кода...
-     1>c:\users\user\documents\visual studio 2015\projects\demolist\demolist\singlelinkedlist.c(187): warning C4715: SLRemovedNodeAtIndex: значение возвращается не при всех путях выполнения
+     1>c:\users\user\documents\visual studio 2015\projects\demolist\demolist\singlelinkedlist.c(197): warning C4715: SLRemovedNodeAtIndex: значение возвращается не при всех путях выполнения
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\User\documents\visual studio 2015\Projects\demoList\Debug\demoList.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\User\documents\visual studio 2015\Projects\demoList\Debug\demoList.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\User\documents\visual studio 2015\Projects\demoList\Debug\demoList.lib" /MACHINE:X86 Debug\main.obj
          Debug\SingleLinkedList.obj
@@ -17,4 +14,4 @@
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:00.85
+Затраченное время: 00:00:00.72

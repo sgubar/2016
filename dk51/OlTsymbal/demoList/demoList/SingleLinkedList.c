@@ -125,6 +125,13 @@ IntNode *SLNodeAtIndex(const IntList *aList, int anIndex)
 	return theResult;
 }
 
+//
+//  SingleLinkedList.c
+//  demoList
+//
+//  Created by Tsymbal Olexandr.
+//  Copyright © 2016 OlTsymbal. All rights reserved.
+//
 IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex) {
 	if (NULL == aList || NULL == aNewNode) // checking does the list and Node is empty?
 	{
@@ -133,6 +140,7 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex) {
 	if (NULL == aList->head && NULL == aList->tail) 
 	{
 		aList->head = aList->tail = aNewNode; //if the head and the tail is empty our node will be put on this place
+		return aNewNode;
 	}
 	else
 	{
@@ -145,20 +153,20 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex) {
 					aNewNode->nextNode = theNode;//aNewNode link to theNode
 					aList->head = aNewNode;//put aNewNode on a head of aList
 					aList->count += 1;//increase count
-					return (aNewNode);
+					return aNewNode;
 				}
 				else
 				{
-					IntNode *PredNode = SLNodeAtIndex(aList, anIndex - 1);
-					aNewNode->nextNode = PredNode->nextNode;//aNewNode shoul link to that which previous node refers
-					PredNode->nextNode = aNewNode;// previous node link to aNewNode
+					IntNode *aPrevNode = SLNodeAtIndex(aList, anIndex - 1);
+					aNewNode->nextNode = aPrevNode->nextNode;//aNewNode shoul link to that which previous node refers
+					aPrevNode->nextNode = aNewNode;// previous node link to aNewNode
 					aList->count += 1;//increase count 
-					return (aNewNode);
+					return aNewNode;
 				}
 			}
 		}
+		return aNewNode;
 	}
-	return aNewNode;
 }
 
 IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex) 
@@ -175,6 +183,7 @@ IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)
 				aList->head = removedNode->nextNode;//head of aList have a link to the nextNode
 				SLFreeIntNode(removedNode);// free node
 				aList->count -= 1;//decrease count 
+				return removedNode;
 			}
 			else
 			{
@@ -182,6 +191,7 @@ IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)
 				PredNode->nextNode = removedNode->nextNode;//previous node has a link to link of removedNode
 				SLFreeIntNode(removedNode);//free node
 				aList->count -= 1;//decrease count
+				return removedNode;
 			}
 	}
 }
