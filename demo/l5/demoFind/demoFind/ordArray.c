@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include <strings.h>
 
-ordArrayPtr create(unsigned aSize)
+ordArrayPtr oa_create(unsigned aSize)
 {
 	ordArrayPtr theArray = (ordArrayPtr)malloc(sizeof(ordArray));
 	if (NULL != theArray)
@@ -25,7 +25,7 @@ ordArrayPtr create(unsigned aSize)
 	return theArray;
 }
 
-void destroy(ordArrayPtr anArray)
+void oa_destroy(ordArrayPtr anArray)
 {
 	if (NULL != anArray)
 	{
@@ -38,7 +38,7 @@ void destroy(ordArrayPtr anArray)
 	}
 }
 
-unsigned insert(ordArrayPtr anArray, int aValue)
+unsigned oa_insert(ordArrayPtr anArray, int aValue)
 {
 	unsigned theResult = anArray->size;
 	
@@ -53,11 +53,12 @@ unsigned insert(ordArrayPtr anArray, int aValue)
 	{
 		if (anArray->storage[i] > aValue)
 		{
+			theResult = i;
 			break;
 		}
 	}
 	
-	for (int j = anArray->size; j < i; j --)
+	for (int j = anArray->size; j > i; j --)
 	{
 		anArray->storage[j] = anArray->storage[j - 1];
 	}
@@ -68,9 +69,9 @@ unsigned insert(ordArrayPtr anArray, int aValue)
 	return theResult;
 }
 
-unsigned delete(ordArrayPtr anArray, int aValue)
+unsigned oa_delete(ordArrayPtr anArray, int aValue)
 {
-	unsigned theResult = find(anArray, aValue);
+	unsigned theResult = oa_find(anArray, aValue);
 	
 	if (theResult == anArray->size)
 	{
@@ -92,7 +93,7 @@ unsigned size(ordArrayPtr anArray)
 	return anArray->size;
 }
 
-unsigned find(ordArrayPtr anArray, int aValue)
+unsigned oa_find(ordArrayPtr anArray, int aValue)
 {
 	unsigned theResult = anArray->size;
 	unsigned theLowerBound = 0;
@@ -128,9 +129,9 @@ unsigned find(ordArrayPtr anArray, int aValue)
 	return theResult;
 }
 
-void print(ordArrayPtr anArray)
+void oa_print(ordArrayPtr anArray)
 {
-	printf ("{");
+	printf ("\n{");
 	
 	for (int i = 0; i < anArray->size; i ++)
 	{
@@ -141,5 +142,5 @@ void print(ordArrayPtr anArray)
 		}
 	}
 	
-	printf ("}");
+	printf ("}\n");
 }

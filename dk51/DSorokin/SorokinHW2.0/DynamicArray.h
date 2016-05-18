@@ -18,12 +18,6 @@ typedef struct __dynamicIntArray
 	int logicalSize;
 }DynamicIntArray;
 
-typedef struct __dynamicIntArrayNew
-{
-	int *storage;
-	int physicalSize;
-	int logicalSize;
-}DynamicIntArrayNew;
 
 DynamicIntArray *createDAInt(int aSize);
 void freeDAInt(DynamicIntArray *anArray);

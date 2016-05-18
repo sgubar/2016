@@ -42,15 +42,25 @@ void setValueAtIndex(int anValue, int anIndex, DynamicIntArray *anArray)
 		//anArray->storage = (int *)realloc(anArray->storage, (anIndex+1)* 2 * sizeof(int));//выделяем новый блок памяти с укзанием на старый и размером его изменения
 		//if (0 == anArray->storage[anIndex]) anArray->logicalSize += 1;// увеличиваем логический размер на 1 в случае если ячейка имеет значение 0
 		//anArray->storage[anIndex] = anValue;//записываем значение в ячейку памяти 
-		DynamicIntArrayNew *DynArrayNew = (DynamicIntArrayNew *)malloc(sizeof(DynamicIntArrayNew));
-		int aSize;
-		aSize = anArray->physicalSize;
-		DynArrayNew->storage = (int *)malloc(aSize * sizeof(int)*2);
-		DynArrayNew->storage = anArray->storage;
-		freeDAInt(anArray);
-		for (int i = DynArrayNew->physicalSize; i < anIndex+1; i++) DynArrayNew->storage[i] = 0;//заполняем новые ячейки 0
-		DynArrayNew->physicalSize = anIndex + 1;
-		if (0 == DynArrayNew->storage[anIndex]) DynArrayNew->logicalSize += 1;// увеличиваем логический размер на 1 в случае если ячейка имеет значение 0
-		DynArrayNew->storage[anIndex] = anValue;//записываем значение в ячейку памяти 
+
+		int aSize=anArray->physicalSize;
+		int *NewStorage= (int *)malloc(anIndex * sizeof(int) * 2);
+		anArray->physicalSize = anIndex*2;
+		for (int j = 0; j <= aSize - 1; j++) {//Заполняем новое хранилище старыми элементами
+			NewStorage[j] = anArray->storage[j];
+		}
+			
+		free(anArray->storage);//Освобождаем старое хранилище
+		for (int i = aSize; i < anArray->physicalSize -1; i++)//заполняем новые ячейки 0
+			NewStorage[i] = 0;
+		if (0 == anArray->storage[anIndex]) anArray->logicalSize += 1;// увеличиваем логический размер на 1 в случае если ячейка имеет значение 0
+			NewStorage[anIndex] = anValue;//записываем значение в ячейку памяти 
+			anArray->logicalSize += 1;
+			anArray->storage = NewStorage;//Ссылаемся на новое хранилище
+			}
+	else//если попали в масив, то просто помещаем на нужный индекс элемент
+	{
+		anArray->storage[anIndex] = anValue;
+		anArray->logicalSize += 1;
 	}
 }
