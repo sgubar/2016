@@ -1,3 +1,11 @@
+//
+//  Simplesort.c
+//  
+//
+//  Created by Serj Timoshenko on 4/18/16.
+//  Copyright © 2016 Serj Timoshenko. All rights reserved.
+//
+
 #include <stdio.h>
 #include <stdlib.h>
 

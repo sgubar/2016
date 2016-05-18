@@ -1,4 +1,10 @@
-
+//
+//  quicksort.h
+//  
+//
+//  Created by Serj Timoshenko on 4/18/16.
+//  Copyright © 2016 Serj Timoshenko. All rights reserved.
+//
 #ifndef quicksort_h
 #define quicksort_h
 

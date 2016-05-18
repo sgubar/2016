@@ -1,3 +1,10 @@
+//
+//  quicksort.c
+//  
+//
+//  Created by Serj Timoshenko on 4/18/16.
+//  Copyright © 2016 Serj Timoshenko. All rights reserved.
+//
 #include "quicksort.h"
 
 static void swap(int anArray[], int aLeftIndex, int aRightIndex);
