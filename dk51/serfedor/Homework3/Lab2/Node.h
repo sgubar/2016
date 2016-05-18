@@ -1,6 +1,6 @@
 //
 //  Node.h
-//  Homework3
+//  Lab2
 //
 //  Created by Sergey Fedorenko on 7/4/16.
 //  Copyright © 2016 Sergey Fedorenko. All rights reserved.
@@ -20,7 +20,6 @@ struct __IntNode
 {
 	int value;
 	IntNode *nextNode;
-	IntNode *prevNode;
 };
 
 //Create a new Node with int value

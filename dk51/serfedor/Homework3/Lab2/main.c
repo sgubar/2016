@@ -1,6 +1,6 @@
 //
 //  main.c
-//  Homework3
+//  Lab2
 //
 //  Created by Sergey Fedorenko on 7/4/16.
 //  Copyright © 2016 Sergey Fedorenko. All rights reserved.
@@ -17,18 +17,15 @@ int main(int argc, const char * argv[])
 	doPrintList(theList);
 	printf("\n");
 	
-	printf("List after swapping Node\n");
+	/*printf("List after swapping Node\n");
 	doPrintList(swapNodeAtList(theList));
 	
 	doSortingValue(theList);
 	printf("\n");
 	printf("List after sorting Node\n");
 	doPrintList(theList);
-
-	printf("Homework 3\n");
-	//insertionSort(theList);
-	//doPrintList(theList);
-	insertionSort(theList, count);
+	*/
+	theBubleSorting(theList, count);
 	doPrintList(theList);
 	system("pause");
 }

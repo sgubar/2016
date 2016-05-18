@@ -1,6 +1,6 @@
 //
 //  RingList.h
-//  Homework3
+//  Lab2
 //
 //  Created by Sergey Fedorenko on 7/4/16.
 //  Copyright © 2016 Sergey Fedorenko. All rights reserved.
@@ -41,6 +41,7 @@ void doPrintList(const RingList *aList);
 
 void doSortingValue(IntNode *theList);
 
+
 //Homework3
-void insertionSort(IntNode *theList, int count);
+void theBubbleSorting(IntNode *theList, int CountList(theList));
 #endif /* RingList_h */

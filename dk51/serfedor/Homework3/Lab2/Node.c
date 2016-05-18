@@ -1,6 +1,6 @@
 //
 //  Node.c
-//  Homework3
+//  Lab2
 //
 //  Created by Sergey Fedorenko on 4/7/16.
 //  Copyright © 2016 Sergey Fedorenko. All rights reserved.
@@ -15,7 +15,6 @@ IntNode *CreateNode(int aValue)
 
 	theResult->value = aValue;
 	theResult->nextNode = NULL;
-
 
 	return theResult;
 }

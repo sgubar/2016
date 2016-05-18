@@ -1,6 +1,6 @@
 //
 //  RingList.c
-//  Homework 3
+//  Lab2
 //
 //  Created by  on 4/7/16.
 //  Copyright © 2016 Sergey fedorenko. All rights reserved.
@@ -21,7 +21,7 @@ RingList *CreateList()
 
 
 	theList->head = NULL;
-	theList->tail = NULL;
+	theList->tail = theList->head;
 	theList->count = 0;
 
 
@@ -192,7 +192,7 @@ IntNode *RemovedNodeAtIndex(RingList *aList, int anIndex) {
 	}
 }
 
-IntNode *findMinNode(const RingList *inputList) {
+/*IntNode *findMinNode(const RingList *inputList) {
 	IntNode *currentNode = inputList->head;
 	IntNode *minNode = currentNode;
 	do {
@@ -257,23 +257,23 @@ void doSortingValue(IntNode *theList) {
 
 }
 
-//Homework 3
+*/
 
-void insertionSort(IntNode *theList, int count)
+
+//Homework3
+void theBubbleSorting(RingList*theList, int Count)//funcion for sorting list(the bubble sorting)
 {
-	for (int theOut = 1; theOut < count; theOut++)
+	for (int theWord = Count - 1; theWord > 1; theWord--)
 	{
-		int theTmp = NodeAtIndex(theList, theOut)->value;
-		int theIn = theOut;
-
-		while (theIn > 0 && NodeAtIndex(theList, theIn - 1)->value >= theTmp)
+		for (int anIndex = 0; anIndex < theWord; anIndex++)//cycle from the first element to the last, with the increase in the index by 1
 		{
-			NodeAtIndex(theList, theIn)->value = NodeAtIndex(theList, theIn - 1)->value;
-			--theIn;
+			if (NodeAtIndex(theList, anIndex)->value > NodeAtIndex(theList, anIndex + 1)->value)//if the value of the current node more than the value of the next node- assign value current node to the next node.
+			{
+				int theTmp = NodeAtIndex(theList, anIndex)->value;//variable, which stores the maximum value of the list
+				NodeAtIndex(theList, anIndex)->value = NodeAtIndex(theList, anIndex + 1)->value;
+				NodeAtIndex(theList, anIndex + 1)->value = theTmp;
+			}
 		}
-
-		NodeAtIndex(theList, theIn)->value = theTmp;
 	}
-
-
+	printf("The bubble sorting\n\n");
 }

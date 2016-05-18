@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{853636DC-F883-42C0-9381-6EA8C51FF82C}</ProjectGuid>
-    <RootNamespace>Lab2</RootNamespace>
+    <ProjectGuid>{0944E128-D7D7-46AE-B1BC-327BA90E8737}</ProjectGuid>
+    <RootNamespace>Lab3</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -65,12 +65,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
-    <ClCompile Include="Node.c" />
-    <ClCompile Include="RingList.c" />
+    <ClCompile Include="quicksort.c" />
+    <ClCompile Include="shellsort.c" />
+    <ClCompile Include="simplesort.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Node.h" />
-    <ClInclude Include="RingList.h" />
+    <ClInclude Include="quicksort.h" />
+    <ClInclude Include="shellsort.h" />
+    <ClInclude Include="simplesort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
