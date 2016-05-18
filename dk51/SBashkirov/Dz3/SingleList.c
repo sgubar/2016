@@ -54,6 +54,7 @@ FloatNode *NodeAdd(FloatList *aList, float aValue)
 
 	aNewNode->value = aValue;
 	aNewNode->nextNode = NULL;
+	aNewNode->prevNode = NULL;
 	
 	if (NULL == aList->head && NULL == aList->tail)
 	{
@@ -224,20 +225,38 @@ FloatList *deleteKeys(FloatList *aList, float key1, float key2, float key3)
 //Dz3
 void insertionSort(FloatList *aList)
 {
-	int RemIndex = 1;
-	for (int i = 1;i < aList->count;i++)
+	FloatNode *UnSortNode = aList->head->nextNode;
+	while (UnSortNode!=NULL)
 	{
-		FloatNode *UnSortNode = RemovedNodeAtIndex(aList, RemIndex);
 		FloatNode *PrevNode = UnSortNode->prevNode;
-		int PasteIndex = RemIndex;
 		while (PrevNode != NULL)
 		{
 			if (UnSortNode->value > PrevNode->value) break;
 			PrevNode = PrevNode->prevNode;
-			if (PasteIndex != 0) PasteIndex--;
 		}
-		InsertNodeAtIndex(aList, UnSortNode, PasteIndex);
-		RemIndex++;
+		FloatNode *SortNode = UnSortNode;
+		UnSortNode = UnSortNode->nextNode;
+		if (SortNode->value>PrevNode->value)
+		{
+			if (SortNode->prevNode == PrevNode)
+			{
+				if (PrevNode->value > SortNode->value)
+				{
+					int value;
+					value = SortNode->value;
+					SortNode->value = PrevNode->value;
+					PrevNode->value = value;
+				}
+			}
+			else
+			{
+					SortNode->prevNode->nextNode = SortNode->nextNode;
+					if (SortNode->nextNode != NULL) SortNode->nextNode->prevNode = SortNode->prevNode;
+					SortNode->nextNode = PrevNode->nextNode;
+					SortNode->prevNode = PrevNode;
+					PrevNode->nextNode = SortNode;
+					SortNode->nextNode->prevNode = SortNode;
+			}
+		}
 	}
-	printf("RemIndex = %d\n", RemIndex);
 }

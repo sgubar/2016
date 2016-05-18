@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1461340772 source:c:\users\Богдан\desktop\dz2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1463327022 source:c:\users\Богдан\desktop\dz2\dz2.c
+	<stdlib.h>
+	<stdio.h>
+
