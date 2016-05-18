@@ -7,8 +7,9 @@
 //
 
 #include "find.h"
+#include <limits.h>
 
-const unsigned kNotFound = -1;
+const unsigned kNotFound = INT_MAX;
 
 unsigned line_find(int anArray[], int aSize, int aKey)
 {
