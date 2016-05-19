@@ -33,8 +33,7 @@ int main(int argc, const char * argv[])
         clock_t theStart0 = clock();
 	selectionSort(CopyArr(array,ARRAY_SIZE), ARRAY_SIZE);
 	clock_t theEnd0 = clock();
-	printf ("time of Selection sorting: %.10lf\n", (double)(theEnd0 - theStart0));
-        printf("Clocks per sec %d",CLOCKS_PER_SEC);
+	printf ("time of Selection sorting: %.10lf\n", (double)(theEnd0 - theStart0)/CLOCKS_PER_SEC);
 		
 	printf("\nTest Bubble sorting\n");
         
