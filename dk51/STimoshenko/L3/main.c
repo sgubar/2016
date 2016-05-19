@@ -2,7 +2,7 @@
 //  main.c
 //  
 //
-//  Created by Serj Timoshenko on 4/18/16.
+//  Created by Serj Timoshenko on 5/18/16.
 //  Copyright © 2016 Serj Timoshenko. All rights reserved.
 //
 
@@ -22,27 +22,29 @@ static void printArray(int anArray[], int aSize);
 int main(int argc, const char * argv[])
 {
 		int theArray[ArraySize];
-		int Number;
-		int theArray1[ArraySize];
-		int theArray2[ArraySize];
-		int theArray3[ArraySize];
-		int theArray4[ArraySize];
-		int theArray5[ArraySize];
+	
+		int theArrayFB[ArraySize];
+		int theArrayFS[ArraySize];
+		int theArrayFI[ArraySize];
+		int theArrayFSh[ArraySize];
+		int theArrayFQu[ArraySize];
+
 	srand(time(NULL));
-	for (Number = 0; Number < ArraySize; Number++)
+	for (int Number = 0; Number < ArraySize; Number++)
 	{
-		theArray[Number] = 0 + rand() % ArraySize;
-		theArray1[Number] = theArray[Number];
-		theArray2[Number] = theArray[Number];
-		theArray3[Number] = theArray[Number];
-		theArray4[Number] = theArray[Number];
-		theArray5[Number] = theArray[Number];
+		theArray[Number] = rand();
+		theArrayFB[Number] = theArray[Number];
+		theArrayFS[Number] = theArray[Number];
+		theArrayFI[Number] = theArray[Number];
+		theArrayFSh[Number] = theArray[Number];
+		theArrayFQu[Number] = theArray[Number];
+
 	}
 
 	printf("Wait, until program test the bubble sorting...");
 
 	clock_t theStart1 = clock();
-	bubbleSort(theArray1, ARRAY_SIZE(theArray1));
+	bubbleSort(theArrayFB, ARRAY_SIZE(theArrayFB));
 	clock_t theEnd1 = clock();
 	printf(" 100 percent. Done\n");
 
@@ -50,7 +52,7 @@ int main(int argc, const char * argv[])
 
 	printf("Wait, until program test the selection sorting...");
 	clock_t theStart2 = clock();
-	selectionSort(theArray2, ARRAY_SIZE(theArray2));
+	selectionSort(theArrayFS, ARRAY_SIZE(theArrayFS));
 	clock_t theEnd2 = clock();
 	printf(" 100 percent. Done\n");
 
@@ -58,7 +60,7 @@ int main(int argc, const char * argv[])
 
 	printf("Wait, until program test the insertion sorting...");
 	clock_t theStart3 = clock();
-	insertionSort(theArray3, ARRAY_SIZE(theArray3));
+	insertionSort(theArrayFI, ARRAY_SIZE(theArrayFI));
 	clock_t theEnd3 = clock();
 	printf(" 100 percent. Done\n");
 
@@ -66,7 +68,7 @@ int main(int argc, const char * argv[])
 
 	printf("Wait, until program test the quick sorting...");
 	clock_t theStart4 = clock();
-	quickSort2(theArray4, 0, ARRAY_SIZE(theArray4) - 1);
+	quickSort2(theArrayFQu, 0, ARRAY_SIZE(theArrayFQu) - 1);
 	clock_t theEnd4 = clock();
 	printf(" 100 percent. Done\n");
 	
@@ -74,7 +76,7 @@ int main(int argc, const char * argv[])
 
 	printf("Wait, until program test the Shell sorting...");
 	clock_t theStart5 = clock();
-	ShellSort(theArray5, ARRAY_SIZE(theArray5));
+	ShellSort(theArrayFSh, ARRAY_SIZE(theArrayFSh));
 	clock_t theEnd5 = clock();
 	printf(" 100 percent. Done\n\n");
 
