@@ -325,29 +325,3 @@ int Face()
     return 0;
 }
 
-Node* CopyValue(List* theList, int val)//McTire's func (delete))
-{
-    Node* copiedNode=NULL;
-    if (NULL != theList)
-	{		
-            Node* theNode=theList->head;
-           
-            do
-		{
-                    if(theList->tail->value==val)//if our value exists in the tail
-                    {
-                        copiedNode=CreateNode(val);
-                        AddNode(theList,copiedNode);
-                        break;
-                    }
-                    else if (theNode->value==val)//exists
-                    {
-                        copiedNode=CreateNode(val);
-                        AddNode(theList,copiedNode);
-                        break;
-                    }                    
-                    theNode=theNode->nextptr;
-                }while(theNode->nextptr!=NULL);
-        }
-    return copiedNode;
-}
