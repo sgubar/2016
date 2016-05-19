@@ -7,36 +7,48 @@
 
 #include <stdio.h>
 #include "Sorting.h"
+#include <Windows.h>
 
-void printArray(int anArray[], int aSize);
+
 int *CreateArray(int Size);
 
-int main()
+int main(int argc, char* argv[])
 {
-	/*int sizeArray;
-	printf("SizeArray:  %d \n", sizeArray);
-	scanf("Size = %d \n", &sizeArray);
-	printf("SizeArray: %d \n", sizeArray);
-	*/
-	int arrSize;
 	
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	printf("В данной программе у вас есть возможность сравнить\nзатраты времени на сортировку массивов с разным количеством данных,\nразными видами сортировок.");
+	printf("\nСортировка выполняется 5ю видами:\n1) Сортировка пузырьком\n2) Сортировка выбором\n3) Сортировка вставкой\n4) Сортировка Шелла\n5) Быстрая сортировка v1 i v2");
+	printf("\nВам доступны для сравненния 4 разных массива:\n1) Имеет 500 элементов\n2) Имеет 1000 элементов\n3) Имеет 5000 элементов\n4) Имеет 10000 элементов");
+	printf("\nДля сортировки желаемого количества элементов,\nнажмите на соответствующую клавишу вашей клавиатуры,\nесли вы хотите выйти из программы, нажмите клавишу 5.\n");
+
+
+	int arrSize;
+	FILE * ptr = fopen("Plot.csv", "w+");
+	fclose(ptr);
+	while (1){
+
 	scanf("%i", &arrSize);
 	switch (arrSize)
 	{
 	case 1:
-		Sorting_5000();
-	break;
+		Sorting_500();
+		break;
 	case 2:
-		Sorting_100();
+		Sorting_1000();
 		break;
 	case 3:
-		Sorting_1000();
+		Sorting_5000();
 		break;
 	case 4:
 		Sorting_10000();
 		break;
+	case 5:
+		exit(0);
+		break;
 	}
-
+	}
+	return 0;
 	system("pause");
 }
 
@@ -51,14 +63,4 @@ int *CreateArray(int size) {
 	return anArray;
 }
 
-void printArray(int anArray[], int aSize)
-{
-	printf("{");
-	for (int i = 0; i < aSize; i++)
-	{
-		printf(" %d ", anArray[i]);
-	}
-
-	printf("}\n");
-}
 

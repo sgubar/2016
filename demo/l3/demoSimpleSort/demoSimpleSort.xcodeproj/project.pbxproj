@@ -10,6 +10,7 @@
 		731F11371CC6C70A00588078 /* shellSort.c in Sources */ = {isa = PBXBuildFile; fileRef = 731F11351CC6C70A00588078 /* shellSort.c */; };
 		734594C71CB5B06000C1B426 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 734594C61CB5B06000C1B426 /* main.c */; };
 		734594CF1CB5B0AB00C1B426 /* SimpleSort.c in Sources */ = {isa = PBXBuildFile; fileRef = 734594CD1CB5B0AB00C1B426 /* SimpleSort.c */; };
+		738BAEFC1CD0A2D8009D769C /* quickSort.c in Sources */ = {isa = PBXBuildFile; fileRef = 738BAEFA1CD0A2D8009D769C /* quickSort.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		734594C61CB5B06000C1B426 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		734594CD1CB5B0AB00C1B426 /* SimpleSort.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SimpleSort.c; sourceTree = "<group>"; };
 		734594CE1CB5B0AB00C1B426 /* SimpleSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleSort.h; sourceTree = "<group>"; };
+		738BAEFA1CD0A2D8009D769C /* quickSort.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = quickSort.c; sourceTree = "<group>"; };
+		738BAEFB1CD0A2D8009D769C /* quickSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quickSort.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				734594CE1CB5B0AB00C1B426 /* SimpleSort.h */,
 				731F11351CC6C70A00588078 /* shellSort.c */,
 				731F11361CC6C70A00588078 /* shellSort.h */,
+				738BAEFA1CD0A2D8009D769C /* quickSort.c */,
+				738BAEFB1CD0A2D8009D769C /* quickSort.h */,
 			);
 			path = demoSimpleSort;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				731F11371CC6C70A00588078 /* shellSort.c in Sources */,
+				738BAEFC1CD0A2D8009D769C /* quickSort.c in Sources */,
 				734594C71CB5B06000C1B426 /* main.c in Sources */,
 				734594CF1CB5B0AB00C1B426 /* SimpleSort.c in Sources */,
 			);

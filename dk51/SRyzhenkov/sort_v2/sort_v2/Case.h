@@ -7,11 +7,13 @@
 #ifndef Case_h
 #define Case_h
 
-#include <stdio.h>
+int Sorting_500();
 
+int Sorting_1000(); 
 int Sorting_5000();
-int Sorting_100(); 
-int Sorting_1000();
 int Sorting_10000();
+
+void printArray(int anArray[], int aSize);
+
 
 #endif /*Case_h */
