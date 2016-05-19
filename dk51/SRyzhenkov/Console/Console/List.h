@@ -10,7 +10,7 @@ typedef struct __IntList
 	IntNode *head;
 	IntNode *tail;
 	int count;
-}IntList;//
+}IntList;
 
 IntList *Create_L();
 
@@ -18,6 +18,8 @@ void FreeList(IntList *List);
 int CountList(const IntList *List);
 void PrintList(IntList *List);
 
+IntNode *InsertNode(IntList *aList, IntNode *aNewNode, int anIndex);
+IntNode *RemovedNode(IntList *aList, int anIndex);
 IntNode *AddNode(IntList *List, IntNode *NewNode);
 IntNode *NodeAtIndex(const IntList *List, int aIndex);
 
