@@ -1,0 +1,36 @@
+﻿Сборка начата 19.05.2016 1:33:52.
+     1>Проект "C:\Users\User\documents\visual studio 2015\Projects\Lists LABA2\Lists LABA2\Lists LABA2.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D "<WIN32, _DEBUG и _WINDOWS" /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt main.c
+         main.c
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(19): warning C4047: функция: "char" отличается по уровням косвенного обращения от "char [3]"
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(19): warning C4024: CreateNewNode: различные типы для формального и фактического параметров 1
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(20): warning C4047: функция: "char" отличается по уровням косвенного обращения от "char [6]"
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(20): warning C4024: CreateNewNode: различные типы для формального и фактического параметров 1
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(21): warning C4047: функция: "char" отличается по уровням косвенного обращения от "char [13]"
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(21): warning C4024: CreateNewNode: различные типы для формального и фактического параметров 1
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(22): warning C4047: функция: "char" отличается по уровням косвенного обращения от "char [15]"
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(22): warning C4024: CreateNewNode: различные типы для формального и фактического параметров 1
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(23): warning C4047: функция: "char" отличается по уровням косвенного обращения от "char [13]"
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(23): warning C4024: CreateNewNode: различные типы для формального и фактического параметров 1
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(24): warning C4047: функция: "char" отличается по уровням косвенного обращения от "char [10]"
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(24): warning C4024: CreateNewNode: различные типы для формального и фактического параметров 1
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(49): warning C4013: FindMinNode: нет определения; предполагается "extern" с возвратом типа "int"
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(52): warning C4013: FindMaxNode: нет определения; предполагается "extern" с возвратом типа "int"
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(56): warning C4013: SwapNodeInList: нет определения; предполагается "extern" с возвратом типа "int"
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(61): warning C4013: SortingList: нет определения; предполагается "extern" с возвратом типа "int"
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(74): warning C4013: DeleteKey: нет определения; предполагается "extern" с возвратом типа "int"
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(78): warning C4013: LatterCount: нет определения; предполагается "extern" с возвратом типа "int"
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(83): warning C4013: system: нет определения; предполагается "extern" с возвратом типа "int"
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(49): warning C4047: инициализация: "MyNode *" отличается по уровням косвенного обращения от "int"
+     1>c:\users\user\documents\visual studio 2015\projects\lists laba2\lists laba2\main.c(52): warning C4047: инициализация: "MyNode *" отличается по уровням косвенного обращения от "int"
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\User\documents\visual studio 2015\Projects\Lists LABA2\Debug\Lists LABA2.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\User\documents\visual studio 2015\Projects\Lists LABA2\Debug\Lists LABA2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\User\documents\visual studio 2015\Projects\Lists LABA2\Debug\Lists LABA2.lib" /MACHINE:X86 Debug\main.obj
+         Debug\SingleList.obj
+         Debug\SingleNODE.obj
+         Lists LABA2.vcxproj -> C:\Users\User\documents\visual studio 2015\Projects\Lists LABA2\Debug\Lists LABA2.exe
+     1>Сборка проекта "C:\Users\User\documents\visual studio 2015\Projects\Lists LABA2\Lists LABA2\Lists LABA2.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:00.60

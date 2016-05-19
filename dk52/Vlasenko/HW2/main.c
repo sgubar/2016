@@ -1,8 +1,5 @@
-//===============================================================
-//				  Copyright by Olexandr Vlasenko.				 
-//===============================================================
-
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 
 #include "Output.h"
@@ -10,7 +7,7 @@
 #include "AddElement.h"
 
 
-int main()
+int main(int argc, char *argv[])
 {
 	int answer, N, indx;
 	printf("Enter the size of array: ");
