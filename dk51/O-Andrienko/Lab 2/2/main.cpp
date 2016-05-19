@@ -55,6 +55,11 @@ void main()
 
 		doPrintSLList(theSortedList);
 
+		sort(theSortedList);
+		puts("\n");
+		doPrintSLList(theSortedList);
+
+
 		right(); //Asking the user about correct result of program
 
 		fclose(in); //closing file

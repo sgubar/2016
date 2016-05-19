@@ -230,4 +230,23 @@ void swapMaxMinNode(IntList *aList)
 	
 }
 
+void sort(IntList *aList) 
+{
+	bool sorted = false;
+	char max = SLNodeName(SLNodeAtIndex(aList, 0));
 
+	while (!sorted)
+	{
+		sorted = true;
+		for (int index = 0; index < SLCountList(aList) - 1; index++)
+		{
+			max = SLNodeName(SLNodeAtIndex(aList, index));
+			if (max > (SLNodeName(SLNodeAtIndex(aList, index + 1))))
+			{
+				SLSwapNode(aList, index, aList, index + 1);
+				sorted = false;
+			}
+		}
+	}
+
+}
