@@ -284,27 +284,7 @@ int Face()
                             printf("\nDone!\n");
                             PrintList(NewList);
                             break;
-                        case 5:
-                             printf("\nEnter value\n");
-                            //dummy=getchar();
-                            scanf("%d",&val);
-                            
-                            if(!val)
-                            printf("\nError\n");
-
-                            else
-                                {
-                                if(!CopyValue(NewList,val))
-                                    {
-                                        printf("This value doesn't exist!");
-                                    }
-                                else
-                                    {
-                                        printf("\nDone!\n");
-                                    }
-                                PrintList(NewList);                                
-                                }
-                            break;
+                       
                         case 0:
                             ;
                             break;
