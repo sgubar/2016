@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1463424571 source:c:\users\Валерий\desktop\dynarray\func.c
+
+1463427650 source:c:\users\Валерий\desktop\dynarray\main.c
+	<stdio.h>
+	<stdlib.h>
+	"DynamicArray.h"
+
+1463426340 c:\users\Валерий\desktop\dynarray\dynamicarray.h
+	<stdio.h>
+
+1463427564 source:c:\users\Валерий\desktop\dynarray\dynamicarray.c
+	<stdio.h>
+	<stdlib.h>
+	"DynamicArray.h"
+
