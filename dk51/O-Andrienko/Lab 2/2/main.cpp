@@ -44,10 +44,13 @@ void main()
 	}
 
 
+	
+
+
 		puts("\n");
+		doPrintSLList(theSortedList);
 
-		doPrintSLList(theList);
-
+		swapMaxMinNode(theSortedList);
 		puts("\n");
 
 		doPrintSLList(theSortedList);

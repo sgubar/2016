@@ -184,22 +184,50 @@ void doPrintSLList(const IntList *aList)
 	}
 }
 
-void *SLSwapNode(const IntList *getList, int getIndex, IntList *postList, int postIndex)
+void *SLSwapNode( IntList *getList, int getIndex, IntList *postList, int postIndex)
 {
 	IntNode *getNode;
 	IntNode *postNode;
+	char swapOne,swapTwo;
+
+	swapOne = SLNodeName(SLNodeAtIndex(postList, postIndex));
+	swapTwo = SLNodeName(SLNodeAtIndex(getList, getIndex));
 
 	getNode = SLNodeAtIndex(getList, getIndex);
-	postNode = SLNodeAtIndex(postList, getIndex);
+	postNode = SLNodeAtIndex(postList, postIndex);
 
 
 
-	postNode->name = getNode->name;
+	postNode->name = swapTwo;
+	getNode->name = swapOne;
 
 	return false;
 
 }
 
+void swapMaxMinNode(IntList *aList)
+{
+	char max = SLNodeName(SLNodeAtIndex(aList,0));
+	int maxIndex = 0;
+	char min = SLNodeName(SLNodeAtIndex(aList, 0));
+	int minIndex = 0;
+	for (int index = 0; index < SLCountList(aList); index++)
+	{
+		if (max < SLNodeName(SLNodeAtIndex(aList, index)))
+		{
+			max = SLNodeName(SLNodeAtIndex(aList, index));
+			maxIndex = index;
+		}
+		if (min > SLNodeName(SLNodeAtIndex(aList, index)))
+		{
+			min = SLNodeName(SLNodeAtIndex(aList, index));
+			minIndex = index;
+		}
+	}
 
+	SLSwapNode(aList, maxIndex, aList, minIndex);
+
+	
+}
 
 

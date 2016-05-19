@@ -32,5 +32,5 @@ IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex);
 IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex);
 
 void doPrintSLList(const IntList *aList);
-
+void swapMaxMinNode(IntList *aList);
 #endif /* SingleLinkedList_h */
