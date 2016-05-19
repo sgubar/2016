@@ -35,15 +35,7 @@ void SortList(List* theList);
 
 Node* SortListAfterMinNode(List* theList);
 
-Node* CopyValue(List* theList,int value);
-
 int Face();
-
-
-List* AdvancedListMode(List* theList);
-List* SaveToFile(List* theList);
-List* LoadFromFile();
-
 
 #endif
 
