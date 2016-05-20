@@ -1,3 +1,10 @@
+/* 
+ * File:   main.c
+ * Author: Dulkin Oleg
+ *
+ * Created on 19 квітня 2016, 4:04
+ * Compiled with gcc(cygwin)
+ */
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
