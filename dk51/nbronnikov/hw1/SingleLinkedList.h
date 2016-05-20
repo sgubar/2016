@@ -1,9 +1,9 @@
 //
-//  SingleLinkedList.h
-//  demoList
+//  hw1
+// 
 //
-//  Created by Slava Gubar on 3/1/16.
-//  Copyright © 2016 Slava Gubar. All rights reserved.
+//  Created by Nazar Bronnikov on 09/05/16.
+//  Copyright (C) 2016 Nazar Bronnikov. All rights reserved.
 //
 
 #ifndef SingleLinkedList_h
