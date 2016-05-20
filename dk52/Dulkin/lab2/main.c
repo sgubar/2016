@@ -1,3 +1,10 @@
+/* 
+ * File:   main.c
+ * Author: Dulkin Oleg
+ *
+ * Created on 19 квітня 2016, 4:04
+ * Compiled with gcc(cygwin)
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
