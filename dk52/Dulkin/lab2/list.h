@@ -1,3 +1,10 @@
+/* 
+ * File:   list.h
+ * Author: Dulkin Oleg
+ *
+ * Created on 19 квітня 2016, 4:04
+ * Compiled with gcc(cygwin)
+ */
 #ifndef SingleList_h
 #define SingleList_h
 
