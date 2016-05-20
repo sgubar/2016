@@ -1,9 +1,9 @@
 //
-//  SingleLinkedNode.c
-//  demoList
+//  hw1
+// 
 //
-//  Created by Slava Gubar on 3/2/16.
-//  Copyright © 2016 Slava Gubar. All rights reserved.
+//  Created by Nazar Bronnikov on 09/05/16.
+//  Copyright (C) 2016 Nazar Bronnikov. All rights reserved.
 //
 
 #include "SingleLinkedNode.h"
