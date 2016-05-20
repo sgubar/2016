@@ -1,4 +1,11 @@
-#ifndef Sort_h
+/* 
+ * File:   Sort.h
+ * Author: Dulkin Oleg
+ *
+ * Created on 19 квітня 2016, 4:04
+ * Compiled with gcc(cygwin)
+ */
+ifndef Sort_h
 #define Sort_h
 
 #include <stdio.h>
