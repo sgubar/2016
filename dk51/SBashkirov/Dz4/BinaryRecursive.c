@@ -1,6 +1,6 @@
 
 #include <stdio.h>
-#include "BinaryFind.h"
+#include "BinaryRecursive.h"
 #include "ordArray.h"
 
 int findCenter(int Left, int Right)

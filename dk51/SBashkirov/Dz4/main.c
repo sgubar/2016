@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include"ordArray.h"
-#include "BinaryFind.h"
+#include "BinaryRecursive.h"
 #include "find.h"
 #include <time.h>
 
