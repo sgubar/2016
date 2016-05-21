@@ -261,19 +261,32 @@ void doSortingValue(IntNode *theList) {
 
 
 //Homework3
-void theBubbleSorting(RingList*theList, int Count)//funcion for sorting list(the bubble sorting)
+void theSelectionSorting(RingList*theList, int Count)
 {
-	for (int theWord = Count - 1; theWord > 1; theWord--)
-	{
-		for (int anIndex = 0; anIndex < theWord; anIndex++)//cycle from the first element to the last, with the increase in the index by 1
+	int j = 0;
+	int min;
+	int IndexMinimum = 0;
+	int IndexRemoved = 0;
+	for (int j = 0; j < Count; j++) {
+		IntNode *MinNode = NodeAtIndex(theList, IndexMinimum);
+		min = NodeAtIndex(theList, IndexMinimum)->value;
+		for (int k = IndexMinimum; k < Count; k++)
 		{
-			if (NodeAtIndex(theList, anIndex)->value > NodeAtIndex(theList, anIndex + 1)->value)//if the value of the current node more than the value of the next node- assign value current node to the next node.
+
+			if (min >= MinNode->value) 
 			{
-				int theTmp = NodeAtIndex(theList, anIndex)->value;//variable, which stores the maximum value of the list
-				NodeAtIndex(theList, anIndex)->value = NodeAtIndex(theList, anIndex + 1)->value;
-				NodeAtIndex(theList, anIndex + 1)->value = theTmp;
+				min = MinNode->value;
+				IndexRemoved = k;
 			}
+
+			MinNode = MinNode->nextNode;
+
 		}
+
+		InsertNodeAtIndex(theList, RemovedNodeAtIndex(theList, IndexRemoved), IndexMinimum);
+		IndexMinimum++;
+
 	}
-	printf("The bubble sorting\n\n");
+	printf("\nselectionSort\n");
 }
+
