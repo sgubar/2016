@@ -4,29 +4,35 @@
   // Created by Dulkin Oleg  on 11.03.16                 //
  // Copyright (C) 2016 Dulkin Oleg. All rights reserved.//
 //////////////////////////////////////////////////////////
-#include <iostream> 
-#include <math.h> 
+#include <stdio.h>
+#include <math.h>/*mathematical library*/
 
-using namespace std; 
+#include "sum.h"/*this three library it header files when conected "main.c" with other ".c" files*/
+#include "csqrt_ratail.h"
 
-float a,b,c,q; 
-int d; 
-int main() 
-{ 
-cout << "Enter A\n"; 
-cin >> a; 
-cout << "Enter B\n";
-cin >> b;
-cout << "Enter C\n"; 
-cin >> c;
-if (b+c == 100){ 
-cout << "Error\n"; 
-} else { 
-q = (a+b+c)/(100-b-c); 
-for (d=0;d<=a;d++){ 
-q = q+pow(2,d+a); 
-} 
-} 
-cout << "Q = " << q << "\n"; 
-system("pause"); 
-} 
+int main()
+{
+	int q, a, b, c, d=0, W; /*declarations variables*/
+	printf("enter a\n");
+	printf("a = ");
+	scanf("%i", &a);
+	printf("b = ");
+	scanf("%i", &c);
+	printf("c = ");
+	scanf("%i", &b);
+
+//	int theCsqrt = docsqrt_ratail(csqrt_ratail(pt) / b);
+
+q = sum(a, d) + csqrt_ratail(a, b, c);
+if (b + c != 100) {
+	
+		printf("%f\n", q);
+
+		scanf_s("%f",&W);
+		}
+	else {
+		printf("ERROR");
+	}
+
+//	return 0;
+}

@@ -13,9 +13,11 @@ struct __IntNode
 };
 
 IntNode *CreateNode(int converting);
+
 void FreeIntNode(IntNode *Node);
 void distribution(IntNode *theList);
 void bubbleSort(IntNode *theList, int count);
+
 
 //void UpdatedValue(IntNode *theList);
 #pragma once

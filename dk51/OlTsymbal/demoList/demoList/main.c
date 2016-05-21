@@ -40,10 +40,14 @@ void doTestSLList()
 
 	SLAddNode(theList, theNode4);
 	printf("number of elements: %d\n", SLCountList(theList));
+	
+	printf("Mylist without insertion\n");
+	doPrintSLList(theList);
 
 	SLInsertNodeAtIndex(theList, theNode3, 1);
 	printf("number of elements: %d\n", SLCountList(theList));
 	
+	printf("Mylist with insertion\n");
 	doPrintSLList(theList);
 
 	SLRemovedNodeAtIndex(theList, 2);

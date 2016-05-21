@@ -18,13 +18,14 @@ typedef struct __ordArray
 	unsigned maxSize;
 }ordArray, *ordArrayPtr;
 
-ordArrayPtr create(unsigned aSize);
-void destroy(ordArrayPtr anArray);
 
-unsigned insert(ordArrayPtr anArray, int aValue);
-unsigned delete(ordArrayPtr anArray, int aValue);
-unsigned size(ordArrayPtr);
-unsigned find(ordArrayPtr anArray, int aValue);
-void print(ordArrayPtr anArray);
+ordArrayPtr oa_create(unsigned aSize);
+void oa_destroy(ordArrayPtr anArray);
+
+unsigned oa_insert(ordArrayPtr anArray, int aValue);
+unsigned oa_delete(ordArrayPtr anArray, int aValue);
+unsigned oa_size(ordArrayPtr);
+unsigned oa_find(ordArrayPtr anArray, int aValue);
+void oa_print(ordArrayPtr anArray);
 
 #endif /* ordArray_h */

@@ -1,0 +1,3 @@
+void right();
+
+bool rightText();

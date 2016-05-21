@@ -1,9 +1,9 @@
 //
 //  main.c
-//  
+//  Dz 2
 //
-//  Created by Sorokin Dmytro on 5/05/16.
-//  Copyright © 2016 Sorokin Dmytro. All rights reserved.
+//  Created by Stanislav Bashkirov on 4/7/16.
+//  Copyright © 2016 Stanislav Bashkirov. All rights reserved.
 //
 
 #include <stdio.h>

@@ -1,9 +1,9 @@
 //
 //  DynamicArray.h
+//  doTest
 //
-//
-//  Created by Sorokin Dmytro on 5/05/16.
-//  Copyright © 2016 Sorokin Dmytro. All rights reserved.
+//  Created by Slava Gubar on 3/24/16.
+//  Copyright © 2016 Slava Gubar. All rights reserved.
 //
 
 #ifndef DynamicArray_h
@@ -17,13 +17,6 @@ typedef struct __dynamicIntArray
 	int physicalSize;
 	int logicalSize;
 }DynamicIntArray;
-
-typedef struct __dynamicIntArrayNew
-{
-	int *storage;
-	int physicalSize;
-	int logicalSize;
-}DynamicIntArrayNew;
 
 DynamicIntArray *createDAInt(int aSize);
 void freeDAInt(DynamicIntArray *anArray);

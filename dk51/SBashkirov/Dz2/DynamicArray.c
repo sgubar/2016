@@ -1,8 +1,9 @@
 //
 //  DynamicArray.c
-//  
-//  Created by Sorokin Dmytro on 5/05/16.
-//  Copyright © 2016 Sorokin Dmytro. All rights reserved.
+//  doTest
+//
+//  Created by Slava Gubar on 3/24/16.
+//  Copyright © 2016 Slava Gubar. All rights reserved.
 //
 
 #include <stdio.h>
@@ -10,47 +11,40 @@
 #include "DynamicArray.h"
 
 
-DynamicIntArray *createDAInt(int aSize)//создаем дм
+DynamicIntArray *createDAInt(int aSize)
 {
-	DynamicIntArray *DynArray=(DynamicIntArray *)malloc(sizeof(DynamicIntArray));;//выделяем память размером структуры
-	DynArray->physicalSize = aSize;//определяем физический размер (количесво ячеек) и помещаем значение в структуру
-	DynArray->logicalSize = 0;//определяем логический размер (количество заполненых ячеек) и помещаем значение в структуру
-	DynArray->storage = (int *)malloc(aSize * sizeof(int));//определяем размер начального масива
-	for (int i=0; i < aSize; i++) DynArray->storage[i] = 0;//Заполняем "хранилище масива" 0
+	DynamicIntArray *DynArray=(DynamicIntArray *)malloc(sizeof(DynamicIntArray));;
+	DynArray->physicalSize = aSize;
+	DynArray->logicalSize = 0;
+	DynArray->storage = (int *)malloc(aSize * sizeof(int));
+	for (int i=0; i < aSize; i++) DynArray->storage[i] = 0;
 	return DynArray;
+
 }
 
-void freeDAInt(DynamicIntArray *anArray)//освобождаем память от масива
+void freeDAInt(DynamicIntArray *anArray)
 {
 	free(anArray->storage);
 	free(anArray);
 }
 
-int valueAtIndex(int anIndex, DynamicIntArray *anArray)//помещаем значение в ячейку по заданному индексу
+int valueAtIndex(int anIndex, DynamicIntArray *anArray)
 {
-	if (anIndex > anArray->physicalSize) return 0;//возвращаем 0 в случае выхода за граници масива
+	if (anIndex > anArray->physicalSize) return 0;
 	int value;
-	value = anArray->storage[anIndex];//помещаем значение по заданому индексу
+	value = anArray->storage[anIndex];
 	return value;
 }
 
 
 void setValueAtIndex(int anValue, int anIndex, DynamicIntArray *anArray)
 {
-	if (anIndex > anArray->physicalSize) //проверяем "поместились" ли мы в масив
+	if (anIndex > anArray->physicalSize) 
 	{
-		//anArray->storage = (int *)realloc(anArray->storage, (anIndex+1)* 2 * sizeof(int));//выделяем новый блок памяти с укзанием на старый и размером его изменения
-		//if (0 == anArray->storage[anIndex]) anArray->logicalSize += 1;// увеличиваем логический размер на 1 в случае если ячейка имеет значение 0
-		//anArray->storage[anIndex] = anValue;//записываем значение в ячейку памяти 
-		DynamicIntArrayNew *DynArrayNew = (DynamicIntArrayNew *)malloc(sizeof(DynamicIntArrayNew));
-		int aSize;
-		aSize = anArray->physicalSize;
-		DynArrayNew->storage = (int *)malloc(aSize * sizeof(int)*2);
-		DynArrayNew->storage = anArray->storage;
-		freeDAInt(anArray);
-		for (int i = DynArrayNew->physicalSize; i < anIndex+1; i++) DynArrayNew->storage[i] = 0;//заполняем новые ячейки 0
-		DynArrayNew->physicalSize = anIndex + 1;
-		if (0 == DynArrayNew->storage[anIndex]) DynArrayNew->logicalSize += 1;// увеличиваем логический размер на 1 в случае если ячейка имеет значение 0
-		DynArrayNew->storage[anIndex] = anValue;//записываем значение в ячейку памяти 
+		anArray->storage = (int *)realloc(anArray->storage, (anIndex+1) * sizeof(int));
+		for (int i = anArray->physicalSize; i < anIndex+1; i++) anArray->storage[i] = 0;
+		anArray->physicalSize = anIndex + 1;
 	}
+	if (0==anArray->storage[anIndex]) anArray->logicalSize +=1;
+	anArray->storage[anIndex] = anValue;
 }

@@ -1,10 +1,8 @@
-#pragma once
+#ifndef Output_h
+#define Output_h
 
-// The function of outputting the array.
+#include <stdio.h>
 
 void Output(int *dynarray, int N_f)
-{
-	printf("An updated array:\n");
-	for (int indx_f = 0; indx_f < N_f; indx_f++)
-		printf("%d\t", dynarray[indx_f]);
-}
+
+#endif /* Output_h */

@@ -2,7 +2,7 @@
 //  quicksort.c
 //  
 //
-//  Created by Serj Timoshenko on 4/18/16.
+//  Created by Serj Timoshenko on 5/18/16.
 //  Copyright © 2016 Serj Timoshenko. All rights reserved.
 //
 #include "quicksort.h"
