@@ -21,7 +21,7 @@ Node *AddNodeToList(Node* head, int n, int value){
 	pred->next=tmp;
 	tmp->next=sled;
    };
-   read=head;
+   read=head;                             //выводим список на экран
 	for(i=1; read!=NULL;i++){
 		printf("\nnode[%d]: %d ", i,read->number);
 		read=read->next;
