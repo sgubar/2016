@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1464205873 source:c:\temp\l2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"node.h"
+	"list.h"
+
+1464043093 c:\temp\l2\node.h
+	<stdio.h>
+
+1464193685 c:\temp\l2\list.h
+	<stdlib.h>
+	"node.h"
+
+1464103548 source:c:\temp\l2\node.c
+	"node.h"
+	<stdlib.h>
+
+1464205402 source:c:\temp\l2\list.c
+	"list.h"
+	"node.h"
+	<stdlib.h>
+
