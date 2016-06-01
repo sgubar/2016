@@ -34,7 +34,10 @@ void deleteTree(TreePtr aTree);
 
 int countTree(TreePtr aTree);
 void displayTree(TreePtr aTree);
+int maxLevelTree(TreePtr aTree);
+int maxLevelBranch(NodePtr currentNode,int Result);
 
+void printBranch(NodePtr CurrentNode, int needlvl,int currentlvl,int lvlSpace);
 NodePtr findNode(TreePtr aTree, const char *aName);
 void insertNode(TreePtr aTree, char *aName, char *aPhoneNumber);
 int deleteNode(TreePtr aTree, const char *aName);

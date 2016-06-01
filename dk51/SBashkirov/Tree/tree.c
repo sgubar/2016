@@ -9,6 +9,7 @@
 #include "tree.h"
 #include <stdlib.h>
 #include <string.h>
+#include<stdio.h>
 
 static void freeNode(NodePtr aNode);
 static NodePtr getSuccessor(TreePtr aTree, NodePtr aDelNode);
@@ -272,4 +273,72 @@ int RecursiveCountTree(NodePtr CurrentNode)
 		result += RecursiveCountTree(CurrentNode->rightChild);
 	}
 	return result;
+}
+
+void moreSpace(int Number)
+{
+	for (int i = 0;i < Number;i++) printf(" ");
+
+}
+
+void displayTree(TreePtr aTree)
+{
+	NodePtr CurrentNode = aTree->root;
+	for (int i = 0;i < 39;i++) printf(" ");
+	printf("%s: %s\n",CurrentNode->note->name, CurrentNode->note->number);
+	for (int i = 0;i < 18;i++) printf(" ");
+	if (CurrentNode->leftChild != NULL) printf("%s: %s", CurrentNode->leftChild->note->name, CurrentNode->leftChild->note->number);
+	for (int i = 0;i < 39;i++) printf(" ");
+	if (CurrentNode->rightChild != NULL) printf("%s: %s\n", CurrentNode->rightChild->note->name, CurrentNode->rightChild->note->number);
+
+	int maxLevel = maxLevelTree(aTree);
+	printf("%d\n", maxLevel);
+	for (int i = 3;i < maxLevel+1;i++)
+	{
+		if (CurrentNode->leftChild != NULL)	printBranch(CurrentNode->leftChild, i, 2,79/(2*i));
+		if (CurrentNode->rightChild != NULL) printBranch(CurrentNode->rightChild, i, 2, 79 / (2 * i));
+		printf("\n");
+	}
+	
+}
+
+void printBranch(NodePtr CurrentNode, int needlvl, int currentlvl, int lvlSpace)
+{
+	if (needlvl - currentlvl == 1)
+	{
+		for (int i = 0; i < lvlSpace; i++) printf(" ");
+		if (CurrentNode->leftChild != NULL) printf("%s: %s", CurrentNode->leftChild->note->name, CurrentNode->leftChild->note->number);
+		for (int i = 0; i < lvlSpace; i++) printf(" ");
+		if (CurrentNode->rightChild != NULL) printf("%s: %s",CurrentNode->rightChild->note->name, CurrentNode->rightChild->note->number);
+		for (int i = 0; i < lvlSpace; i++) printf(" ");
+	}
+	else
+	{
+		if (CurrentNode->leftChild != NULL)	printBranch(CurrentNode->leftChild, needlvl,++currentlvl,lvlSpace);
+		if (CurrentNode->rightChild != NULL) printBranch(CurrentNode->rightChild, needlvl, ++currentlvl,lvlSpace);
+	}
+}
+
+
+int maxLevelTree(TreePtr aTree)
+{
+	int maxLevelLeft = 0, maxLevelRight = 0,Result = 0;
+	if (aTree->root->leftChild != NULL)	maxLevelLeft = maxLevelBranch(aTree->root->leftChild,1);
+	if (aTree->root->rightChild != NULL) maxLevelRight = maxLevelBranch(aTree->root->rightChild,1);
+	if (maxLevelLeft > maxLevelRight) Result = maxLevelLeft;
+	if (maxLevelLeft < maxLevelRight) Result = maxLevelRight;
+	
+	return Result;
+}
+
+
+int maxLevelBranch(NodePtr currentNode,int Result)
+{
+	int maxLevelLeft = 0, maxLevelRight = 0;
+	if (currentNode->leftChild != NULL) maxLevelLeft = maxLevelBranch(currentNode->leftChild,Result);
+	if (currentNode->rightChild != NULL) maxLevelRight = maxLevelBranch(currentNode->rightChild,Result);
+	if (maxLevelLeft > maxLevelRight) Result = maxLevelLeft;
+	if (maxLevelLeft < maxLevelRight) Result = maxLevelRight;
+
+	return ++Result;
 }
