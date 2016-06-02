@@ -9,9 +9,9 @@ void oct_hex()
 	int oct_hex_Number;
 
 	// Perevod iz oct v hex
-	printf("Enter hexadecimal number:\n");
+	printf("Enter octal number:\n");
 	scanf("%o", &oct_hex_Number);
-	printf("Octal equivalent of number is %x\n", oct_hex_Number);
+	printf("Hexademical equivalent of number is %x\n", oct_hex_Number);
 
 	// Ne daem zakrit consol
 	system("pause");
