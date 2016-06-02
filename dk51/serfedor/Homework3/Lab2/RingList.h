@@ -43,5 +43,5 @@ void doSortingValue(IntNode *theList);
 
 
 //Homework3
-void theBubbleSorting(IntNode *theList, int CountList(theList));
+void theSelectionSorting(IntNode *theList, int CountList(theList));
 #endif /* RingList_h */

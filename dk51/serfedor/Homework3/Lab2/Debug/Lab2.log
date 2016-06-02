@@ -1,4 +1,4 @@
-﻿Сборка начата 18.05.2016 21:28:07.
+﻿Сборка начата 21.05.2016 9:29:44.
      1>Проект "C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Homework3\Lab2\Lab2.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
          D:\Programm Files\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt RingList.c
@@ -11,10 +11,9 @@
          D:\Programm Files\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Homework3\Debug\Lab2.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Homework3\Debug\Lab2.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Homework3\Debug\Lab2.lib" /MACHINE:X86 Debug\main.obj
          Debug\Node.obj
          Debug\RingList.obj
-     1>main.obj : error LNK2019: ссылка на неразрешенный внешний символ _theBubleSorting в функции _main
-     1>C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Homework3\Debug\Lab2.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
-     1>Сборка проекта "C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Homework3\Lab2\Lab2.vcxproj" завершена (целевые объекты Build) с ошибкой.
+         Lab2.vcxproj -> C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Homework3\Debug\Lab2.exe
+     1>Сборка проекта "C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Homework3\Lab2\Lab2.vcxproj" завершена (целевые объекты Build).
 
-Ошибка сборки.
+Сборка успешно завершена.
 
-Затраченное время: 00:00:03.02
+Затраченное время: 00:00:02.15

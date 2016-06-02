@@ -1,9 +1,9 @@
 
 /* 
- * File:   retail.h
+ * File:   csqrt_ratail
  * Author: Dulkin Oleg
  *
- * Created on 21 квітня 2016, 0:51
+ * Created on 19 травня 2016, 4:01
  */
 
 #ifndef RETAIL_H

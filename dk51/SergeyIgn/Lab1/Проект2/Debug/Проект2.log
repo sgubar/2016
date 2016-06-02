@@ -1,0 +1,13 @@
+﻿Сборка начата 19.05.2016 1:49:40.
+     1>Проект "C:\Users\SergeyIgnaten\Documents\Visual Studio 2015\Projects\Проект2\Проект2\Проект2.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\visualstudio2015\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt Source.c
+         Source.c
+     1>c:\users\sergeyignaten\documents\visual studio 2015\projects\проект2\проект2\source.c(25): warning C4013: system: нет определения; предполагается "extern" с возвратом типа "int"
+     1>c:\users\sergeyignaten\documents\visual studio 2015\projects\проект2\проект2\source.c(18): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdio.h(1270): note:  см. объявление "scanf"
+     1>Сборка проекта "C:\Users\SergeyIgnaten\Documents\Visual Studio 2015\Projects\Проект2\Проект2\Проект2.vcxproj" завершена (целевые объекты Build) с ошибкой.
+
+Ошибка сборки.
+
+Затраченное время: 00:00:00.23

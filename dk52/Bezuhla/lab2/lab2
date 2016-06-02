@@ -1,0 +1,180 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct LIST // структура список
+{
+    int number; // элементы
+    struct LIST *next; // указатель на след. элемент
+};
+
+//-----------------------------------------------------------------------------
+void Push(struct LIST** list, int number) 
+{
+    struct LIST* node = malloc(sizeof(struct LIST)); 
+    node->number = number; 
+    node->next = *list; 
+    *list = node; 
+}
+
+//-----------------------------------------------------------------------------
+int DeleteElement(struct LIST** list, int element)
+{
+    struct LIST *buf;
+    // буферный элемент, которым мы будем пользоваться при удалении элемента
+
+    // если список не пуст и не состоит из одного элемента
+    if ( *list && ((*list)->number != element) )
+    {
+        struct LIST *t = (*list)->next; // t - буфферная переменная
+        // хранящая в данной строке второй элемент списка.
+
+        while ( t && t->next->number != element )
+        // перебираем элементы списка, пока не найдем предшествующий
+        // тому элементу, который хотим удалить
+        {
+            t = t->next; // записываем в t следующий элемент.
+        }
+
+        // как только нашли элемент предшествующий удаляемому
+        if (t) // если не конец списка
+        {
+            buf = t->next; // записываем удаляемый элемент в буфер
+            t->next = t->next->next; // вместо указателя на удаляемый элемент
+            // записываем указатель на следующий элемент
+            free(buf); // Освобождаем память
+            return 0;
+        }
+        else  //если конец списка
+        {
+            return -1; 
+        }
+    }
+     //иначе
+    else  
+    {
+        if ( (*list)->number == element )
+        { // Если первый элемент - единственный,
+          // т.е. именно его мы и хотим удалить
+            buf = *list;
+            *list = (*list)->next; 
+            free(buf); // Освобождаем память
+            return 0;
+        }
+        else // удалять нечего.
+        {
+            return -1;
+        }
+    }
+}
+
+//-----------------------------------------------------------------------------
+void Print(const struct LIST* list)
+// эта функция для вывода на экран всех элементов списка
+{
+    if (list) // если список не пуст
+    {
+        struct LIST *temp = list; // буфферная переменная
+
+        while (temp) // пока она не пуста
+        {
+            printf("%d ", temp->number); // печатаем текущий элемент
+            temp = temp->next; // присваиваем следующий
+        }
+    }
+}
+
+//-----------------------------------------------------------------------------
+void SwapMinMax(struct LIST* list)
+{
+    if ( list && list->next )
+    // если список не пуст и не состоит из одного элемента
+    {
+        struct LIST *temp = list;
+        struct LIST *bufMin = temp;
+        struct LIST *bufMax = temp;
+
+        while (temp) // перебираем элементы списка
+        {
+            temp = temp->next;
+            if (temp && temp->number > bufMax->number)
+            {
+                bufMax = temp; // если значение текущего элемента больше
+                // чем bufMax, то записываем в bufMax значение текущего элемента
+            }
+            if (temp && temp->number < bufMin->number)
+            {
+                bufMin = temp; // если значение текущего элемента меньше
+                // чем bufMin, то записываем в bufMin значение текущего элемента
+            }
+        }
+        int tempValue = bufMin->number; // меняем местами максимум и минимум
+        bufMin->number = bufMax->number;
+        bufMax->number = tempValue;
+    }
+}
+
+//-----------------------------------------------------------------------------
+void BubbleSort(struct LIST* list)
+{
+    if ( list && list->next )
+    // если список не пуст и не состоит из одного элемента, то есть
+        // есть, что сортировать
+    {
+        struct LIST *tempI = list; // пузырьковая сортировка
+        
+
+        while (tempI) // перебираем элементы списка
+        {
+            struct LIST *tempJ = tempI; 
+            while (tempJ) // перебираем элементы списка
+            {
+                if (tempI->number < tempJ->number)
+                {
+                    int tempValue = tempI->number; // меняем местами элементы
+                    tempI->number = tempJ->number;
+                    tempJ->number = tempValue;
+                }
+                tempJ = tempJ->next;
+            }
+            tempI = tempI->next;
+        }
+    }
+}
+
+
+//-----------------------------------------------------------------------------
+int main()
+{
+    printf(" Старт \n\n");
+    int i = 10;
+    struct LIST* list = NULL; //создаем пустой список
+    int a; // переменнная для элементов списка
+    while (i--) // пока не закончится список
+    {
+        //scanf("%d", &a); // пользователь вводит значение элемента
+        Push(&list, i); // это значение записывается в список
+        //printf("%d", i); // и выводится на экран
+    }
+
+    printf(" Список: \n");
+    Print(list); // выводим на экран элементы списка
+
+    printf("\n\n Удаление элемента ... \n\n");
+    DeleteElement(&list, 5); // удаляем элемент = 5
+
+    printf(" Список после удаления: \n");
+    Print(list); // выводим на экран элементы списка
+
+    SwapMinMax(list);
+    printf("\n\n Список после обмена: \n");
+    Print(list); // выводим на экран элементы списка
+
+    BubbleSort(list);
+    printf("\n\n Список после пузырьковой сортировки: \n");
+    Print(list); // выводим на экран элементы списка
+
+    printf ("\n\n  Нажмите любую клавишу, чтобы выйти");
+    scanf ("%c%c",&i, &i); 
+    return 0;
+}
+

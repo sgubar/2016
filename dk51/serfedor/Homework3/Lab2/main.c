@@ -25,7 +25,7 @@ int main(int argc, const char * argv[])
 	printf("List after sorting Node\n");
 	doPrintList(theList);
 	*/
-	theBubleSorting(theList, count);
+	theSelectionSorting(theList, theList->count);
 	doPrintList(theList);
 	system("pause");
 }
