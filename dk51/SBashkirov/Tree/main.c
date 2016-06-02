@@ -29,6 +29,9 @@ int main(int argc, const char * argv[])
 		theFindNode = findNode(theTree, "acc");
 		printf ("find result: %x\n", (unsigned int)theFindNode);
 	}
+	printf("count = %d\n", countTree(theTree));
+	displayTree(theTree);
+	deleteTree(theTree);
 	// insert code here...
 	printf("Hello, World!\n");
 	system("pause");

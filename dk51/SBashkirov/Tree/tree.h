@@ -31,6 +31,7 @@ typedef struct __Tree
 
 TreePtr createTree();
 void deleteTree(TreePtr aTree);
+void deleteBranch(NodePtr CurrentNode);
 
 int countTree(TreePtr aTree);
 void displayTree(TreePtr aTree);

@@ -28,7 +28,35 @@ TreePtr createTree()
 
 void deleteTree(TreePtr aTree)
 {
+	if (NULL != aTree->root)
+	{
+		if (NULL != aTree->root->leftChild)
+		{
+			deleteBranch(aTree->root->leftChild);
+			freeNode(aTree->root->leftChild);
+		}
+		if (NULL != aTree->root->rightChild)
+		{
+			deleteBranch(aTree->root->rightChild);
+			freeNode(aTree->root->rightChild);
+		}
+		freeNode(aTree->root);
+	}
+	free(aTree);
+}
 
+void deleteBranch(NodePtr CurrentNode)
+{
+	if (NULL != CurrentNode->leftChild)
+	{
+		deleteBranch(CurrentNode->leftChild);
+		freeNode(CurrentNode->leftChild);
+	}
+	if (NULL != CurrentNode->rightChild)
+	{
+		deleteBranch(CurrentNode->rightChild);
+		freeNode(CurrentNode->rightChild);
+	}
 }
 
 NodePtr findNode(TreePtr aTree, const char *aName)
