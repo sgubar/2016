@@ -27,7 +27,7 @@ int main(int argc, const char * argv[])
 	
 	
 	clock_t theStart = clock();
-	NodePtr theFindNode = findNode(theTree, "f");
+	NodePtr theFindNode = findNode(theTree, "k");
 	clock_t theEnd = clock();
 	printf("Time of finding: %.15lf\n", (double)(theEnd - theStart) / CLOCKS_PER_SEC);
 
@@ -42,6 +42,7 @@ int main(int argc, const char * argv[])
 	printf("count = %d\n", countTree(theTree));
 	displayTree(theTree);
 	deleteTree(theTree);
+	
 	
 	
 	system("pause");

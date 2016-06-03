@@ -32,6 +32,7 @@ void displayTree(TreePtr aTree);
 NodePtr findNode(TreePtr aTree, const char *aName);
 void insertNode(TreePtr aTree, char *aName, char *aPhoneNumber);
 int deleteNode(TreePtr aTree, const char *aName);
+void deleteBranch(NodePtr CurrentNode);
 
 int RecursiveCountTree(NodePtr CurrentNode);
 int maxLevelTree(TreePtr aTree);
