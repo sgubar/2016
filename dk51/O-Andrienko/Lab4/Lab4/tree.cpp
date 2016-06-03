@@ -22,7 +22,36 @@ TreePtr createTree()
 
 void deleteTree(TreePtr aTree)
 {
+	if (NULL != aTree->root)
+	{
+		if (NULL != aTree->root->leftChild)
+		{
+			deleteBranch(aTree->root->leftChild);
+			freeNode(aTree->root->leftChild);
+		}
+		if (NULL != aTree->root->rightChild)
+		{
+			deleteBranch(aTree->root->rightChild);
+			freeNode(aTree->root->rightChild);
+		}
+		freeNode(aTree->root);
+	}
+	free(aTree);
+	printf("\n\nTree is deleted\n\n");
+}
 
+void deleteBranch(NodePtr CurrentNode)
+{
+	if (NULL != CurrentNode->leftChild)
+	{
+		deleteBranch(CurrentNode->leftChild);
+		freeNode(CurrentNode->leftChild);
+	}
+	if (NULL != CurrentNode->rightChild)
+	{
+		deleteBranch(CurrentNode->rightChild);
+		freeNode(CurrentNode->rightChild);
+	}
 }
 
 NodePtr findNode(TreePtr aTree, const char *aName)
@@ -272,21 +301,30 @@ int RecursiveCountTree(NodePtr CurrentNode)
 
 void displayTree(TreePtr aTree)
 {
-	NodePtr CurrentNode = aTree->root;
-	
-	for (int i = 0; i < 30; i++) printf(" ");
-	printf("%s: %s\n", CurrentNode->note->name, CurrentNode->note->number);
-	for (int i = 0; i < 11; i++) printf(" ");
-	if (CurrentNode->leftChild != NULL) printf("%s: %s\n", CurrentNode->leftChild->note->name, CurrentNode->leftChild->note->number);
-	for (int i = 0; i < 20; i++) printf(" ");
-	if (CurrentNode->rightChild != NULL) printf("%s: %s\n", CurrentNode->rightChild->note->name, CurrentNode->rightChild->note->number);
-
-	int maxLevel = maxLevelTree(aTree);
-	for (int i = 3; i < maxLevel + 1; i++)
+	if (NULL == aTree) 
 	{
-		if (CurrentNode->leftChild != NULL)	printBranch(CurrentNode->leftChild, i, 2, 50 -  (2 * (i)));
-		if (CurrentNode->rightChild != NULL) printBranch(CurrentNode->rightChild, i, 2,  50 + (2 *(i)));
-		printf("\n");
+		printf(" \n Current Tree deosn't exist or Tree is empty\n");
+	}
+	else
+	{
+
+		NodePtr CurrentNode = aTree->root;
+
+		for (int i = 0; i < 30; i++) printf(" ");
+		printf("%s: %s\n", CurrentNode->note->name, CurrentNode->note->number);
+		for (int i = 0; i < 11; i++) printf(" ");
+		if (CurrentNode->leftChild != NULL) printf("%s: %s\n", CurrentNode->leftChild->note->name, CurrentNode->leftChild->note->number);
+		for (int i = 0; i < 20; i++) printf(" ");
+		if (CurrentNode->rightChild != NULL) printf("%s: %s\n", CurrentNode->rightChild->note->name, CurrentNode->rightChild->note->number);
+
+		int maxLevel = maxLevelTree(aTree);
+		for (int i = 3; i < maxLevel + 1; i++)
+		{
+			if (CurrentNode->leftChild != NULL)	printBranch(CurrentNode->leftChild, i, 2, 50 - (2 * (i)));
+			if (CurrentNode->rightChild != NULL) printBranch(CurrentNode->rightChild, i, 2, 50 + (2 * (i)));
+			printf("\n");
+		}
+
 	}
 
 }
