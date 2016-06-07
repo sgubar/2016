@@ -229,16 +229,16 @@ MyList *SelectionSorting(const MyList *inList)
 	{
 		MyNode *aNextNode = aMinNode->nextNode;
 		/*for (aNextNode; aNextNode->nextNode != NULL; aNextNode = aNextNode->nextNode)*/
-		do
-		{
+		
+		while (aNextNode != NULL) {
 			if (strlen(aNextNode->value) <= strlen(aMinNode->value))
 			{
 				char *theValue = aMinNode->value;
 				aMinNode->value = aNextNode->value;
 				aNextNode->value = theValue;
 			}
-		aNextNode = aNextNode->nextNode;
-		}while (aNextNode!=NULL);
+			aNextNode = aNextNode->nextNode;
+		}
 		
 		aMinNode = aMinNode->nextNode;
 	}
