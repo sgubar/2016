@@ -18,7 +18,7 @@
 #define ARRAY_SIZE(a) (sizeof(a)/sizeof(a[0]))
 
 void printArray(int anArray[], int aSize);
-
+int* Copypast(int* SortArr,int aSize);
 int main(int argc, const char * argv[])
 {
          int i;
@@ -26,47 +26,50 @@ int main(int argc, const char * argv[])
         printf ("Enter the length of mass:");
         scanf("%d", &aSize);
         
+        
       	printf("Test bubble sorting\n");
-	int* BubArray= randArray (aSize);
-        printArray(BubArray,aSize);
+	int *NotSortArr=randArray(aSize);
+        int* BubbleAr=Copypast(NotSortArr,aSize);
+        //printArray(BubbleAr,aSize);
         clock_t StartBubble=clock();
-	bubbleSort(BubArray,aSize);
+	bubbleSort(BubbleAr,aSize);
         clock_t EndBubble=clock();
+        //printArray(BubbleAr,aSize);
         printf ("time of Bubble sorting: %.12lf\n", (double)(EndBubble - StartBubble)/CLOCKS_PER_SEC);
 	
         printf("\nTest selection sorting\n");
-        int* SelArray= randArray (aSize);
-        printArray(SelArray,aSize);
+        int* SelAr=Copypast(NotSortArr,aSize);
+        //printArray(SelAr,aSize);
         clock_t StartSel=clock();
-	selectionSort(SelArray,aSize);
+	selectionSort(SelAr,aSize);
         clock_t EndSel=clock();
         printf ("time of Selection sorting: %.12lf\n", (double)(EndSel - StartSel)/CLOCKS_PER_SEC);	
 
 	printf("\nTest insertion sorting\n");
-	int* InsArray= randArray (aSize);
-         printArray(InsArray,aSize); 
+	int* InsAr=Copypast(NotSortArr,aSize);
+        //printArray(InsAr,aSize); 
         clock_t InsStart=clock();
-	insertionSort(InsArray,aSize);
+	insertionSort(InsAr,aSize);
         clock_t InsEnd=clock();
         
 	printf ("time of Insertion sorting: %.12lf\n", (double)(InsEnd - InsStart)/CLOCKS_PER_SEC);
 
 	printf("\nTest Shell sorting\n");
-	 int* ShellArray= randArray (aSize);
-         printArray(ShellArray,aSize); 
+	int* ShellAr=Copypast(NotSortArr,aSize);
+         //printArray(ShellAr,aSize); 
         clock_t StartShell=clock();
-	bubbleSort(ShellArray,aSize);
-        clock_t EndShell=clock();
+	shellSort(ShellAr,aSize);
+        clock_t EndShell=clock(); 
 	
 	printf ("time of Shell sorting: %.12lf\n", (double)(EndShell - StartShell)/CLOCKS_PER_SEC);
 	
 		
 	printf("\nTest Quick sorting\n");
         
-	 int* QuickArray= randArray (aSize);
-          printArray(QuickArray,aSize); 
+	int* QuickAr=Copypast(NotSortArr,aSize);
+          //printArray(QuickAr,aSize); 
         clock_t StartQuick=clock();
-	quickSort2(QuickArray,0,aSize);
+	quickSort2(QuickAr,0,aSize);
         clock_t EndQuick=clock();
 	
 	printf ("time of Quick sorting: %.12lf\n", (double)(EndQuick - StartQuick)/CLOCKS_PER_SEC);
@@ -88,4 +91,15 @@ void printArray(int* anArray,int aSize)
 	printf("}\n");
 }
 
+int* Copypast(int* SortArr,int aSize) 
+{ 
 
+int *Copypast=malloc(aSize*sizeof(int)); 
+
+for (int i =0;i<aSize;i++) 
+{ 
+Copypast[i]=SortArr[i]; 
+} 
+
+return Copypast; 
+}
