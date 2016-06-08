@@ -17,17 +17,23 @@ int main(int argc, const char * argv[])
 	insertNode(theTree, "acc", "1232");
 	insertNode(theTree, "baa", "1233");
 	insertNode(theTree, "bad", "1236");
-	insertNode(theTree, "bda", "1237");
-	insertNode(theTree, "daa", "1238");
+	insertNode(theTree, "bac", "1256");
+
+
+
 	
 	NodePtr theFindNode = findNode(theTree, "acc");
-	
+	printf("Count tree: %d\n", countTree(theTree));
 	if (deleteNode(theTree, "acc"))
 	{
 		theFindNode = findNode(theTree, "acc");
 		printf ("find result: %x\n", (unsigned int)theFindNode);
 	}
 	printf("Count tree: %d\n", countTree(theTree));
+
+	TreeKiller(theTree);
+
+	
 	system("pause");
 
 }

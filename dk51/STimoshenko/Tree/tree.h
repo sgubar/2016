@@ -30,10 +30,9 @@ typedef struct __Tree
 }Tree, *TreePtr;
 
 TreePtr createTree();
-void deleteTree(TreePtr aTree);
 
-int countTree(TreePtr aTree);
-void displayTree(TreePtr aTree);
+
+
 
 NodePtr findNode(TreePtr aTree, const char *aName);
 void insertNode(TreePtr aTree, char *aName, char *aPhoneNumber);
@@ -41,6 +40,7 @@ int deleteNode(TreePtr aTree, const char *aName);
 
 int recursivecounttree(NodePtr theCurrent);
 int countTree(TreePtr aTree);
-
+void TreeKiller(TreePtr aTree);
+void RecursiveDeleteTree(NodePtr theCurrentNode);
 
 #endif /* tree_h */

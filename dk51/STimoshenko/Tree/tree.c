@@ -24,8 +24,37 @@ TreePtr createTree()
 	return theTree;
 }
 
-void deleteTree(TreePtr aTree)
+void TreeKiller(TreePtr aTree)
 {
+
+	if (NULL != aTree->root->leftChild)
+	{
+		RecursiveDeleteTree(aTree->root->leftChild);
+		freeNode(aTree->root->leftChild);
+	}
+	if (NULL != aTree->root->rightChild)
+	{
+		RecursiveDeleteTree(aTree->root->rightChild);
+		freeNode(aTree->root->rightChild);
+	}
+	free(aTree);
+
+}
+
+void RecursiveDeleteTree(NodePtr theCurrentNode)
+{
+	if (NULL != theCurrentNode->leftChild)
+	{
+		RecursiveDeleteTree(theCurrentNode->leftChild);
+		freeNode(theCurrentNode->leftChild);
+	}
+	if (NULL != theCurrentNode->rightChild)
+	{
+		RecursiveDeleteTree(theCurrentNode->rightChild);
+		freeNode(theCurrentNode->rightChild);
+
+	}
+
 
 }
 
@@ -239,16 +268,19 @@ NodePtr getSuccessor(TreePtr aTree, NodePtr aDelNode)
 
 	return theSuccessor;
 }
+
 int countTree(TreePtr aTree)
 {
 	NodePtr theCurrent = aTree->root;
 	int theResult = 1;
-	if (theCurrent->leftChild != NULL) {
-		theResult++;    
+	if (theCurrent->leftChild != NULL) 
+	{
+		theResult++;
 		theResult= theResult + recursivecounttree(theCurrent->leftChild);
 
 	}
-	if (theCurrent->rightChild != NULL) {
+	if (theCurrent->rightChild != NULL) 
+	{
 		theResult++;
 		theResult = theResult + recursivecounttree(theCurrent->rightChild);
 
@@ -260,7 +292,9 @@ int countTree(TreePtr aTree)
 int recursivecounttree(NodePtr theCurrent)
 {
 	int theResult = 0;
-	if (theCurrent->leftChild != NULL) {
+
+	if (theCurrent->leftChild != NULL) 
+	{
 
 		theResult++;
 		theResult = theResult + recursivecounttree(theCurrent->leftChild);
@@ -276,3 +310,4 @@ int recursivecounttree(NodePtr theCurrent)
 
 	return theResult;
 }
+
