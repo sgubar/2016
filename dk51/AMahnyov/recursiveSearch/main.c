@@ -5,6 +5,7 @@
 static int *generateOrdArray(int size);
 static void printArray(int anArray[], int start, int end);
 int searchIn(int anArray[], int leftBound, int rightBound, int key);
+int errorCode = 0;
 
 int main(){
     int *searchArray = generateOrdArray(15);
@@ -14,14 +15,20 @@ int main(){
     int key;
     scanf("%d", &key);
     printf("Found at: %d\n", searchIn(searchArray, 0, 15, key));
+    printf("Error code: %d\n", errorCode);
     return 0;
 }
 
 int searchIn(int anArray[], int leftBound, int rightBound, int key){
+    errorCode = 0;
     int midpoint = leftBound + (rightBound-leftBound)/2;
     printf("Midpoint: %d\n", midpoint);
     getchar();
     if(anArray[midpoint] == key) return midpoint; //element found, end recursion
+    if((leftBound + 1 == rightBound) && leftBound != key){
+        errorCode = 1;
+        return 0; //element not found
+    }
     if(key > anArray[midpoint]){ //element is right of midpoint
         printArray(anArray, midpoint, rightBound);
         searchIn(anArray, midpoint, rightBound, key);
@@ -60,4 +67,4 @@ int searchIn(int anArray[], int leftBound, int rightBound, int key){
         searchIn(anArray, leftBound, midpoint, key);
     }
 }*/
-//TODO: fix "element not found issue"
+//TODO: fix "element not found issue"2

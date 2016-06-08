@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1465406742 source:c:\workspace\dk51\amahnyov\exam\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"tree.h"
+
+1465405652 c:\workspace\dk51\amahnyov\exam\tree.h
+	<stdio.h>
+
+1465406691 source:c:\workspace\dk51\amahnyov\exam\tree.cpp
+	"tree.h"
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<graphics.h>
+
