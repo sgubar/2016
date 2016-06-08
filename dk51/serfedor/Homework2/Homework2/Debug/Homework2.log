@@ -1,29 +1,16 @@
-﻿Сборка начата 08.04.2016 8:09:27.
-     1>Проект "C:\Users\Home\Documents\GitHub\2016\dk51\serfedor\Homework2\Homework2\Homework2.vcxproj" в узле 2 (целевые объекты Build).
+﻿Сборка начата 03.06.2016 9:41:56.
+     1>Проект "C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Homework2\Homework2\Homework2.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         D:\VC2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt DynamicArray.c main.c
-         main.c
-     1>c:\users\home\documents\github\2016\dk51\serfedor\homework2\homework2\main.c(15): warning C4013: system: нет определения; предполагается "extern" с возвратом типа "int"
-     1>c:\users\home\documents\github\2016\dk51\serfedor\homework2\homework2\main.c(23): warning C4020: setValueAtIndex: слишком много фактических параметров
-     1>c:\users\home\documents\github\2016\dk51\serfedor\homework2\homework2\main.c(24): warning C4020: setValueAtIndex: слишком много фактических параметров
-     1>c:\users\home\documents\github\2016\dk51\serfedor\homework2\homework2\main.c(25): warning C4020: setValueAtIndex: слишком много фактических параметров
-     1>c:\users\home\documents\github\2016\dk51\serfedor\homework2\homework2\main.c(26): warning C4020: setValueAtIndex: слишком много фактических параметров
-     1>c:\users\home\documents\github\2016\dk51\serfedor\homework2\homework2\main.c(27): warning C4020: setValueAtIndex: слишком много фактических параметров
-     1>c:\users\home\documents\github\2016\dk51\serfedor\homework2\homework2\main.c(32): warning C4020: setValueAtIndex: слишком много фактических параметров
-     1>c:\users\home\documents\github\2016\dk51\serfedor\homework2\homework2\main.c(33): warning C4020: setValueAtIndex: слишком много фактических параметров
-     1>c:\users\home\documents\github\2016\dk51\serfedor\homework2\homework2\main.c(34): warning C4020: setValueAtIndex: слишком много фактических параметров
+         D:\Programm Files\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt DynamicArray.c
          DynamicArray.c
-     1>c:\users\home\documents\github\2016\dk51\serfedor\homework2\homework2\dynamicarray.c(19): warning C4047: =: "int" отличается по уровням косвенного обращения от "void *"
-     1>c:\users\home\documents\github\2016\dk51\serfedor\homework2\homework2\dynamicarray.c(40): warning C4029: объявленный список формальных параметров отличается от объявления
-     1>c:\users\home\documents\github\2016\dk51\serfedor\homework2\homework2\dynamicarray.c(44): warning C4047: =: "int *" отличается по уровням косвенного обращения от "int"
-     1>c:\users\home\documents\github\2016\dk51\serfedor\homework2\homework2\dynamicarray.c(46): warning C4047: ==: "void *" отличается по уровням косвенного обращения от "int"
-         Создание кода...
+     1>c:\users\солнце\documents\github\2016\dk51\serfedor\homework2\homework2\dynamicarray.c(32): warning C4098: freeDAInt: функция типа "void", возвращающая значение
+     1>c:\users\солнце\documents\github\2016\dk51\serfedor\homework2\homework2\dynamicarray.c(45): warning C4029: объявленный список формальных параметров отличается от объявления
        Link:
-         D:\VC2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Home\Documents\GitHub\2016\dk51\serfedor\Homework2\Debug\Homework2.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Home\Documents\GitHub\2016\dk51\serfedor\Homework2\Debug\Homework2.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Home\Documents\GitHub\2016\dk51\serfedor\Homework2\Debug\Homework2.lib" /MACHINE:X86 Debug\DynamicArray.obj
+         D:\Programm Files\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Homework2\Debug\Homework2.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Homework2\Debug\Homework2.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Homework2\Debug\Homework2.lib" /MACHINE:X86 Debug\DynamicArray.obj
          Debug\main.obj
-         Homework2.vcxproj -> C:\Users\Home\Documents\GitHub\2016\dk51\serfedor\Homework2\Debug\Homework2.exe
-     1>Сборка проекта "C:\Users\Home\Documents\GitHub\2016\dk51\serfedor\Homework2\Homework2\Homework2.vcxproj" завершена (целевые объекты Build).
+         Homework2.vcxproj -> C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Homework2\Debug\Homework2.exe
+     1>Сборка проекта "C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Homework2\Homework2\Homework2.vcxproj" завершена (целевые объекты Build).
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:00.73
+Затраченное время: 00:00:02.12

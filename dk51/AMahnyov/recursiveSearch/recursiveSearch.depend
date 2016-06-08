@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1464864107 source:c:\workspace\dk51\amahnyov\recursivesearch\main.c
+	<stdio.h>
+	<stdlib.h>
+

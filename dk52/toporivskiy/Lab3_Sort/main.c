@@ -14,6 +14,7 @@
 #include "SimpleSort.h"
 #include "shellSort.h"
 #include "quickSort.h"
+#include "doTest.h"
 
 
 
@@ -21,11 +22,8 @@ int main()
 {
 	// Entry point
 	printf("CHOOSE OPERATION:\n");
-	printf("1) Time to sort the array with 500 elements\n");
-	printf("2) Time to sort the array with 1000 elements\n");
-	printf("3) Time to sort the array with 10 000 elements\n");
-	printf("4) Time to sort the array with 50 000 elements\n");
-	printf("5) Exit\n");
+	printf("1) Time to sort the array with 10000 elements\n");
+	printf("2) Exit\n");
 	printf("\n");
 	int operation;
 	// Choose operation and checkup
@@ -33,31 +31,16 @@ int main()
 		printf("Enter number of operation:\n");
 		scanf("%d", &operation);
 		printf("\n");
-	} while (operation != 1 && operation != 2 && operation != 3 && operation != 4 && operation != 5);
+	} while (operation != 1 && operation != 2);
 	// Output operation on the screen
 	if (operation == 1) {
-		int anArray[500];
+		// So we initialization our array with 10'000 cells and calculate size number of array.
+		int anArray[10000];
 		int aSize = ARRAY_SIZE(anArray);
-		fillArray(anArray, aSize);
-			printf("{");
-			for (int i = 0; i < aSize; i++)
-			{
-				printf(" %d ", anArray[i]);
-			}
-
-			printf("}\n");
-			system("pause");
+		// Call function that will testing time of running sort fuction
+		doTest(anArray, aSize);
 	}
 	else if (operation == 2) {
-		int anArray[1000];
-		int aSize = ARRAY_SIZE(anArray);
-		fillArray(anArray, aSize);
-	}
-	else if (operation == 3) {
-	}
-	else if (operation == 4) {
-	}
-	else if (operation == 5) {
 		return 0;
 	}
 	else {

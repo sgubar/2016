@@ -1,0 +1,14 @@
+﻿Сборка начата 20.05.2016 0:51:45.
+     1>Проект "c:\Users\sergeyignaten\documents\visual studio 2015\Projects\homework2\homework2\homework2.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\visualstudio2015\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt Source.c
+         Source.c
+       Link:
+         C:\Program Files (x86)\visualstudio2015\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\sergeyignaten\documents\visual studio 2015\Projects\homework2\Debug\homework2.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"c:\users\sergeyignaten\documents\visual studio 2015\Projects\homework2\Debug\homework2.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\sergeyignaten\documents\visual studio 2015\Projects\homework2\Debug\homework2.lib" /MACHINE:X86 Debug\DynamicArray.obj
+         Debug\Source.obj
+         homework2.vcxproj -> c:\users\sergeyignaten\documents\visual studio 2015\Projects\homework2\Debug\homework2.exe
+     1>Сборка проекта "c:\Users\sergeyignaten\documents\visual studio 2015\Projects\homework2\homework2\homework2.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:00.54

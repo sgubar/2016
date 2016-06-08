@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1464900773 source:c:\temp\homework4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ord_array.h"
+	"recursive_search.h"
+	"linear_find.h"
+	<time.h>
+
+1464899938 source:c:\temp\homework4\ord_array.c
+	"ord_array.h"
+	<stdlib.h>
+	<string.h>
+
+1464899875 c:\temp\homework4\ord_array.h
+	<stdio.h>
+
+1464900147 source:c:\temp\homework4\recursive_search.c
+	<stdio.h>
+	"recursive_search.h"
+	"ord_array.h"
+
+1464900114 c:\temp\homework4\recursive_search.h
+	"ord_array.h"
+	<stdio.h>
+
+1464899664 source:c:\temp\homework4\linear_find.c
+	"linear_find.h"
+	<limits.h>
+
+1464900397 c:\temp\homework4\linear_find.h
+	<stdio.h>
+

@@ -16,15 +16,20 @@ DynamicIntArray *createDAInt(int aSize)
 	DA->physicalSize = aSize;
 	DA->logicalSize = 0;
 	DA->storage = (int *)malloc(aSize*sizeof(int));;
-	for (int i = 0; i < aSize; i++) DA->storage[i] = NULL;
+	for (int i = 0; i < aSize; i++) DA->storage[i] = 0;
 	return DA;
 }
-void freeDAInt(DynamicIntArray *anArray)
+void freeDAInt(DynamicIntArray *anArray )
 {	
-	free(anArray->storage);
-	free(anArray);
-	anArray->storage = NULL;
-	anArray->logicalSize = anArray->physicalSize = 0;
+	if (anArray != NULL)
+	{
+		if (anArray->storage != NULL)
+		{
+			free(anArray->storage);
+			free(anArray);
+		}
+	}
+	return 0;
 }
 
 int valueAtIndex(int anIndex, DynamicIntArray *anArray)
@@ -38,11 +43,12 @@ int valueAtIndex(int anIndex, DynamicIntArray *anArray)
 
 void setValueAtIndex(int anValue, int anIndex, DynamicIntArray *anArray)
 {
-	if (anArray->logicalSize == anArray->physicalSize) {
-		anArray->physicalSize *= 2;
-		if (anIndex > anArray->physicalSize) anArray->physicalSize = anIndex;
-		anArray->storage = (int)realloc(anArray->storage, anArray->physicalSize  *sizeof(int));
+	if (anIndex > anArray->physicalSize)
+	{
+		anArray->storage = (int *)realloc(anArray->storage, (anIndex + 1) * sizeof(int));
+		for (int i = anArray->physicalSize; i < anIndex + 1; i++) anArray->storage[i] = 0;
+		anArray->physicalSize = anIndex + 1;
 	}
-	if (NULL == anArray->storage[anIndex]) anArray->logicalSize++;
+	if (0 == anArray->storage[anIndex]) anArray->logicalSize += 1;
 	anArray->storage[anIndex] = anValue;
 }

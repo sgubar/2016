@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 
 
@@ -37,6 +38,26 @@ void Init(Node **begin)
 		end = end->next;
 		end->info = j;
 		j = j+10;
+		end->next = NULL;
+	}
+}
+
+void Init_random(Node **begin)
+{
+	*begin = (Node*)malloc(sizeof(struct Node));
+	srand(time(NULL));
+	
+	(*begin)->info = rand() % 1001;
+	(*begin)->next = NULL;
+	
+	Node* end = *begin;
+	
+	int i;
+	for (i=0; i<5; i++)
+	{
+		end->next = (Node*)malloc(sizeof(struct Node));
+		end = end->next;
+		end->info = rand() % 1001;
 		end->next = NULL;
 	}
 }
@@ -101,6 +122,78 @@ void Delete(Node **begin,int data)
 	}
 }
 
+void Change_min_max(Node **begin)
+{
+	int min, max;
+	Node *t1 = *begin;
+	min = t1->info;
+	if (t1->info < min)
+	{
+		*begin = t1->next;
+		free(t1);
+		return;
+	}
+}
+
+void Bubble_sort(Node *begin)
+{
+    Node * p = NULL;
+    
+    if (begin != NULL)
+	{
+        while (begin->next != NULL)
+		{
+            p = begin->next;
+            
+            do
+			{
+                if (p->info < begin->info)
+				{
+                    int tmp = p->info;
+                    p->info = begin->info;
+                    begin->info = tmp;
+                }
+                
+                p = p->next;
+            } while (p != NULL);
+            
+            begin = begin->next;
+        }
+    }
+}
+
+void Insertion_sort(Node *begin)
+{
+    Node *p, *key;
+    Node *result = begin;
+    begin = begin->next;      /* Головой стал следующий элемент */
+    result->next = NULL;    /* Первый элемент отсортированного списка */
+
+    while(begin->next != NULL)
+	{
+        key = begin;
+        begin = begin->next;
+        if(key->info < result->info)
+		{   /* Вставляем результат в голову */
+            key->next = result;
+            result = key;
+        }
+		else
+		{
+            p = result;
+            while(p->next != NULL)
+			{     /* Бежим по уже сформированному результату */
+                if(p->next->info > key->info)
+                    break;
+                p = p->next;
+            }
+            key->next = p->next;
+            p->next = key;
+        }
+    }
+    begin = result;
+}
+
 void Free(Node **begin)
 {
 	if (*begin==0) return;
@@ -117,38 +210,64 @@ void Free(Node **begin)
 
 void MenuPrint()
 {
-	Printf("What would you like to do?");
-	Printf("1. Insert the node.");
-	Printf("2. Delete the node.");
-}
-
-void Menu(int answer)
-{
-	
+	printf("\nWhat would you like to do?");
+	printf("\n1. Insert the node. (It should be sorted before)");
+	printf("\n2. Delete the node.");
+	printf("\n3. Bubble-sort the list.");
+	printf("\n4. Isertion-sort the list.");
+	printf("\n5. Quit.\n");
 }
 
 int main(int argc, char *argv[])
 {
-	int answer;
+	int answer, info;
 	Node* begin = NULL;
+	Init_random(&begin);
 	
-	Printf("Welcome!");
+	printf("Welcome!\n");
+	printf("\nThis is your list:\n");
+	Print(begin);
+	
+	start:
+	answer=0;
 	MenuPrint();
 	scanf("%d",&answer);
-	Menu(answer);
+	if (answer == 1)
+	{
+		printf("Enter data: ");
+		scanf("%d",&info);
+		Insert(&begin, info);
+		Print(begin);
+		goto start;
+	}
+	if (answer == 2)
+	{
+		printf("Enter data: ");
+		scanf("%d",&info);
+		Delete(&begin, info);
+		Print(begin);
+		goto start;
+	}
+	if (answer == 3)
+	{
+		Bubble_sort(begin);
+		Print(begin);
+		goto start;
+	}
+	if (answer == 4)
+	{
+		Insertion_sort(begin);
+		Print(begin);
+		goto start;
+	}
+	if (answer == 5)
+	{
+		goto finish;
+	}
+	else
+	printf("\nNo such answer!");
 	
-	Init(&begin);
-	Print(begin);
-	Insert(&begin,50);
-	Print(begin);
-	Insert(&begin,25);
-	Print(begin);
-	Insert(&begin,1);
-	Print(begin);
-	Delete(&begin,20);
-	Print(begin);
+	finish:
 	Free(&begin);
-	Print(begin);
-	
 	return 0;
 }
