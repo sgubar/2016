@@ -2,7 +2,7 @@
 //  main.c
 //
 //
-//  Created by Bogdan Maximovich on 23/03/16.
+//  Created by Bogdan Maximovich on 15/05/16.
 //  Copyright © 2016 Bogdan Maximovich. All rights reserved.
 //
 
@@ -22,11 +22,6 @@ int main()
 
 void doTestList()
 {
-	int CreateDoubleNode = 0;
-
-	printf("List\n");
-	printf("\n");
-
 	IntNode *theNode1 = CreateNode(1);
 	IntNode *theNode2 = CreateNode(2);
 	IntNode *theNode3 = CreateNode(3);
@@ -44,14 +39,16 @@ void doTestList()
 	AddNode(theList, theNode5);
 	AddNode(theList, theNode6);
 	AddNode(theList, theNode7);
+
     InsertNodeAtIndex(theList, theNode8, 5);
+    printf("\nInsert node at list with index 5\n\n");
 
 	doPrintList(theList);
 
 	printf("\n");
 
 	RemovedNodeAtIndex(theList, 6);
-
+    printf("\nRemove from the list node with index 6\n\n");
 	doPrintList(theList);
 
 	printf("\n");
