@@ -13,22 +13,26 @@ int main(int argc, const char * argv[])
 {
 	TreePtr theTree = createTree();
 
-	insertNode(theTree, "aaa", "1234");
-	insertNode(theTree, "abb", "1235");
-	insertNode(theTree, "acc", "1232");
-	insertNode(theTree, "baa", "1233");
-
-	NodePtr theFindNode = findNode(theTree, "acc");
+	insertNode(theTree, "Andrey", "1234");
+	insertNode(theTree, "Alyosha", "1235");
+	insertNode(theTree, "Azirov", "1232");
+	insertNode(theTree, "Bodya", "1233");
+	insertNode(theTree, "Badyrich", "3333");
+	NodePtr theFindNode = findNode(theTree, "Bodya");
 
 	printf("count = %d\n", countTree(theTree));
+	printTree(theTree);
 
-	if (deleteNode(theTree, "acc"))
+	if (deleteNode(theTree, "Azirov"))
 	{
-		theFindNode = findNode(theTree, "acc");
+		theFindNode = findNode(theTree, "Azirov");
 		printf("find result: %x\n", (unsigned int)theFindNode);
 	}
-	printf("count = %d\n", countTree(theTree));
+	printf("\n");
 	// insert code here...
-	printf("Hello, World!\n");
+	printTree(theTree);
+	printf("count = %d\n", countTree(theTree));
+	deleteTree(theTree);
+	
 	system("pause");
 }

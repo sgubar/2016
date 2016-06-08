@@ -31,14 +31,16 @@ typedef struct __Tree
 
 TreePtr createTree();
 void deleteTree(TreePtr aTree);
-
+void deleteBranch(TreePtr aTree);
 int countTree(TreePtr aTree);
-void displayTree(TreePtr aTree);
+int countBranch(TreePtr aTree);
+void printTree(TreePtr aTree);
+void printBranch(TreePtr aTree);
 
 NodePtr findNode(TreePtr aTree, const char *aName);
 void insertNode(TreePtr aTree, char *aName, char *aPhoneNumber);
 int deleteNode(TreePtr aTree, const char *aName);
 
-int RecursiveCountTree(NodePtr CurrentNode);
+
 
 #endif /* tree_h */

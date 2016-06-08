@@ -27,27 +27,61 @@ TreePtr createTree()
 
 void deleteTree(TreePtr aTree)
 {
-
+	if (NULL != aTree->root)
+	{
+		if (NULL != aTree->root->leftChild)
+		{
+			deleteBranch(aTree->root->leftChild);
+			freeNode(aTree->root->leftChild);
+		}
+		if (NULL != aTree->root->rightChild)
+		{
+			deleteBranch(aTree->root->rightChild);
+			freeNode(aTree->root->rightChild);
+		}
+		freeNode(aTree->root);
+	}
+	free(aTree);
 }
+
+void deleteBranch(NodePtr CurrentNode)
+{
+	if (NULL != CurrentNode->leftChild)
+	{
+		deleteBranch(CurrentNode->leftChild);
+		freeNode(CurrentNode->leftChild);
+	}
+	if (NULL != CurrentNode->rightChild)
+	{
+		deleteBranch(CurrentNode->rightChild);
+		freeNode(CurrentNode->rightChild);
+	}
+}
+
+
 
 NodePtr findNode(TreePtr aTree, const char *aName)
 {
-	NodePtr theCurrentNode = aTree->root; //<! - start from root
-	int theComparisionResult = 0;
-
-	while (0 != (theComparisionResult = strcmp(aName, theCurrentNode->note->name))) //<! - walk through the tree
+	if (NULL!=aTree->root)
 	{
-		theCurrentNode = (theComparisionResult < 0)
-			? theCurrentNode->leftChild
-			: theCurrentNode->rightChild;
+		NodePtr theCurrentNode = aTree->root; //<! - start from root
+		int theComparisionResult = 0;
 
-		if (NULL == theCurrentNode)
+		while (0 != (theComparisionResult = strcmp(aName, theCurrentNode->note->name))) //<! - walk through the tree
 		{
-			break;
-		}
-	}
+			theCurrentNode = (theComparisionResult < 0)
+				? theCurrentNode->leftChild
+				: theCurrentNode->rightChild;
 
-	return theCurrentNode;
+			if (NULL == theCurrentNode)
+			{
+				break;
+			}
+		}
+
+		return theCurrentNode;
+	}
+	return 0;
 }
 
 void insertNode(TreePtr aTree, char *aName, char *aPhoneNumber)
@@ -243,33 +277,74 @@ NodePtr getSuccessor(TreePtr aTree, NodePtr aDelNode)
 
 int countTree(TreePtr aTree)
 {
-	NodePtr theCurrentNode = aTree->root;
-	int result = 1;
-	if (theCurrentNode->leftChild != NULL)
+	int count = 0;
+	if (NULL != aTree->root)
 	{
-		result++;
-		result += RecursiveCountTree(theCurrentNode->leftChild);
+		count = 1;
+		if (NULL != aTree->root->leftChild)
+		{
+			count++;
+			count+=countBranch(aTree->root->leftChild);
+		}
+		if (NULL != aTree->root->rightChild)
+		{
+			count++;
+			count+=countBranch(aTree->root->rightChild);
+		}
+		return count;
 	}
-	if (theCurrentNode->rightChild != NULL)
+
+}
+int countBranch(NodePtr aTree)
+{
+	int count = 0;
+	if (NULL != aTree->leftChild)
 	{
-		result++;
-		result += RecursiveCountTree(theCurrentNode->rightChild);
+		count++;
+		count+=countBranch(aTree->leftChild);
+	
 	}
-	return result;
+	if (NULL != aTree->rightChild)
+	{
+		count++;
+		count+=countBranch(aTree->rightChild);
+		
+	}
+	return count;
 }
 
-int RecursiveCountTree(NodePtr CurrentNode)
+void printTree(TreePtr aTree)
 {
-	int result = 0;
-	if (CurrentNode->leftChild != NULL)
+	if (NULL != aTree->root)
 	{
-		result++;
-		result += RecursiveCountTree(CurrentNode->leftChild);
+		printf("%s-%s\n", aTree->root->note->name, aTree->root->note->number);
+		if (NULL != aTree->root->leftChild)
+		{
+			printf("%s - %s\n", aTree->root->leftChild->note->name, aTree->root->leftChild->note->number);
+			printBranch(aTree->root->leftChild);
+
+		}
+		if (NULL != aTree->root->rightChild)
+		{
+			printf("%s - %s\n", aTree->root->rightChild->note->name, aTree->root->rightChild->note->number);
+			printBranch(aTree->root->rightChild);
+		}
 	}
-	if (CurrentNode->rightChild != NULL)
+
+}
+
+void printBranch(NodePtr CurrentNode)
+{
+	if (NULL != CurrentNode->leftChild)
 	{
-		result++;
-		result += RecursiveCountTree(CurrentNode->rightChild);
+
+		printf("%s - %s\n", CurrentNode->leftChild->note->name, CurrentNode->leftChild->note->number);
+		printBranch(CurrentNode->leftChild);
+
 	}
-	return result;
+	if (NULL != CurrentNode->rightChild)
+	{
+		printf("%s - %s\n", CurrentNode->rightChild->note->name, CurrentNode->rightChild->note->number);
+		printBranch(CurrentNode->rightChild);
+	}
 }
