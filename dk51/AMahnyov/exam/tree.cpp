@@ -19,6 +19,7 @@ static NodePtr getSuccessor(TreePtr aTree, NodePtr aDelNode);
 static void displayBranch(NodePtr inputNode, int x, int y);
 void drawNode(NodePtr inputNode, int x, int y);
 static int countBranch(NodePtr inputNode, int currentCount);
+static void deleteBranch(NodePtr inputNode);
 
 TreePtr createTree()
 {
@@ -32,49 +33,77 @@ TreePtr createTree()
 	return theTree;
 }
 
-void deleteTree(TreePtr aTree)
-{
+void deleteTree(TreePtr aTree){
+    if(NULL != aTree){
+        if(NULL != aTree->root->leftChild) deleteBranch(aTree->root->leftChild);
+        if(NULL != aTree->root->rightChild) deleteBranch(aTree->root->rightChild);
+    }
+    free(aTree);
+}
 
+static void deleteBranch(NodePtr inputNode){
+    if(NULL != inputNode->leftChild) deleteBranch(inputNode->leftChild);
+    if(NULL != inputNode->rightChild) deleteBranch(inputNode->rightChild);
+    free(inputNode->note);
+    free(inputNode);
 }
 
 int countTree(TreePtr aTree){
-    int result = -1;
+    int resultLeft = 0;
+    int resultRight = 0;
     if(aTree != NULL){
         if(NULL != aTree->root->leftChild){
-            result = countBranch(aTree->root->leftChild, 0);
+            resultLeft = countBranch(aTree->root->leftChild, 0);
         }
         if(NULL != aTree->root->rightChild){
-            result = countBranch(aTree->root->rightChild, 0);
+            resultRight = countBranch(aTree->root->rightChild, 0);
         }
-        result++;
     }
-    return result;
+    return resultLeft+resultRight+1;
 }
 
 static int countBranch(NodePtr inputNode, int currentCount){
-    printf("inputNode: %s\n", inputNode->note->name);
-    if(NULL != inputNode->leftChild) currentCount += countBranch(inputNode->leftChild, currentCount);
-    if(NULL != inputNode->rightChild) currentCount += countBranch(inputNode->rightChild, currentCount);
-    if(NULL == inputNode->rightChild && NULL == inputNode->leftChild) currentCount++;
-    currentCount++;
-    return currentCount;
+    int curCoutL = 0;
+    int curCoutR = 0;
+    if(NULL != inputNode->leftChild){
+        curCoutL = countBranch(inputNode->leftChild, currentCount);
+    }
+    if(NULL != inputNode->rightChild){
+        curCoutR = countBranch(inputNode->rightChild, currentCount);
+    }
+    //printf("Leaving, currentCount: %d, currentNode: %s\n", currentCount, inputNode->note->name);
+    return currentCount + curCoutL + curCoutR + 1;
 }
 
 void displayTree(TreePtr aTree){
     if(aTree != NULL){
         NodePtr currentNode = aTree->root;
         drawNode(currentNode, getmaxx()/2, 0);
-        if(NULL != aTree->root->leftChild) displayBranch(aTree->root->leftChild, getmaxx()/2-100, 50);
-        if(NULL != aTree->root->rightChild) displayBranch(aTree->root->rightChild, getmaxx()/2+100, 50);
+        if(NULL != aTree->root->leftChild){
+            displayBranch(aTree->root->leftChild, getmaxx()/2-100, 50);
+            line(getmaxx()/2, 0, getmaxx()/2-100, 50);
+        }
+        if(NULL != aTree->root->rightChild){
+            displayBranch(aTree->root->rightChild, getmaxx()/2+100, 50);
+            line(getmaxx()/2, 0, getmaxx()/2+100, 50);
+        }
     }else{
         printf("Invalid tree!\n");
     }
+    system("pause");
+    closegraph();
 }
 
 static void displayBranch(NodePtr inputNode, int x, int y){
     drawNode(inputNode, x, y);
-    if(NULL != inputNode->leftChild)  displayBranch(inputNode->leftChild, x-100, y+50);
-    if(NULL != inputNode->rightChild) displayBranch(inputNode->rightChild, x+100, y+50);
+    if(NULL != inputNode->leftChild){
+        displayBranch(inputNode->leftChild, x-100, y+50);
+        line(x, y, x-100, y+50);
+    }
+    if(NULL != inputNode->rightChild){
+        displayBranch(inputNode->rightChild, x+100, y+50);
+        line(x, y, x+100, y+50);
+    }
 }
 
 void drawNode(NodePtr inputNode, int x, int y){
