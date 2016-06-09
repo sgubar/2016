@@ -4,17 +4,18 @@
 #include <time.h>
 #include "Binarry.h"
 
-#define ARRAY_SIZE(a) (sizeof(theArray)/sizeof(theArray[0]))
+//#define ARRAY_SIZE(a) (sizeof(theArray)/sizeof(theArray[0]))
+#define SIZE_ARRAY_3 (1000)
 
 	int main(int argc, const char * argv[])
 	{
 		//int theIndex1, theIndex2;
-		ordArrayPtr theArray = binarycreate(10000);
+		ordArrayPtr theArray = binarycreate(SIZE_ARRAY_3);
 
 		srand(0);
-		for (int i = 0; i < 10000; i++)
+		for (int i = 0; i < 1000; i++)
 		{
-			binaryinsert(theArray, rand() % 5000);
+			binaryinsert(theArray, rand() % 500);
 		}
 
 		printf("Test Binaryfind^ \n");
