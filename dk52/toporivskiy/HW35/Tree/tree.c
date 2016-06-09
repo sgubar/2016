@@ -3,7 +3,7 @@
 //  demoTree
 //
 //  Created by Slava Gubar on 5/18/16.
-//  Copyright © 2016 Slava Gubar. All rights reserved.
+//  Copyright Â© 2016 Slava Gubar. All rights reserved.
 //
 
 #include "tree.h"
@@ -238,4 +238,18 @@ NodePtr getSuccessor(TreePtr aTree, NodePtr aDelNode)
 	}
 
 	return theSuccessor;
+}
+
+/////////////////////////
+void displayTree(NodePtr aNode)
+{
+	if (NULL != aNode)
+{
+	printf("%s\n", aNode->note->name);
+	displayTree(aNode->leftChild);
+	displayTree(aNode->rightChild);
+} else 
+{
+return 0;
+}
 }
