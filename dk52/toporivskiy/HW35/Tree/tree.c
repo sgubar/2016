@@ -83,6 +83,26 @@ int countTree(TreePtr aTree)
 	return theResult;
 }
 
+
+int countTree(NodePtr aNode)
+{
+	int theRezult = 0;
+	if (NULL != aTree->root) {
+	if (NULL != aNode) // Checking node
+	{
+		theRezult++;
+		theRezult = theRezult + countTree(aNode->leftChild);
+		theRezult = theRezult + countTree(aNode->rightChild);
+	}
+	else
+	{
+		return 0;
+	}
+	}
+
+	return theRezult;
+}
+
 void displayTree(NodePtr aNode)
 {
 	if (NULL != aNode)
