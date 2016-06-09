@@ -1,0 +1,8 @@
+﻿  Binarry.c
+d:\документы\visual studio 2015\projects\find\find\binarry.c(14): warning C4013: 'memset' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\find\find\binarry.c(44): warning C4018: '<': signed/unsigned mismatch
+d:\документы\visual studio 2015\projects\find\find\binarry.c(73): warning C4018: '<': signed/unsigned mismatch
+d:\документы\visual studio 2015\projects\find\find\binarry.c(126): warning C4013: 'printf' undefined; assuming extern returning int
+d:\документы\visual studio 2015\projects\find\find\binarry.c(128): warning C4018: '<': signed/unsigned mismatch
+d:\документы\visual studio 2015\projects\find\find\binarry.c(131): warning C4018: '<': signed/unsigned mismatch
+  Find.vcxproj -> d:\документы\visual studio 2015\Projects\Find\Debug\Find.exe
