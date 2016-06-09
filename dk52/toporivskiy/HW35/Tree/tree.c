@@ -2,7 +2,7 @@
 //  tree.c
 //  demoTree
 //
-//  Created by Slava Gubar on 5/18/16.
+//  Created by Slava Gubar & Andrew Toporivskiy on 5/18/16.
 //  Copyright © 2016 Slava Gubar. All rights reserved.
 //
 
@@ -25,10 +25,64 @@ TreePtr createTree()
 	return theTree;
 }
 
+///////////////////////////////////////////////////////////
 void deleteTree(TreePtr aTree)
 {
-
+	if (NULL != aTree)
+	{
+		if (NULL != aTree->root)
+		{
+				while (NULL != aTree->root->leftChild)
+				{
+					NodePtr CurrentNode = aTree->root->leftChild;
+					while (NULL != CurrentNode->leftChild)
+					{
+						freeNode(CurrentNode->leftChild);
+					}
+					freeNode(aTree->root->leftChild);
+				}
+				while (NULL != aTree->root->rightChild)
+				{
+					NodePtr CurrentNode = aTree->root->rightChild;
+					while (NULL != CurrentNode->rightChild)
+					{
+						freeNode(CurrentNode->rightChild);
+					}
+					freeNode(aTree->root->rightChild);
+				}
+			free(aTree->root);
+		}
+		free(aTree);
+	}
 }
+
+int countTree(TreePtr aTree)
+{
+	NodePtr theCurrentNode = aTree->root;  //<! - start from root
+	int theResult;
+	if (NULL != aTree->root)
+	{
+		theResult = 1;
+
+		while (NULL != theCurrentNode)
+		{
+			if (theCurrentNode->leftChild != NULL)
+			{
+				theResult++;
+			}
+			if (theCurrentNode->rightChild != NULL)
+			{
+				theResult++;
+			}
+		}
+	}
+	else
+	{
+		theResult = 0;
+	}
+	return theResult;
+}
+///////////////////////////////////////////////////////////
 
 NodePtr findNode(TreePtr aTree, const char *aName)
 {
@@ -55,7 +109,8 @@ void insertNode(TreePtr aTree, char *aName, char *aPhoneNumber)
 	// prepare new Node
 	// 1. create new node
 	NodePtr theNewNode = (NodePtr)malloc(sizeof(Node));
-	memset(theNewNode, 0, sizeof(Node));
+	bzero(theNewNode, sizeof(Node)); // Issue with it! (#include <strings.h>)
+	//memset(theNewNode, 0, sizeof(Node)); // Maybe this function (#include <string.h>)
 
 	// 2. create new note
 	PhoneNotePtr theNote = (PhoneNotePtr)malloc(sizeof(PhoneNote));
@@ -239,7 +294,6 @@ NodePtr getSuccessor(TreePtr aTree, NodePtr aDelNode)
 
 	return theSuccessor;
 }
-
 /////////////////////////
 void displayTree(NodePtr aNode)
 {
