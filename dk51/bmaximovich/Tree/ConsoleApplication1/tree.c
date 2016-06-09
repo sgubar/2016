@@ -3,7 +3,7 @@
 //
 //
 //  Created by Bogdan Maximovich on 6/08/16.
-//  Copyright © 2016 Bogdan Maximovich. All rights reserved.
+//  Copyright Â© 2016 Bogdan Maximovich. All rights reserved.
 //
 
 #include "tree.h"
@@ -253,7 +253,7 @@ void deleteTree(TreePtr aTree, NodePtr theCurrentNode) {
 	}
 
 	deleteNode(aTree, theCurrentNode->note->name);
-
+free(aTree);
 }
 
 
