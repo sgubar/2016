@@ -3,7 +3,7 @@
 //  demoTree
 //
 //  Created by Slava Gubar on 5/18/16.
-//  Copyright Â© 2016 Slava Gubar. All rights reserved.
+//  Copyright © 2016 Slava Gubar. All rights reserved.
 //
 
 #include "tree.h"
@@ -108,7 +108,7 @@ static void displayBranch(NodePtr inputNode, int x, int y){
 
 void drawNode(NodePtr inputNode, int x, int y){
     txTextOut(x, y, inputNode->note->name);
-    txTextOut(x, y+10, inputNode->note->number);
+    txTextOut(x, y+15, inputNode->note->number);
 }
 
 NodePtr findNode(TreePtr aTree, const char *aName)

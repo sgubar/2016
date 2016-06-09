@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1465409525 source:c:\workspace\dk51\amahnyov\exam\main.cpp
+1465409799 source:c:\workspace\dk51\amahnyov\exam\main.cpp
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -8,7 +8,7 @@
 1465405652 c:\workspace\dk51\amahnyov\exam\tree.h
 	<stdio.h>
 
-1465409699 source:c:\workspace\dk51\amahnyov\exam\tree.cpp
+1465413596 source:c:\workspace\dk51\amahnyov\exam\tree.cpp
 	"tree.h"
 	<stdlib.h>
 	<string.h>
