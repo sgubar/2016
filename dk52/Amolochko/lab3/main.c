@@ -4,6 +4,7 @@
 #include "quickSort.h"
 #include "SimpleSort.h"
 #include "shellSort.h"
+#include "Adition.h"
 
 #define ARRAY_SIZE(a) (sizeof(a)/sizeof(a[0]))
 
@@ -53,7 +54,7 @@ void main()
 	shellSort(d, ARRAY_SIZE(a));
 	clock_t theEnd4 = clock(); /*finish clock*/
 	printArray(d, ARRAY_SIZE(a));
-	printf ("time of Shell sorting: %.10lf\n", (double)(theEnd4 - theStart4)/CLOCKS_PER_SEC);
+	printf ("time of Shell sorting: %.20lf\n", (double)(theEnd4 - theStart4)/CLOCKS_PER_SEC);
 	
 
 	printf("\nTest quickSort\n");
