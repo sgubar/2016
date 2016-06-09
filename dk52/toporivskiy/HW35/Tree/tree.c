@@ -82,6 +82,19 @@ int countTree(TreePtr aTree)
 	}
 	return theResult;
 }
+
+void displayTree(NodePtr aNode)
+{
+	if (NULL != aNode)
+{
+	printf("%s\n", aNode->note->name);
+	displayTree(aNode->leftChild);
+	displayTree(aNode->rightChild);
+} else 
+{
+printf("Empty tree\n");
+}
+}
 ///////////////////////////////////////////////////////////
 
 NodePtr findNode(TreePtr aTree, const char *aName)
@@ -293,17 +306,4 @@ NodePtr getSuccessor(TreePtr aTree, NodePtr aDelNode)
 	}
 
 	return theSuccessor;
-}
-/////////////////////////
-void displayTree(NodePtr aNode)
-{
-	if (NULL != aNode)
-{
-	printf("%s\n", aNode->note->name);
-	displayTree(aNode->leftChild);
-	displayTree(aNode->rightChild);
-} else 
-{
-return 0;
-}
 }
