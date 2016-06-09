@@ -56,33 +56,6 @@ void deleteTree(TreePtr aTree)
 	}
 }
 
-int countTree(TreePtr aTree)
-{
-	NodePtr theCurrentNode = aTree->root;  //<! - start from root
-	int theResult;
-	if (NULL != aTree->root)
-	{
-		theResult = 1;
-
-		while (NULL != theCurrentNode)
-		{
-			if (theCurrentNode->leftChild != NULL)
-			{
-				theResult++;
-			}
-			if (theCurrentNode->rightChild != NULL)
-			{
-				theResult++;
-			}
-		}
-	}
-	else
-	{
-		theResult = 0;
-	}
-	return theResult;
-}
-
 
 int countTree(NodePtr aNode)
 {
