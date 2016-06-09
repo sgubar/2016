@@ -3,7 +3,19 @@
 //
 //
 //  Created by Bogdan Maximovich on 6/08/16.
-//  Copyright � 2016 Bogdan Maximovich. All rights reserved.
+//  Copyright © 2016 Bogdan Maximovich. All rights reserved.
+//
+
+#include <stdio.h>
+#include "tree.h"
+
+int main(int argc, const char * argv[])
+//
+//  Main.c
+//
+//
+//  Created by Bogdan Maximovich on 6/08/16.
+//  Copyright © 2016 Bogdan Maximovich. All rights reserved.
 //
 
 #include <stdio.h>
@@ -19,16 +31,23 @@ int main(int argc, const char * argv[])
 	insertNode(theTree, "baa", "1233");
 
 	displayTree(theTree);
-	deleteNode(theTree, "baa");
 
 	printf("\ncount before: %d\n\n\n", countTree(theTree->root));
+
+	if(deleteNode(theTree, "baa")==1){
+    printf("\n\n Node (baa) has been deleted\n\n");
+	}else{
+	printf("Node not found\n\n");
+	}
+
 	displayTree(theTree);
 
-	deleteTree(theTree, theTree->root);
-	
-	printf("\n\n Node (baa) has been delete\n\n", deleteNode);
+
 
 	printf("count after: %d\n\n\n", countTree(theTree->root));
+
+    deleteTree(theTree, theTree->root);
+
 	system("pause");
 	return 0;
 }
