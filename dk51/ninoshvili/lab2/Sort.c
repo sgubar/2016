@@ -1,48 +1,52 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include"node.h"
-#include"Sort.h"
+#include <stdio.h>
+#include "List.h"
+#include "node.h"
 
-node *Sort(node *head)
+list *sort(list *thelist)
 {
-		int index, j;
-
-		for (index = 0; index < 10; index++)
+	int index = 1;
+	int j = 1;
+	node *item = thelist->head;
+	node *nextItem = item->next;
+	node *beforeitem = item->previous;
+	node *afterNextItem = nextItem->next;
+	//TODO LATER
+	for (index = 1; index < thelist->count; index++)
+	{
+		item = thelist->head;
+		nextItem = item->next;
+		for (j = 1; j < thelist->count; j++)
+		//	item = thelist->head; nextItem->next != NULL; nextItem = nextItem->next
 		{
-			node *previousItem = head; //pointer to the first element
-			node *firstItem = previousItem->next; //to the second
-			node *secondItem = firstItem->next; // to the third
-
-			for (j = 0; j<10; j++)
+			if (item->data > nextItem->data)
 			{
-				if (previousItem == head && previousItem->data > firstItem->data)
-				{
-					head = firstItem; //second element become the first
-					firstItem->next = previousItem; //first element has adress of the element with lower data
-					previousItem->next = secondItem; //element with lower data has adress of the third element
-					previousItem = firstItem; // to save the sequence change pointers
-					firstItem = previousItem->next;
-					secondItem = firstItem->next;
-				}
+				beforeitem = item->previous;
+				afterNextItem = nextItem->next;
 
-				
-				if (secondItem == NULL) //wathcing for the end of the list
-					break;
+				if(beforeitem != NULL)
+					beforeitem->next = nextItem;
 
-				if (firstItem->data > secondItem->data)
-				{
-					firstItem->next = secondItem->next;
-					previousItem->next = secondItem;
-					secondItem->next = firstItem;
-					firstItem = previousItem->next;
-					secondItem = firstItem->next;
-				}
-				
-				previousItem = previousItem->next;//go father in the list
-				firstItem = firstItem->next;
-				secondItem = secondItem->next;
+				nextItem->previous = beforeitem;
+				nextItem->next = item;
+				item->previous = nextItem;
+				item->next = afterNextItem;
+
+				if(afterNextItem != NULL)
+					afterNextItem->previous = item;
+
+				if (item == thelist->head)
+					thelist->head = nextItem;
+
+				if (nextItem == thelist->tail)
+					thelist->tail= item;
+
+				item = item->previous;
+				nextItem = item->next;
 			}
-			
+
+			item = nextItem;
+			nextItem = nextItem->next;
 		}
-		return head;
+	}
+	return thelist;
 }

@@ -1,6 +1,7 @@
-#ifndef DEL_H
-#define DEL_H
+#ifndef DELETE_H
+#define DELETE_H
+#include "List.h"
 
-void del();
+list *del(list *thelist, int key);
 
 #endif

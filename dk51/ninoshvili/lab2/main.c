@@ -1,98 +1,95 @@
-//main.c
-//
-//linked list
-//
-//
-//created by Sergey Ninoshvili 02/06/2016
-//Copyright © 2016 Ninoshvili. All rights reserved
-
-#define _CRT_SECURE_NO_WARNINGS
+#define  _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
+#include "insert.h"
+#include "delete.h"
+#include "sort.h"
+#include "changeMaxMin.h"
+#include "takeNode.h"
+#include "List.h"
 #include "node.h"
-#include "Insert.h"
-#include "Change.h"
-#include "Mission.h"
+#include "createList.h"
+#include "createNode.h"
+#include "task.h"
 
-
-void print(node *item); //create a function to comfortable output of the list
+void print(list *thelist);
 
 int main()
 {
-	int position = 1;
-	int data;
+	int value;
 	int index = 0;
-	int key;
-	node *item;
 
-	node *head = NULL; //empty list
+	//empty list
+	list *thelist = createList();
+	node *item = NULL;
 
-	printf("please input only positive integer of data\n");
-
-	do 
+	printf("please input only positive values for 10 items\n");
+	for (index = 0; index < 10; index++)
 	{
-		printf("data to %d position\n", position);
-		scanf("%d", &data);
-	} while (data <= 0);
-
-	if (position == 1)
-	{
-		head = Insert(data, position, head);
-		position++;
-	}
-
-	
-	for (index = 2; index < 11; index++)
-	{
-			do
-			{
-				printf("data to %d position\n", position);
-				scanf("%d", &data);
-			} while (data <= 0);
-
+		do
+		{
+			printf("%d value is:", (index + 1));
+			scanf("%d", &value);
 			
-			item = Insert(data, position, head);
-			position++;
+			if (value > 0)
+			{
+				item = createNode(value);
+				insert(item, thelist);
+			}
+
+			if (value < 1) 
+				printf("try again and input only positive value\n");
+
+		} while (value < 1);
 	}
-	
-	printf("so your list now:");
-	print(head);
+	printf("count now is:%d\n", thelist->count);
+	print(thelist);
 
-		head = Sort(head);
-
-	printf("\nsorted list\n");
-	print(head);
-
-		head = Change(head);
-
-	printf("\nchanged the lowest and the highest elements\n");
-	print(head);
-
-	printf("\nenter the data, which you wanna find and delete from the list\n");
+	printf("choose the value which want to delete from the list:");
+	int key;
 	scanf("%d", &key);
 
-		head = Find(head, key);
-	printf("\nlist:");
-	print(head);
+	del(thelist, key);
+	printf("count now is:%d\n", thelist->count);
+	print(thelist);
 
-	printf("\nsorted again:");
-		head = Sort(head);
-	print(head);
+	printf("changing max and min\n");
+	changeMaxMin(thelist);
+	print(thelist);
 
-		head = Mission(head);
-	printf("\ntask:\n");
+	do
+	{
+		printf("choose the node of the list which you want to take:");
+		scanf("%d", &key);
 
-	print(head);
+		if (key > thelist->count || key <1)
+			printf("but not lower than 1 and bigger than count of nodes at the list\n");
 
-	printf("\n");
+	} while (key > thelist->count || key < 1);
 
+	node *takenNode = take(thelist, key);
+	printf("count now is:%d\n", thelist->count);
+	print(thelist);
+
+	printf("sorting...\n");
+	sort(thelist);
+	print(thelist);
+
+	//TODO task
+	printf("list after making task:\n");
+	task(thelist);
+	print(thelist);
 
 	system("pause");
 }
 
-void print(node *item)
+void print(list *thelist)
 {
-	//item = head
+	node *item = thelist->head;
+
+	printf("list: ");
 	for (; item != NULL; item = item->next)
 		printf("%d ", item->data);
+
+	printf("\n");
 }

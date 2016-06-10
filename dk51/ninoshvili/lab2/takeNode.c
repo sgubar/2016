@@ -2,59 +2,53 @@
 #include "List.h"
 #include "node.h"
 
-list *del(list *thelist, int key)
+list *take(list *thelist, int key)
 {
+	if (key < 1 || key > thelist->count)
+		return -1;
+
+	int index = 1;
 	node *firstItem = thelist->head;
 	node *lastItem = thelist->tail;
 
 	//and variable item
-	node *item = thelist->head; 
+	node *item = thelist->head;
 
-	for (; item->next != NULL; item = item->next)
-	{
-		if (firstItem->data == key)
+	//taking by the number of node
+	for (index = 1; index < key; index++)
+		item = item->next;
+
+		if (item == thelist->head)
 		{
 			thelist->head = firstItem->next;
-			node *newhead = firstItem->next;
-			newhead->previous = NULL;
-
-			free(firstItem);
-			firstItem = NULL; //after this we can't use this node
 			thelist->count -= 1;
 
-			return thelist;
+			return item;
 		}
 
-		if (lastItem->data == key)
+		if (item == thelist->tail)
 		{
 			thelist->tail = lastItem->previous;
 			node *newtail = lastItem->previous;
 			newtail->next = NULL;
-
-			free(lastItem);
-			lastItem = NULL;
 			thelist->count -= 1;
 
-			return thelist;
+			return item;
 		}
 
-		if (item->data == key)
+		if (item !=  thelist->head && item != thelist->tail)
 		{
 			node *itemPrevious = item->previous;
 			node *itemNext = item->next;
 
 			itemPrevious->next = itemNext;
 			itemNext->previous = itemPrevious;
-
-			free(item);
-			item = NULL;
 			thelist->count -= 1;
 
-			return thelist;
+			return item;
 		}
-	}
-
-	printf("can't find this value\n");
+	
+	printf("can't find this node\n");
 
 	return thelist;
 }
