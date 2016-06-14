@@ -13,10 +13,16 @@ list *task(list *thelist)
 	node *previousTOnext = item->previous;
 	node *saveAdress = previousTOnext->previous;
 
+	head->next = item;
+	item->previous = head;
+
 	while(previousTOnext != head)
 	{
+		item->previous = (head->next == item) ? head : item->next;
 		item->next = previousTOnext;
+
 		previousTOnext->previous = item;
+		
 
 		item = previousTOnext;
 		previousTOnext = saveAdress;

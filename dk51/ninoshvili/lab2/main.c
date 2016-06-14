@@ -11,6 +11,7 @@
 #include "createList.h"
 #include "createNode.h"
 #include "task.h"
+#include "Homework.h"
 
 void print(list *thelist);
 
@@ -53,7 +54,7 @@ int main()
 	printf("count now is:%d\n", thelist->count);
 	print(thelist);
 
-	printf("changing max and min\n");
+    printf("changing max and min\n");
 	changeMaxMin(thelist);
 	print(thelist);
 
@@ -75,9 +76,12 @@ int main()
 	sort(thelist);
 	print(thelist);
 
-	//TODO task
-	printf("list after making task:\n");
+	printf("\nlist after making task:\n");
 	task(thelist);
+	print(thelist);
+
+	printf("\nlist after making homework:\n");
+	Homework(thelist);
 	print(thelist);
 
 	system("pause");

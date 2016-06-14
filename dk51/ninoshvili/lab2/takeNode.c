@@ -21,6 +21,8 @@ list *take(list *thelist, int key)
 		if (item == thelist->head)
 		{
 			thelist->head = firstItem->next;
+			node *newhead = firstItem->next;
+			newhead->previous = NULL;
 			thelist->count -= 1;
 
 			return item;

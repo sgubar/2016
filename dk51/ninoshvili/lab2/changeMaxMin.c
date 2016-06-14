@@ -2,7 +2,7 @@
 #include "List.h"
 #include "node.h"
 
-list *changeMaxMin(list *thelist)
+list *changeMaxMin(list *thelist) //BUG max opposite min
 {
 	node *item = thelist->head;
 	node *nextItem = item->next;
@@ -27,162 +27,66 @@ list *changeMaxMin(list *thelist)
 	node *aftermax = max->next;
 	node *aftermin = min->next;
 
-	if (beforemax == NULL && aftermin != NULL || beforemin == NULL && aftermax != NULL)/*one element is a head and second somewhere in the list*/
+	if (max->next == min)
 	{
-		if (beforemax == NULL) /*max = head*/
-		{
-			/*max = min*/
-			min->previous = NULL;
-			aftermax->previous = min;
-			min->next = aftermax;
-
-			thelist->head = min;
-
-			/*min = max*/
-			beforemin->next = max;
-			max->previous = beforemin;
-			aftermin->previous = max;
-			max->next = aftermin;
-		}
-
-		if (beforemin == NULL) /*min = head*/
-		{
-			/*min = max*/
-			max->previous = NULL;
-			aftermin->previous = max;
-			max->next = aftermin;
-
-			thelist->head = max;
-
-			/*max = min*/
+		if (beforemax != NULL)
 			beforemax->next = min;
-			min->previous = beforemax;
-			aftermax->previous = min;
-			min->next = aftermax;
-		}
-		return thelist;
-	}
+		else thelist->head = min;
 
-	if (aftermax == NULL && beforemin != NULL || aftermin == NULL && beforemax != NULL) /*one element is tail and second somewhere in the list*/
-	{
-		if (aftermax == NULL)/*max = tail*/
-		{
-			/*max = min*/
-			beforemax->next = min;
-			min->previous = beforemax;
-			min->next = NULL;
-
-			thelist->tail = min;
-
-			/*min = max*/
-			beforemin->next = max;
-			max->previous = beforemin;
-			aftermin->previous = max;
-			max->next = aftermin;
-		}
-
-		if (aftermin == NULL)/*min = tail*/
-		{
-			/*min = max*/
-			beforemin->next = max;
-			max->previous = beforemin;
-			max->next = NULL;
-
-			thelist->tail = max;
-
-			/*max = min*/
-			beforemax->next = min;
-			min->previous = beforemax;
-			aftermax->previous = min;
-			min->next = aftermax;
-		}
-		return thelist;
-	}
-
-	if (aftermax == NULL && beforemin == NULL || aftermin == NULL && beforemax == NULL) /*when head = min or max, while tail = max or min*/
-	{
-		if (aftermax == NULL)
-		{
-			/*max = min*/
-			beforemax->next = min;
-			min->previous = beforemax;
-			min->next = NULL;
-
-			thelist->tail = min;
-
-			/*min = max*/
-			max->previous = NULL;
-			aftermin->previous = max;
-			max->next = aftermin;
-
-			thelist->head = max;
-		}
-
-		if (aftermin == NULL)
-		{
-			/*max = min*/
-			min->previous = NULL;
-			aftermax->previous = min;
-			min->next = aftermax;
-
-			thelist->head = min;
-
-			/*min = max*/
-			beforemin->next = max;
-			max->previous = beforemin;
-			max->next = NULL;
-
-			thelist->tail = max;
-		}
-		return thelist;
-	}
-
-	//BUG IF .....MAXMIN.....
-	if (beforemax != NULL && beforemin != NULL && aftermax != NULL && aftermin != NULL) /*changing without taking head or tail of the list*/
-	{
-		if (max->next == min || min->next == max)
-		{
-			if (max->next == min)
-			{
-				beforemax->next = min;
-				min->previous = beforemax;
-
-				min->next = max;
-				max->previous = min;
-
-				max->next = aftermin;
-				aftermin->previous = max;
-
-				return thelist;
-			}
-			if (min->next == max)
-			{
-				beforemin->next = max;
-				max->previous = beforemin;
-
-				max->next = min;
-				min->previous = max;
-
-				min->next = aftermax;
-				aftermax->previous = min;
-
-				return thelist;
-			}
-		}
-		/*max = min*/
-		beforemax->next = min;
 		min->previous = beforemax;
-		aftermax->previous = min;
-		min->next = aftermax;
 
-		/*min = max*/
-		beforemin->next = max;
-		max->previous = beforemin;
-		aftermin->previous = max;
+		min->next = max;
+		max->previous = min;
+
 		max->next = aftermin;
 
+		if (aftermin != NULL)
+			aftermin->previous = max;
+		else thelist->tail = max;
+
 		return thelist;
 	}
+	if (min->next == max)
+	{
+		if (beforemin != NULL)
+			beforemin->next = max;
+		else thelist->head = max;
+
+		max->previous = beforemin;
+
+		max->next = min;
+		min->previous = max;
+
+		min->next = aftermax;
+
+		if (aftermax != NULL)
+			aftermax->previous = min;
+		else thelist->tail = min;
+
+		return thelist;
+	}
+
+		if (beforemax != NULL && beforemax != min) //max is not a head of the list
+			beforemax->next = min;
+		else thelist->head = min;
+
+		if(aftermax != NULL && aftermax != min) //max is not a tali of the list
+		    aftermax->previous = min; 
+		else thelist->tail = min;
+
+		if (beforemin != NULL && beforemin != max) //min is not a head of the list
+			beforemin->next = max;
+		else thelist->head = max;
+
+		if(aftermin != NULL && aftermin != max) //min is not a tail of the list
+			aftermin->previous = max;
+		else thelist->tail = max;
+		
+		min->next = aftermax;
+		min->previous = beforemax;
+	
+		max->next = aftermin;
+		max->previous = beforemin;
 
 	return thelist;
 }
