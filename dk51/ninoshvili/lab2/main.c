@@ -1,3 +1,11 @@
+/* main.c													*
+ * Doubly Linked List										*
+ *															*
+ *															*
+ * Created by Sergiy Ninoshvili on 15/06/2016 		        *
+ *													        *
+ * Copyright © 2016 Sergiy Ninoshvili. All rights reserved. *
+ *													        */
 #define  _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,7 +25,7 @@ void print(list *thelist);
 
 int main()
 {
-	int value;
+	int value; //value of the node
 	int index = 0;
 
 	//empty list
@@ -47,7 +55,7 @@ int main()
 	print(thelist);
 
 	printf("choose the value which want to delete from the list:");
-	int key;
+	int key; //value of deleting node
 	scanf("%d", &key);
 
 	del(thelist, key);
@@ -61,7 +69,7 @@ int main()
 	do
 	{
 		printf("choose the node of the list which you want to take:");
-		scanf("%d", &key);
+		scanf("%d", &key); //number of the node in the list
 
 		if (key > thelist->count || key <1)
 			printf("but not lower than 1 and bigger than count of nodes at the list\n");
@@ -77,16 +85,17 @@ int main()
 	print(thelist);
 
 	printf("\nlist after making task:\n");
-	task(thelist);
+	task(thelist); //from a b c d e f to a e d c b f 
 	print(thelist);
 
 	printf("\nlist after making homework:\n");
-	Homework(thelist);
+	Homework(thelist); //sorting by insertion kind 
 	print(thelist);
 
 	system("pause");
 }
 
+//function for comfortable printing the list
 void print(list *thelist)
 {
 	node *item = thelist->head;

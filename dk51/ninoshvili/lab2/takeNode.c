@@ -1,3 +1,11 @@
+/* takeNode.c	(for doubly list)							*
+ * finding node by position in the list, get out of this 	*
+ * this list and return a pointer to taking node			*
+ *															*
+ * Created by Sergiy Ninoshvili on 15/06/2016 		        *
+ *													        *
+ * Copyright © 2016 Sergiy Ninoshvili. All rights reserved. *
+ *													        */
 #include <stdio.h>
 #include "List.h"
 #include "node.h"

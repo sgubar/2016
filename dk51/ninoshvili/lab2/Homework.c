@@ -1,3 +1,11 @@
+/* homework.c												*
+ * insertion sorting										*
+ *															*
+ *															*
+ * Created by Sergiy Ninoshvili on 15/06/2016 		        *
+ *													        *
+ * Copyright © 2016 Sergiy Ninoshvili. All rights reserved. *
+ *													        */
 #include <stdio.h>
 #include "List.h"
 #include "node.h"
@@ -40,9 +48,12 @@ list *Homework(list *thelist)
 					beforeCompare->next = insertionItem;
 				else thelist->head = insertionItem;
 
-				insertionItem->previous = beforeCompare;
 				node *afterInsertionItem = insertionItem->next;
+
+				//put insertionItem between compare and before compare item
+				insertionItem->previous = beforeCompare;
 				insertionItem->next = compareItem;
+
 				compareItem->previous = insertionItem;
 
 				if (compareItem != EndSorted)

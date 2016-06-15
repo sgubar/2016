@@ -1,3 +1,11 @@
+/* delete.c  (for doubly linked list)						*
+ * finding node by value and deleting    					*
+ *															*
+ *															*
+ * Created by Sergiy Ninoshvili on 15/06/2016 		        *
+ *													        *
+ * Copyright © 2016 Sergiy Ninoshvili. All rights reserved. *
+ *													        */
 #include <stdio.h>
 #include "List.h"
 #include "node.h"
@@ -12,7 +20,7 @@ list *del(list *thelist, int key)
 
 	for (; item->next != NULL; item = item->next)
 	{
-		if (firstItem->data == key)
+		if (firstItem->data == key) //deleting head 
 		{
 			thelist->head = firstItem->next;
 			node *newhead = firstItem->next;
@@ -25,7 +33,7 @@ list *del(list *thelist, int key)
 			return thelist;
 		}
 
-		if (lastItem->data == key)
+		if (lastItem->data == key) //deleting tail
 		{
 			thelist->tail = lastItem->previous;
 			node *newtail = lastItem->previous;
@@ -38,8 +46,9 @@ list *del(list *thelist, int key)
 			return thelist;
 		}
 
-		if (item->data == key)
+		if (item->data == key) //deleting somewhere in the middle 
 		{
+			//adress around of deleting node
 			node *itemPrevious = item->previous;
 			node *itemNext = item->next;
 
