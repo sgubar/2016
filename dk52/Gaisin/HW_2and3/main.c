@@ -3,7 +3,6 @@
 #include <stdlib.h> //library for generate random namber
 
 #include "printArray.h"
-#include "sortArray.h"
 
 int main() 
 {
