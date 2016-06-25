@@ -15,10 +15,6 @@ int main()
 	for(int i=0; i<Asize; i++) //cycle "for"
 		arrayy[i] = rand() %10; //filling array ranodm nambers 0<=x<=9
 	printArray(arrayy, Asize); //function output on screen 
-
-	sortArray(arrayy, Asize);
-	printf("\nsorted array \n");
-	printArray(arrayy, Asize);
 	free(arrayy); //function release memory
 	return 0;
 }
