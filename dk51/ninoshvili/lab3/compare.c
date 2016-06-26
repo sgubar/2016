@@ -15,10 +15,13 @@ int *createArray(int size, int pivot)
 	int *Array = (int*)malloc(size*sizeof(int));
 	int i;
 
-	srand(time(NULL));
+	/*srand(time(NULL));
 
 	for (i = 0; i < size; i++)
-		Array[i] = 1 + rand() % pivot;
+		Array[i] = 1 + rand() % pivot;*/
+
+	for (i = 0; i < size; i++)
+		Array[i] = size - i;
 	return Array;
 }
 
@@ -52,7 +55,7 @@ void bubbleRezult()
 		if(size == 10)
 			PArray(Array, size);
 
-		printf("time for %5d elements = %43.40lf\n", size, (double)((Finish - Start) / CLOCKS_PER_SEC));
+		printf("time for %5d elements = %43.50f\n", size, (long double)((Finish - Start) / CLOCKS_PER_SEC));
 
 		size = (size == 10000) ? 50000 : (size * 10);
 	} while (size < 60000);
@@ -81,7 +84,7 @@ void selectionRezult()
 		if (size == 10)
 			PArray(Array, size);
 
-		printf("time for %6d elements = %43.40lf\n", size, (double)((Finish - Start) / CLOCKS_PER_SEC));
+		printf("time for %6d elements = %43.50f\n", size, (long double)((Finish - Start) / CLOCKS_PER_SEC));
 
 		size = (size == 10000) ? 50000 : (size * 10);
 	} while (size < 60000);
@@ -110,10 +113,12 @@ void insertionRezult()
 		if (size == 10)
 			PArray(Array, size);
 
-		printf("time for %6d elements = %43.40lf\n", size, (double)((Finish - Start) / CLOCKS_PER_SEC));
+		printf("time for %6d elements = %43.50f\n", size, (long double)((Finish - Start) / CLOCKS_PER_SEC));
 
 		size = (size == 10000) ? 50000 : (size * 10);
 	} while (size < 60000);
+
+	free(Array);
 }
 
 void shellRezult()
@@ -137,10 +142,12 @@ void shellRezult()
 		if (size == 10)
 			PArray(Array, size);
 
-		printf("time for %6d elements = %43.40lf\n", size, (double)((Finish - Start) / CLOCKS_PER_SEC));
+		printf("time for %6d elements = %43.50f\n", size, (long double)((Finish - Start) / CLOCKS_PER_SEC));
 
 		size = (size == 10000) ? 50000 : (size * 10);
 	} while (size < 60000);
+
+	free(Array);
 }
 
 void quickRezult()
@@ -166,8 +173,10 @@ void quickRezult()
 		if (size == 10)
 			PArray(Array, size);
 
-		printf("time for %6d elements = %43.40lf\n", size, (double)((Finish - Start) / CLOCKS_PER_SEC));
+		printf("time for %6d elements = %43.50f\n", size, (long double)((Finish - Start) / CLOCKS_PER_SEC));
 
-		size = (size == 10000) ? 50000 : (size * 10);
-	} while (size < 60000);
+		size = (size == 1000) ? 5000 : (size * 10);
+	} while (size < 10000);
+
+	free(Array);
 }

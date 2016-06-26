@@ -10,7 +10,7 @@
 
 void bubbleSort(int anArray[], int aSize)
 {
-	for (int theOut = aSize - 1; theOut > 1; theOut --)
+	for (int theOut = aSize - 1; theOut > 0; theOut --)
 	{
 		for (int theIn = 0; theIn < theOut; theIn ++)
 		{
