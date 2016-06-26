@@ -8,8 +8,8 @@ ordArrayPtr oa_create(unsigned aSize)
 	if (NULL != theArray)
 	{
 		theArray->size = 0;
-		theArray->maxSize = aSize;
-		theArray->storage = (int *)malloc(sizeof(int) * aSize);
+		theArray->maxSize = aSize; //size will be aSize
+		theArray->storage = (int *)malloc(sizeof(int) * aSize); //allocate memory for int namber aSize time
 	
 		bzero(theArray->storage, aSize);
 	}
@@ -19,14 +19,14 @@ ordArrayPtr oa_create(unsigned aSize)
 
 void oa_destroy(ordArrayPtr anArray)
 {
-	if (NULL != anArray)
+	if (NULL != anArray) //if anArray not equal NULL, then carry
 	{
 		if (NULL != anArray->storage)
 		{
 			free(anArray->storage);
 		}
 	
-		free(anArray);
+		free(anArray); //frees memory for array anArray
 	}
 }
 
