@@ -1,10 +1,10 @@
-//
-//  main.c
-//  demoFind
-//
-//  Created by Slava Gubar on 5/10/16.
-//  Copyright © 2016 Slava Gubar. All rights reserved.
-//
+/*																 /
+/  main.c			                                             /
+/  compare search                                                /
+/                                                                /
+/  Created by Sergey Ninoshvili on 25/6/16.                      /
+/  Copyright © 2016 Sergey Ninoshvili. All rights reserved.      /
+/																*/
 
 #include <stdio.h>
 #include <stdlib.h>

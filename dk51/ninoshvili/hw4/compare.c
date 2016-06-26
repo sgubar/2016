@@ -1,6 +1,6 @@
 /*																 /
 /  compare.c			                                         /
-/  compare sort                                                  /
+/  compare search                                                /
 /                                                                /
 /  Created by Sergey Ninoshvili on 25/6/16.                      /
 /  Copyright © 2016 Sergey Ninoshvili. All rights reserved.      /
