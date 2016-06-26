@@ -1,9 +1,9 @@
 //
-//  hw1
-// 
+//  main.c
+//  demoList
 //
-//  Created by Nazar Bronnikov on 09/05/16.
-//  Copyright (C) 2016 Nazar Bronnikov. All rights reserved.
+//  Created by Slava Gubar on 3/1/16.
+//  Copyright © 2016 Slava Gubar. All rights reserved.
 //
 
 #include <stdio.h>
@@ -16,7 +16,7 @@ void doPrintSLList(const IntList *aList);
 int main(int argc, const char * argv[])
 {
 	doTestSLList();
-
+	system("pause");
 	return 0;
 }
 
@@ -37,28 +37,10 @@ void doTestSLList()
 	printf("number of elements: %d\n", SLCountList(theList));
 	
 	doPrintSLList(theList);
-	printf("\n \n");
-
-	IntNode *theNode42 = SLCreateNodeWithIntValue(42);
-	SLInsertNodeAtIndex(theList, theNode42, 1);
-
-	IntNode *theNode1 = SLCreateNodeWithIntValue(1);
-	SLInsertNodeAtIndex(theList, theNode1, 0);
-
-	doPrintSLList(theList);
-	printf("\n \n");
-
-	SLRemovedNodeAtIndex(theList, 0);
-
-	doPrintSLList(theList);
-	printf("\n \n");
-
+	
 	SLFreeList(theList);
 	
 	printf("Done.\n");
-
-	int buster;
-	scanf_s("%d\n", &buster);
 }
 
 void doPrintSLList(const IntList *aList)
