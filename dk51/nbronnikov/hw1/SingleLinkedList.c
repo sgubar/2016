@@ -1,8 +1,8 @@
 //
-//  SingleLinkedNode.c
+//  SingleLinkedList.c
 //  demoList
 //
-//  Created by Slava Gubar on 3/2/16.
+//  Created by Slava Gubar on 3/1/16.
 //  Copyright © 2016 Slava Gubar. All rights reserved.
 //
 
@@ -94,6 +94,7 @@ int SLCountList(const IntList *aList)
 	{
 		theResult = aList->count;
 	}
+	else { return NULL; }
 
 	return theResult;
 }
@@ -102,7 +103,7 @@ IntNode *SLNodeAtIndex(const IntList *aList, int anIndex)
 {
 	IntNode *theResult = NULL;
 
-	if (NULL != aList && anIndex < aList->count)
+	if (NULL != aList && anIndex <= aList->count)
 	{
 		int i = 0;
 		IntNode *theNode = aList->head;
@@ -124,84 +125,73 @@ IntNode *SLNodeAtIndex(const IntList *aList, int anIndex)
 	return theResult;
 }
 
-IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
-{
-	if (aList == NULL || aNewNode == NULL || anIndex > aList->count)
+//
+//  SingleLinkedList.c
+//  demoList
+//
+//  Created by Bronnikov Nazar.
+//  Copyright © 2016 Bronnikov Nazar. All rights reserved.
+//
+IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex) {
+	if (NULL == aList || NULL == aNewNode) 
 	{
 		return NULL;
 	}
-
-	if (anIndex == 0)
+	if (NULL == aList->head && NULL == aList->tail) 
 	{
-		aNewNode->nextNode = aList->head;
-
-		aList->head = aNewNode;
-		aList->count++;
-
+		aList->head = aList->tail = aNewNode; 
 		return aNewNode;
-	}
-
-	if (anIndex == aList->count)
-	{
-		return SLAddNode(aList, aNewNode);
-	}
-
-	IntNode *aPrevNode = SLNodeAtIndex(aList, anIndex - 1);
-
-	if (aPrevNode == NULL)
-	{
-		return NULL;
-	}
-
-	aNewNode->nextNode = aPrevNode->nextNode;
-	aPrevNode->nextNode = aNewNode;
-	
-	aList->count++;
-
-	return aNewNode;
-}
-
-IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)
-{
-	if (aList == NULL || anIndex > aList->count)
-	{
-		return NULL;
-	}
-
-	IntNode *aDelNode = NULL;
-
-	if (anIndex == 0)
-	{
-		aDelNode = aList->head;
-
-		aList->head = aList->head->nextNode;
 	}
 	else
 	{
-		IntNode *aPrevNode = SLNodeAtIndex(aList, anIndex - 1);
-
-		if (aPrevNode == NULL)
+		if (NULL != aList &&  anIndex <= aList->count)
 		{
-			return NULL;
+			IntNode *theNode = aList->head;
+			while (theNode != NULL) {
+				if (anIndex == 0)   
+				{
+					aNewNode->nextNode = theNode;
+					aList->head = aNewNode;
+					aList->count += 1;
+					return aNewNode;
+				}
+				else
+				{
+					IntNode *alastNode = SLNodeAtIndex(aList, anIndex - 1);
+					aNewNode->nextNode = alastNode->nextNode;
+					alastNode->nextNode = aNewNode;
+					aList->count += 1; 
+					return aNewNode;
+				}
+			}
 		}
-
-		aDelNode = aPrevNode->nextNode;
-
-		if (anIndex == aList->count)
-		{
-			aPrevNode->nextNode = NULL;
-
-			aList->tail = aPrevNode;
-		}
-		else
-		{
-			aPrevNode->nextNode = aPrevNode->nextNode->nextNode;
-		}
+		return aNewNode;
 	}
+}
 
-	SLFreeIntNode(aDelNode);
-
-	aList->count--;
-
-	return aList->tail;
+IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex) 
+{
+	if (NULL == aList)
+	{
+		return NULL;
+	}
+	if (NULL != aList &&  anIndex <= aList->count)
+	{
+			IntNode *deleteNode = SLNodeAtIndex(aList, anIndex);
+			if (anIndex == 0)
+			{
+				aList->head = deleteNode->nextNode;
+				SLFreeIntNode(deleteNode);
+				aList->count -= 1;
+				return deleteNode;
+			}
+			else
+			{
+				IntNode *PredNode = SLNodeAtIndex(aList, anIndex - 1);
+				PredNode->nextNode = deleteNode->nextNode;
+				SLFreeIntNode(deleteNode);
+				aList->count -= 1;
+				return deleteNode;
+			}
+	}
 }
