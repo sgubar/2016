@@ -1,0 +1,176 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+typedef struct Node *link; 					
+typedef int elementype; 		
+
+typedef struct Node{ 						
+	elementype elem; 					
+	link next; 								
+	link prev; 							
+	elementype elem2;
+} node;
+
+typedef link list; 					
+
+list lst; 								
+
+list create(void){ 						
+	list cur;							
+	list res; 								
+	list temp;
+	int counter = 1; 						
+	res = cur = (link)malloc(sizeof(node)); 
+	cur->elem = 0; 						
+	cur->prev = NULL; 					
+    srand(time(NULL));
+
+    while(counter!=10){ 				
+		temp = cur; 						
+		cur = cur->next = (list)malloc(sizeof(node));
+        cur->elem = rand()%100;
+        cur->prev = temp; 					
+        counter++;
+	}
+
+	cur->next = NULL; 						
+	return res;							
+}
+
+
+void print_elem(list p, int pos){          
+	int counter = 0;
+
+	while(counter!=pos){
+		p = p->next;
+		counter++;
+	}
+	printf("%d-->",p->elem);
+}
+
+int get_elem(list p, int pos){           
+	int counter = 0;
+
+	while(counter!=pos){
+		p = p->next;
+		counter++;
+	}
+    return p->elem;
+}
+
+void swap_elem(list p, int pos1,int pos2){           
+	int counter = 0;
+    int temp;
+	int temp2;
+	while(counter!=pos1){
+		p = p->next;
+		counter++;
+	}
+	temp = p->elem;
+    p=p->next;
+    temp2 = p->elem;
+    p->elem=temp;
+    p=p->prev;
+    p->elem = temp2;
+}
+
+void destruct(list ls){                    
+	link q;
+	while(ls!=NULL){
+		q = ls;
+		ls = ls->next;
+		free(q);
+	}
+}
+
+list remove_elem(list p,int pos){
+	int counter = 0;
+	list nxt_temp;
+	list prv_temp;
+	list old_addr;
+
+	old_addr = p;
+
+	if(pos == 0){
+		return p->next;
+	}
+
+	while(counter!=pos){
+		p = p->next;
+		counter++;
+	}
+
+	nxt_temp = p->next;
+	prv_temp = p->prev;
+
+	if(p->next == NULL){
+		p = p->prev;
+		p->next = NULL;
+		return old_addr;
+	}
+
+	p = p->prev;
+	p->next = nxt_temp;
+
+	p = p->next = p->next;
+	p->prev = prv_temp;
+	return old_addr;
+}
+
+
+void insert_elem(list p, int pos, int value){
+	int counter = 0;
+	list cur;
+	list temp;
+	cur = (list)malloc(sizeof(node));
+	while(counter!=pos){
+		p=p->next;
+		counter++;
+	}
+	temp = p->next;
+	p->next = cur;
+	cur->prev = p;
+	cur->next = temp;
+	cur->elem = value;
+}
+
+int size_list(list p){
+	int sizelist=0;
+	while(p!=NULL){
+		p = p->next;
+		sizelist++;
+	}
+	return sizelist;
+}
+
+int main(){
+	int i,j,temp=0;
+	int sizelist;
+	lst = create(); 						
+
+	sizelist = size_list(lst);
+	for(i=0;i!=9;i++){ 					
+		print_elem(lst,i);
+	}
+
+	for(i=1;i<sizelist;i++){
+        for(j=i;j>0&&(get_elem(lst,j-1)>get_elem(lst,j));j--){
+            swap_elem(lst,j-1,j);
+        }
+	}
+	
+    printf("\nSorted: ");
+    for(i=0;i!=9;i++){ 					
+		print_elem(lst,i);
+	}
+	printf("NULL\nNOW LIST IS DESTRUCTED....BYE\n");
+
+	destruct(lst);                          
+	while(1){
+             ;
+    }
+	return 0;                               
+
+}
