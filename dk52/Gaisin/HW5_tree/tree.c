@@ -50,6 +50,23 @@ void deleteCell(NodePtr CurrentNode) //function for deleted child
 	}
 }
 
+int countTree(NodePtr aNode) //function to calculate quantity nodes
+{
+	int count = 0;
+	if (aNode != NULL)//chek node, if node free, return
+	{
+		count++;
+		count = count + countTree(aNode->leftChild);
+		count = count + countTree(aNode->rightChild);
+	}
+	else
+	{
+		return 0;
+	}
+
+	return count;
+}
+
 
 NodePtr findNode(TreePtr aTree, const char *aName)
 {
@@ -263,22 +280,4 @@ NodePtr getSuccessor(TreePtr aTree, NodePtr aDelNode)
 	}
 
 	return theSuccessor;
-}
-
-
-int countTree(NodePtr aNode) //function to calculate quantity nodes
-{
-	int count = 0;
-	if (aNode != NULL)//chek node, if node free, return
-	{
-		count++;
-		count = count + countTree(aNode->leftChild);
-		count = count + countTree(aNode->rightChild);
-	}
-	else
-	{
-		return 0;
-	}
-
-	return count;
 }
