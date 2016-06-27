@@ -1,137 +1,58 @@
-#include "DynamicArray.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include "DynamicArray.h"
 
 DynamicIntArray *createDAInt(int aSize)
 {
-
-	anArray = (DynamicIntArray*)malloc(sizeof(DynamicIntArray));
-	anArray->storage = (int*)malloc(aSize*sizeof(int));
-	anArray->physicalSize = aSize;
-	anArray->logicalSize = 0;
-	printf("Allocated %d bytes for the array\n\n", aSize*sizeof(int));
-
-	return anArray;
+	DynamicIntArray* Massiv = malloc(sizeof(DynamicIntArray)); //create our box;
+	Massiv->storage = malloc(sizeof(int)*aSize); // storage = pointer to mass;
+	Massiv->physicalSize = aSize; // number of cells
+	Massiv->logicalSize = 0; // a new array - 0 employed;
+	return Massiv;
 }
-
 void freeDAInt(DynamicIntArray *anArray)
 {
-	if (anArray == NULL || anArray->storage == NULL)//if the structure is empty...
-		return;
-
-	free(anArray->storage);
-
-	free(anArray);
+	if (anArray != NULL)
+	{
+		free(anArray->storage); //clear storrage;
+		free(anArray); //and only after that clear our array;
+	}
 }
-
 int valueAtIndex(DynamicIntArray *anArray, int anIndex)
 {
-	if (anIndex <= 0 || anIndex > anArray->physicalSize - 1)
+	int value;
+	if (anArray != NULL)
 	{
-		printf("Error:index out of the bounds.\n");
-		return -1;
-	}
-	return anArray->storage[anIndex];
-}
-
-void setValueAtIndex(DynamicIntArray *anArray, int anValue, int anIndex, int memoryflag)
-{
-	int NewValueIndex = 0;
-	int logicalSizeOLD = anArray->logicalSize;//save current logical size
-
-	if (memoryflag >= 1)//allocate more memory if needed
-	{
-		while (anIndex > anArray->physicalSize - 1)
+		if (anIndex < anArray->physicalSize)
 		{
-			anArray->physicalSize *= 2;
-			anArray->storage = realloc(anArray->storage, anArray->physicalSize*sizeof(int));
-			printf("allocated %d bytes for the array...\n", anArray->physicalSize*sizeof(int));
+			value = anArray->storage[anIndex]; //value of array record to storage;
+			return value;
 		}
-		memoryflag = 0;
 	}
-
-	if (anIndex <= anArray->logicalSize)//if we don't need to expand the logical size...
+	else
 	{
-		while (anIndex != logicalSizeOLD)
+		return NULL;
+
+		// 	if there is a structure - to join the process
+	}
+	void setValueAtIndex(DynamicIntArray *anArray, int anValue, int anIndex)
+	{
+		if (anArray != NULL)
 		{
-			logicalSizeOLD--;
+			if (anIndex < anArray->physicalSize)
+			{
+				anArray->storage[anIndex] = anValue;// assigned value of a cell anVAlue;
+				anArray->logicalSize++;//anArray->logicalSize=anArray->logicalSize+1;
+			}
+			else if (anIndex >= anArray->physicalSize)
+			{
+				realloc(anArray->storage, anIndex * 2);//size memory block that referenced parameter, change on 2 times;
+				anArray->physicalSize = anIndex * 2 * sizeof(int); //count cells*sine one;
+				anArray->storage[anIndex] = anValue;
+				anArray->logicalSize++;
+			}
 		}
-		NewValueIndex = logicalSizeOLD;
-	}
-	if (anIndex > anArray->logicalSize)//if we need to expand the logical size...
-	{
-
-		while (anArray->logicalSize != anIndex)//increase logical size;
+		else
 		{
-			anArray->logicalSize++;
+			anArray->anDebg = 0;// if false, 
 		}
-
-		while (anArray->logicalSize > logicalSizeOLD)//fill with zeros all elements between 
-		{
-			int i = 1;
-
-			if (anIndex != 0)
-				anArray->storage[0] = 0;
-			anArray->storage[logicalSizeOLD + i] = 0;
-
-			i++;
-			logicalSizeOLD++;
-		}
-		NewValueIndex = anArray->logicalSize;
 	}
-
-	anArray->storage[NewValueIndex] = anValue;//write the new value to the corresponding index
-
-}
-
-void printTheArray(DynamicIntArray *anArray)
-{
-	int i = 0;
-	printf("Your array:\n");
-	while (i <= anArray->logicalSize)
-	{
-		printf(" element[%d]:%d\n", i, anArray->storage[i]);
-		i++;
-	}
-}
-
-void printTheArrayInfo(DynamicIntArray *anArray)
-{
-	printf("Array physical size: %d\n", anArray->physicalSize);
-	printf("Array logical size: %d\n", anArray->logicalSize);
-	printf("Array zero element address: %d\n", anArray->storage);
-}
-
-int IndexNegativeCheck(int anIndex)
-{
-	int errorflag = 0;
-	if (anIndex < 0)
-	{
-		printf("Error:index must be a positive value.");
-		errorflag++;
-	}
-	return errorflag;
-}
-
-int IndexMemoryCheck(DynamicIntArray *anArray, int anIndex)
-{
-	int memoryflag = 0;
-
-	if (anIndex > anArray->physicalSize - 1)
-	{
-		printf("Index out of the bounds...allocating more memory...\n");
-		memoryflag++;
-	}
-
-	return memoryflag;
-}
-
-int SizeCheck(int aSize)
-{
-	if (aSize <= 0)
-	{
-		printf("Error: invalid size.\n");
-		return 1;
-	}
-	return -1;
-}
