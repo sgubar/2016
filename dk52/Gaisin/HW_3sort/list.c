@@ -28,13 +28,14 @@ void pushBackToList(Node *head, int value)
 
 void printList(Node *head)
 {
-	if (head->next == NULL)
+	if (head->next == NULL) //if in list no elements
 	{
 		printf("List is empty\n");
 		return;
 	}
 
 	printf("\nList: ");
+	//cycle will be executed until the current element does not indicate NULL
 	for (Node* current = head->next; current != NULL; current = current->next)
 		printf("%i ", current->value);
 	printf("\n\n");
@@ -43,13 +44,13 @@ void printList(Node *head)
 Node* last(Node *head)
 {
 	Node *last = head;
-	while (last->next != NULL)
+	while (last->next != NULL) //find last element
 		last = last->next;
 
 	return last;
 }
 
-void sort(Node* head)
+void sort(Node* head) //bubble sort
 {
 	Node *lastNotSorted = last(head)->next;
 	while (lastNotSorted != head->next)
