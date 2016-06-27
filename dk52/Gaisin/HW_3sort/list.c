@@ -13,15 +13,6 @@ Node* initializeList()
 	return node;
 }
 
-int count(Node* head)
-{
-	int count = 0;
-	for (Node* current = head; current->next != NULL; current = current->next)
-		count++;
-
-	return count;
-}
-
 void pushBackToList(Node *head, int value)
 {
 		Node *node = (Node*)malloc(sizeof(Node));
