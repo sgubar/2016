@@ -15,7 +15,7 @@ int main(int argc, const char * argv[])
 	ordArrayPtr theArray = oa_create(1000); /*create array for 1000 elements with random values*/
 	
 	srand(0);
-	for (int i = 0; i < 1000; i++)
+	for (int i = 0; i < 1000; i++) /*random values */
 	{
 		oa_insert(theArray, rand() % 1000);
 	}
