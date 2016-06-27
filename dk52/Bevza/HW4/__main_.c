@@ -3,7 +3,7 @@
 //  demoFind
 //
 //  Created by Slava Gubar on 5/10/16.
-//  Copyright © 2016 Slava Gubar. All rights reserved.
+//  Copyright Â© 2016 Slava Gubar. All rights reserved.
 //
 
 #include <stdio.h>
@@ -12,7 +12,7 @@
 
 int main(int argc, const char * argv[])
 {
-	ordArrayPtr theArray = oa_create(1000); /*create array for 10000 elements with random values*/
+	ordArrayPtr theArray = oa_create(1000); /*create array for 1000 elements with random values*/
 	
 	srand(0);
 	for (int i = 0; i < 1000; i++)
