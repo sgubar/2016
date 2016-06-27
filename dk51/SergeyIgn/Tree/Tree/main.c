@@ -3,7 +3,7 @@
 //  Tree
 //
 //  Created by Slava Gubar on 5/18/16.
-//  Copyright © 2016 Slava Gubar. All rights reserved.
+//  Copyright Â© 2016 Slava Gubar. All rights reserved.
 //
 
 #include <stdio.h>
@@ -13,19 +13,19 @@ int main(int argc, const char * argv[])
 {
 	TreePtr theTree = createTree();
 
-	insertNode(theTree, "Andrey", "1234");
-	insertNode(theTree, "Alyosha", "1235");
-	insertNode(theTree, "Azirov", "1232");
-	insertNode(theTree, "Bodya", "1233");
-	insertNode(theTree, "Badyrich", "3333");
-	NodePtr theFindNode = findNode(theTree, "Bodya");
+	insertNode(theTree, "Andrew", "1234");
+	insertNode(theTree, "Sergey", "1235");
+	insertNode(theTree, "Petr", "1232");
+	insertNode(theTree, "Vasiliy", "1233");
+	insertNode(theTree, "Ivan", "3333");
+	NodePtr theFindNode = findNode(theTree, "Basiliy");
 
 	printf("count = %d\n", countTree(theTree));
 	printTree(theTree);
 
-	if (deleteNode(theTree, "Azirov"))
+	if (deleteNode(theTree, "Sergey"))
 	{
-		theFindNode = findNode(theTree, "Azirov");
+		theFindNode = findNode(theTree, "Sergey");
 		printf("find result: %x\n", (unsigned int)theFindNode);
 	}
 	printf("\n");
