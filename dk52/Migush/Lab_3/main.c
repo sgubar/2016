@@ -5,67 +5,65 @@
 #include "SimpleSort.h"
 #include "shellSort.h"
 #include "quickSort.h"
+#include "filling.h"
 
 #define ARRAY_SIZE(a) (sizeof(a)/sizeof(a[0]))
 
-static void printArray(int anArray[], int aSize);
-int *CreateFillArray(int SizeArr);
-
-int SizeArr;
-int main(int argc, const char * argv[])
+void main()
 {
-    printf("Enter your array lenght");
-    scanf("%d",&SizeArr);
+	int a[1000];
+	int b[1000];
+	int c[1000];
+	int d[1000];
+	int e[1000];
+	gener_array(a,b,c,d,e);
 
 
 	printf("Test bubble sorting\n");
-	int*Array=CreateFillArray(SizeArr);
+	printArray(a, ARRAY_SIZE(a));
     clock_t theStart0 = clock();
-	bubbleSort(Array,SizeArr);
+	bubbleSort(a, ARRAY_SIZE(a));
 	clock_t theEnd0 = clock();
+	printArray(a, ARRAY_SIZE(a));
 	printf ("time of bubble sorting: %.10lf\n", (double)(theEnd0 - theStart0)/CLOCKS_PER_SEC);
 
-	printf("Test insertion sorting\n");
-    Array=CreateFillArray(SizeArr);
-    clock_t theStart3 = clock();
-    insertionSort(Array,SizeArr);
-    clock_t theEnd3 = clock();
-	printf ("time of insertion sorting: %.10lf\n", (double)(theEnd3 - theStart3)/CLOCKS_PER_SEC);
-
-
-
 	printf("\nTest selection sorting\n");
-	Array=CreateFillArray(SizeArr);
-	clock_t theStart1 = clock();
-	selectionSort(Array,SizeArr);
-	clock_t theEnd1 = clock();
-	printf ("time of Selection sorting: %.10lf\n", (double)(theEnd1 - theStart1)/CLOCKS_PER_SEC);
+	printArray(b, ARRAY_SIZE(b));
+	clock_t theStart2 = clock(); /*starting clock*/
+	selectionSort(b, ARRAY_SIZE(b));
+	clock_t theEnd2 = clock(); /*finish clock*/
+	printArray(b, ARRAY_SIZE(b));
+	printf ("time of Selection sorting: %.10lf\n", (double)(theEnd2 - theStart2)/CLOCKS_PER_SEC);
+
+
+
+
+
+	printf("\nTest insertion sorting\n");
+	printArray(c, ARRAY_SIZE(a));
+	clock_t theStart3 = clock(); /*starting clock*/
+	insertionSort(c, ARRAY_SIZE(a));
+	clock_t theEnd3 = clock(); /*finish clock*/
+	printArray(c, ARRAY_SIZE(a));
+	printf ("time of Inserton sorting: %.10lf\n", (double)(theEnd3 - theStart3)/CLOCKS_PER_SEC);
+
+
 
 	printf("\nTest Shell sorting\n");
-    Array=CreateFillArray(SizeArr);
-    clock_t theStart = clock();
-	shellSort(Array,SizeArr);
-	clock_t theEnd = clock();
-	printf ("time of Shell sorting: %.10lf\n", (double)(theEnd - theStart)/CLOCKS_PER_SEC);
+	printArray(d, ARRAY_SIZE(a));
+	clock_t theStart4 = clock(); /*starting clock*/
+	shellSort(d, ARRAY_SIZE(a));
+	clock_t theEnd4 = clock(); /*finish clock*/
+	printArray(d, ARRAY_SIZE(a));
+	printf ("time of Shell sorting: %.20lf\n", (double)(theEnd4 - theStart4)/CLOCKS_PER_SEC);
+	
 
-	printf("\nTest Quick sorting\n");
-    Array=CreateFillArray(SizeArr);
-	clock_t theStartQuick = clock();
-	quickSort2(Array,0,SizeArr - 1);
-	clock_t theEndQuick = clock();
-    printf ("time of sorting: %.10lf\n", (double)(theEndQuick - theStartQuick)/CLOCKS_PER_SEC);
-
-
-	system("pause");
+	printf("\nTest quickSort\n");
+	printArray(e, ARRAY_SIZE(e));
+	clock_t theStart5 = clock();
+	quickSort(e, 0, ARRAY_SIZE(e) - 1);
+	clock_t theEnd5 = clock();
+	printArray(e, ARRAY_SIZE(e));
+	printf ("time of quickSort : %.20lf\n", (double)(theEnd5 - theStart5)/CLOCKS_PER_SEC);
 }
 
-int*CreateFillArray(int SizeArr)
-{
-    int i;
-    int *Arr = malloc(SizeArr*sizeof(int));
-    for (i=0;i<SizeArr;i++)
-    {
-    Arr[i] = rand() %100;
-    }
-    return Arr;
-}

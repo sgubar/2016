@@ -3,7 +3,7 @@
 //  Lab2
 //
 //  Created by Andrew Toporivskiy on 6/26/16.
-//  Copyright © 2016 Andrew Toporivskiy. All rights reserved.
+//  Copyright Â© 2016 Andrew Toporivskiy. All rights reserved.
 //
 
 #include "SingleLinkedList.h"
@@ -168,7 +168,7 @@ IntNode *RemovedNodeAtIndex(IntList *aList, int anIndex)
 
 IntList *MinMax_Swapper(IntList *aList)
 {
-	IntNode *min = aList->head, *max = aList->head;
+	IntNode *min = aList->tail, *max = aList->head;
 	int minIndex, maxIndex;
 	for (int i = 1; i < aList->count; i++)
 	{

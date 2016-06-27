@@ -43,8 +43,7 @@ void setValueAtIndex(DynamicIntArray *anArray, int anValue, int anIndex)
 {
 	if(anIndex>=0)
 	{
-	int /*NewIndex=anIndex, value=anValue,*/i,*NewStorage;
-	/*DynamicIntArray *TheArray=anArray;*/
+	int i,*NewStorage;
 		if(anIndex<=anArray->physicalSize) /*if index doesn`t extend size of the array*/
 		{
 			anArray->storage[anIndex]=anValue;
@@ -64,5 +63,5 @@ void setValueAtIndex(DynamicIntArray *anArray, int anValue, int anIndex)
 	}
 	else
 	printf("Error. Index is less than 0.");
-	return; /*return new value at the index*/
+	return;
 }
