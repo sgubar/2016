@@ -9,7 +9,7 @@ TreePtr createTree()
 {
 	TreePtr theTree = (TreePtr) malloc(sizeof(Tree));
 	
-	if (NULL != theTree) //!<- check correctness of memmory allocatoin
+	if (NULL != theTree) //check correctness of memory allocatoin
 	{
 		theTree->root = NULL; //!<- by default the root is NULL - the tree is empty
 	}
@@ -18,34 +18,34 @@ TreePtr createTree()
 }
 
 
-void deleteTree(TreePtr aTree)
+void deleteTree(TreePtr aTree) //function for deleted tree
 {
-	if (NULL != aTree->root)
+	if (NULL != aTree->root) //chek memory tree
 	{
-		if (NULL != aTree->root->leftChild)
+		if (NULL != aTree->root->leftChild) //chek left child
 		{
-			deleteBranch(aTree->root->leftChild);
+			deleteCell(aTree->root->leftChild); //use function deleteCall
 			freeNode(aTree->root->leftChild);
 		}
 		if (NULL != aTree->root->rightChild)
 		{
-			deleteBranch(aTree->root->rightChild);
+			deleteCell(aTree->root->rightChild);
 			freeNode(aTree->root->rightChild);
 		}
 		freeNode(aTree->root);
 	}
-	free(aTree);
+	free(aTree); //free memoty for aTree
 }
-void deleteBranch(NodePtr CurrentNode)
+void deleteCell(NodePtr CurrentNode) //function for deleted child
 {
 	if (NULL != CurrentNode->leftChild)
 	{
-		deleteBranch(CurrentNode->leftChild);
+		deleteCell(CurrentNode->leftChild);
 		freeNode(CurrentNode->leftChild);
 	}
 	if (NULL != CurrentNode->rightChild)
 	{
-		deleteBranch(CurrentNode->rightChild);
+		deleteCell(CurrentNode->rightChild);
 		freeNode(CurrentNode->rightChild);
 	}
 }
@@ -266,10 +266,10 @@ NodePtr getSuccessor(TreePtr aTree, NodePtr aDelNode)
 }
 
 
-int countTree(NodePtr aNode)
+int countTree(NodePtr aNode) //function to calculate quantity nodes
 {
 	int count = 0;
-	if (aNode != NULL)//if the node isn't empty...
+	if (aNode != NULL)//chek node, if node free, return
 	{
 		count++;
 		count = count + countTree(aNode->leftChild);
