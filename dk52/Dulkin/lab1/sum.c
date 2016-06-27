@@ -4,7 +4,7 @@
 
 
 
-float suma(float a, float d) {
+float sum(float a, float d) {
 	float q;
 	for (d;d<=a;d++)
 	q = (powf(2, (d + a)) - powf(2, a));

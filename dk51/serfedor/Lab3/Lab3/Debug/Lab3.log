@@ -1,17 +1,1 @@
-﻿Сборка начата 18.05.2016 21:05:08.
-     1>Проект "C:\Users\Солнце\Desktop\Lab3\Lab3\Lab3.vcxproj" в узле 2 (целевые объекты Build).
-     1>ClCompile:
-         D:\Programm Files\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt main.c
-         main.c
-     1>c:\users\солнце\desktop\lab3\lab3\main.c(31): warning C4244: функция: преобразование "time_t" в "unsigned int", возможна потеря данных
-       Link:
-         D:\Programm Files\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Солнце\Desktop\Lab3\Debug\Lab3.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Солнце\Desktop\Lab3\Debug\Lab3.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Солнце\Desktop\Lab3\Debug\Lab3.lib" /MACHINE:X86 Debug\main.obj
-         Debug\quicksort.obj
-         Debug\shellsort.obj
-         Debug\simplesort.obj
-         Lab3.vcxproj -> C:\Users\Солнце\Desktop\Lab3\Debug\Lab3.exe
-     1>Сборка проекта "C:\Users\Солнце\Desktop\Lab3\Lab3\Lab3.vcxproj" завершена (целевые объекты Build).
-
-Сборка успешно завершена.
-
-Затраченное время: 00:00:00.54
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets(57,5): error MSB8020: The build tools for v120 (Platform Toolset = 'v120') cannot be found. To build using the v120 build tools, please install v120 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Retarget solution".

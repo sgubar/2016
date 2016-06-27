@@ -1,69 +1,55 @@
-//
-//  main.c
-//  Dz 2
-//
-//  Created by Nazar Bronnikiv on 4/7/16.
-//  Copyright © 2016 Nazar Bronnikiv. All rights reserved.
-//
-
+#include <stdio.h>
+#include <stdlib.h>
 #include "DynamicArray.h"
-
-#include <malloc.h>
-#include <string.h>
 
 
 DynamicIntArray *createDAInt(int aSize)
-{
-	DynamicIntArray *aNewArray = (DynamicIntArray *)malloc(sizeof(DynamicIntArray));
+    {
+        DynamicIntArray *DynArray=(DynamicIntArray*)malloc(sizeof(DynamicIntArray));
+        DynArray -> storage=(int*)malloc(aSize*sizeof(int));
+        DynArray->logicalSize=0;
+        DynArray->physicalSize=aSize;
 
-	memset(aNewArray, 0, sizeof(DynamicIntArray));
-	
-	aNewArray->physicalSize = aSize;
-
-	aNewArray->storage = (int *)malloc(aSize * sizeof(int));
-	
-	memset(aNewArray->storage, 0, aSize * sizeof(int));
-	
-	return aNewArray;
-}
-
+        return DynArray;
+    }
 void freeDAInt(DynamicIntArray *anArray)
-{
-	free(anArray->storage);
-	
-	free(anArray);
-}
+    {
+    if(anArray!= NULL)//if array exists
+        {
+            if(anArray->storage!= NULL)
+                free(anArray->storage);//firstly free array itself
+    free (anArray);//then clear our struct memory (to prevent memory outflow)
 
-int valueAtIndex(DynamicIntArray *anArray, int anIndex)
-{
-	if (anIndex >= anArray->physicalSize)
-	{
-		return -1;
-	}
-	
-	return anArray->storage[anIndex];
-}
+    }
+    }
+int valueAtIndex(int anIndex,DynamicIntArray *anArray)
+     {
+     if (anIndex > anArray->physicalSize || anArray->storage == NULL)
+        return NULL;
+     else
+      anArray->storage[anIndex];
+     }
+ void setValueAtIndex(int anValue, int anIndex,DynamicIntArray *anArray)
 
-void setValueAtIndex(DynamicIntArray *anArray, int anValue, int anIndex)
+    {
+     if (anIndex>anArray->physicalSize||anArray->physicalSize==anArray->logicalSize)
+     {
+            anArray->storage=realloc(anArray->storage,anIndex*sizeof(int)*3);//reallocating memory block
+           anArray->physicalSize=anIndex*3;
+           anArray->storage[anIndex]=anValue;
+             anArray->logicalSize++;
+     }
+     else
+        {
+            anArray->storage[anIndex]=anValue;
+            anArray->logicalSize++;
+        }
+    }
+
+
+int infofunc( DynamicIntArray *DynArr)//just for debug
 {
-	if (anIndex > anArray->physicalSize)
-	{
-		int newSize = (anIndex + 10) * sizeof(int);
-		int *newStorage = (int *)malloc(newSize);
-		
-		memset(newStorage, 0, newSize);
-		memcpy(newStorage, anArray->storage, anArray->physicalSize * sizeof(int));
-		
-		free(anArray->storage);
-		
-		anArray->storage = newStorage;
-		anArray->physicalSize = anIndex + 10;
-	}
-	
-	if (anArray->storage[anIndex] == 0)
-	{
-		anArray->logicalSize +=1;
-	}
-	
-	anArray->storage[anIndex] = anValue;
+    printf("logical size: %d"
+            "\nphysical size: %d\n\n",DynArr->logicalSize,DynArr->physicalSize);
+    return 0;
 }

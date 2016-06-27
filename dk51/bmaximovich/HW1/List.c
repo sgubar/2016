@@ -1,7 +1,7 @@
 //  list.c
 //
 //
-//  Created by Bogdan Maximovich on 23/03/16.
+//  Created by Bogdan Maximovich on 15/05/16.
 //  Copyright © 2016 Bogdan Maximovich. All rights reserved.
 //
 
@@ -114,7 +114,7 @@ IntNode *IndexNode(const IntList *aList, int anIndex)
 }
 void *InsertNodeAtIndex(IntList *InsertList, IntNode *InsertNode, int index)
 {
-	// Check the input parameter
+
 	if (  InsertNode != NULL &&InsertList!=NULL && index<=InsertList->count + 1&&index>=0)
 	{
 		if (0 != index)
@@ -132,8 +132,7 @@ void *InsertNodeAtIndex(IntList *InsertList, IntNode *InsertNode, int index)
 			InsertList->count += 1;
 		}
 	}
-	else
-	{return NULL;}
+
 }
 void *RemovedNodeAtIndex(IntList *InsertList, int InsertNode)
 {
@@ -149,7 +148,7 @@ void *RemovedNodeAtIndex(IntList *InsertList, int InsertNode)
 }
        else
 {
-	
+
 InsertList->head = IndexNode(InsertList, InsertNode + 1);
 InsertList->count -= 1;
 
@@ -188,37 +187,4 @@ int *ValueNode(const IntList *aList, int anValue)
 	}else{
         return -1;
 	}
-}
-
-
-IntNode *findMaxNode(const IntList *aList) {
-	IntNode *currentNode = aList->head;
-	IntNode *maxNode = currentNode;
-	do {
-		if (currentNode->value >= maxNode->value) {
-			maxNode = currentNode;
-		}
-		currentNode = currentNode->nextNode;
-	} while (NULL != currentNode);
-	return maxNode;
-}
-IntNode *findMinNode(const IntList *inputList) {
-	IntNode *currentNode = inputList->head;
-	IntNode *minNode = currentNode;
-	do {
-		if (currentNode->value <= minNode->value) {
-			minNode = currentNode;
-		}
-		currentNode = currentNode->nextNode;
-	} while (NULL != currentNode);
-	return minNode;
-}
-
-IntList *swapNodeAtList(IntList *inputList) {
-	IntNode *minNode = findMinNode(inputList);
-	IntNode *maxNode = findMaxNode(inputList);
-	int minvalue = minNode->value;
-	minNode->value = maxNode->value;
-	maxNode->value = minvalue;
-	return inputList;
 }

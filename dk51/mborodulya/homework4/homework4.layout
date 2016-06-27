@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="linear_find.c" open="1" top="0" tabpos="1">
+		<Cursor position="110" topLine="0" />
+	</File>
+	<File name="linear_find.h" open="1" top="0" tabpos="2">
+		<Cursor position="68" topLine="0" />
+	</File>
+	<File name="main.c" open="1" top="1" tabpos="7">
+		<Cursor position="667" topLine="12" />
+	</File>
+	<File name="ord_array.c" open="1" top="0" tabpos="3">
+		<Cursor position="1773" topLine="83" />
+	</File>
+	<File name="ord_array.h" open="1" top="0" tabpos="4">
+		<Cursor position="495" topLine="0" />
+	</File>
+	<File name="recursive_search.c" open="1" top="0" tabpos="5">
+		<Cursor position="167" topLine="0" />
+	</File>
+	<File name="recursive_search.h" open="1" top="0" tabpos="6">
+		<Cursor position="13" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

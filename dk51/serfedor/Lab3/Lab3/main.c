@@ -17,7 +17,7 @@
 
 #define ARRAY_SIZE(a) (sizeof(theArray)/sizeof(theArray[0]))
 #define ArraySize 25000
-static void printArray(int anArray[], int aSize);
+//static void printArray(int anArray[], int aSize);
 
 int main(int argc, const char * argv[])
 {

@@ -1,0 +1,3 @@
+﻿  main.c
+d:\документы\visual studio 2015\projects\binarytree\binarytree\main.c(35): warning C4013: 'system' undefined; assuming extern returning int
+  binaryTree.vcxproj -> d:\документы\visual studio 2015\Projects\binaryTree\Debug\binaryTree.exe

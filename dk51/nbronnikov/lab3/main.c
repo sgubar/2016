@@ -1,202 +1,45 @@
-//
-//  Lab3
-// 
-//
-//  Created by Nazar Bronnikov on 15/05/16.
-//  Copyright (C) 2016 Nazar Bronnikov. All rights reserved.
-//
-
 #include <stdio.h>
 #include <time.h>
-#include <math.h>
-#include <stdlib.h>
-#include <malloc.h>
 
-
-#include "SimpleSort.h"
-#include "shellSort.h"
-#include "quickSort.h"
+#include "Sorting.h"
 
 #define ARRAY_SIZE(a) (sizeof(a)/sizeof(a[0]))
 
-static void printArray(int anArray[], int aSize);
-static void fillArray(int anArray[], int aSize, int aPivot);
-static void show_menu(int *choise);
+int main(int argc, const char * argv[]){
 
-int main(int argc, const char * argv[])
-{
-	int sort_type = -1;
-	int exit = 0;
-	int array_size = 0;
-
-	while (!exit)
-	{
-		show_menu(&sort_type);
-
-		switch (sort_type)
-		{
-			case 1:
-			{
-				printf("Vvedite razmer massiva:  ");
-
-				scanf_s("%d%*[^\n]", &array_size);
-
-				int *array_ptr = (int*)malloc(array_size * sizeof(int));
-
-				fillArray(array_ptr, array_size, 9999);
-
-				clock_t start = clock();
-				bubbleSort(array_ptr, array_size);
-				clock_t end = clock();
-
-				free(array_ptr);
-				
-				printf ("Vremya sortirovki: %.10lf\n", (double)(end - start)/CLOCKS_PER_SEC);
-			}
-			break;
-
-			case 2:
-			{
-				printf("Vvedite razmer massiva:  ");
-
-				scanf_s("%d%*[^\n]", &array_size);
-
-				int *array_ptr = (int*)malloc(array_size * sizeof(int));
-
-				fillArray(array_ptr, array_size, 9999);
-
-				clock_t start = clock();
-				selectionSort(array_ptr, array_size);
-				clock_t end = clock();
-
-				free(array_ptr);
-				
-				printf ("Vremya sortirovki: %.10lf\n", (double)(end - start)/CLOCKS_PER_SEC);
-			}
-			break;
-
-			case 3:
-			{
-				printf("Vvedite razmer massiva:  ");
-
-				scanf_s("%d%*[^\n]", &array_size);
-
-				int *array_ptr = (int*)malloc(array_size * sizeof(int));
-
-				fillArray(array_ptr, array_size, 9999);
-
-				clock_t start = clock();
-				insertionSort(array_ptr, array_size);
-				clock_t end = clock();
-
-				free(array_ptr);
-				
-				printf ("Vremya sortirovki: %.10lf\n", (double)(end - start)/CLOCKS_PER_SEC);
-			}
-			break;
-
-			case 4:
-			{
-				printf("Vvedite razmer massiva:  ");
-
-				scanf_s("%d%*[^\n]", &array_size);
-
-				int *array_ptr = (int*)malloc(array_size * sizeof(int));
-
-				fillArray(array_ptr, array_size, 9999);
-
-				clock_t start = clock();
-				shellSort(array_ptr, array_size);
-				clock_t end = clock();
-
-				free(array_ptr);
-				
-				printf ("Vremya sortirovki: %.10lf\n", (double)(end - start)/CLOCKS_PER_SEC);
-			}
-			break;
-
-			case 5:
-			{
-				printf("Vvedite razmer massiva:  ");
-
-				scanf_s("%d%*[^\n]", &array_size);
-
-				int *array_ptr = (int*)malloc(array_size * sizeof(int));
-
-				fillArray(array_ptr, array_size, 9999);
-
-				clock_t start = clock();
-				quickSort(array_ptr, 0, array_size - 1);
-				clock_t end = clock();
-
-				free(array_ptr);
-				
-				printf ("Vremya sortirovki: %.10lf\n", (double)(end - start)/CLOCKS_PER_SEC);
-			}
-			break;
-
-			case 6:
-			{
-				printf("Vvedite razmer massiva:  ");
-
-				scanf_s("%d%*[^\n]", &array_size);
-
-				int *array_ptr = (int*)malloc(array_size * sizeof(int));
-
-				fillArray(array_ptr, array_size, 9999);
-
-				clock_t start = clock();
-				quickSort2(array_ptr, 0, array_size - 1);
-				clock_t end = clock();
-
-				free(array_ptr);
-				
-				printf ("Vremya sortirovki: %.10lf\n", (double)(end - start)/CLOCKS_PER_SEC);
-			}
-			break;
-
-			case 9:
-			{
-				exit = 1;
-			}
-			break;
-
-			default:
-				printf("Nevernaya komanda! \n");
-			break;
-		}
-
-		printf("\n \n \n");
-	}
+	int theArray[10000], theArray1[10000], theArray2[10000], theArray3[10000];
 	
+	clock_t time, time2, time3, time1;
+
+	for (int i = 0; i < 10000; i++){
+
+		theArray[i] = rand();
+
+		theArray2[i] = theArray[i];
+		theArray3[i] = theArray[i];
+		theArray1[i] = theArray[i];
+	}
+	time = clock();
+	bubbleSort(theArray, ARRAY_SIZE(theArray));
+	time = clock() - time;
+	printf("Time of buble sorting = %f\n", (double)time / CLOCKS_PER_SEC);
+
+	time2 = clock();
+	selectionSort(theArray1, ARRAY_SIZE(theArray1));
+	time2 = clock() - time2;
+	printf("Selection sort time %f\n", (double)time2 / CLOCKS_PER_SEC);
+
+	time3 = clock();
+	insertionSort(theArray2, ARRAY_SIZE(theArray2));
+	time3 = clock() - time3;
+	printf("Insertion Sort %f\n", (double)time2 / CLOCKS_PER_SEC);
+
+	time1 = clock();
+	shellSort(theArray3, ARRAY_SIZE(theArray3));
+	time1 = clock() - time1;
+	printf("Shell sort %f\n", (double)time1 / CLOCKS_PER_SEC);
+
+	//system("pause");
 
 	return 0;
-}
-
-static void show_menu(int *choise)
-{
-	printf("Vuberite tip sortirovki: \n");
-
-	printf("\t Pyzurkovaya - 1. \n");
-	printf("\t Vuborom - 2. \n");
-	printf("\t Vstavkoy - 3. \n");
-	printf("\t Shell sortirovka - 4. \n");
-	printf("\t Bustraya - 5. \n");
-	printf("\t Bustraya 2 - 6. \n");
-
-	printf("\t Vuhod is programmu - 9. \n");
-
-	printf("\n Vash vubor: ");
-
-	scanf_s("%d%*[^\n] ", choise);
-}
-
-void fillArray(int anArray[], int aSize, int max_val)
-{
-	srand(0);
-
-	for (int i = 0; i < aSize; i++)
-	{
-		anArray[i] = rand() % max_val;
-	}
 }

@@ -45,3 +45,30 @@
 	"list.h"
 	<stdio.h>
 
+1463599778 source:c:\users\Богдан\documents\2016\dk51\bmaximovich\hw1\list.c
+	"list.h"
+	"Node.h"
+	<stdlib.h>
+	"DoubleList.h"
+
+1463340736 c:\users\Богдан\documents\2016\dk51\bmaximovich\hw1\list.h
+	<stdio.h>
+	"Node.h"
+
+1463340736 c:\users\Богдан\documents\2016\dk51\bmaximovich\hw1\node.h
+	<stdio.h>
+
+1463340736 c:\users\Богдан\documents\2016\dk51\bmaximovich\hw1\doublelist.h
+	<stdio.h>
+	"list.h"
+
+1463600058 source:c:\users\Богдан\documents\2016\dk51\bmaximovich\hw1\main.c
+	<stdio.h>
+	"Node.h"
+	"list.h"
+	"DoubleList.h"
+
+1463340736 source:c:\users\Богдан\documents\2016\dk51\bmaximovich\hw1\node.c
+	"Node.h"
+	<stdlib.h>
+

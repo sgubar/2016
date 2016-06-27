@@ -1,0 +1,15 @@
+﻿Сборка начата 08.06.2016 22:50:01.
+     1>Проект "C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Tree\Tree\Tree.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         D:\Programm Files\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt main.c
+         main.c
+     1>c:\users\солнце\documents\github\2016\dk51\serfedor\tree\tree\main.c(37): warning C4013: system: нет определения; предполагается "extern" с возвратом типа "int"
+       Link:
+         D:\Programm Files\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Tree\Debug\Tree.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Tree\Debug\Tree.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Tree\Debug\Tree.lib" /MACHINE:X86 Debug\main.obj
+         Debug\tree.obj
+         Tree.vcxproj -> C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Tree\Debug\Tree.exe
+     1>Сборка проекта "C:\Users\Солнце\Documents\GitHub\2016\dk51\serfedor\Tree\Tree\Tree.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:01.24

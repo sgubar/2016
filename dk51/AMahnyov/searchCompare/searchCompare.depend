@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1465458122 source:c:\workspace\dk51\amahnyov\searchcompare\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"searchFunctions.h"
+
+1465456835 c:\workspace\dk51\amahnyov\searchcompare\searchfunctions.h
+
+1465458140 source:c:\workspace\dk51\amahnyov\searchcompare\searchfunctions.c
+	<stdio.h>
+	<stdlib.h>
+	"searchFunctions.h"
+

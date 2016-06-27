@@ -1,0 +1,3 @@
+Create 2 functions:
+IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex);
+IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex);

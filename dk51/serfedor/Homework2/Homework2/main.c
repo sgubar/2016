@@ -17,29 +17,33 @@ int main()
 
 void DynAr() {
 	printf("Create dynamic with integer value\n");
-	DynamicIntArray *anArray = createDAInt(5);
+
+	DynamicIntArray *anArray = createDAInt(15);
 	printDAsize(anArray);
 
-	setValueAtIndex(5, 0, anArray);
-	setValueAtIndex(2, 1, anArray);
-	setValueAtIndex(10, 2, anArray);
-	setValueAtIndex(1, 3, anArray);	
-	setValueAtIndex(13, 4, anArray);
-	
-	printf("Index[2] = %d\n", valueAtIndex(2, anArray));
-
+	printf("\nAdd number 1 at index 1\n");
+	setValueAtIndex(1, 1, anArray);
+	printf("Index[1] = %d\n", valueAtIndex(1, anArray));
 	printDAsize(anArray);
-	setValueAtIndex(3, 6, anArray);
-	setValueAtIndex(7, 5, anArray);
-	setValueAtIndex(8, 7, anArray);
-	printf("\n");
-	printf("Index[7] = %d\n", valueAtIndex(7, anArray));
 
+	printf("\nAdd number 2 at index 0\n");
+	setValueAtIndex(2, 0, anArray);
+	printf("Index[0] = %d\n", valueAtIndex(0, anArray));
+	printDAsize(anArray);
+
+	printf("\nAdd number 134 index 3\n");
+	setValueAtIndex(134, 3, anArray);
+	printf("Index[3] = %d\n", valueAtIndex(3, anArray));
+	printDAsize(anArray);
+
+	printf("\nAdd number 30 at index 25\n");
+	setValueAtIndex(30, 25, anArray);
+	printf("Index[25] = %d\n", valueAtIndex(25, anArray));
 	printDAsize(anArray);
 
 	freeDAInt(anArray);
 
-	printDAsize(anArray);
+	
 }
 void printDAsize(DynamicIntArray *anArray) 
 {
