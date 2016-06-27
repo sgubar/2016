@@ -63,5 +63,5 @@ void setValueAtIndex(DynamicIntArray *anArray, int anValue, int anIndex)
 	}
 	else
 	printf("Error. Index is less than 0.");
-	return; /*return new value at the index*/
+	return;
 }
