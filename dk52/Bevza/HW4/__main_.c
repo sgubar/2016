@@ -32,6 +32,5 @@ int main(int argc, const char * argv[])
 	clock_t theEndBin = clock();
 	printf("time of Bin searching: %.10lf\n", (double)(theEndBin - theStartBin) / CLOCKS_PER_SEC);
 
-	//oa_print(anArray); // For testings
 	system("pause");
 }
