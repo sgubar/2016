@@ -10,13 +10,13 @@ int main()
 	Node *head = initializeList();
 	int namber, i=0;
 	printf("add ten integer namber to list \n");
-	do
+	do //cycle 10 for input values
 	{
 		scanf("%i", &namber);
 		pushBackToList(head, namber);
 	}while(i != 9);
-	printList(head);
-	sort(head);
+	printList(head); //function output list on screen
+	sort(head); //function sorting
 	printList(head);
 	return 0;
 }
