@@ -5,8 +5,8 @@
 
 int main(int argc, char** argv) {
     
+    Show();
     
-    
-    //PrintList(newList);
+    /*PrintList*/;
     return 0;
 }
