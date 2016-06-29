@@ -232,28 +232,28 @@ NodePtr getSuccessor(TreePtr aTree, NodePtr aDelNode)
 // My functions:
 int countTree(TreePtr aTree)
 {
-	if (node->leftChild == NULL && node->rightChild == NULL)
+	if (Node->leftChild == NULL && Node->rightChild == NULL)
 		return 1;
 	int left, right;
-	if (node->leftChild != NULL)
-		left = NodeCount(node->leftChild);
+	if (Node->leftChild != NULL)
+		left = countTree(Node->leftChild);
 	else
 		left = 0;
-	if (node->rightChild != NULL)
-		right = NodeCount(node->rightChild);
+	if (Node->rightChild != NULL)
+		right = countTree(Node->rightChild);
 	else
 		right = 0;
 	return left+right+1;
 }
-void displayTree(TreePtr aTree, long n)
+void displayTree(TreePtr aTree, int n)
 {
-   long i;
-   if (root)
+   int i;
+   if (Node)
    {
-      Print(root->right, n+5);
+      displayTree(Node->rightChild, n+5);
       for (i = 0; i < n; i++) 
          printf(" ");
-      printf("%d\n", root->data);
-      Print(root->left, n+5);
+      printf("%d\n", Node->note);
+      displayTree(Node->leftChild, n+5);
    }
 }
