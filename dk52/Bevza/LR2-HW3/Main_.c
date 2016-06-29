@@ -3,7 +3,7 @@
 #include "List.h"
 #include"Node.h"
 
-int main(int argc, char** argv) {
+int main() {
     
     Show();
     
