@@ -3,7 +3,7 @@
 //  demoTree
 //
 //  Created by Slava Gubar on 5/18/16.
-//  Copyright © 2016 Slava Gubar. All rights reserved.
+//  Copyright Â© 2016 Slava Gubar. All rights reserved.
 //
 
 #include <stdio.h>
@@ -24,12 +24,6 @@ int main(int argc, const char * argv[])
 	insertNode(theTree, "caa", "1231");
 	
 	NodePtr theFindNode = findNode(theTree, "acc");
-	
-/*	if (deleteNode(theTree, "acc"))
-	{
-		theFindNode = findNode(theTree, "acc");
-		printf ("find result: %x", (unsigned int)theFindNode);
-	} */
 	
 	count = countTree(theTree->root);
 
